@@ -1,0 +1,4 @@
+[
+  "-workspace", "MKUnits.xcworkspace",
+  "-scheme", "MKUnits"
+]
