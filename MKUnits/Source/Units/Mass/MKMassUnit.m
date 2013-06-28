@@ -11,13 +11,19 @@
 @implementation MKMassUnit
 
 + (instancetype)tonne {
-    return [self megagram];
+    static NSString *name   = @"tonne";
+    static NSString *symbol = @"t";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:3 isNegative:NO];
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
 }
 
 + (instancetype)megagram {
     static NSString *name   = @"megagram";
     static NSString *symbol = @"Mg";
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:-2 isNegative:NO];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:3 isNegative:NO];
     
     return [self createWithName:name
                      withSymbol:symbol
