@@ -11,12 +11,6 @@
 		903335CE177D0CCC00FE8665 /* MKUnit+MKQuantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335B8177D0CCC00FE8665 /* MKUnit+MKQuantity.m */; };
 		903335CF177D0CCC00FE8665 /* MKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335BA177D0CCC00FE8665 /* MKUnit.m */; };
 		903335D0177D0CCC00FE8665 /* NSDecimalNumber+Negative.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335BF177D0CCC00FE8665 /* NSDecimalNumber+Negative.m */; };
-		903335D1177D0CCC00FE8665 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 903335C2177D0CCC00FE8665 /* .gitkeep */; };
-		903335D2177D0CCC00FE8665 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 903335C4177D0CCC00FE8665 /* .gitkeep */; };
-		903335D3177D0CCC00FE8665 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 903335C6177D0CCC00FE8665 /* .gitkeep */; };
-		903335D4177D0CCC00FE8665 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 903335C8177D0CCC00FE8665 /* .gitkeep */; };
-		903335D5177D0CCC00FE8665 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 903335CA177D0CCC00FE8665 /* .gitkeep */; };
-		903335D6177D0CCC00FE8665 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 903335CC177D0CCC00FE8665 /* .gitkeep */; };
 		903335DB177D0CF000FE8665 /* MKQuantity_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */; };
 		903335DC177D0CF000FE8665 /* MKUnit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335D9177D0CF000FE8665 /* MKUnit_Tests.m */; };
 		903335DD177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */; };
@@ -57,12 +51,6 @@
 		903335BD177D0CCC00FE8665 /* MKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMacros.h; sourceTree = "<group>"; };
 		903335BE177D0CCC00FE8665 /* NSDecimalNumber+Negative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Negative.h"; sourceTree = "<group>"; };
 		903335BF177D0CCC00FE8665 /* NSDecimalNumber+Negative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Negative.m"; sourceTree = "<group>"; };
-		903335C2177D0CCC00FE8665 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		903335C4177D0CCC00FE8665 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		903335C6177D0CCC00FE8665 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		903335C8177D0CCC00FE8665 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		903335CA177D0CCC00FE8665 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		903335CC177D0CCC00FE8665 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		903335D7177D0CF000FE8665 /* Base_Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base_Tests.h; sourceTree = "<group>"; };
 		903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity_Tests.m; sourceTree = "<group>"; };
 		903335D9177D0CF000FE8665 /* MKUnit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUnit_Tests.m; sourceTree = "<group>"; };
@@ -126,13 +114,13 @@
 		903335B4177D0CCC00FE8665 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				903335B5177D0CCC00FE8665 /* MKQuantity.h */,
-				903335B6177D0CCC00FE8665 /* MKQuantity.m */,
-				903335B7177D0CCC00FE8665 /* MKUnit+MKQuantity.h */,
-				903335B8177D0CCC00FE8665 /* MKUnit+MKQuantity.m */,
+				903335BB177D0CCC00FE8665 /* MKUnits.h */,
 				903335B9177D0CCC00FE8665 /* MKUnit.h */,
 				903335BA177D0CCC00FE8665 /* MKUnit.m */,
-				903335BB177D0CCC00FE8665 /* MKUnits.h */,
+				903335B7177D0CCC00FE8665 /* MKUnit+MKQuantity.h */,
+				903335B8177D0CCC00FE8665 /* MKUnit+MKQuantity.m */,
+				903335B5177D0CCC00FE8665 /* MKQuantity.h */,
+				903335B6177D0CCC00FE8665 /* MKQuantity.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -163,7 +151,6 @@
 		903335C1177D0CCC00FE8665 /* Area */ = {
 			isa = PBXGroup;
 			children = (
-				903335C2177D0CCC00FE8665 /* .gitkeep */,
 			);
 			path = Area;
 			sourceTree = "<group>";
@@ -171,7 +158,6 @@
 		903335C3177D0CCC00FE8665 /* Byte */ = {
 			isa = PBXGroup;
 			children = (
-				903335C4177D0CCC00FE8665 /* .gitkeep */,
 			);
 			path = Byte;
 			sourceTree = "<group>";
@@ -179,7 +165,6 @@
 		903335C5177D0CCC00FE8665 /* Length */ = {
 			isa = PBXGroup;
 			children = (
-				903335C6177D0CCC00FE8665 /* .gitkeep */,
 			);
 			path = Length;
 			sourceTree = "<group>";
@@ -187,7 +172,6 @@
 		903335C7177D0CCC00FE8665 /* Mass */ = {
 			isa = PBXGroup;
 			children = (
-				903335C8177D0CCC00FE8665 /* .gitkeep */,
 			);
 			path = Mass;
 			sourceTree = "<group>";
@@ -195,7 +179,6 @@
 		903335C9177D0CCC00FE8665 /* Temperature */ = {
 			isa = PBXGroup;
 			children = (
-				903335CA177D0CCC00FE8665 /* .gitkeep */,
 			);
 			path = Temperature;
 			sourceTree = "<group>";
@@ -203,7 +186,6 @@
 		903335CB177D0CCC00FE8665 /* Time */ = {
 			isa = PBXGroup;
 			children = (
-				903335CC177D0CCC00FE8665 /* .gitkeep */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -269,9 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				903335D7177D0CF000FE8665 /* Base_Tests.h */,
-				903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */,
-				903335D9177D0CF000FE8665 /* MKUnit_Tests.m */,
-				903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */,
+				9091EA14177D98EC00D334BB /* core-tests */,
+				9091EA15177D98FF00D334BB /* externals-tests */,
 				9037008C177D0BD400708FEA /* Supporting Files */,
 			);
 			path = MKUnitsTests;
@@ -284,6 +265,23 @@
 				9037008E177D0BD400708FEA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9091EA14177D98EC00D334BB /* core-tests */ = {
+			isa = PBXGroup;
+			children = (
+				903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */,
+				903335D9177D0CF000FE8665 /* MKUnit_Tests.m */,
+			);
+			name = "core-tests";
+			sourceTree = "<group>";
+		};
+		9091EA15177D98FF00D334BB /* externals-tests */ = {
+			isa = PBXGroup;
+			children = (
+				903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */,
+			);
+			name = "externals-tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,12 +361,6 @@
 				9037007A177D0BD400708FEA /* Default.png in Resources */,
 				9037007C177D0BD400708FEA /* Default@2x.png in Resources */,
 				9037007E177D0BD400708FEA /* Default-568h@2x.png in Resources */,
-				903335D1177D0CCC00FE8665 /* .gitkeep in Resources */,
-				903335D2177D0CCC00FE8665 /* .gitkeep in Resources */,
-				903335D3177D0CCC00FE8665 /* .gitkeep in Resources */,
-				903335D4177D0CCC00FE8665 /* .gitkeep in Resources */,
-				903335D5177D0CCC00FE8665 /* .gitkeep in Resources */,
-				903335D6177D0CCC00FE8665 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
