@@ -10,26 +10,53 @@
 
 @interface MKUnit_Tests : SenTestCase
 
-@property (nonatomic, strong) MKUnit *test_class;
+@property (nonatomic, strong) MKUnit *unit_A;
+@property (nonatomic, strong) MKUnit *unit_B;
 
 @end
 
 @implementation MKUnit_Tests
 
 - (void)setUp {
-    self.test_class = [MKUnit create];
+    self.unit_A = [MKUnit unit_A];  // base unit
+    self.unit_B = [MKUnit unit_B];
 }
 
 - (void)tearDown {
-    self.test_class = nil;
+    self.unit_A = nil;
+    self.unit_B = nil;
 }
 
-- (void)test_create_default {
-    assertThat(self.test_class, notNilValue());
-    assertThat(self.test_class.name, equalToIgnoringCase(@"Unit"));
-    assertThat(self.test_class.symbol, equalToIgnoringCase(@"unit"));
-    assertThat(self.test_class.ratio, equalTo(@1));
+- (void)test_create {
+    assertThat(self.unit_A, notNilValue());
+    assertThat(self.unit_A.name, equalToIgnoringCase(@"Unit A"));
+    assertThat(self.unit_A.symbol, equalToIgnoringCase(@"unit-a"));
+    assertThat(self.unit_A.ratio, equalTo(@1));
 }
 
+- (void)test_convertFromBaseUnit {
+    id result = [self.unit_B convertToBaseUnit:@2];
+    assertThat(result, equalTo(@4));
+}
+
+- (void)test_convertToBaseUnit {
+    id result = [self.unit_B convertFromBaseUnit:@2];
+    assertThat(result, equalTo(@1));
+}
+
+- (void)test_description {
+    id result = [self.unit_A description];
+    assertThat(result, equalTo(@"unit-a"));
+}
+
+- (void)test_isEqual_returns_true_when_same_units {
+    BOOL result = [self.unit_A isEqual:[MKUnit unit_A]];
+    assertThatBool(result, equalToBool(YES));
+}
+
+- (void)test_isEqual_returns_false_when_diff_units {
+    BOOL result = [self.unit_A isEqual:[MKUnit unit_B]];
+    assertThatBool(result, equalToBool(NO));
+}
 
 @end

@@ -10,7 +10,6 @@
 
 @interface MKUnit : NSObject
 
-+ (instancetype)create;
 + (instancetype)createWithName:(NSString *)name
                     withSymbol:(NSString *)symbol withRatio:(NSDecimalNumber *)ratio;
 

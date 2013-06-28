@@ -19,22 +19,6 @@
     return [[self alloc] initWithName:name withSymbol:symbol withRatio:ratio];
 }
 
-// TODO: extract to MKUnit+Test category
-+ (instancetype)create {
-    return [self _default];
-}
-
-// TODO: extract to MKUnit+Test category
-+ (instancetype)_default {
-    static NSString *name   = @"Unit";
-    static NSString *symbol = @"unit";
-    id ratio = [NSDecimalNumber one];
-    
-    return [[self alloc] initWithName:name
-                           withSymbol:symbol
-                            withRatio:ratio];
-}
-
 - (id)initWithName:(NSString *)name
         withSymbol:(NSString *)symbol withRatio:(NSDecimalNumber *)ratio {
     if (self = [super init]) {
