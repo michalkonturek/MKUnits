@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0460"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FCD1C07C5B4B4C8CB8650714"
+               BlueprintIdentifier = "D54900DA09A44E41AB18908F"
                BuildableName = "libPods-MKUnitsTests.a"
                BlueprintName = "Pods-MKUnitsTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

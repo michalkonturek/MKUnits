@@ -14,6 +14,8 @@
 		903335DB177D0CF000FE8665 /* MKQuantity_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */; };
 		903335DC177D0CF000FE8665 /* MKUnit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335D9177D0CF000FE8665 /* MKUnit_Tests.m */; };
 		903335DD177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */; };
+		90361462177E38C700E3FAE1 /* MKMassUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90361461177E38C700E3FAE1 /* MKMassUnit.m */; };
+		90361465177E3B9800E3FAE1 /* MKLengthUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90361464177E3B9800E3FAE1 /* MKLengthUnit.m */; };
 		90370068177D0BD400708FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370067177D0BD400708FEA /* UIKit.framework */; };
 		9037006A177D0BD400708FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370069177D0BD400708FEA /* Foundation.framework */; };
 		9037006C177D0BD400708FEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9037006B177D0BD400708FEA /* CoreGraphics.framework */; };
@@ -27,7 +29,6 @@
 		90370087177D0BD400708FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370067177D0BD400708FEA /* UIKit.framework */; };
 		90370088177D0BD400708FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370069177D0BD400708FEA /* Foundation.framework */; };
 		90370090177D0BD400708FEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9037008E177D0BD400708FEA /* InfoPlist.strings */; };
-		9091EA18177D9AA700D334BB /* MKUnit+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 9091EA17177D9AA700D334BB /* MKUnit+Test.m */; };
 		F01588EF7C664B74B8BBE5E8 /* libPods-MKUnitsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F1D34DC47C415180711C40 /* libPods-MKUnitsTests.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,10 @@
 		903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity_Tests.m; sourceTree = "<group>"; };
 		903335D9177D0CF000FE8665 /* MKUnit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUnit_Tests.m; sourceTree = "<group>"; };
 		903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Negative_Tests.m"; sourceTree = "<group>"; };
+		90361460177E38C700E3FAE1 /* MKMassUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMassUnit.h; sourceTree = "<group>"; };
+		90361461177E38C700E3FAE1 /* MKMassUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMassUnit.m; sourceTree = "<group>"; };
+		90361463177E3B9800E3FAE1 /* MKLengthUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLengthUnit.h; sourceTree = "<group>"; };
+		90361464177E3B9800E3FAE1 /* MKLengthUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLengthUnit.m; sourceTree = "<group>"; };
 		90370064177D0BD400708FEA /* MKUnits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKUnits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90370067177D0BD400708FEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		90370069177D0BD400708FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,8 +78,6 @@
 		90370085177D0BD400708FEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9037008D177D0BD400708FEA /* MKUnitsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MKUnitsTests-Info.plist"; sourceTree = "<group>"; };
 		9037008F177D0BD400708FEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9091EA16177D9AA700D334BB /* MKUnit+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKUnit+Test.h"; sourceTree = "<group>"; };
-		9091EA17177D9AA700D334BB /* MKUnit+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKUnit+Test.m"; sourceTree = "<group>"; };
 		B5CF1D0DEB864CABB46F1979 /* Pods-MKUnitsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKUnitsTests.xcconfig"; path = "Pods/Pods-MKUnitsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		F1F1D34DC47C415180711C40 /* libPods-MKUnitsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MKUnitsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,6 +171,8 @@
 		903335C5177D0CCC00FE8665 /* Length */ = {
 			isa = PBXGroup;
 			children = (
+				90361463177E3B9800E3FAE1 /* MKLengthUnit.h */,
+				90361464177E3B9800E3FAE1 /* MKLengthUnit.m */,
 			);
 			path = Length;
 			sourceTree = "<group>";
@@ -175,6 +180,8 @@
 		903335C7177D0CCC00FE8665 /* Mass */ = {
 			isa = PBXGroup;
 			children = (
+				90361460177E38C700E3FAE1 /* MKMassUnit.h */,
+				90361461177E38C700E3FAE1 /* MKMassUnit.m */,
 			);
 			path = Mass;
 			sourceTree = "<group>";
@@ -275,8 +282,6 @@
 			children = (
 				903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */,
 				903335D9177D0CF000FE8665 /* MKUnit_Tests.m */,
-				9091EA16177D9AA700D334BB /* MKUnit+Test.h */,
-				9091EA17177D9AA700D334BB /* MKUnit+Test.m */,
 			);
 			name = "core-tests";
 			sourceTree = "<group>";
@@ -431,7 +436,9 @@
 				90370074177D0BD400708FEA /* main.m in Sources */,
 				90370078177D0BD400708FEA /* AppDelegate.m in Sources */,
 				903335CD177D0CCC00FE8665 /* MKQuantity.m in Sources */,
+				90361465177E3B9800E3FAE1 /* MKLengthUnit.m in Sources */,
 				903335CE177D0CCC00FE8665 /* MKUnit+MKQuantity.m in Sources */,
+				90361462177E38C700E3FAE1 /* MKMassUnit.m in Sources */,
 				903335CF177D0CCC00FE8665 /* MKUnit.m in Sources */,
 				903335D0177D0CCC00FE8665 /* NSDecimalNumber+Negative.m in Sources */,
 			);
@@ -444,7 +451,6 @@
 				903335DB177D0CF000FE8665 /* MKQuantity_Tests.m in Sources */,
 				903335DC177D0CF000FE8665 /* MKUnit_Tests.m in Sources */,
 				903335DD177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m in Sources */,
-				9091EA18177D9AA700D334BB /* MKUnit+Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +496,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -522,6 +529,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

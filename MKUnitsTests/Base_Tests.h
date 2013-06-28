@@ -14,7 +14,6 @@
 #import "MKUnits.h"
 
 #import "NSDecimalNumber+Negative.h"
-#import "MKUnit+Test.h"
 
 #define TEST_PASSES assertThatBool(YES, equalToBool(YES));
 #define TEST_FAILS  STFail(@"Test not implemented.");

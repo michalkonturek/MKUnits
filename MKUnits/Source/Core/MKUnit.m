@@ -33,6 +33,20 @@
     METHOD_USE_DESIGNATED_INIT
 }
 
+- (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)unit {
+    return [self convertAmount:amount from:unit to:self];
+}
+
+- (NSNumber *)convertAmount:(NSNumber *)amount to:(MKUnit *)unit {
+    return [self convertAmount:amount from:self to:unit];
+}
+
+- (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)from to:(MKUnit *)to {
+    id baseAmount = [from convertToBaseUnit:amount];
+    id converted = [to convertFromBaseUnit:baseAmount];
+    return converted;
+}
+
 - (NSNumber *)convertFromBaseUnit:(NSNumber *)amount {
     id value = [NSDecimalNumber createFrom:amount];
     return [value decimalNumberByDividingBy:self.ratio];
