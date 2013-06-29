@@ -16,6 +16,7 @@
 		903335DD177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */; };
 		90361462177E38C700E3FAE1 /* MKMassUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90361461177E38C700E3FAE1 /* MKMassUnit.m */; };
 		90361465177E3B9800E3FAE1 /* MKLengthUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90361464177E3B9800E3FAE1 /* MKLengthUnit.m */; };
+		90361468177F2CC000E3FAE1 /* MKByteUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90361467177F2CC000E3FAE1 /* MKByteUnit.m */; };
 		90370068177D0BD400708FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370067177D0BD400708FEA /* UIKit.framework */; };
 		9037006A177D0BD400708FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370069177D0BD400708FEA /* Foundation.framework */; };
 		9037006C177D0BD400708FEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9037006B177D0BD400708FEA /* CoreGraphics.framework */; };
@@ -61,6 +62,8 @@
 		90361461177E38C700E3FAE1 /* MKMassUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMassUnit.m; sourceTree = "<group>"; };
 		90361463177E3B9800E3FAE1 /* MKLengthUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLengthUnit.h; sourceTree = "<group>"; };
 		90361464177E3B9800E3FAE1 /* MKLengthUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLengthUnit.m; sourceTree = "<group>"; };
+		90361466177F2CC000E3FAE1 /* MKByteUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKByteUnit.h; sourceTree = "<group>"; };
+		90361467177F2CC000E3FAE1 /* MKByteUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKByteUnit.m; sourceTree = "<group>"; };
 		90370064177D0BD400708FEA /* MKUnits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKUnits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90370067177D0BD400708FEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		90370069177D0BD400708FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,6 +167,8 @@
 		903335C3177D0CCC00FE8665 /* Byte */ = {
 			isa = PBXGroup;
 			children = (
+				90361466177F2CC000E3FAE1 /* MKByteUnit.h */,
+				90361467177F2CC000E3FAE1 /* MKByteUnit.m */,
 			);
 			path = Byte;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90361468177F2CC000E3FAE1 /* MKByteUnit.m in Sources */,
 				90370074177D0BD400708FEA /* main.m in Sources */,
 				90370078177D0BD400708FEA /* AppDelegate.m in Sources */,
 				903335CD177D0CCC00FE8665 /* MKQuantity.m in Sources */,
