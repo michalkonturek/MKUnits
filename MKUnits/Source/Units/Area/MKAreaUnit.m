@@ -84,31 +84,31 @@
 
 @implementation MKQuantity (MKAreaUnit)
 
-+ (instancetype)area_square_millimeterWithQuantity:(NSNumber *)amount {
++ (instancetype)area_square_millimeterWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKAreaUnit square_millimeter]];
 }
 
-+ (instancetype)area_square_centimeterWithQuantity:(NSNumber *)amount {
++ (instancetype)area_square_centimeterWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKAreaUnit square_centimeter]];
 }
 
-+ (instancetype)area_square_decimeterWithQuantity:(NSNumber *)amount {
++ (instancetype)area_square_decimeterWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKAreaUnit square_decimeter]];
 }
 
-+ (instancetype)area_square_meterWithQuantity:(NSNumber *)amount {
++ (instancetype)area_square_meterWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKAreaUnit square_meter]];
 }
 
-+ (instancetype)area_areWithQuantity:(NSNumber *)amount {
++ (instancetype)area_areWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKAreaUnit are]];
 }
 
-+ (instancetype)area_hectareWithQuantity:(NSNumber *)amount {
++ (instancetype)area_hectareWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKAreaUnit hectare]];
 }
 
-+ (instancetype)area_square_kilometerWithQuantity:(NSNumber *)amount {
++ (instancetype)area_square_kilometerWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKAreaUnit square_kilometer]];
 }
 
