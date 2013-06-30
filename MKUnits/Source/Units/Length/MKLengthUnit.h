@@ -11,10 +11,10 @@
 
 @interface MKLengthUnit : MKUnit
 
-+ (instancetype)kilometer;
-+ (instancetype)meter;
-+ (instancetype)centimeter;
 + (instancetype)millimeter;
++ (instancetype)centimeter;
++ (instancetype)meter;
++ (instancetype)kilometer;
 
 @end
 
