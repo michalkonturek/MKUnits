@@ -19,5 +19,6 @@
 #import "MKMassUnit.h"
 #import "MKMassUnit+Imperial.h"
 #import "MKLengthUnit.h"
+#import "MKLengthUnit+Imperial.h"
 #import "MKTimeUnit.h"
 

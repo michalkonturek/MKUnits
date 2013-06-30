@@ -12,6 +12,8 @@
 		901FACBD1780992E00103B0C /* NSNumber+Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACBC1780992E00103B0C /* NSNumber+Fraction.m */; };
 		901FACC017809A7D00103B0C /* MKQuantity+Precision.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACBF17809A7D00103B0C /* MKQuantity+Precision.m */; };
 		901FACC217809FEB00103B0C /* MKQuantity_Precision_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */; };
+		901FACC51780A4A700103B0C /* MKLengthUnit+Imperial.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC41780A4A700103B0C /* MKLengthUnit+Imperial.m */; };
+		901FACC71780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC61780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m */; };
 		903335CD177D0CCC00FE8665 /* MKQuantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335B6177D0CCC00FE8665 /* MKQuantity.m */; };
 		903335CE177D0CCC00FE8665 /* MKUnit+MKQuantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335B8177D0CCC00FE8665 /* MKUnit+MKQuantity.m */; };
 		903335CF177D0CCC00FE8665 /* MKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335BA177D0CCC00FE8665 /* MKUnit.m */; };
@@ -66,6 +68,9 @@
 		901FACBE17809A7D00103B0C /* MKQuantity+Precision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKQuantity+Precision.h"; sourceTree = "<group>"; };
 		901FACBF17809A7D00103B0C /* MKQuantity+Precision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKQuantity+Precision.m"; sourceTree = "<group>"; };
 		901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity_Precision_Tests.m; sourceTree = "<group>"; };
+		901FACC31780A4A700103B0C /* MKLengthUnit+Imperial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKLengthUnit+Imperial.h"; sourceTree = "<group>"; };
+		901FACC41780A4A700103B0C /* MKLengthUnit+Imperial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKLengthUnit+Imperial.m"; sourceTree = "<group>"; };
+		901FACC61780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLengthUnit_Imperial_Tests.m; sourceTree = "<group>"; };
 		903335B5177D0CCC00FE8665 /* MKQuantity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKQuantity.h; sourceTree = "<group>"; };
 		903335B6177D0CCC00FE8665 /* MKQuantity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity.m; sourceTree = "<group>"; };
 		903335B7177D0CCC00FE8665 /* MKUnit+MKQuantity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKUnit+MKQuantity.h"; sourceTree = "<group>"; };
@@ -219,6 +224,8 @@
 			children = (
 				90361463177E3B9800E3FAE1 /* MKLengthUnit.h */,
 				90361464177E3B9800E3FAE1 /* MKLengthUnit.m */,
+				901FACC31780A4A700103B0C /* MKLengthUnit+Imperial.h */,
+				901FACC41780A4A700103B0C /* MKLengthUnit+Imperial.m */,
 			);
 			path = Length;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 				9069CC82177FC5420056A364 /* MKMassUnit_Tests.m */,
 				901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */,
 				904F619C177FC8A200CD4DFC /* MKLengthUnit_Tests.m */,
+				901FACC61780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m */,
 				90361471177FB42900E3FAE1 /* MKTimeUnit_Tests.m */,
 			);
 			name = "units-tests";
@@ -502,6 +510,7 @@
 				904F61A5177FD17B00CD4DFC /* MKAreaUnit+Imperial.m in Sources */,
 				901FACC017809A7D00103B0C /* MKQuantity+Precision.m in Sources */,
 				903335CE177D0CCC00FE8665 /* MKUnit+MKQuantity.m in Sources */,
+				901FACC51780A4A700103B0C /* MKLengthUnit+Imperial.m in Sources */,
 				901FACBD1780992E00103B0C /* NSNumber+Fraction.m in Sources */,
 				90361462177E38C700E3FAE1 /* MKMassUnit.m in Sources */,
 				903335CF177D0CCC00FE8665 /* MKUnit.m in Sources */,
@@ -516,6 +525,7 @@
 			files = (
 				903335DB177D0CF000FE8665 /* MKQuantity_Tests.m in Sources */,
 				90361472177FB42900E3FAE1 /* MKTimeUnit_Tests.m in Sources */,
+				901FACC71780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m in Sources */,
 				903335DC177D0CF000FE8665 /* MKUnit_Tests.m in Sources */,
 				904F619B177FC7EF00CD4DFC /* MKMassUnit_Tests.m in Sources */,
 				904F61A2177FCDEA00CD4DFC /* MKArea_Tests.m in Sources */,
