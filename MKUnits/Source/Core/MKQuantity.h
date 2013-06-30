@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+FOUNDATION_EXPORT NSString * const UNIT_MISMATCH;
+
 @class MKUnit;
 
 @interface MKQuantity : NSObject

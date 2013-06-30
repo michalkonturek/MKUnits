@@ -36,17 +36,15 @@
 }
 
 - (void)test_one_stone_is_14_pounds {
-//    MKQuantity *expected = [MKQuantity mass_poundWithAmount:@14];
-//    BOOL result = [[MKQuantity mass_stoneWithAmount:@1] isTheSame:expected];
-//    assertThatBool(result, equalToBool(YES));
+    MKQuantity *expected = [MKQuantity mass_poundWithAmount:@14];
+    BOOL result = [[MKQuantity mass_stoneWithAmount:@1] isTheSame:expected withPrecision:5];
+    assertThatBool(result, equalToBool(YES));
     
     /*
      14 pounds is converted to 1.00000050076453201349859612710600618239 st
      
      NSLog(@"%@", [expected convertTo:[MKMassUnit stone]]);
      */
-    
-    TEST_PASSES
 }
 
 - (void)test_one_quarter_is_28_pounds {

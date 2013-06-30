@@ -11,6 +11,7 @@
 #import "MKUnit.h"
 #import "MKQuantity.h"
 #import "MKUnit+MKQuantity.h"
+#import "MKQuantity+Precision.h"
 
 #import "MKAreaUnit.h"
 #import "MKAreaUnit+Imperial.h"
