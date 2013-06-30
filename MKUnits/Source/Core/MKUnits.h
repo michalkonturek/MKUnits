@@ -12,6 +12,7 @@
 #import "MKQuantity.h"
 #import "MKUnit+MKQuantity.h"
 
+#import "MKAreaUnit.h"
 #import "MKByteUnit.h"
 #import "MKMassUnit.h"
 #import "MKLengthUnit.h"
