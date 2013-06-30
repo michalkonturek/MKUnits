@@ -10,20 +10,10 @@
 
 @implementation MKLengthUnit
 
-+ (instancetype)kilometer {
-    static NSString *name   = @"kilometer";
-    static NSString *symbol = @"km";
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:3 isNegative:NO];
-    
-    return [self createWithName:name
-                     withSymbol:symbol
-                      withRatio:ratio];
-}
-
-+ (instancetype)meter {
-    static NSString *name   = @"meter";
-    static NSString *symbol = @"m";
-    id ratio = [NSDecimalNumber one];
++ (instancetype)millimeter {
+    static NSString *name   = @"millimeter";
+    static NSString *symbol = @"mm";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:-3 isNegative:NO];
     
     return [self createWithName:name
                      withSymbol:symbol
@@ -40,10 +30,20 @@
                       withRatio:ratio];
 }
 
-+ (instancetype)milimeter {
-    static NSString *name   = @"milimeter";
-    static NSString *symbol = @"mm";
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:-3 isNegative:NO];
++ (instancetype)meter {
+    static NSString *name   = @"meter";
+    static NSString *symbol = @"m";
+    id ratio = [NSDecimalNumber one];
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
++ (instancetype)kilometer {
+    static NSString *name   = @"kilometer";
+    static NSString *symbol = @"km";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:3 isNegative:NO];
     
     return [self createWithName:name
                      withSymbol:symbol
@@ -67,8 +67,8 @@
     return [self createWithAmount:amount withUnit:[MKLengthUnit meter]];
 }
 
-+ (instancetype)length_milimeterWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKLengthUnit milimeter]];
++ (instancetype)length_millimeterWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKLengthUnit millimeter]];
 }
 
 - (instancetype)length_convertToKilometer {
@@ -84,7 +84,7 @@
 }
 
 - (instancetype)length_convertToMilimeter {
-    return [self convertTo:[MKLengthUnit milimeter]];
+    return [self convertTo:[MKLengthUnit millimeter]];
 }
 
 @end

@@ -73,7 +73,7 @@
 }
 
 - (void)test_throws_exception_when_subtracting_diff_group {
-    STAssertThrows([self.gram_300 subtract:[MKQuantity length_milimeterWithAmount:@1]], @"");
+    STAssertThrows([self.gram_300 subtract:[MKQuantity length_millimeterWithAmount:@1]], @"");
 }
 
 - (void)test_convertTo_grams {
@@ -109,7 +109,7 @@
 }
 
 - (void)test_isTheSame_throws_exception_when_diff_group {
-    STAssertThrows([self.gram_300 isTheSame:[MKQuantity length_milimeterWithAmount:@1]], @"");
+    STAssertThrows([self.gram_300 isTheSame:[MKQuantity length_millimeterWithAmount:@1]], @"");
 }
 
 - (void)test_isGreaterThan_returns_true_same_group_same_units {

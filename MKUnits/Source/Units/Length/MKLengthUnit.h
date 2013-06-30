@@ -14,21 +14,21 @@
 + (instancetype)kilometer;
 + (instancetype)meter;
 + (instancetype)centimeter;
-+ (instancetype)milimeter;
++ (instancetype)millimeter;
 
 @end
 
 @interface MKQuantity (Length)
 
++ (instancetype)length_millimeterWithAmount:(NSNumber *)amount;
 + (instancetype)length_centimeterWithAmount:(NSNumber *)amount;
-+ (instancetype)length_kilometerWithAmount:(NSNumber *)amount;
 + (instancetype)length_meterWithAmount:(NSNumber *)amount;
-+ (instancetype)length_milimeterWithAmount:(NSNumber *)amount;
++ (instancetype)length_kilometerWithAmount:(NSNumber *)amount;
 
-- (instancetype)length_convertToKilometer;
-- (instancetype)length_convertToMeter;
-- (instancetype)length_convertToCentimeter;
 - (instancetype)length_convertToMilimeter;
+- (instancetype)length_convertToCentimeter;
+- (instancetype)length_convertToMeter;
+- (instancetype)length_convertToKilometer;
 - (instancetype)length_convertTo:(MKLengthUnit *)other;
 
 @end

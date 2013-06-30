@@ -15,4 +15,5 @@
 #import "MKByteUnit.h"
 #import "MKMassUnit.h"
 #import "MKLengthUnit.h"
+#import "MKTimeUnit.h"
 

@@ -14,14 +14,6 @@
 
 @implementation MKByteUnit_Tests
 
-- (void)setUp {
-    [super setUp];
-}
-
-- (void)tearDown {
-    [super tearDown];
-}
-
 - (void)test_one_kilobit_is_1000_bit {
     MKQuantity *expected = [MKQuantity byte_bitWithAmount:@1000];
     BOOL result = [[MKQuantity byte_kilobitWithAmount:@1]isTheSame:expected];

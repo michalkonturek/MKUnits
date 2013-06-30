@@ -11,19 +11,23 @@
 
 @interface MKMassUnit : MKUnit
 
-+ (instancetype)tonne;
-+ (instancetype)megagram;
-+ (instancetype)kilogram;
-+ (instancetype)decagram;
++ (instancetype)milligram;
 + (instancetype)gram;
-+ (instancetype)miligram;
++ (instancetype)decagram;
++ (instancetype)kilogram;
++ (instancetype)megagram;
++ (instancetype)tonne;
 
 @end
 
 @interface MKQuantity (MKMassUnit)
 
++ (instancetype)mass_milligramWithAmount:(NSNumber *)amount;
 + (instancetype)mass_gramWithAmount:(NSNumber *)amount;
++ (instancetype)mass_decagramWithAmount:(NSNumber *)amount;
 + (instancetype)mass_kilogramWithAmount:(NSNumber *)amount;
++ (instancetype)mass_megagramWithAmount:(NSNumber *)amount;
++ (instancetype)mass_tonneWithAmount:(NSNumber *)amount;
 
 - (instancetype)mass_convertToGram;
 - (instancetype)mass_convertToKilogram;
