@@ -172,7 +172,6 @@
 				903335C3177D0CCC00FE8665 /* Byte */,
 				903335C5177D0CCC00FE8665 /* Length */,
 				903335C7177D0CCC00FE8665 /* Mass */,
-				903335C9177D0CCC00FE8665 /* Temperature */,
 				903335CB177D0CCC00FE8665 /* Time */,
 			);
 			path = Units;
@@ -214,13 +213,6 @@
 				90361461177E38C700E3FAE1 /* MKMassUnit.m */,
 			);
 			path = Mass;
-			sourceTree = "<group>";
-		};
-		903335C9177D0CCC00FE8665 /* Temperature */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Temperature;
 			sourceTree = "<group>";
 		};
 		903335CB177D0CCC00FE8665 /* Time */ = {
