@@ -62,7 +62,14 @@
 
 + (instancetype)tonne {
     static NSString *name   = @"tonne";
-    static NSString *symbol = @"t";
+    
+    /*
+     NOTE:
+     There is a collision of symbols between tonne and imperial ton.
+     As tonne is a different name for megagram, use Mg istead of t.
+     */
+    
+    static NSString *symbol = @"Mg";
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:3 isNegative:NO];
     
     return [self createWithName:name

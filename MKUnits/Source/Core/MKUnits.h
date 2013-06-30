@@ -16,6 +16,7 @@
 #import "MKAreaUnit+Imperial.h"
 #import "MKByteUnit.h"
 #import "MKMassUnit.h"
+#import "MKMassUnit+Imperial.h"
 #import "MKLengthUnit.h"
 #import "MKTimeUnit.h"
 
