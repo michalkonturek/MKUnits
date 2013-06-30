@@ -33,6 +33,7 @@
 		90370087177D0BD400708FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370067177D0BD400708FEA /* UIKit.framework */; };
 		90370088177D0BD400708FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370069177D0BD400708FEA /* Foundation.framework */; };
 		90370090177D0BD400708FEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9037008E177D0BD400708FEA /* InfoPlist.strings */; };
+		904F619B177FC7EF00CD4DFC /* MKMassUnit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9069CC82177FC5420056A364 /* MKMassUnit_Tests.m */; };
 		F01588EF7C664B74B8BBE5E8 /* libPods-MKUnitsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F1D34DC47C415180711C40 /* libPods-MKUnitsTests.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		90370085177D0BD400708FEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9037008D177D0BD400708FEA /* MKUnitsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MKUnitsTests-Info.plist"; sourceTree = "<group>"; };
 		9037008F177D0BD400708FEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9069CC82177FC5420056A364 /* MKMassUnit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMassUnit_Tests.m; sourceTree = "<group>"; };
 		B5CF1D0DEB864CABB46F1979 /* Pods-MKUnitsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKUnitsTests.xcconfig"; path = "Pods/Pods-MKUnitsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		F1F1D34DC47C415180711C40 /* libPods-MKUnitsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MKUnitsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				9036146A177FAC0800E3FAE1 /* MKByteUnit_Tests.m */,
+				9069CC82177FC5420056A364 /* MKMassUnit_Tests.m */,
 				90361471177FB42900E3FAE1 /* MKTimeUnit_Tests.m */,
 			);
 			name = "units-tests";
@@ -477,6 +480,7 @@
 				903335DB177D0CF000FE8665 /* MKQuantity_Tests.m in Sources */,
 				90361472177FB42900E3FAE1 /* MKTimeUnit_Tests.m in Sources */,
 				903335DC177D0CF000FE8665 /* MKUnit_Tests.m in Sources */,
+				904F619B177FC7EF00CD4DFC /* MKMassUnit_Tests.m in Sources */,
 				903335DD177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m in Sources */,
 				9036146B177FAC0800E3FAE1 /* MKByteUnit_Tests.m in Sources */,
 			);
