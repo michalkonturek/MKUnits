@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "MKUnits"
-  s.version      = "0.9.0"
+  s.version      = "1.0.0"
   s.summary      = "Provides units of measurement of physical quantities."
   s.homepage     = "https://github.com/michalkonturek/MKUnits"
   s.license      = 'MIT'
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.source       = { 
     :git => "https://github.com/michalkonturek/MKUnits.git", 
-    :tag => "0.9.0" 
+    :tag => "1.0.0" 
   }
 
   s.source_files = 'MKUnits/Source/**/*.{h,m}'

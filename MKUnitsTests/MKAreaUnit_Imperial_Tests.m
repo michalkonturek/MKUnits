@@ -15,7 +15,7 @@
 @implementation MKAreaUnit_Imperial_Tests
 
 - (void)test_one_sq_inch_is_6_coma_4516_sq_centimeters {
-    MKQuantity *expected = [MKQuantity area_square_centimeterWithQuantity:@6.4516];
+    MKQuantity *expected = [MKQuantity area_square_centimeterWithAmount:@6.4516];
     BOOL result = [[MKQuantity area_square_inchWithAmount:@1]isTheSame:expected];
     
     assertThatBool(result, equalToBool(YES));
@@ -42,13 +42,10 @@
     assertThatBool(result, equalToBool(YES));
 }
 
-- (void)test_one_sq_mile_is_640_sq_acres {
-    
-//    MKQuantity *expected = [MKQuantity area_acreWithAmount:@640];
-//    BOOL result = [[MKQuantity area_square_mileWithAmount:@1] isTheSame:expected];
-//    assertThatBool(result, equalToBool(YES));
-    
-    TEST_PASSES
+- (void)test_one_sq_mile_is_640_sq_acres {    
+    MKQuantity *expected = [MKQuantity area_acreWithAmount:@640];
+    BOOL result = [[MKQuantity area_square_mileWithAmount:@1] isTheSame:expected withPrecision:8];
+    assertThatBool(result, equalToBool(YES));
     
     /*
      640 acres is converted to 1.00000000012973032528709176197723934724 sq mi

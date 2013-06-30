@@ -23,12 +23,12 @@
 
 @interface MKQuantity (MKAreaUnit)
 
-+ (instancetype)area_square_millimeterWithQuantity:(NSNumber *)amount;
-+ (instancetype)area_square_centimeterWithQuantity:(NSNumber *)amount;
-+ (instancetype)area_square_decimeterWithQuantity:(NSNumber *)amount;
-+ (instancetype)area_square_meterWithQuantity:(NSNumber *)amount;
-+ (instancetype)area_areWithQuantity:(NSNumber *)amount;
-+ (instancetype)area_hectareWithQuantity:(NSNumber *)amount;
-+ (instancetype)area_square_kilometerWithQuantity:(NSNumber *)amount;
++ (instancetype)area_square_millimeterWithAmount:(NSNumber *)amount;
++ (instancetype)area_square_centimeterWithAmount:(NSNumber *)amount;
++ (instancetype)area_square_decimeterWithAmount:(NSNumber *)amount;
++ (instancetype)area_square_meterWithAmount:(NSNumber *)amount;
++ (instancetype)area_areWithAmount:(NSNumber *)amount;
++ (instancetype)area_hectareWithAmount:(NSNumber *)amount;
++ (instancetype)area_square_kilometerWithAmount:(NSNumber *)amount;
 
 @end
