@@ -19,22 +19,6 @@
     return [[self alloc] initWithName:name withSymbol:symbol withRatio:ratio];
 }
 
-// TODO: extract to MKUnit+Test category
-+ (instancetype)create {
-    return [self _default];
-}
-
-// TODO: extract to MKUnit+Test category
-+ (instancetype)_default {
-    static NSString *name   = @"Unit";
-    static NSString *symbol = @"unit";
-    id ratio = [NSDecimalNumber one];
-    
-    return [[self alloc] initWithName:name
-                           withSymbol:symbol
-                            withRatio:ratio];
-}
-
 - (id)initWithName:(NSString *)name
         withSymbol:(NSString *)symbol withRatio:(NSDecimalNumber *)ratio {
     if (self = [super init]) {
@@ -47,6 +31,20 @@
 
 - (id)init {
     METHOD_USE_DESIGNATED_INIT
+}
+
+- (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)unit {
+    return [self convertAmount:amount from:unit to:self];
+}
+
+- (NSNumber *)convertAmount:(NSNumber *)amount to:(MKUnit *)unit {
+    return [self convertAmount:amount from:self to:unit];
+}
+
+- (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)from to:(MKUnit *)to {
+    id baseAmount = [from convertToBaseUnit:amount];
+    id converted = [to convertFromBaseUnit:baseAmount];
+    return converted;
 }
 
 - (NSNumber *)convertFromBaseUnit:(NSNumber *)amount {

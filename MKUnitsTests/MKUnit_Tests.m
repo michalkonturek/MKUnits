@@ -10,26 +10,58 @@
 
 @interface MKUnit_Tests : SenTestCase
 
-@property (nonatomic, strong) MKUnit *test_class;
+@property (nonatomic, strong) MKMassUnit *kilogram;
+@property (nonatomic, strong) MKMassUnit *gram;
 
 @end
 
 @implementation MKUnit_Tests
 
 - (void)setUp {
-    self.test_class = [MKUnit create];
+    self.kilogram = [MKMassUnit kilogram];
+    self.gram = [MKMassUnit gram];
 }
 
 - (void)tearDown {
-    self.test_class = nil;
+    self.kilogram = nil;
+    self.gram = nil;
 }
 
-- (void)test_create_default {
-    assertThat(self.test_class, notNilValue());
-    assertThat(self.test_class.name, equalToIgnoringCase(@"Unit"));
-    assertThat(self.test_class.symbol, equalToIgnoringCase(@"unit"));
-    assertThat(self.test_class.ratio, equalTo(@1));
+- (void)test_create {
+    assertThat(self.kilogram, notNilValue());
+    assertThat(self.kilogram.name, equalToIgnoringCase(@"kilogram"));
+    assertThat(self.kilogram.symbol, equalToIgnoringCase(@"kg"));
+    assertThat(self.kilogram.ratio, equalTo(@1));
 }
 
+- (void)test_convertFromBaseUnit {
+    id result = [self.gram convertToBaseUnit:@600];
+    assertThat(result, equalTo(@0.6));
+}
+
+- (void)test_convertToBaseUnit {
+    id result = [self.gram convertFromBaseUnit:@0.2];
+    assertThat(result, equalTo(@200));
+}
+
+- (void)test_description {
+    id result = [self.kilogram description];
+    assertThat(result, equalTo(@"kg"));
+}
+
+- (void)test_isEqual_returns_true {
+    BOOL result = [self.kilogram isEqual:[MKMassUnit kilogram]];
+    assertThatBool(result, equalToBool(YES));
+}
+
+- (void)test_isEqual_returns_false_when_diff_units_but_same_group {
+    BOOL result = [self.kilogram isEqual:[MKMassUnit gram]];
+    assertThatBool(result, equalToBool(NO));
+}
+
+- (void)test_isEqual_returns_false_when_diff_units_and_diff_group {
+    BOOL result = [self.kilogram isEqual:[MKLengthUnit centimeter]];
+    assertThatBool(result, equalToBool(NO));
+}
 
 @end

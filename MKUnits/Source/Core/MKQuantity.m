@@ -28,15 +28,17 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
 
 - (instancetype)add:(MKQuantity *)other {
     NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
-    
-    id amount = [self.amount decimalNumberByAdding:other.amount];
+
+    MKQuantity *converted = [other convertTo:self.unit];
+    id amount = [self.amount decimalNumberByAdding:converted.amount];
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
 - (instancetype)subtract:(MKQuantity *)other {
     NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
-    
-    id amount = [self.amount decimalNumberBySubtracting:other.amount];
+
+    MKQuantity *converted = [other convertTo:self.unit];
+    id amount = [self.amount decimalNumberBySubtracting:converted.amount];
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
@@ -67,22 +69,21 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
 }
 
 - (BOOL)isTheSame:(MKQuantity *)other {
-    if (![self.unit isEqual:other.unit]) return NO;
     return ([self compare:other] == NSOrderedSame);
 }
 
 - (BOOL)isGreaterThan:(MKQuantity *)other {
-    if (![self.unit isEqual:other.unit]) return NO;
     return ([self compare:other] == NSOrderedDescending);
 }
 
 - (BOOL)isLessThan:(MKQuantity *)other {
-    if (![self.unit isEqual:other.unit]) return NO;
     return ([self compare:other] == NSOrderedAscending);
 }
 
 - (NSComparisonResult)compare:(MKQuantity *)other {
-    return ([self.amount compare:other.amount]);
+    NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
+    MKQuantity *converted = [other convertTo:self.unit];
+    return ([self.amount compare:converted.amount]);
 }
 
 - (NSNumber *)amountInBaseUnit {

@@ -37,5 +37,4 @@
 - (NSNumber *)amountInBaseUnit;
 - (NSNumber *)amountFromBaseUnit;
 
-
 @end
