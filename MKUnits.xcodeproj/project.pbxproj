@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900762C81781972D00F44D86 /* NSNumber+Fraction_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 900762C71781972D00F44D86 /* NSNumber+Fraction_Tests.m */; };
 		901FACB51780859000103B0C /* MKMassUnit+Imperial.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACB41780859000103B0C /* MKMassUnit+Imperial.m */; };
 		901FACB717808F0500103B0C /* MKMassUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */; };
 		901FACBD1780992E00103B0C /* NSNumber+Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACBC1780992E00103B0C /* NSNumber+Fraction.m */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		900762C71781972D00F44D86 /* NSNumber+Fraction_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Fraction_Tests.m"; sourceTree = "<group>"; };
 		901FACB31780859000103B0C /* MKMassUnit+Imperial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMassUnit+Imperial.h"; sourceTree = "<group>"; };
 		901FACB41780859000103B0C /* MKMassUnit+Imperial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMassUnit+Imperial.m"; sourceTree = "<group>"; };
 		901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMassUnit_Imperial_Tests.m; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */,
+				900762C71781972D00F44D86 /* NSNumber+Fraction_Tests.m */,
 			);
 			name = "externals-tests";
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				903335DC177D0CF000FE8665 /* MKUnit_Tests.m in Sources */,
 				904F619B177FC7EF00CD4DFC /* MKMassUnit_Tests.m in Sources */,
 				904F61A2177FCDEA00CD4DFC /* MKArea_Tests.m in Sources */,
+				900762C81781972D00F44D86 /* NSNumber+Fraction_Tests.m in Sources */,
 				904F619D177FC8A200CD4DFC /* MKLengthUnit_Tests.m in Sources */,
 				901FACB717808F0500103B0C /* MKMassUnit_Imperial_Tests.m in Sources */,
 				904F61A7177FD4EE00CD4DFC /* MKAreaUnit_Imperial_Tests.m in Sources */,

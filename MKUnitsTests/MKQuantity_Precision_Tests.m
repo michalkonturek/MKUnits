@@ -27,19 +27,19 @@
     self.quantity_2 = nil;
 }
 
-- (void)test_precision_5 {
+- (void)test_precision_05 {
     short precision = 5;
     BOOL shouldPass = YES;
     [self _perform_tests_with_precision:precision shouldPass:shouldPass];
 }
 
-- (void)test_precision_6 {
+- (void)test_precision_06 {
     short precision = 6;
     BOOL shouldPass = YES;
     [self _perform_tests_with_precision:precision shouldPass:shouldPass];
 }
 
-- (void)test_precision_7 {
+- (void)test_precision_07 {
     short precision = 7;
     BOOL shouldPass = NO;
     [self _perform_tests_with_precision:precision shouldPass:shouldPass];

@@ -38,6 +38,7 @@
 }
 
 - (NSDecimalNumber *)decimalNumberWithPrecision:(short)precision {
+    NSAssert(precision >= 0, @"Precision cannot be negative.");
     NSDecimalNumberHandler *behavior = [[self class] decimalNumberHandlerWithScale:precision];
     return [[self decimalNumber] decimalNumberByRoundingAccordingToBehavior:behavior];
 }
