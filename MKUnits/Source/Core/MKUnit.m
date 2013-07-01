@@ -33,6 +33,12 @@
     METHOD_USE_DESIGNATED_INIT
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    return [[self class] createWithName:[self.name copyWithZone:zone]
+                             withSymbol:[self.symbol copyWithZone:zone]
+                              withRatio:[self.ratio copyWithZone:zone]];
+}
+
 - (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)unit {
     return [self convertAmount:amount from:unit to:self];
 }
@@ -62,12 +68,12 @@
 }
 
 - (NSUInteger)hash {
-    return [self.name hash];
+    return [[NSString stringWithFormat:@"%@%@", [self class], self.symbol] hash];
 }
 
 - (BOOL)isEqual:(id)object {
-    return ([self.name isEqualToString:[object name]]);
+    if (![object isMemberOfClass:[self class]]) return NO;
+    return ([self.symbol isEqualToString:[object symbol]]);
 }
-
 
 @end
