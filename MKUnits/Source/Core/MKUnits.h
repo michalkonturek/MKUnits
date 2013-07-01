@@ -22,3 +22,4 @@
 #import "MKLengthUnit+Imperial.h"
 #import "MKTimeUnit.h"
 
+#import "NSNumber+Fraction.h"

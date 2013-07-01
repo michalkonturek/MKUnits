@@ -10,12 +10,13 @@
 
 @interface MKQuantity (Precision)
 
+- (instancetype)quantityWithPrecision:(short)precision;
+- (NSNumber *)amountWithPrecision:(short)precision;
+
 - (BOOL)isTheSame:(MKQuantity *)other withPrecision:(short)precision;
 - (BOOL)isGreaterThan:(MKQuantity *)other withPrecision:(short)precision;
 - (BOOL)isLessThan:(MKQuantity *)other withPrecision:(short)precision;
 
 - (NSComparisonResult)compare:(MKQuantity *)other withPrecision:(short)precision;
-
-
 
 @end

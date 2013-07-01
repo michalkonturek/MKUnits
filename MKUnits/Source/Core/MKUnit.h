@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MKUnit : NSObject
+@interface MKUnit : NSObject<NSCopying>
 
 + (instancetype)createWithName:(NSString *)name
                     withSymbol:(NSString *)symbol withRatio:(NSDecimalNumber *)ratio;

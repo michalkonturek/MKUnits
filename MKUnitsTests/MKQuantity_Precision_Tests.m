@@ -28,24 +28,59 @@
 }
 
 - (void)test_precision_5 {
-    [self _test_precision:5 shouldPass:YES];
+    short precision = 5;
+    BOOL shouldPass = YES;
+    [self _perform_tests_with_precision:precision shouldPass:shouldPass];
 }
 
 - (void)test_precision_6 {
-    [self _test_precision:6 shouldPass:YES];
+    short precision = 6;
+    BOOL shouldPass = YES;
+    [self _perform_tests_with_precision:precision shouldPass:shouldPass];
 }
 
 - (void)test_precision_7 {
-    [self _test_precision:7 shouldPass:NO];
+    short precision = 7;
+    BOOL shouldPass = NO;
+    [self _perform_tests_with_precision:precision shouldPass:shouldPass];
 }
 
 - (void)test_precision_10 {
-    [self _test_precision:10 shouldPass:NO];
+    short precision = 10;
+    BOOL shouldPass = NO;
+    [self _perform_tests_with_precision:precision shouldPass:shouldPass];
+}
+
+- (void)_perform_tests_with_precision:(short)precision shouldPass:(BOOL)shouldPass {
+    [self _test_precision:precision shouldPass:shouldPass];
+    [self _test_amountWithPrecision:precision shouldPass:shouldPass];
+    [self _test_quantityWithPrecision:precision shouldPass:shouldPass];
+    [self _test_returns_same_units_quantityWithPrecision:precision];
 }
 
 - (void)_test_precision:(short)precision shouldPass:(BOOL)pass {
     BOOL result = [self.quantity_1 isTheSame:self.quantity_2 withPrecision:precision];
     assertThatBool(result, equalToBool(pass));
 }
+
+- (void)_test_amountWithPrecision:(short)precision shouldPass:(BOOL)pass {
+    id rounded = [self.quantity_2 amountWithPrecision:precision];
+    BOOL result = ([self.quantity_1.amount compare:rounded] == NSOrderedSame);
+    assertThatBool(result, equalToBool(pass));
+}
+
+- (void)_test_quantityWithPrecision:(short)precision shouldPass:(BOOL)pass {
+    id rounded = [self.quantity_2 quantityWithPrecision:precision];
+    BOOL result = [self.quantity_1 isTheSame:rounded];
+    assertThatBool(result, equalToBool(pass));
+}
+
+- (void)_test_returns_same_units_quantityWithPrecision:(short)precision {
+    id rounded = [self.quantity_2 quantityWithPrecision:precision];
+    BOOL same_unit = ([self.quantity_1.unit isEqual:[rounded unit]]);
+    assertThatBool(same_unit, equalToBool(YES));
+    
+}
+
 
 @end

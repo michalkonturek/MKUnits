@@ -14,6 +14,15 @@
 
 @implementation MKQuantity (Precision)
 
+- (instancetype)quantityWithPrecision:(short)precision {
+    id rounded = [self amountWithPrecision:precision];
+    return [[self class] createWithAmount:rounded withUnit:[self.unit copy]];
+}
+
+- (NSNumber *)amountWithPrecision:(short)precision {
+    return [self.amount decimalNumberWithPrecision:precision];
+}
+
 - (BOOL)isTheSame:(MKQuantity *)other withPrecision:(short)precision {
     return ([self compare:other withPrecision:precision] == NSOrderedSame);
 }

@@ -154,7 +154,7 @@ Example **.m** file:
 
 To add additional units to existing Quantity simply create a category for that Quantity.
 
-Do not sublcass as units are only interconvertible with units of the same Quantity.
+Do not sublcass as units are only interconvertible with units belonging to the same Quantity.
 
 Example **.h** file:
 
