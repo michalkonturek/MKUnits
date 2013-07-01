@@ -68,6 +68,10 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
     return [[self class] createWithAmount:unit_amount withUnit:unit];
 }
 
+- (NSNumber *)amountInBaseUnit {
+    return [self.unit convertToBaseUnit:self.amount];
+}
+
 - (BOOL)isTheSame:(MKQuantity *)other {
     return ([self compare:other] == NSOrderedSame);
 }
@@ -86,14 +90,6 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
     return ([self.amount compare:converted.amount]);
 }
 
-- (NSNumber *)amountInBaseUnit {
-    return [self.unit convertToBaseUnit:self.amount];
-}
-
-- (NSNumber *)amountFromBaseUnit {
-    return [self.unit convertFromBaseUnit:self.amount];
-}
-
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ %@", self.amount, self.unit];
 }
@@ -108,6 +104,5 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
     return [[NSString stringWithFormat:@"%@%@%@",
              [self class], self.unit.symbol, self.amount] hash];
 }
-
 
 @end

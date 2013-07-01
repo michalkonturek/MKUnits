@@ -23,5 +23,4 @@
 - (NSNumber *)convertToBaseUnit:(NSNumber *)amount;
 - (NSNumber *)convertFromBaseUnit:(NSNumber *)amount;
 
-
 @end
