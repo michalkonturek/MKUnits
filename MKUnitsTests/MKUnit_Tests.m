@@ -64,4 +64,12 @@
     assertThatBool(result, equalToBool(NO));
 }
 
+- (void)test_hash {
+    BOOL result = ([[MKMassUnit kilogram] hash] == [[MKMassUnit grain] hash]);
+    assertThatBool(result, equalToBool(NO));
+    
+    result = ([[MKMassUnit megagram] hash] == [[MKMassUnit milligram] hash]);
+    assertThatBool(result, equalToBool(NO));
+}
+
 @end

@@ -137,5 +137,29 @@
     assertThatBool(result, equalToBool(NO));
 }
 
+- (void)test_hash_returns_true {
+    MKQuantity *kg1 = [MKQuantity mass_gramWithAmount:@1];
+    MKQuantity *kg2 = [MKQuantity mass_gramWithAmount:@1];
+    
+    BOOL result = ([kg1 hash] == [kg2 hash]);
+    assertThatBool(result, equalToBool(YES));
+}
+
+- (void)test_hash_returns_false_when_same_units_different_amounts {
+    MKQuantity *q1 = [MKQuantity mass_gramWithAmount:@1];
+    MKQuantity *q2 = [MKQuantity mass_gramWithAmount:@2];
+    
+    BOOL result = ([q1 hash] == [q2 hash]);
+    assertThatBool(result, equalToBool(NO));
+}
+
+- (void)test_hash_returns_false_when_different_units_same_amounts {
+    MKQuantity *q1 = [MKQuantity mass_megagramWithAmount:@1];
+    MKQuantity *q2 = [MKQuantity mass_milligramWithAmount:@1];
+    
+    BOOL result = ([q1 hash] == [q2 hash]);
+    assertThatBool(result, equalToBool(NO));
+}
+
 @end
 

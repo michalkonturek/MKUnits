@@ -67,13 +67,13 @@
     return self.symbol;
 }
 
-- (NSUInteger)hash {
-    return [[NSString stringWithFormat:@"%@%@", [self class], self.symbol] hash];
-}
-
 - (BOOL)isEqual:(id)object {
     if (![object isMemberOfClass:[self class]]) return NO;
     return ([self.symbol isEqualToString:[object symbol]]);
+}
+
+- (NSUInteger)hash {
+    return [[NSString stringWithFormat:@"%@%@", [self class], self.symbol] hash];
 }
 
 @end

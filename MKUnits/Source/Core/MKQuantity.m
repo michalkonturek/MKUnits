@@ -98,14 +98,15 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
     return [NSString stringWithFormat:@"%@ %@", self.amount, self.unit];
 }
 
-- (NSUInteger)hash {
-    return [self.amount hash];
-}
-
 - (BOOL)isEqual:(id)object {
     if (![object isKindOfClass:[self class]]) return NO;
-    if ([[object unit] isEqual:self.amount]) return NO;
+    if (![[object unit] isEqual:self.unit]) return NO;
     return [self.amount isEqual:[object amount]];
+}
+
+- (NSUInteger)hash {
+    return [[NSString stringWithFormat:@"%@%@%@",
+             [self class], self.unit.symbol, self.amount] hash];
 }
 
 
