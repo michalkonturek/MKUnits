@@ -1,6 +1,10 @@
 # MKUnits
 
 [![Build Status](https://travis-ci.org/michalkonturek/MKUnits.png)](https://travis-ci.org/michalkonturek/MKUnits)
+![Build Platform](http://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png)
+![Build Version](http://cocoapod-badges.herokuapp.com/v/MKUnits/badge.png)
+
+http://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png
 
 Provides units of measurement of physical quantities and simplifies manipulation of them.
 
@@ -74,7 +78,7 @@ result = [result quantityWithPrecision:3];
 // 0.945 st
 ```
 
-or simply round the amount of existing `MKQuantity`.
+or rounding the amount of existing `MKQuantity`.
 
 ```objc
 id final_amount_in_stones = [result amountWithPrecision:3];
@@ -152,7 +156,6 @@ Example **.h** file:
 + (instancetype)quantity_unittwoWithAmount:(NSNumber *)amount;
 
 @end
-
 ```
 
 Example **.m** file:
