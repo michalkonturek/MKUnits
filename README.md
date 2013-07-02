@@ -1,8 +1,8 @@
 # MKUnits
 
 [![Build Status](https://travis-ci.org/michalkonturek/MKUnits.png)](https://travis-ci.org/michalkonturek/MKUnits)
-![Build Platform](http://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png)
-![Build Version](http://cocoapod-badges.herokuapp.com/v/MKUnits/badge.png)
+[![Build Platform](http://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
+[![Build Version](http://cocoapod-badges.herokuapp.com/v/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
 
 http://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png
 
