@@ -11,19 +11,7 @@
 
 #import "NSDecimalNumber+Negative.h"
 
-//NSString * const UNITS_NOT_CONVERTIBLE = @"Units not convertible.";
-
 @implementation MKUnit
-
-//+ (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)from to:(MKUnit *)to {
-//    return [[self _default] convertAmount:amount from:from to:to];
-//}
-//
-//+ (instancetype)_default {
-//    return [self createWithName:@"Unit"
-//                     withSymbol:@"u"
-//                      withRatio:[NSDecimalNumber one]];
-//}
 
 + (instancetype)createWithName:(NSString *)name
                     withSymbol:(NSString *)symbol
@@ -50,26 +38,6 @@
                              withSymbol:[self.symbol copyWithZone:zone]
                               withRatio:[self.ratio copyWithZone:zone]];
 }
-
-//- (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)unit {
-//    return [self convertAmount:amount from:unit to:self];
-//}
-//
-//- (NSNumber *)convertAmount:(NSNumber *)amount to:(MKUnit *)unit {
-//    return [self convertAmount:amount from:self to:unit];
-//}
-//
-//- (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)from to:(MKUnit *)to {
-//    NSAssert([from isConvertibleWith:to], UNITS_NOT_CONVERTIBLE);
-//    
-//    id baseAmount = [from convertToBaseUnit:amount];
-//    id converted = [to convertFromBaseUnit:baseAmount];
-//    return converted;
-//}
-
-//- (BOOL)isConvertibleWith:(MKUnit *)unit {
-//    return [unit isMemberOfClass:[self class]];
-//}
 
 - (NSNumber *)convertFromBaseUnit:(NSNumber *)amount {
     id value = [NSDecimalNumber createFrom:amount];
