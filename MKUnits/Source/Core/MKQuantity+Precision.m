@@ -9,6 +9,7 @@
 #import "MKQuantity+Precision.h"
 
 #import "MKUnit.h"
+#import "MKUnit+Conversion.h"
 
 #import "NSNumber+Fraction.h"
 
@@ -36,7 +37,7 @@
 }
 
 - (NSComparisonResult)compare:(MKQuantity *)other withPrecision:(short)precision {
-    NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
+    NSAssert([self.unit isConvertibleWith:other.unit], UNITS_NOT_CONVERTIBLE);
     MKQuantity *converted = [other convertTo:self.unit];
     return ([[self.amount decimalNumberWithPrecision:precision]
              compare:[converted.amount decimalNumberWithPrecision:precision]]);

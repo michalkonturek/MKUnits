@@ -39,20 +39,6 @@
                               withRatio:[self.ratio copyWithZone:zone]];
 }
 
-- (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)unit {
-    return [self convertAmount:amount from:unit to:self];
-}
-
-- (NSNumber *)convertAmount:(NSNumber *)amount to:(MKUnit *)unit {
-    return [self convertAmount:amount from:self to:unit];
-}
-
-- (NSNumber *)convertAmount:(NSNumber *)amount from:(MKUnit *)from to:(MKUnit *)to {
-    id baseAmount = [from convertToBaseUnit:amount];
-    id converted = [to convertFromBaseUnit:baseAmount];
-    return converted;
-}
-
 - (NSNumber *)convertFromBaseUnit:(NSNumber *)amount {
     id value = [NSDecimalNumber createFrom:amount];
     return [value decimalNumberByDividingBy:self.ratio];
@@ -67,13 +53,13 @@
     return self.symbol;
 }
 
-- (NSUInteger)hash {
-    return [[NSString stringWithFormat:@"%@%@", [self class], self.symbol] hash];
-}
-
 - (BOOL)isEqual:(id)object {
     if (![object isMemberOfClass:[self class]]) return NO;
     return ([self.symbol isEqualToString:[object symbol]]);
+}
+
+- (NSUInteger)hash {
+    return [[NSString stringWithFormat:@"%@%@", [self class], self.symbol] hash];
 }
 
 @end

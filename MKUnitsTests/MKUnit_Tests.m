@@ -34,6 +34,19 @@
     assertThat(self.kilogram.ratio, equalTo(@1));
 }
 
+- (void)test_convertAmountFromTo_no_exception_when_same_group {
+    STAssertNoThrow([self.kilogram convertAmount:@1 to:[MKMassUnit pound]], @"");
+}
+
+- (void)test_convertAmountFromTo_throws_exception_when_diff_groups {
+    STAssertThrows([self.kilogram convertAmount:@1 to:[MKLengthUnit meter]], @"");
+}
+
+- (void)test_convertAmountFromTo_class_method {
+    id result = [MKUnit convertAmount:@1 from:[MKMassUnit kilogram] to:[MKMassUnit gram]];
+    assertThat(result, equalTo(@1000));    
+}
+
 - (void)test_convertFromBaseUnit {
     id result = [self.gram convertToBaseUnit:@600];
     assertThat(result, equalTo(@0.6));
@@ -61,6 +74,14 @@
 
 - (void)test_isEqual_returns_false_when_diff_units_and_diff_group {
     BOOL result = [self.kilogram isEqual:[MKLengthUnit centimeter]];
+    assertThatBool(result, equalToBool(NO));
+}
+
+- (void)test_hash {
+    BOOL result = ([[MKMassUnit kilogram] hash] == [[MKMassUnit grain] hash]);
+    assertThatBool(result, equalToBool(NO));
+    
+    result = ([[MKMassUnit megagram] hash] == [[MKMassUnit milligram] hash]);
     assertThatBool(result, equalToBool(NO));
 }
 

@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXPORT NSString * const UNIT_MISMATCH;
-
 @class MKUnit;
 
 @interface MKQuantity : NSObject
@@ -30,13 +28,12 @@ FOUNDATION_EXPORT NSString * const UNIT_MISMATCH;
 
 - (instancetype)convertTo:(MKUnit *)unit;
 
+- (NSNumber *)amountInBaseUnit;
+
 - (BOOL)isTheSame:(MKQuantity *)other;
 - (BOOL)isGreaterThan:(MKQuantity *)other;
 - (BOOL)isLessThan:(MKQuantity *)other;
 
 - (NSComparisonResult)compare:(MKQuantity *)other;
-
-- (NSNumber *)amountInBaseUnit;
-- (NSNumber *)amountFromBaseUnit;
 
 @end
