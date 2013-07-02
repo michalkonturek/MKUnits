@@ -42,6 +42,11 @@
     STAssertThrows([self.kilogram convertAmount:@1 to:[MKLengthUnit meter]], @"");
 }
 
+- (void)test_convertAmountFromTo_class_method {
+    id result = [MKUnit convertAmount:@1 from:[MKMassUnit kilogram] to:[MKMassUnit gram]];
+    assertThat(result, equalTo(@1000));    
+}
+
 - (void)test_convertFromBaseUnit {
     id result = [self.gram convertToBaseUnit:@600];
     assertThat(result, equalTo(@0.6));

@@ -48,7 +48,7 @@ id result = [[[kilograms add:grams] add:pounds] subtract:milligrams];
 
 The result amount is 6.5358237 **[kg]**.
 
-Now we subtract 0.5358237 **[kg]** in ounces **[oz]**, which is 18.900624805 **[oz]** according to Google converter, but MKUnits is mega precise, so in fact it is 18.900624805483390296005199558361177 **[oz]**.
+Now we subtract 0.5358237 **[kg]** in ounces **[oz]**, which is 18.900624805 **[oz]** according to Google converter, but as MKUnits is mega precise, in fact it is 18.900624805483390296005199558361177 **[oz]**.
 
 ```objc
 id ounces = [[MKQuantity mass_kilogramWithAmount:@0.5358237]
@@ -63,10 +63,42 @@ Now we want the result to be in stones **[st]**, so:
 ```objc
 result = [result convertTo:[MKMassUnit stone]];
 // 0.94483873964811055873038869091017890993 st
+```
+
+As the result is too precise for our needs, we want to round it.
+
+We can do that by either creating new `MKQuantity` object with rounded amount,
+
+```objc
+result = [result quantityWithPrecision:3];
+// 0.945 st
+```
+
+or simply round the amount of existing `MKQuantity`.
+
+```objc
+id final_amount_in_stones = [result amountWithPrecision:3];
+// 0.945
 
 id final_amount_in_stones = [result.amount decimalNumberWithPrecision:3];
 // 0.945
 ```
+
+## Quick Conversion
+
+MKUnits supports quick number conversion between different units 
+without the need of instantiating `MKQuantity` objects.
+
+Converting amount of 1 **[kg]** to 1000 **[g]** can be achieved in the following ways:
+
+```objc
+id converted = [MKUnit convertAmount:@1 from:[MKMassUnit kilogram] to:[MKMassUnit gram]];
+
+id converted = [[MKMassUnit kilogram] convertAmount:@1 to:[MKMassUnit gram]];
+
+id converted = [[MKMassUnit gram] convertAmount:@1 from:[MKMassUnit kilogram]];
+```
+
 
 ## Precision and Rounding
 
@@ -79,6 +111,21 @@ To round a number to a desired decimal place, use `decimalNumberWithPrecision:` 
 ```objc
 [@1.123456789 decimalNumberWithPrecision:5]; // results in 1.12346.
 ```
+
+Alternatively you can take advantage of `MKQuantity+Precision` category which offers
+the following methods:
+
+```objc
+- (instancetype)quantityWithPrecision:(short)precision;
+- (NSNumber *)amountWithPrecision:(short)precision;
+
+- (BOOL)isTheSame:(MKQuantity *)other withPrecision:(short)precision;
+- (BOOL)isGreaterThan:(MKQuantity *)other withPrecision:(short)precision;
+- (BOOL)isLessThan:(MKQuantity *)other withPrecision:(short)precision;
+
+- (NSComparisonResult)compare:(MKQuantity *)other withPrecision:(short)precision;
+```
+
 
 ## Extending MKUnits
 
@@ -146,7 +193,6 @@ Example **.m** file:
 }
 
 @end
-
 ```
 
 
@@ -172,7 +218,6 @@ Example **.h** file:
 + (instancetype)group_unittwoWithAmount:(NSNumber *)amount;
 
 @end
-
 ```
 
 
