@@ -7,9 +7,9 @@
 //
 
 #import "MKQuantity.h"
-#import "MKUnit.h"
 
-NSString * const UNIT_MISMATCH = @"Unit mismatch";
+#import "MKUnit.h"
+#import "MKUnit+Conversion.h"
 
 @implementation MKQuantity
 
@@ -27,7 +27,7 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
 }
 
 - (instancetype)add:(MKQuantity *)other {
-    NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
+    [self _assert_that_is_convertible_with_unit:other.unit];
 
     MKQuantity *converted = [other convertTo:self.unit];
     id amount = [self.amount decimalNumberByAdding:converted.amount];
@@ -35,22 +35,22 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
 }
 
 - (instancetype)subtract:(MKQuantity *)other {
-    NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
-
+    [self _assert_that_is_convertible_with_unit:other.unit];
+    
     MKQuantity *converted = [other convertTo:self.unit];
     id amount = [self.amount decimalNumberBySubtracting:converted.amount];
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
 - (instancetype)multiplyBy:(MKQuantity *)other {
-    NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
+    [self _assert_that_is_convertible_with_unit:other.unit];
     
     id amount = [self.amount decimalNumberByMultiplyingBy:other.amount];
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
 - (instancetype)divideBy:(MKQuantity *)other {
-    NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
+    [self _assert_that_is_convertible_with_unit:other.unit];
     
     id amount = [self.amount decimalNumberByDividingBy:other.amount];
     return [[self class] createWithAmount:amount withUnit:self.unit];
@@ -62,10 +62,10 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
 }
 
 - (instancetype)convertTo:(MKUnit *)unit {
-    NSAssert([self.unit isMemberOfClass:[unit class]], UNIT_MISMATCH);
-    id base_amount = [self amountInBaseUnit];
-    id unit_amount = [unit convertFromBaseUnit:base_amount];
-    return [[self class] createWithAmount:unit_amount withUnit:unit];
+    [self _assert_that_is_convertible_with_unit:unit];
+
+    id converted = [self.unit convertAmount:self.amount to:unit];
+    return [[self class] createWithAmount:converted withUnit:unit];
 }
 
 - (NSNumber *)amountInBaseUnit {
@@ -85,9 +85,14 @@ NSString * const UNIT_MISMATCH = @"Unit mismatch";
 }
 
 - (NSComparisonResult)compare:(MKQuantity *)other {
-    NSAssert([self.unit isMemberOfClass:[other.unit class]], UNIT_MISMATCH);
+    [self _assert_that_is_convertible_with_unit:other.unit];
+    
     MKQuantity *converted = [other convertTo:self.unit];
     return ([self.amount compare:converted.amount]);
+}
+
+- (void)_assert_that_is_convertible_with_unit:(MKUnit *)unit {
+    NSAssert([self.unit isConvertibleWith:unit], UNITS_NOT_CONVERTIBLE);
 }
 
 - (NSString *)description {
