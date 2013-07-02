@@ -4,7 +4,6 @@
 [![Build Platform](http://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
 [![Build Version](http://cocoapod-badges.herokuapp.com/v/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
 
-http://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png
 
 Provides units of measurement of physical quantities and simplifies manipulation of them.
 
