@@ -1,8 +1,9 @@
 # MKUnits
 
-[![Build Status](https://travis-ci.org/michalkonturek/MKUnits.png)](https://travis-ci.org/michalkonturek/MKUnits)
-[![Build Platform](http://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
-[![Build Version](http://cocoapod-badges.herokuapp.com/v/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
+[![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)](https://github.com/michalkonturek/MKUnits/blob/master/LICENSE)
+[![Build Platform](https://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
+[![Build Version](https://cocoapod-badges.herokuapp.com/v/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
+[![Build Status](https://travis-ci.org/michalkonturek/MKUnits.png?branch=master)](https://travis-ci.org/michalkonturek/MKUnits)
 
 
 Provides units of measurement of physical quantities and simplifies manipulation of them.
