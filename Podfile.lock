@@ -1,13 +1,10 @@
 PODS:
-  - Kiwi (2.2)
-  - OCHamcrest (2.1.0)
+  - OCHamcrest (3.0.0)
 
 DEPENDENCIES:
-  - Kiwi (>= 2.1)
-  - OCHamcrest (>= 1.9)
+  - OCHamcrest (>= 3.0.0)
 
 SPEC CHECKSUMS:
-  Kiwi: db174bba4ee8068b15d7122f1b22fb64b7c1d378
-  OCHamcrest: 96f5cb58fa0fd4b3609d37fe21e5246b259bba2a
+  OCHamcrest: 739added27df87b26adb60ab5aa14b7e3cf58afe
 
-COCOAPODS: 0.20.2
+COCOAPODS: 0.26.2

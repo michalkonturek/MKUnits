@@ -30,7 +30,7 @@
     Default is long form, which describes the object, the name of the invocation, and the
     sub-matcher's mismatch diagnosis. Short form only has the sub-matcher's mismatch diagnosis.
  */
-@property (assign, nonatomic) BOOL shortMismatchDescription;
+@property (nonatomic, assign) BOOL shortMismatchDescription;
 
 /**
     Helper method for creating an invocation.
@@ -42,7 +42,7 @@
 /**
     Returns an HCInvocationMatcher object initialized with an invocation and a matcher.
  */
-- (id)initWithInvocation:(NSInvocation *)anInvocation matching:(id<HCMatcher>)aMatcher;
+- (instancetype)initWithInvocation:(NSInvocation *)anInvocation matching:(id<HCMatcher>)aMatcher;
 
 /**
     Invokes stored invocation on given item and returns the result.
