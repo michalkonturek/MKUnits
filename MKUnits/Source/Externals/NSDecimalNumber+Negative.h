@@ -10,7 +10,7 @@
 @interface NSDecimalNumber (Negative)
 
 + (NSDecimalNumber *)createFrom:(NSNumber *)number;
-+ (NSDecimalNumber *)minutOne;
++ (NSDecimalNumber *)minusOne;
 
 - (NSDecimalNumber *)negate;
 
