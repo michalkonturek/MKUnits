@@ -17,7 +17,7 @@
 @implementation NSDecimalNumber_Negative_Tests
 
 - (void)test_minusOne {
-    NSDecimalNumber *input = [NSDecimalNumber minutOne];
+    NSDecimalNumber *input = [NSDecimalNumber minusOne];
     assertThat(input, equalToInteger(-1));
 }
 

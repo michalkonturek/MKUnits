@@ -13,12 +13,12 @@
     return [self decimalNumberWithDecimal:[number decimalValue]];
 }
 
-+ (NSDecimalNumber *)minutOne {
++ (NSDecimalNumber *)minusOne {
     return [[NSDecimalNumber zero] decimalNumberBySubtracting:[NSDecimalNumber one]];
 }
 
 - (NSDecimalNumber *)negate {
-    return [self decimalNumberByMultiplyingBy:[NSDecimalNumber minutOne]];
+    return [self decimalNumberByMultiplyingBy:[NSDecimalNumber minusOne]];
 }
 
 @end
