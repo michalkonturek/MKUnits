@@ -12,25 +12,14 @@
 
 @interface HCIsEmptyCollection : HCHasCount
 
-+ (id)isEmptyCollection;
-- (id)init;
++ (instancetype)isEmptyCollection;
+- (instancetype)init;
 
 @end
 
 
 OBJC_EXPORT __attribute__((deprecated)) id<HCMatcher> HC_empty(void);
 OBJC_EXPORT id<HCMatcher> HC_isEmpty(void);
-
-/**
-    Matches empty collection.
-
-    Deprecated; use isEmpty() instead.
-
-    @ingroup collection_matchers
- */
-#ifdef HC_SHORTHAND
-    #define empty() HC_empty()
-#endif
 
 /**
     Matches empty collection.
