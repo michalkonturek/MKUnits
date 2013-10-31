@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.source       = { 
     :git => "https://github.com/michalkonturek/MKUnits.git", 
-    :tag => "1.1.1" 
+    :tag => "1.1.2" 
   }
 
   s.source_files = 'MKUnits/Source/**/*.{h,m}'
