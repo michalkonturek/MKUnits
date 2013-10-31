@@ -6,7 +6,9 @@
 [![Build Status](https://travis-ci.org/michalkonturek/MKUnits.png?branch=master)](https://travis-ci.org/michalkonturek/MKUnits)
 
 
-Provides units of measurement of physical quantities and simplifies manipulation of them.
+MKUnits is extremely precise unit conversion library for Objective-C. It provides units of measurement of physical quantities and simplifies manipulation of them.
+
+
 
 
 ## Supported Quantities 
