@@ -7,7 +7,7 @@ before_install:
     - brew install xctool
 
     # FIX: https://github.com/CocoaPods/CocoaPods/issues/1121
-    - gem uninstall cocoapods
+    #- gem uninstall cocoapods
     - gem install cocoapods
 
     # update cocoapods
