@@ -6,10 +6,16 @@ before_install:
     - brew remove xctool
     - brew install xctool
 
+    # FIX: https://github.com/CocoaPods/CocoaPods/issues/1121
+    - gem install cocoapods
+
     # update cocoapods
     - gem update cocoapods
 
-script: xctool clean build test -arch i386 ONLY_ACTIVE_ARCH=NO
+script: xctool -arch i386 ONLY_ACTIVE_ARCH=NO clean build test -freshSimulator -freshInstall
+
+#script: xctool clean build test -arch i386 ONLY_ACTIVE_ARCH=NO -freshSimulator -freshInstall
+#script: xctool clean build test -arch i386 ONLY_ACTIVE_ARCH=NO
 # script: xctool clean build test
 
 notifications:
