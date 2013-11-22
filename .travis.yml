@@ -12,6 +12,10 @@ before_install:
     # update cocoapods
     - gem update cocoapods
 
+    # print version summary
+    - pod --version
+    - xctool -version
+
 script: xctool -arch i386 ONLY_ACTIVE_ARCH=NO clean build test -freshSimulator -freshInstall
 
 #script: xctool clean build test -arch i386 ONLY_ACTIVE_ARCH=NO -freshSimulator -freshInstall
