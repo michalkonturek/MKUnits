@@ -5,24 +5,15 @@
 [![Build Version](https://cocoapod-badges.herokuapp.com/v/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
 [![Build Status](https://travis-ci.org/michalkonturek/MKUnits.png?branch=master)](https://travis-ci.org/michalkonturek/MKUnits)
 
-
 MKUnits is extremely precise unit conversion library for Objective-C. It provides units of measurement of physical quantities and simplifies manipulation of them.
 
 
+## License
 
+Source code of this project is available under the standard MIT license. Please see [the license file][LICENSE].
 
-## Supported Quantities 
-
-At the moment MKUnits supports the following quantities:
-
-* Area (base unit: square meter)
-* Bytes (base unit: bit) 
-* Mass (base unit: kilogram)
-* Length (base unit: meter)
-* Time (base unit: second)
-
-You can easily extend MKUnits by adding new [quantities](#new-quantity) or [units](#new-unit).
-
+[PODS]:http://cocoapods.org/
+[LICENSE]:https://github.com/michalkonturek/MKUnits/blob/master/LICENSE
 
 
 ## Usage
@@ -90,6 +81,19 @@ id amount_in_stones = [result amountWithPrecision:3];
 id amount_in_stones = [result.amount decimalNumberWithPrecision:3];
 // 0.945
 ```
+
+## Supported Quantities 
+
+At the moment MKUnits supports the following quantities:
+
+* Area (base unit: square meter)
+* Bytes (base unit: bit) 
+* Mass (base unit: kilogram)
+* Length (base unit: meter)
+* Time (base unit: second)
+
+You can easily extend MKUnits by adding new [quantities](#new-quantity) or [units](#new-unit).
+
 
 ## Quick Conversion
 
