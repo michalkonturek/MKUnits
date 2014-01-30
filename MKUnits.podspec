@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
     :tag => "1.1.2" 
   }
 
-  s.source_files = 'MKUnits/Source/**/*.{h,m}'
+  s.source_files = 'Source/**/*.{h,m}'
   s.requires_arc = true
 end
