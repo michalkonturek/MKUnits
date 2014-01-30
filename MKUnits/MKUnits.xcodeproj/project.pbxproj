@@ -168,17 +168,17 @@
 		90299B991899EA5700FF6782 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				90299B9A1899EA5700FF6782 /* MKQuantity+Precision.h */,
-				90299B9B1899EA5700FF6782 /* MKQuantity+Precision.m */,
+				90299BA41899EA5700FF6782 /* MKUnits.h */,
 				90299B9C1899EA5700FF6782 /* MKQuantity.h */,
 				90299B9D1899EA5700FF6782 /* MKQuantity.m */,
+				90299B9A1899EA5700FF6782 /* MKQuantity+Precision.h */,
+				90299B9B1899EA5700FF6782 /* MKQuantity+Precision.m */,
+				90299BA21899EA5700FF6782 /* MKUnit.h */,
+				90299BA31899EA5700FF6782 /* MKUnit.m */,
 				90299B9E1899EA5700FF6782 /* MKUnit+Conversion.h */,
 				90299B9F1899EA5700FF6782 /* MKUnit+Conversion.m */,
 				90299BA01899EA5700FF6782 /* MKUnit+MKQuantity.h */,
 				90299BA11899EA5700FF6782 /* MKUnit+MKQuantity.m */,
-				90299BA21899EA5700FF6782 /* MKUnit.h */,
-				90299BA31899EA5700FF6782 /* MKUnit.m */,
-				90299BA41899EA5700FF6782 /* MKUnits.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
