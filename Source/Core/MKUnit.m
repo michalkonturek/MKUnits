@@ -9,7 +9,7 @@
 #import "MKUnit.h"
 #import "MKMacros.h"
 
-#import "NSDecimalNumber+Negative.h"
+#import <MKFoundationKit/NSNumber+MK.h>
 
 @implementation MKUnit
 
@@ -40,12 +40,12 @@
 }
 
 - (NSNumber *)convertFromBaseUnit:(NSNumber *)amount {
-    id value = [NSDecimalNumber createFrom:amount];
+    id value = [NSDecimalNumber mk_createFrom:amount];
     return [value decimalNumberByDividingBy:self.ratio];
 }
 
 - (NSNumber *)convertToBaseUnit:(NSNumber *)amount {
-    id value = [NSDecimalNumber createFrom:amount];
+    id value = [NSDecimalNumber mk_createFrom:amount];
     return [value decimalNumberByMultiplyingBy:self.ratio];
 }
 
