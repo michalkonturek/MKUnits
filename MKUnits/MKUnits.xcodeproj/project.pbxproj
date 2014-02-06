@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		900762C81781972D00F44D86 /* NSNumber+Fraction_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 900762C71781972D00F44D86 /* NSNumber+Fraction_Tests.m */; };
 		901FACB717808F0500103B0C /* MKMassUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */; };
 		901FACC217809FEB00103B0C /* MKQuantity_Precision_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */; };
 		901FACC71780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC61780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m */; };
@@ -16,8 +15,6 @@
 		90299BC31899EA5700FF6782 /* MKUnit+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299B9F1899EA5700FF6782 /* MKUnit+Conversion.m */; };
 		90299BC41899EA5700FF6782 /* MKUnit+MKQuantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299BA11899EA5700FF6782 /* MKUnit+MKQuantity.m */; };
 		90299BC51899EA5700FF6782 /* MKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299BA31899EA5700FF6782 /* MKUnit.m */; };
-		90299BC61899EA5700FF6782 /* NSDecimalNumber+Negative.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299BA81899EA5700FF6782 /* NSDecimalNumber+Negative.m */; };
-		90299BC71899EA5700FF6782 /* NSNumber+Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299BAA1899EA5700FF6782 /* NSNumber+Fraction.m */; };
 		90299BC81899EA5700FF6782 /* MKAreaUnit+Imperial.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299BAE1899EA5700FF6782 /* MKAreaUnit+Imperial.m */; };
 		90299BC91899EA5700FF6782 /* MKAreaUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299BB01899EA5700FF6782 /* MKAreaUnit.m */; };
 		90299BCA1899EA5700FF6782 /* MKByteUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299BB31899EA5700FF6782 /* MKByteUnit.m */; };
@@ -28,7 +25,6 @@
 		90299BCF1899EA5700FF6782 /* MKTimeUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90299BC01899EA5700FF6782 /* MKTimeUnit.m */; };
 		903335DB177D0CF000FE8665 /* MKQuantity_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */; };
 		903335DC177D0CF000FE8665 /* MKUnit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335D9177D0CF000FE8665 /* MKUnit_Tests.m */; };
-		903335DD177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */; };
 		9036146B177FAC0800E3FAE1 /* MKByteUnit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9036146A177FAC0800E3FAE1 /* MKByteUnit_Tests.m */; };
 		90361472177FB42900E3FAE1 /* MKTimeUnit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90361471177FB42900E3FAE1 /* MKTimeUnit_Tests.m */; };
 		90370068177D0BD400708FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370067177D0BD400708FEA /* UIKit.framework */; };
@@ -65,7 +61,6 @@
 /* Begin PBXFileReference section */
 		13010856EB764246BC3F440C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8801CF4A5FB54F4EBBF7595B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		900762C71781972D00F44D86 /* NSNumber+Fraction_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Fraction_Tests.m"; sourceTree = "<group>"; };
 		901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMassUnit_Imperial_Tests.m; sourceTree = "<group>"; };
 		901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity_Precision_Tests.m; sourceTree = "<group>"; };
 		901FACC61780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLengthUnit_Imperial_Tests.m; sourceTree = "<group>"; };
@@ -81,10 +76,6 @@
 		90299BA31899EA5700FF6782 /* MKUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUnit.m; sourceTree = "<group>"; };
 		90299BA41899EA5700FF6782 /* MKUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUnits.h; sourceTree = "<group>"; };
 		90299BA61899EA5700FF6782 /* MKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMacros.h; sourceTree = "<group>"; };
-		90299BA71899EA5700FF6782 /* NSDecimalNumber+Negative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Negative.h"; sourceTree = "<group>"; };
-		90299BA81899EA5700FF6782 /* NSDecimalNumber+Negative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Negative.m"; sourceTree = "<group>"; };
-		90299BA91899EA5700FF6782 /* NSNumber+Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Fraction.h"; sourceTree = "<group>"; };
-		90299BAA1899EA5700FF6782 /* NSNumber+Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Fraction.m"; sourceTree = "<group>"; };
 		90299BAD1899EA5700FF6782 /* MKAreaUnit+Imperial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAreaUnit+Imperial.h"; sourceTree = "<group>"; };
 		90299BAE1899EA5700FF6782 /* MKAreaUnit+Imperial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAreaUnit+Imperial.m"; sourceTree = "<group>"; };
 		90299BAF1899EA5700FF6782 /* MKAreaUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKAreaUnit.h; sourceTree = "<group>"; };
@@ -104,7 +95,6 @@
 		903335D7177D0CF000FE8665 /* Base_Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base_Tests.h; sourceTree = "<group>"; };
 		903335D8177D0CF000FE8665 /* MKQuantity_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity_Tests.m; sourceTree = "<group>"; };
 		903335D9177D0CF000FE8665 /* MKUnit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUnit_Tests.m; sourceTree = "<group>"; };
-		903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Negative_Tests.m"; sourceTree = "<group>"; };
 		9036146A177FAC0800E3FAE1 /* MKByteUnit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKByteUnit_Tests.m; sourceTree = "<group>"; };
 		90361471177FB42900E3FAE1 /* MKTimeUnit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKTimeUnit_Tests.m; sourceTree = "<group>"; };
 		90370064177D0BD400708FEA /* MKUnits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKUnits.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,10 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				90299BA61899EA5700FF6782 /* MKMacros.h */,
-				90299BA71899EA5700FF6782 /* NSDecimalNumber+Negative.h */,
-				90299BA81899EA5700FF6782 /* NSDecimalNumber+Negative.m */,
-				90299BA91899EA5700FF6782 /* NSNumber+Fraction.h */,
-				90299BAA1899EA5700FF6782 /* NSNumber+Fraction.m */,
 			);
 			path = Externals;
 			sourceTree = "<group>";
@@ -341,7 +327,6 @@
 			children = (
 				903335D7177D0CF000FE8665 /* Base_Tests.h */,
 				9091EA14177D98EC00D334BB /* core-tests */,
-				9091EA15177D98FF00D334BB /* externals-tests */,
 				90361469177FABE200E3FAE1 /* units-tests */,
 				9037008C177D0BD400708FEA /* Supporting Files */,
 			);
@@ -365,15 +350,6 @@
 				903335D9177D0CF000FE8665 /* MKUnit_Tests.m */,
 			);
 			name = "core-tests";
-			sourceTree = "<group>";
-		};
-		9091EA15177D98FF00D334BB /* externals-tests */ = {
-			isa = PBXGroup;
-			children = (
-				903335DA177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m */,
-				900762C71781972D00F44D86 /* NSNumber+Fraction_Tests.m */,
-			);
-			name = "externals-tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,9 +532,7 @@
 				90299BCB1899EA5700FF6782 /* MKLengthUnit+Imperial.m in Sources */,
 				90370074177D0BD400708FEA /* main.m in Sources */,
 				90299BC91899EA5700FF6782 /* MKAreaUnit.m in Sources */,
-				90299BC61899EA5700FF6782 /* NSDecimalNumber+Negative.m in Sources */,
 				90299BC81899EA5700FF6782 /* MKAreaUnit+Imperial.m in Sources */,
-				90299BC71899EA5700FF6782 /* NSNumber+Fraction.m in Sources */,
 				90299BCD1899EA5700FF6782 /* MKMassUnit+Imperial.m in Sources */,
 				90370078177D0BD400708FEA /* AppDelegate.m in Sources */,
 				90299BCF1899EA5700FF6782 /* MKTimeUnit.m in Sources */,
@@ -577,11 +551,9 @@
 				903335DC177D0CF000FE8665 /* MKUnit_Tests.m in Sources */,
 				904F619B177FC7EF00CD4DFC /* MKMassUnit_Tests.m in Sources */,
 				904F61A2177FCDEA00CD4DFC /* MKArea_Tests.m in Sources */,
-				900762C81781972D00F44D86 /* NSNumber+Fraction_Tests.m in Sources */,
 				904F619D177FC8A200CD4DFC /* MKLengthUnit_Tests.m in Sources */,
 				901FACB717808F0500103B0C /* MKMassUnit_Imperial_Tests.m in Sources */,
 				904F61A7177FD4EE00CD4DFC /* MKAreaUnit_Imperial_Tests.m in Sources */,
-				903335DD177D0CF000FE8665 /* NSDecimalNumber+Negative_Tests.m in Sources */,
 				901FACC217809FEB00103B0C /* MKQuantity_Precision_Tests.m in Sources */,
 				9036146B177FAC0800E3FAE1 /* MKByteUnit_Tests.m in Sources */,
 			);
