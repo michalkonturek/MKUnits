@@ -15,7 +15,7 @@
 @implementation NSNumber_Fraction_Tests
 
 - (void)test_decimalNumberWithPrecision_throws_exception_when_negative_precision {
-    STAssertThrows([@12.123456 decimalNumberWithPrecision:-2], @"");
+    STAssertThrows([@12.123456 mk_roundedWithPrecision:-2], @"");
 }
 
 @end

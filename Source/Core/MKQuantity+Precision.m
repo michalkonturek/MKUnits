@@ -11,7 +11,7 @@
 #import "MKUnit.h"
 #import "MKUnit+Conversion.h"
 
-#import "NSNumber+Fraction.h"
+#import <MKFoundationKit/NSNumber+MK.h>
 
 @implementation MKQuantity (Precision)
 
@@ -21,7 +21,7 @@
 }
 
 - (NSNumber *)amountWithPrecision:(short)precision {
-    return [self.amount decimalNumberWithPrecision:precision];
+    return [self.amount mk_roundedWithPrecision:precision];
 }
 
 - (BOOL)isTheSame:(MKQuantity *)other withPrecision:(short)precision {
@@ -39,8 +39,8 @@
 - (NSComparisonResult)compare:(MKQuantity *)other withPrecision:(short)precision {
     NSAssert([self.unit isConvertibleWith:other.unit], UNITS_NOT_CONVERTIBLE);
     MKQuantity *converted = [other convertTo:self.unit];
-    return ([[self.amount decimalNumberWithPrecision:precision]
-             compare:[converted.amount decimalNumberWithPrecision:precision]]);
+    return ([[self.amount mk_roundedWithPrecision:precision]
+             compare:[converted.amount mk_roundedWithPrecision:precision]]);
 }
 
 @end
