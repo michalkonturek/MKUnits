@@ -35,7 +35,7 @@
 
 - (BOOL)matches:(id)item describingMismatchTo:(id<HCDescription>)mismatchDescription
 {
-    for (id<HCMatcher> oneMatcher in matchers)
+    for (id <HCMatcher> oneMatcher in matchers)
     {
         if (![oneMatcher matches:item])
         {
@@ -60,9 +60,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_allOf(id match, ...)
+id HC_allOf(id match, ...)
 {
     va_list args;
     va_start(args, match);

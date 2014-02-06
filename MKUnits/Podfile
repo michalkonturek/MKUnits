@@ -1,5 +1,7 @@
 
 
+pod 'MKFoundationKit/NSNumber'
+
 target :MKUnitsTests, :exclusive => true do
     pod 'OCHamcrest',	'>= 3.0.0'
 #	pod 'OCMock',     	'>= 2.1.1'

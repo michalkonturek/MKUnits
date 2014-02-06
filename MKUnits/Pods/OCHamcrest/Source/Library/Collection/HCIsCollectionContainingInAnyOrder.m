@@ -39,7 +39,7 @@
 - (BOOL)matches:(id)item
 {
     NSUInteger index = 0;
-    for (id<HCMatcher> matcher in matchers)
+    for (id <HCMatcher> matcher in matchers)
     {
         if ([matcher matches:item])
         {
@@ -66,8 +66,6 @@
 
 @end
 
-
-#pragma mark -
 
 @implementation HCIsCollectionContainingInAnyOrder
 
@@ -122,9 +120,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_containsInAnyOrder(id itemMatch, ...)
+id HC_containsInAnyOrder(id itemMatch, ...)
 {
     NSMutableArray *matchers = [NSMutableArray arrayWithObject:HCWrapInMatcher(itemMatch)];
     

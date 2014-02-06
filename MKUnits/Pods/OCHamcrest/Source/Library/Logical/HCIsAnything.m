@@ -51,14 +51,12 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_anything()
+id HC_anything()
 {
     return [HCIsAnything isAnything];
 }
 
-id<HCMatcher> HC_anythingWithDescription(NSString *description)
+id HC_anythingWithDescription(NSString *description)
 {
     return [HCIsAnything isAnythingWithDescription:description];
 }

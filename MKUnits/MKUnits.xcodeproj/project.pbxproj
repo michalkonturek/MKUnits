@@ -48,6 +48,7 @@
 		904F619D177FC8A200CD4DFC /* MKLengthUnit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 904F619C177FC8A200CD4DFC /* MKLengthUnit_Tests.m */; };
 		904F61A2177FCDEA00CD4DFC /* MKArea_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 904F61A1177FCDEA00CD4DFC /* MKArea_Tests.m */; };
 		904F61A7177FD4EE00CD4DFC /* MKAreaUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 904F61A6177FD4EE00CD4DFC /* MKAreaUnit_Imperial_Tests.m */; };
+		BE851324B7574A238FC4CAAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8801CF4A5FB54F4EBBF7595B /* libPods.a */; };
 		F01588EF7C664B74B8BBE5E8 /* libPods-MKUnitsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F1D34DC47C415180711C40 /* libPods-MKUnitsTests.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13010856EB764246BC3F440C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8801CF4A5FB54F4EBBF7595B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		900762C71781972D00F44D86 /* NSNumber+Fraction_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Fraction_Tests.m"; sourceTree = "<group>"; };
 		901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMassUnit_Imperial_Tests.m; sourceTree = "<group>"; };
 		901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity_Precision_Tests.m; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 				90370068177D0BD400708FEA /* UIKit.framework in Frameworks */,
 				9037006A177D0BD400708FEA /* Foundation.framework in Frameworks */,
 				9037006C177D0BD400708FEA /* CoreGraphics.framework in Frameworks */,
+				BE851324B7574A238FC4CAAE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +285,7 @@
 				90370066177D0BD400708FEA /* Frameworks */,
 				90370065177D0BD400708FEA /* Products */,
 				B5CF1D0DEB864CABB46F1979 /* Pods-MKUnitsTests.xcconfig */,
+				13010856EB764246BC3F440C /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,6 +306,7 @@
 				9037006B177D0BD400708FEA /* CoreGraphics.framework */,
 				90370085177D0BD400708FEA /* SenTestingKit.framework */,
 				F1F1D34DC47C415180711C40 /* libPods-MKUnitsTests.a */,
+				8801CF4A5FB54F4EBBF7595B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -377,9 +383,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90370096177D0BD400708FEA /* Build configuration list for PBXNativeTarget "MKUnits" */;
 			buildPhases = (
+				D9AA71D8984244F19B88352F /* Check Pods Manifest.lock */,
 				90370060177D0BD400708FEA /* Sources */,
 				90370061177D0BD400708FEA /* Frameworks */,
 				90370062177D0BD400708FEA /* Resources */,
+				DEC044E56AE544148891B9B1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -487,6 +495,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		D9AA71D8984244F19B88352F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DEC044E56AE544148891B9B1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		F343E75DDB9849EFA2EE2B74 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -606,7 +644,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
@@ -633,7 +671,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -644,11 +682,12 @@
 		};
 		90370097177D0BD400708FEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13010856EB764246BC3F440C /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MKUnits/MKUnits-Prefix.pch";
 				INFOPLIST_FILE = "MKUnits/MKUnits-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -656,11 +695,12 @@
 		};
 		90370098177D0BD400708FEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13010856EB764246BC3F440C /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MKUnits/MKUnits-Prefix.pch";
 				INFOPLIST_FILE = "MKUnits/MKUnits-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

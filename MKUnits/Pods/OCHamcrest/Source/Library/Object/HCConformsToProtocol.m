@@ -42,9 +42,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_conformsTo(Protocol *aProtocol)
+id HC_conformsTo(Protocol *aProtocol)
 {
     return [HCConformsToProtocol conformsTo:aProtocol];
 }

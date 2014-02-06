@@ -33,9 +33,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_isA(Class aClass)
+id HC_isA(Class aClass)
 {
     return [HCIsTypeOf isTypeOf:aClass];
 }
