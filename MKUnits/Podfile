@@ -1,6 +1,6 @@
 
 
-pod 'MKFoundationKit/NSNumber'
+pod 'MKFoundationKit/NSNumber',	'>= 1.1.0'
 
 target :MKUnitsTests, :exclusive => true do
     pod 'OCHamcrest',	'>= 3.0.0'
