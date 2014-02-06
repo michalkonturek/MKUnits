@@ -1,6 +1,5 @@
 //
 //  MKMacros.h
-//  MKUnitConverter
 //
 //  Created by Michal Konturek on 25/06/2013.
 //  Copyright (c) 2013 Michal Konturek. All rights reserved.
