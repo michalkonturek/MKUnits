@@ -11,7 +11,7 @@
 		900E1D3618A4486B00DC1420 /* MKQuantity+Precision.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2D18A4486B00DC1420 /* MKQuantity+Precision.m */; };
 		900E1D3718A4486B00DC1420 /* MKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2F18A4486B00DC1420 /* MKUnit.m */; };
 		900E1D3818A4486B00DC1420 /* MKUnit+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D3118A4486B00DC1420 /* MKUnit+Conversion.m */; };
-		900E1D3918A4486B00DC1420 /* MKUnit+MKQuantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D3318A4486B00DC1420 /* MKUnit+MKQuantity.m */; };
+		900E1D3918A4486B00DC1420 /* MKUnit+Quantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D3318A4486B00DC1420 /* MKUnit+Quantity.m */; };
 		901FACB717808F0500103B0C /* MKMassUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */; };
 		901FACC217809FEB00103B0C /* MKQuantity_Precision_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */; };
 		901FACC71780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC61780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m */; };
@@ -70,8 +70,8 @@
 		900E1D2F18A4486B00DC1420 /* MKUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUnit.m; sourceTree = "<group>"; };
 		900E1D3018A4486B00DC1420 /* MKUnit+Conversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKUnit+Conversion.h"; sourceTree = "<group>"; };
 		900E1D3118A4486B00DC1420 /* MKUnit+Conversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKUnit+Conversion.m"; sourceTree = "<group>"; };
-		900E1D3218A4486B00DC1420 /* MKUnit+MKQuantity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKUnit+MKQuantity.h"; sourceTree = "<group>"; };
-		900E1D3318A4486B00DC1420 /* MKUnit+MKQuantity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKUnit+MKQuantity.m"; sourceTree = "<group>"; };
+		900E1D3218A4486B00DC1420 /* MKUnit+Quantity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKUnit+Quantity.h"; sourceTree = "<group>"; };
+		900E1D3318A4486B00DC1420 /* MKUnit+Quantity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKUnit+Quantity.m"; sourceTree = "<group>"; };
 		900E1D3418A4486B00DC1420 /* MKUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUnits.h; sourceTree = "<group>"; };
 		901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMassUnit_Imperial_Tests.m; sourceTree = "<group>"; };
 		901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity_Precision_Tests.m; sourceTree = "<group>"; };
@@ -161,8 +161,8 @@
 				900E1D2F18A4486B00DC1420 /* MKUnit.m */,
 				900E1D3018A4486B00DC1420 /* MKUnit+Conversion.h */,
 				900E1D3118A4486B00DC1420 /* MKUnit+Conversion.m */,
-				900E1D3218A4486B00DC1420 /* MKUnit+MKQuantity.h */,
-				900E1D3318A4486B00DC1420 /* MKUnit+MKQuantity.m */,
+				900E1D3218A4486B00DC1420 /* MKUnit+Quantity.h */,
+				900E1D3318A4486B00DC1420 /* MKUnit+Quantity.m */,
 				900E1D3418A4486B00DC1420 /* MKUnits.h */,
 			);
 			name = Source;
@@ -519,7 +519,7 @@
 				900E1D3518A4486B00DC1420 /* MKQuantity.m in Sources */,
 				90299BCD1899EA5700FF6782 /* MKMassUnit+Imperial.m in Sources */,
 				90370078177D0BD400708FEA /* AppDelegate.m in Sources */,
-				900E1D3918A4486B00DC1420 /* MKUnit+MKQuantity.m in Sources */,
+				900E1D3918A4486B00DC1420 /* MKUnit+Quantity.m in Sources */,
 				90299BCF1899EA5700FF6782 /* MKTimeUnit.m in Sources */,
 				900E1D3618A4486B00DC1420 /* MKQuantity+Precision.m in Sources */,
 			);

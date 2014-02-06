@@ -10,7 +10,7 @@
 
 #import "MKUnit.h"
 #import "MKUnit+Conversion.h"
-#import "MKUnit+MKQuantity.h"
+#import "MKUnit+Quantity.h"
 #import "MKQuantity.h"
 #import "MKQuantity+Precision.h"
 
