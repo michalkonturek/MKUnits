@@ -33,3 +33,14 @@
 - (instancetype)mass_convertToKilogram;
 
 @end
+
+@interface NSNumber (Quantity)
+
+- (MKQuantity *)mass_milligram;
+- (MKQuantity *)mass_gram;
+- (MKQuantity *)mass_decagram;
+- (MKQuantity *)mass_kilogram;
+- (MKQuantity *)mass_megagram;
+- (MKQuantity *)mass_tonne;
+
+@end

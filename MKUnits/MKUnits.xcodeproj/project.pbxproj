@@ -152,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				90299BAB1899EA5700FF6782 /* Units */,
+				900E1D3418A4486B00DC1420 /* MKUnits.h */,
 				900E1D2918A4486B00DC1420 /* MKMacros.h */,
 				900E1D2A18A4486B00DC1420 /* MKQuantity.h */,
 				900E1D2B18A4486B00DC1420 /* MKQuantity.m */,
@@ -163,7 +164,6 @@
 				900E1D3118A4486B00DC1420 /* MKUnit+Conversion.m */,
 				900E1D3218A4486B00DC1420 /* MKUnit+Quantity.h */,
 				900E1D3318A4486B00DC1420 /* MKUnit+Quantity.m */,
-				900E1D3418A4486B00DC1420 /* MKUnits.h */,
 			);
 			name = Source;
 			path = ../../Source;
