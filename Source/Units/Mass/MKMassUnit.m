@@ -115,7 +115,7 @@
 
 @end
 
-@implementation NSNumber (Quantity)
+@implementation NSNumber (MKMassUnit)
 
 - (MKQuantity *)mass_milligram {
     return [MKQuantity mass_milligramWithAmount:self];

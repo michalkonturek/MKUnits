@@ -34,7 +34,7 @@
 
 @end
 
-@interface NSNumber (Quantity)
+@interface NSNumber (MKMassUnit)
 
 - (MKQuantity *)mass_milligram;
 - (MKQuantity *)mass_gram;
