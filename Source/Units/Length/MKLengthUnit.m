@@ -55,36 +55,60 @@
 
 @implementation MKQuantity (MKLengthUnit)
 
-+ (instancetype)length_centimeterWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKLengthUnit centimeter]];
++ (instancetype)length_millimeterWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKLengthUnit millimeter]];
 }
 
-+ (instancetype)length_kilometerWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKLengthUnit kilometer]];
++ (instancetype)length_centimeterWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKLengthUnit centimeter]];
 }
 
 + (instancetype)length_meterWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKLengthUnit meter]];
 }
 
-+ (instancetype)length_millimeterWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKLengthUnit millimeter]];
-}
-
-- (instancetype)length_convertToKilometer {
-    return [self convertTo:[MKLengthUnit kilometer]];
-}
-
-- (instancetype)length_convertToMeter {
-    return [self convertTo:[MKLengthUnit meter]];
-}
-
-- (instancetype)length_convertToCentimeter {
-    return [self convertTo:[MKLengthUnit centimeter]];
-}
-
-- (instancetype)length_convertToMilimeter {
-    return [self convertTo:[MKLengthUnit millimeter]];
++ (instancetype)length_kilometerWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKLengthUnit kilometer]];
 }
 
 @end
+
+
+@implementation NSNumber (MKLengthUnit)
+
+- (MKQuantity *)length_millimeter {
+    return [MKQuantity length_millimeterWithAmount:self];
+}
+
+- (MKQuantity *)length_centimeter {
+    return [MKQuantity length_centimeterWithAmount:self];
+}
+
+- (MKQuantity *)length_meter {
+    return [MKQuantity length_meterWithAmount:self];
+}
+
+- (MKQuantity *)length_kilometer {
+    return [MKQuantity length_kilometerWithAmount:self];
+}
+
+@end
+
+
+
+//- (instancetype)length_convertToMilimeter {
+//    return [self convertTo:[MKLengthUnit millimeter]];
+//}
+//
+//- (instancetype)length_convertToCentimeter {
+//    return [self convertTo:[MKLengthUnit centimeter]];
+//}
+//
+//- (instancetype)length_convertToMeter {
+//    return [self convertTo:[MKLengthUnit meter]];
+//}
+//
+//- (instancetype)length_convertToKilometer {
+//    return [self convertTo:[MKLengthUnit kilometer]];
+//}
+
