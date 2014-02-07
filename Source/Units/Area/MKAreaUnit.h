@@ -32,3 +32,15 @@
 + (instancetype)area_square_kilometerWithAmount:(NSNumber *)amount;
 
 @end
+
+@interface NSNumber (MKAreaUnit)
+
+- (MKQuantity *)area_square_millimeter;
+- (MKQuantity *)area_square_centimeter;
+- (MKQuantity *)area_square_decimeter;
+- (MKQuantity *)area_square_meter;
+- (MKQuantity *)area_are;
+- (MKQuantity *)area_hectare;
+- (MKQuantity *)area_square_kilometer;
+
+@end
