@@ -16,7 +16,7 @@ Source code of this project is available under the standard MIT license. Please 
 [LICENSE]:https://github.com/michalkonturek/MKUnits/blob/master/LICENSE
 
 
-## Usage
+## Example
 
 Let's create 1.5 kilograms **[kg]**,
 
@@ -71,13 +71,13 @@ id stone_quantity = [result quantityWithPrecision:3];
 // 0.945 st
 ```
 
-or rounding the amount of existing `MKQuantity`.
+or by rounding the amount of existing `MKQuantity`.
 
 ```objc
-id amount_in_stones = [result amountWithPrecision:3];
+id amount_in_stones_1 = [result amountWithPrecision:3];
 // 0.945
 
-id amount_in_stones = [result.amount decimalNumberWithPrecision:3];
+id amount_in_stones_2 = [[result amount] mk_roundedWithPrecision:3];;
 // 0.945
 ```
 
@@ -112,14 +112,14 @@ id amount = [[MKMassUnit gram] convertAmount:@1 from:[MKMassUnit kilogram]];
 
 ## Precision and Rounding
 
-MKUnits uses `NSDecimalNumber` for all conversions, therefore, it is extremely precise. 
+MKUnits uses `NSDecimalNumber` for all operations, therefore, it is extremely precise. 
 
-To round a number to a desired decimal place, use `decimalNumberWithPrecision:` method of `NSNumber+Fraction` category. 
+To round a number to a desired decimal place, simply use `mk_roundedWithPrecision:` method of `NSNumber+MK_Precision` category. 
 
 **Example:** Rounding 1.123456789 to 5 decimal places:
 
 ```objc
-[@1.123456789 decimalNumberWithPrecision:5]; // results in 1.12346.
+[@1.123456789 mk_roundedWithPrecision:5]; // results in 1.12346.
 ```
 
 Alternatively you can take advantage of `MKQuantity+Precision` category which offers
