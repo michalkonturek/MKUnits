@@ -12,6 +12,7 @@
 		900E1D3718A4486B00DC1420 /* MKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2F18A4486B00DC1420 /* MKUnit.m */; };
 		900E1D3818A4486B00DC1420 /* MKUnit+Conversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D3118A4486B00DC1420 /* MKUnit+Conversion.m */; };
 		900E1D3918A4486B00DC1420 /* MKUnit+Quantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D3318A4486B00DC1420 /* MKUnit+Quantity.m */; };
+		900E1D3D18A6691D00DC1420 /* Example.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D3C18A6691D00DC1420 /* Example.m */; };
 		901FACB717808F0500103B0C /* MKMassUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */; };
 		901FACC217809FEB00103B0C /* MKQuantity_Precision_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */; };
 		901FACC71780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 901FACC61780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m */; };
@@ -73,6 +74,8 @@
 		900E1D3218A4486B00DC1420 /* MKUnit+Quantity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKUnit+Quantity.h"; sourceTree = "<group>"; };
 		900E1D3318A4486B00DC1420 /* MKUnit+Quantity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKUnit+Quantity.m"; sourceTree = "<group>"; };
 		900E1D3418A4486B00DC1420 /* MKUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUnits.h; sourceTree = "<group>"; };
+		900E1D3B18A6691D00DC1420 /* Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
+		900E1D3C18A6691D00DC1420 /* Example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example.m; sourceTree = "<group>"; };
 		901FACB617808F0500103B0C /* MKMassUnit_Imperial_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMassUnit_Imperial_Tests.m; sourceTree = "<group>"; };
 		901FACC117809FEB00103B0C /* MKQuantity_Precision_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKQuantity_Precision_Tests.m; sourceTree = "<group>"; };
 		901FACC61780A8BA00103B0C /* MKLengthUnit_Imperial_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLengthUnit_Imperial_Tests.m; sourceTree = "<group>"; };
@@ -148,6 +151,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		900E1D3A18A6691100DC1420 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				900E1D3B18A6691D00DC1420 /* Example.h */,
+				900E1D3C18A6691D00DC1420 /* Example.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		90299B981899EA5700FF6782 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +296,7 @@
 		9037006D177D0BD400708FEA /* MKUnits */ = {
 			isa = PBXGroup;
 			children = (
+				900E1D3A18A6691100DC1420 /* Example */,
 				90299B981899EA5700FF6782 /* Source */,
 				90370076177D0BD400708FEA /* AppDelegate.h */,
 				90370077177D0BD400708FEA /* AppDelegate.m */,
@@ -507,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900E1D3D18A6691D00DC1420 /* Example.m in Sources */,
 				90299BCE1899EA5700FF6782 /* MKMassUnit.m in Sources */,
 				90299BCC1899EA5700FF6782 /* MKLengthUnit.m in Sources */,
 				90299BCA1899EA5700FF6782 /* MKByteUnit.m in Sources */,
