@@ -82,7 +82,6 @@
 
 @end
 
-
 @implementation MKQuantity (MKLengthUnit_Imperial)
 
 + (instancetype)length_inchWithAmount:(NSNumber *)amount {
@@ -114,7 +113,6 @@
 }
 
 @end
-
 
 @implementation NSNumber (MKLengthUnit_Imperial)
 

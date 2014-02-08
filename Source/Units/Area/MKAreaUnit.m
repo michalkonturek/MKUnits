@@ -114,7 +114,6 @@
 
 @end
 
-
 @implementation NSNumber (MKAreaUnit_Imperial)
 
 - (MKQuantity *)area_square_millimeter {

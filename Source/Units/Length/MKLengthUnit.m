@@ -52,7 +52,6 @@
 
 @end
 
-
 @implementation MKQuantity (MKLengthUnit)
 
 + (instancetype)length_millimeterWithAmount:(NSNumber *)amount {
@@ -72,7 +71,6 @@
 }
 
 @end
-
 
 @implementation NSNumber (MKLengthUnit)
 

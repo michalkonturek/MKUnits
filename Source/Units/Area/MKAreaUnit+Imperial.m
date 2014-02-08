@@ -62,7 +62,6 @@
 
 @end
 
-
 @implementation MKQuantity (MKAreaUnit_Imperial)
 
 + (instancetype)area_square_inchWithAmount:(NSNumber *)amount {
@@ -86,7 +85,6 @@
 }
 
 @end
-
 
 @implementation NSNumber (MKAreaUnit_Imperial)
 
