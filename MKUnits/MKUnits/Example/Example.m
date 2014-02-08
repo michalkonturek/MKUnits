@@ -18,28 +18,37 @@
     
     id pounds = [@10 mass_pound];
     NSLog(@"%@", [pounds convertTo:[MKMassUnit kilogram]]);
+    // 4.5359237 kg
     
     id milligrams = [@100 mass_milligram];
     id result = [[[kilograms add:grams] add:pounds] subtract:milligrams];
     NSLog(@"%@", result);
+    // 6.5358237 kg
     
     id ounces = [[@0.5358237 mass_kilogram] convertTo:[MKMassUnit ounce]];
     NSLog(@"%@", ounces);
+    // 18.900624805483390296005199558361177 oz
     
     result = [result subtract:ounces];
     NSLog(@"%@", result);
+    // 6.00000000000000000000000000000000003 kg
     
     result = [result convertTo:[MKMassUnit stone]];
     NSLog(@"%@", result);
+    // 0.94483873964811055873038869091017890993 st
     
     id stone_quantity = [result quantityWithPrecision:3];
     NSLog(@"%@", stone_quantity);
+    // 0.945 st
     
     id amount_in_stones_1 = [result amountWithPrecision:3];
     NSLog(@"%@", amount_in_stones_1);
+    // 0.945
     
     id amount_in_stones_2 = [[result amount] mk_roundedWithPrecision:3];
     NSLog(@"%@", amount_in_stones_2);
+    // 0.945
 }
 
 @end
+
