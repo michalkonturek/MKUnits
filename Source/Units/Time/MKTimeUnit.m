@@ -184,9 +184,54 @@
 
 @end
 
+@implementation NSNumber (MKTimeUnit)
 
+- (MKQuantity *)time_nanosecond {
+    return [MKQuantity time_nanosecondWithAmount:self];
+}
 
+- (MKQuantity *)time_microsecond {
+    return [MKQuantity time_microsecondWithAmount:self];
+}
 
+- (MKQuantity *)time_millisecond {
+    return [MKQuantity time_millisecondWithAmount:self];
+}
 
+- (MKQuantity *)time_second {
+    return [MKQuantity time_secondWithAmount:self];
+}
 
+- (MKQuantity *)time_minute {
+    return [MKQuantity time_minuteWithAmount:self];
+}
 
+- (MKQuantity *)time_hour {
+    return [MKQuantity time_hourWithAmount:self];
+}
+
+- (MKQuantity *)time_day {
+    return [MKQuantity time_dayWithAmount:self];
+}
+
+- (MKQuantity *)time_week {
+    return [MKQuantity time_weekWithAmount:self];
+}
+
+- (MKQuantity *)time_month {
+    return [MKQuantity time_monthWithAmount:self];
+}
+
+- (MKQuantity *)time_year {
+    return [MKQuantity time_yearWithAmount:self];
+}
+
+- (MKQuantity *)time_decade {
+    return [MKQuantity time_decadeWithAmount:self];
+}
+
+- (MKQuantity *)time_century {
+    return [MKQuantity time_centuryWithAmount:self];
+}
+
+@end

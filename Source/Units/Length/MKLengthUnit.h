@@ -35,10 +35,3 @@
 - (MKQuantity *)length_kilometer;
 
 @end
-
-
-
-//- (instancetype)length_convertToMilimeter;
-//- (instancetype)length_convertToCentimeter;
-//- (instancetype)length_convertToMeter;
-//- (instancetype)length_convertToKilometer;

@@ -91,22 +91,3 @@
 }
 
 @end
-
-
-
-//- (instancetype)length_convertToMilimeter {
-//    return [self convertTo:[MKLengthUnit millimeter]];
-//}
-//
-//- (instancetype)length_convertToCentimeter {
-//    return [self convertTo:[MKLengthUnit centimeter]];
-//}
-//
-//- (instancetype)length_convertToMeter {
-//    return [self convertTo:[MKLengthUnit meter]];
-//}
-//
-//- (instancetype)length_convertToKilometer {
-//    return [self convertTo:[MKLengthUnit kilometer]];
-//}
-
