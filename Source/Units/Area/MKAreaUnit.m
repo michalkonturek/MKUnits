@@ -113,3 +113,35 @@
 }
 
 @end
+
+@implementation NSNumber (MKAreaUnit_Imperial)
+
+- (MKQuantity *)area_square_millimeter {
+    return [MKQuantity area_square_millimeterWithAmount:self];
+}
+
+- (MKQuantity *)area_square_centimeter {
+    return [MKQuantity area_square_centimeterWithAmount:self];
+}
+
+- (MKQuantity *)area_square_decimeter {
+    return [MKQuantity area_square_decimeterWithAmount:self];
+}
+
+- (MKQuantity *)area_square_meter {
+    return [MKQuantity area_square_meterWithAmount:self];
+}
+
+- (MKQuantity *)area_are {
+    return [MKQuantity area_areWithAmount:self];
+}
+
+- (MKQuantity *)area_hectare {
+    return [MKQuantity area_hectareWithAmount:self];
+}
+
+- (MKQuantity *)area_square_kilometer {
+    return [MKQuantity area_square_kilometerWithAmount:self];
+}
+
+@end

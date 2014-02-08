@@ -115,3 +115,30 @@
 
 @end
 
+@implementation NSNumber (MKMassUnit)
+
+- (MKQuantity *)mass_milligram {
+    return [MKQuantity mass_milligramWithAmount:self];
+}
+
+- (MKQuantity *)mass_gram {
+    return [MKQuantity mass_gramWithAmount:self];
+}
+
+- (MKQuantity *)mass_decagram {
+    return [MKQuantity mass_decagramWithAmount:self];
+}
+
+- (MKQuantity *)mass_kilogram {
+    return [MKQuantity mass_kilogramWithAmount:self];
+}
+
+- (MKQuantity *)mass_megagram {
+    return [MKQuantity mass_megagramWithAmount:self];
+}
+
+- (MKQuantity *)mass_tonne {
+    return [MKQuantity mass_tonneWithAmount:self];
+}
+
+@end

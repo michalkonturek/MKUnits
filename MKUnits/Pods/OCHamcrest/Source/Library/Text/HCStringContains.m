@@ -33,9 +33,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_containsString(NSString *aString)
+id <HCMatcher> HC_containsString(NSString *aString)
 {
     return [HCStringContains stringContains:aString];
 }

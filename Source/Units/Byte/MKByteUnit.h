@@ -56,3 +56,27 @@
 + (instancetype)byte_terabyteWithAmount:(NSNumber *)amount;
 
 @end
+
+@interface NSNumber (MKByteUnit)
+
+- (MKQuantity *)byte_bit;
+- (MKQuantity *)byte_kilobit;
+- (MKQuantity *)byte_megabit;
+- (MKQuantity *)byte_gigabit;
+- (MKQuantity *)byte_terabit;
+
+- (MKQuantity *)byte_crumb;
+- (MKQuantity *)byte_nibbleb;
+- (MKQuantity *)byte_byte;
+
+- (MKQuantity *)byte_kibibyte;
+- (MKQuantity *)byte_mebibyte;
+- (MKQuantity *)byte_gibibyte;
+- (MKQuantity *)byte_tebibyte;
+
+- (MKQuantity *)byte_kilobyte;
+- (MKQuantity *)byte_megabyte;
+- (MKQuantity *)byte_gigabyte;
+- (MKQuantity *)byte_terabyte;
+
+@end

@@ -11,18 +11,10 @@
 
 #import "HCDescription.h"
 
-
-typedef struct
-{
-    int first;
-    __unsafe_unretained NSString *second;
-} HCPairIntNSString;
-
-
 /**
     Splits string into decimal number (-1 if not found) and remaining string.
  */
-static HCPairIntNSString separate(NSString *component)
+static NSArray *separate(NSString *component)
 {
     int index = 0;
     bool gotIndex = false;
@@ -39,18 +31,16 @@ static HCPairIntNSString separate(NSString *component)
     }
     
     if (!gotIndex)
-        return (HCPairIntNSString){ -1, component };
+        return @[@-1, component];
     else
-        return (HCPairIntNSString){ index, [component substringFromIndex:charIndex] };
+        return @[@(index), [component substringFromIndex:charIndex]];
 }
 
-
-#pragma mark -
 
 @implementation HCDescribedAs
 
 + (instancetype)describedAs:(NSString *)description
-                 forMatcher:(id<HCMatcher>)aMatcher
+                 forMatcher:(id <HCMatcher>)aMatcher
                  overValues:(NSArray *)templateValues
 {
     return [[self alloc] initWithDescription:description
@@ -59,7 +49,7 @@ static HCPairIntNSString separate(NSString *component)
 }
 
 - (instancetype)initWithDescription:(NSString *)description
-                         forMatcher:(id<HCMatcher>)aMatcher
+                         forMatcher:(id <HCMatcher>)aMatcher
                          overValues:(NSArray *)templateValues
 {
     self = [super init];
@@ -95,13 +85,14 @@ static HCPairIntNSString separate(NSString *component)
         }
         else
         {
-            HCPairIntNSString parseIndex = separate(oneComponent);
-            if (parseIndex.first < 0)
+            NSArray *parseIndex = separate(oneComponent);
+            int index = [parseIndex[0] intValue];
+            if (index < 0)
                 [[description appendText:@"%"] appendText:oneComponent];
             else
             {
-                [description appendDescriptionOf:values[(NSUInteger)parseIndex.first]];
-                [description appendText:parseIndex.second];
+                [description appendDescriptionOf:values[index]];
+                [description appendText:parseIndex[1]];
             }
         }
     }
@@ -110,9 +101,7 @@ static HCPairIntNSString separate(NSString *component)
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_describedAs(NSString *description, id<HCMatcher> matcher, ...)
+id HC_describedAs(NSString *description, id <HCMatcher> matcher, ...)
 {
     NSMutableArray *valueList = [NSMutableArray array];
     

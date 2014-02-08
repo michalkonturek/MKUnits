@@ -48,9 +48,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_isIn(id aCollection)
+id HC_isIn(id aCollection)
 {
     return [HCIsIn isInCollection:aCollection];
 }

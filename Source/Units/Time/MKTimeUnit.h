@@ -42,3 +42,20 @@
 + (instancetype)time_centuryWithAmount:(NSNumber *)amount;
 
 @end
+
+@interface NSNumber (MKTimeUnit)
+
+- (MKQuantity *)time_nanosecond;
+- (MKQuantity *)time_microsecond;
+- (MKQuantity *)time_millisecond;
+- (MKQuantity *)time_second;
+- (MKQuantity *)time_minute;
+- (MKQuantity *)time_hour;
+- (MKQuantity *)time_day;
+- (MKQuantity *)time_week;
+- (MKQuantity *)time_month;
+- (MKQuantity *)time_year;
+- (MKQuantity *)time_decade;
+- (MKQuantity *)time_century;
+
+@end

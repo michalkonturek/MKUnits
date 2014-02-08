@@ -102,8 +102,6 @@
 @end
 
 
-#pragma mark -
-
 static void requirePairedObject(id obj)
 {
     if (obj == nil)
@@ -115,7 +113,7 @@ static void requirePairedObject(id obj)
 }
 
 
-id<HCMatcher> HC_hasEntries(id keysAndValueMatch, ...)
+id HC_hasEntries(id keysAndValueMatch, ...)
 {
     va_list args;
     va_start(args, keysAndValueMatch);

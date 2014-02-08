@@ -16,31 +16,31 @@ Source code of this project is available under the standard MIT license. Please 
 [LICENSE]:https://github.com/michalkonturek/MKUnits/blob/master/LICENSE
 
 
-## Usage
+## Example
 
 Let's create 1.5 kilograms **[kg]**,
 
 ```objc
-id kilograms = [MKQuantity mass_kilogramWithAmount:@1.5];
+id kilograms = [@1.5 mass_kilogram];
 ```
 
 0.5 **[kg]** in grams **[g]** 
 
 ```objc
-id grams = [MKQuantity mass_gramWithAmount:@500];
+id grams = [@500 mass_gram];
 ```
 
 and 10 pounds **[lb]** (which is 4.5359237 **[kg]**)
 <!--and 4.5359237 **[kg]** in pounds **[lb]**.-->
 
 ```objc
-id pounds = [MKQuantity mass_poundWithAmount:@10];
+id pounds = [@10 mass_pound];
 ```
 
 Then we add all of the above togehter and subtract 0.0001 **[kg]** in milligrams **[mg]**.
 
 ```objc
-id milligrams = [MKQuantity mass_milligramWithAmount:@100];
+id milligrams = [@100 mass_milligram];
 id result = [[[kilograms add:grams] add:pounds] subtract:milligrams];
 ```
 
@@ -49,8 +49,7 @@ The result amount is 6.5358237 **[kg]**.
 Now we subtract 0.5358237 **[kg]** in ounces **[oz]**, which is 18.900624805 **[oz]** according to Google converter, but as MKUnits is very precise, it is in fact 18.900624805483390296005199558361177 **[oz]**.
 
 ```objc
-id ounces = [[MKQuantity mass_kilogramWithAmount:@0.5358237]
-	             convertTo:[MKMassUnit ounce]];
+id ounces = [[@0.5358237 mass_kilogram] convertTo:[MKMassUnit ounce]];
 result = [result subtract:ounces];
 ```
 
@@ -72,13 +71,13 @@ id stone_quantity = [result quantityWithPrecision:3];
 // 0.945 st
 ```
 
-or rounding the amount of existing `MKQuantity`.
+or by rounding the amount of existing `MKQuantity`.
 
 ```objc
-id amount_in_stones = [result amountWithPrecision:3];
+id amount_in_stones_1 = [result amountWithPrecision:3];
 // 0.945
 
-id amount_in_stones = [result.amount decimalNumberWithPrecision:3];
+id amount_in_stones_2 = [[result amount] mk_roundedWithPrecision:3];;
 // 0.945
 ```
 
@@ -113,14 +112,14 @@ id amount = [[MKMassUnit gram] convertAmount:@1 from:[MKMassUnit kilogram]];
 
 ## Precision and Rounding
 
-MKUnits uses `NSDecimalNumber` for all conversions, therefore, it is extremely precise. 
+MKUnits uses `NSDecimalNumber` for all operations, therefore, it is extremely precise. 
 
-To round a number to a desired decimal place, use `decimalNumberWithPrecision:` method of `NSNumber+Fraction` category. 
+To round a number to a desired decimal place, simply use `mk_roundedWithPrecision:` method of `NSNumber+MK_Precision` category. 
 
 **Example:** Rounding 1.123456789 to 5 decimal places:
 
 ```objc
-[@1.123456789 decimalNumberWithPrecision:5]; // results in 1.12346.
+[@1.123456789 mk_roundedWithPrecision:5]; // results in 1.12346.
 ```
 
 Alternatively you can take advantage of `MKQuantity+Precision` category which offers
@@ -163,6 +162,13 @@ Example **.h** file:
 + (instancetype)quantity_unittwoWithAmount:(NSNumber *)amount;
 
 @end
+
+@interface NSNumber (QuantityUnit)
+
+- (MKQuantity *)quantity_unitone;
+- (MKQuantity *)quantity_unittwo;
+
+@end
 ```
 
 Example **.m** file:
@@ -203,6 +209,18 @@ Example **.m** file:
 }
 
 @end
+
+@implementation NSNumber (QuantityUnit)
+
+- (MKQuantity *)quantity_unitone {
+	return [MKQuantity quantity_unitoneWithAmount:self];
+}
+
+- (MKQuantity *)quantity_unittwo {
+	return [MKQuantity quantity_unittwoWithAmount:self];
+}
+
+@end
 ```
 
 
@@ -226,6 +244,13 @@ Example **.h** file:
 
 + (instancetype)group_unitoneWithAmount:(NSNumber *)amount;
 + (instancetype)group_unittwoWithAmount:(NSNumber *)amount;
+
+@end
+
+@interface NSNumber (GroupUnit_Extension)
+
+- (MKQuantity *)quantity_unitone;
+- (MKQuantity *)quantity_unittwo;
 
 @end
 ```

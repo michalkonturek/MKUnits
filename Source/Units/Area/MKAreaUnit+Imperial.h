@@ -27,3 +27,13 @@
 + (instancetype)area_square_mileWithAmount:(NSNumber *)amount;
 
 @end
+
+@interface NSNumber (MKAreaUnit_Imperial)
+
+- (MKQuantity *)area_square_inch;
+- (MKQuantity *)area_square_foot;
+- (MKQuantity *)area_square_yard;
+- (MKQuantity *)area_acre;
+- (MKQuantity *)area_square_mile;
+
+@end

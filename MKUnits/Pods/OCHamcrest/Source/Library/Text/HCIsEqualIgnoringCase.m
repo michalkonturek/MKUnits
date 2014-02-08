@@ -47,9 +47,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_equalToIgnoringCase(NSString *aString)
+id HC_equalToIgnoringCase(NSString *aString)
 {
     return [HCIsEqualIgnoringCase isEqualIgnoringCase:aString];
 }

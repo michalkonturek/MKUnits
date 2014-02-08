@@ -64,9 +64,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_stringContainsInOrder(NSString *substring, ...)
+id HC_stringContainsInOrder(NSString *substring, ...)
 {
     va_list args;
     va_start(args, substring);

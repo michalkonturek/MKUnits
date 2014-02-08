@@ -113,3 +113,35 @@
 }
 
 @end
+
+@implementation NSNumber (MKLengthUnit_Imperial)
+
+- (MKQuantity *)length_inch {
+    return [MKQuantity length_inchWithAmount:self];
+}
+
+- (MKQuantity *)length_foot {
+    return [MKQuantity length_footWithAmount:self];
+}
+
+- (MKQuantity *)length_yard {
+    return [MKQuantity length_yardWithAmount:self];
+}
+
+- (MKQuantity *)length_chain {
+    return [MKQuantity length_chainWithAmount:self];
+}
+
+- (MKQuantity *)length_furlong {
+    return [MKQuantity length_furlongWithAmount:self];
+}
+
+- (MKQuantity *)length_mile {
+    return [MKQuantity length_mileWithAmount:self];
+}
+
+- (MKQuantity *)length_nautical_mile {
+    return [MKQuantity length_nautical_mileWithAmount:self];
+}
+
+@end

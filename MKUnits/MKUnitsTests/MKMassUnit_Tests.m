@@ -49,4 +49,11 @@
     assertThatBool(result, equalToBool(YES));
 }
 
+- (void)test_nsnumber_category {
+    id expected = [@1000 mass_gram];
+    BOOL result = [[@1 mass_kilogram] isTheSame:expected];
+    
+    assertThatBool(result, equalToBool(YES));
+}
+
 @end

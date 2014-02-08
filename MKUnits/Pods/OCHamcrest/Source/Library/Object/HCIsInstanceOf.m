@@ -33,9 +33,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_instanceOf(Class aClass)
+id HC_instanceOf(Class aClass)
 {
     return [HCIsInstanceOf isInstanceOf:aClass];
 }

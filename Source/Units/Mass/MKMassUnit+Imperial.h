@@ -33,3 +33,16 @@
 + (instancetype)mass_tonWithAmount:(NSNumber *)amount;
 
 @end
+
+@interface NSNumber (MKMassUnit_Imperial)
+
+- (MKQuantity *)mass_grain;
+- (MKQuantity *)mass_drachm;
+- (MKQuantity *)mass_ounce;
+- (MKQuantity *)mass_pound;
+- (MKQuantity *)mass_stone;
+- (MKQuantity *)mass_quarter;
+- (MKQuantity *)mass_hundredweight;
+- (MKQuantity *)mass_ton;
+
+@end

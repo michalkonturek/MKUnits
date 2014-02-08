@@ -143,3 +143,39 @@
 }
 
 @end
+
+@implementation NSNumber (MKMassUnit_Imperial)
+
+- (MKQuantity *)mass_grain {
+    return [MKQuantity mass_grainWithAmount:self];
+}
+
+- (MKQuantity *)mass_drachm {
+    return [MKQuantity mass_drachmWithAmount:self];
+}
+
+- (MKQuantity *)mass_ounce {
+    return [MKQuantity mass_ounceWithAmount:self];
+}
+
+- (MKQuantity *)mass_pound {
+    return [MKQuantity mass_poundWithAmount:self];
+}
+
+- (MKQuantity *)mass_stone {
+    return [MKQuantity mass_stoneWithAmount:self];
+}
+
+- (MKQuantity *)mass_quarter {
+    return [MKQuantity mass_quarterWithAmount:self];
+}
+
+- (MKQuantity *)mass_hundredweight {
+    return [MKQuantity mass_hundredweightWithAmount:self];
+}
+
+- (MKQuantity *)mass_ton {
+    return [MKQuantity mass_tonWithAmount:self];
+}
+
+@end

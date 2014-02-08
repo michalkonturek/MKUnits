@@ -85,3 +85,28 @@
 }
 
 @end
+
+@implementation NSNumber (MKAreaUnit_Imperial)
+
+- (MKQuantity *)area_square_inch {
+    return [MKQuantity area_square_inchWithAmount:self];
+}
+
+- (MKQuantity *)area_square_foot {
+    return [MKQuantity area_square_footWithAmount:self];
+}
+
+- (MKQuantity *)area_square_yard {
+    return [MKQuantity area_square_yardWithAmount:self];
+}
+
+- (MKQuantity *)area_acre {
+    return [MKQuantity area_acreWithAmount:self];
+}
+
+- (MKQuantity *)area_square_mile {
+    return [MKQuantity area_square_mileWithAmount:self];
+}
+
+@end
+

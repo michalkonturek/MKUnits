@@ -11,6 +11,8 @@
 #import "MKUnit.h"
 #import "MKUnit+Conversion.h"
 
+#import <MKFoundationKit/NSNumber+MK.h>
+
 @implementation MKQuantity
 
 + (instancetype)createWithAmount:(NSNumber *)amount
@@ -58,7 +60,7 @@
 
 - (instancetype)negate {
     id amount = [NSDecimalNumber decimalNumberWithDecimal:[self.amount decimalValue]];
-    return [[self class] createWithAmount:[amount negate] withUnit:self.unit];
+    return [[self class] createWithAmount:[amount mk_negate] withUnit:self.unit];
 }
 
 - (instancetype)convertTo:(MKUnit *)unit {

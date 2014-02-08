@@ -31,3 +31,15 @@
 + (instancetype)length_nautical_mileWithAmount:(NSNumber *)amount;
 
 @end
+
+@interface NSNumber (MKLengthUnit_Imperial)
+
+- (MKQuantity *)length_inch;
+- (MKQuantity *)length_foot;
+- (MKQuantity *)length_yard;
+- (MKQuantity *)length_chain;
+- (MKQuantity *)length_furlong;
+- (MKQuantity *)length_mile;
+- (MKQuantity *)length_nautical_mile;
+
+@end

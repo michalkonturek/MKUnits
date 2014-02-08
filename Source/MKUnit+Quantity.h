@@ -1,5 +1,5 @@
 //
-//  MKUnit+MKQuantity.h
+//  MKUnit+Quantity.h
 //  MKUnits
 //
 //  Created by Michal Konturek on 27/06/2013.
@@ -10,7 +10,7 @@
 
 @class MKQuantity;
 
-@interface MKUnit (MKQuantity)
+@interface MKUnit (Quantity)
 
 - (MKQuantity *)quantityWithAmount:(NSNumber *)amount;
 

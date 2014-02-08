@@ -52,39 +52,42 @@
 
 @end
 
-
 @implementation MKQuantity (MKLengthUnit)
+
++ (instancetype)length_millimeterWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKLengthUnit millimeter]];
+}
 
 + (instancetype)length_centimeterWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKLengthUnit centimeter]];
-}
-
-+ (instancetype)length_kilometerWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKLengthUnit kilometer]];
 }
 
 + (instancetype)length_meterWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKLengthUnit meter]];
 }
 
-+ (instancetype)length_millimeterWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKLengthUnit millimeter]];
++ (instancetype)length_kilometerWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKLengthUnit kilometer]];
 }
 
-- (instancetype)length_convertToKilometer {
-    return [self convertTo:[MKLengthUnit kilometer]];
+@end
+
+@implementation NSNumber (MKLengthUnit)
+
+- (MKQuantity *)length_millimeter {
+    return [MKQuantity length_millimeterWithAmount:self];
 }
 
-- (instancetype)length_convertToMeter {
-    return [self convertTo:[MKLengthUnit meter]];
+- (MKQuantity *)length_centimeter {
+    return [MKQuantity length_centimeterWithAmount:self];
 }
 
-- (instancetype)length_convertToCentimeter {
-    return [self convertTo:[MKLengthUnit centimeter]];
+- (MKQuantity *)length_meter {
+    return [MKQuantity length_meterWithAmount:self];
 }
 
-- (instancetype)length_convertToMilimeter {
-    return [self convertTo:[MKLengthUnit millimeter]];
+- (MKQuantity *)length_kilometer {
+    return [MKQuantity length_kilometerWithAmount:self];
 }
 
 @end

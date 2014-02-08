@@ -239,3 +239,71 @@
 }
 
 @end
+
+@implementation NSNumber (MKByteUnit)
+
+- (MKQuantity *)byte_bit {
+    return [MKQuantity byte_bitWithAmount:self];
+}
+
+- (MKQuantity *)byte_kilobit {
+    return [MKQuantity byte_kilobitWithAmount:self];
+}
+
+- (MKQuantity *)byte_megabit {
+    return [MKQuantity byte_megabitWithAmount:self];
+}
+
+- (MKQuantity *)byte_gigabit {
+    return [MKQuantity byte_gigabitWithAmount:self];
+}
+
+- (MKQuantity *)byte_terabit {
+    return [MKQuantity byte_terabitWithAmount:self];
+}
+
+- (MKQuantity *)byte_crumb {
+    return [MKQuantity byte_crumbWithAmount:self];
+}
+
+- (MKQuantity *)byte_nibbleb {
+    return [MKQuantity byte_nibblebWithAmount:self];
+}
+
+- (MKQuantity *)byte_byte {
+    return [MKQuantity byte_byteWithAmount:self];
+}
+
+- (MKQuantity *)byte_kibibyte {
+    return [MKQuantity byte_kibibyteWithAmount:self];
+}
+
+- (MKQuantity *)byte_mebibyte {
+    return [MKQuantity byte_mebibyteWithAmount:self];
+}
+
+- (MKQuantity *)byte_gibibyte {
+    return [MKQuantity byte_gibibyteWithAmount:self];
+}
+
+- (MKQuantity *)byte_tebibyte {
+    return [MKQuantity byte_tebibyteWithAmount:self];
+}
+
+- (MKQuantity *)byte_kilobyte {
+    return [MKQuantity byte_kilobyteWithAmount:self];
+}
+
+- (MKQuantity *)byte_megabyte {
+    return [MKQuantity byte_megabyteWithAmount:self];
+}
+
+- (MKQuantity *)byte_gigabyte {
+    return [MKQuantity byte_gigabyteWithAmount:self];
+}
+
+- (MKQuantity *)byte_terabyte {
+    return [MKQuantity byte_terabyteWithAmount:self];
+}
+
+@end
