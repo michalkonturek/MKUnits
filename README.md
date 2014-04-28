@@ -1,9 +1,14 @@
 # MKUnits
 
-[![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)](https://github.com/michalkonturek/MKUnits/blob/master/LICENSE)
+[![Twitter](https://img.shields.io/badge/contact-@MichalKonturek-blue.svg?style=flat)](http://twitter.com/michalkonturek)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/michalkonturek/MKUnits/blob/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/v/MKUnits.svg?style=flat)](https://github.com/michalkonturek/MKUnits)
+[![Build Status](http://img.shields.io/travis/michalkonturek/ActiveRecord.svg?style=flat)](https://travis-ci.org/michalkonturek/MKUnits)
+
+<!--[![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)](https://github.com/michalkonturek/MKUnits/blob/master/LICENSE)
 [![Build Platform](https://cocoapod-badges.herokuapp.com/p/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
 [![Build Version](https://cocoapod-badges.herokuapp.com/v/MKUnits/badge.png)](https://github.com/michalkonturek/MKUnits)
-[![Build Status](https://travis-ci.org/michalkonturek/MKUnits.png?branch=master)](https://travis-ci.org/michalkonturek/MKUnits)
+[![Build Status](https://travis-ci.org/michalkonturek/MKUnits.png?branch=master)](https://travis-ci.org/michalkonturek/MKUnits)-->
 
 MKUnits is extremely precise unit conversion library for Objective-C. It provides units of measurement of physical quantities and simplifies manipulation of them.
 
