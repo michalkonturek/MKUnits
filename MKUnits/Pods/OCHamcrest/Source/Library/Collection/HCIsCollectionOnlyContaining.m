@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsCollectionOnlyContaining.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -10,22 +10,25 @@
 #import "HCIsCollectionOnlyContaining.h"
 
 #import "HCAnyOf.h"
-#import "HCDescription.h"
-#import "HCWrapInMatcher.h"
+#import "HCCollect.h"
 
+
+@interface HCIsCollectionOnlyContaining ()
+@property (nonatomic, readonly) id <HCMatcher> matcher;
+@end
 
 @implementation HCIsCollectionOnlyContaining
 
-+ (instancetype)isCollectionOnlyContaining:(id <HCMatcher>)aMatcher
++ (instancetype)isCollectionOnlyContaining:(id <HCMatcher>)matcher
 {
-    return [[self alloc] initWithMatcher:aMatcher];
+    return [[self alloc] initWithMatcher:matcher];
 }
 
-- (instancetype)initWithMatcher:(id <HCMatcher>)aMatcher
+- (instancetype)initWithMatcher:(id <HCMatcher>)matcher
 {
     self = [super init];
     if (self)
-        matcher = aMatcher;
+        _matcher = matcher;
     return self;
 }
 
@@ -38,7 +41,7 @@
         return NO;
     
     for (id item in collection)
-        if (![matcher matches:item])
+        if (![self.matcher matches:item])
             return NO;
     return YES;
 }
@@ -46,7 +49,7 @@
 - (void)describeTo:(id<HCDescription>)description
 {
     [[description appendText:@"a collection containing items matching "]
-                  appendDescriptionOf:matcher];
+                  appendDescriptionOf:self.matcher];
 }
 
 @end
@@ -54,17 +57,10 @@
 
 id HC_onlyContains(id itemMatch, ...)
 {
-    NSMutableArray *matchers = [NSMutableArray arrayWithObject:HCWrapInMatcher(itemMatch)];
-    
     va_list args;
     va_start(args, itemMatch);
-    itemMatch = va_arg(args, id);
-    while (itemMatch != nil)
-    {
-        [matchers addObject:HCWrapInMatcher(itemMatch)];
-        itemMatch = va_arg(args, id);
-    }
+    NSArray *matchers = HCCollectMatchers(itemMatch, args);
     va_end(args);
-    
+
     return [HCIsCollectionOnlyContaining isCollectionOnlyContaining:[HCAnyOf anyOf:matchers]];
 }

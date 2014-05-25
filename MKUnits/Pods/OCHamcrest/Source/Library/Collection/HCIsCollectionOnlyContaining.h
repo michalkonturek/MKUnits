@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsCollectionOnlyContaining.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,17 +11,14 @@
 
 
 @interface HCIsCollectionOnlyContaining : HCBaseMatcher
-{
-    id <HCMatcher> matcher;
-}
 
-+ (instancetype)isCollectionOnlyContaining:(id <HCMatcher>)aMatcher;
-- (instancetype)initWithMatcher:(id <HCMatcher>)aMatcher;
++ (instancetype)isCollectionOnlyContaining:(id <HCMatcher>)matcher;
+- (instancetype)initWithMatcher:(id <HCMatcher>)matcher;
 
 @end
 
 
-OBJC_EXPORT id HC_onlyContains(id itemMatch, ...) NS_REQUIRES_NIL_TERMINATION;
+FOUNDATION_EXPORT id HC_onlyContains(id itemMatch, ...) NS_REQUIRES_NIL_TERMINATION;
 
 /**
  onlyContains(firstMatcher, ...) -

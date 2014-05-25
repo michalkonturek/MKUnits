@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCSubstringMatcher.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,7 +9,6 @@
 
 #import "HCSubstringMatcher.h"
 
-#import "HCDescription.h"
 #import "HCRequireNonNilObject.h"
 
 
@@ -26,7 +25,7 @@
     
     self = [super init];
     if (self)
-        substring = [aString copy];
+        _substring = [aString copy];
     return self;
 }
 
@@ -35,7 +34,7 @@
     [[[[description appendText:@"a string "]
                     appendText:[self relationship]]
                     appendText:@" "]
-                    appendDescriptionOf:substring];
+                    appendDescriptionOf:self.substring];
 }
 
 @end

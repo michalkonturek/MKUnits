@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCConformsToProtocol.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Todd Farrell
 //
@@ -9,9 +9,6 @@
 
 
 @interface HCConformsToProtocol : HCBaseMatcher
-{
-    Protocol *theProtocol;
-}
 
 + (instancetype)conformsTo:(Protocol *)protocol;
 - (instancetype)initWithProtocol:(Protocol *)protocol;
@@ -19,7 +16,7 @@
 @end
 
 
-OBJC_EXPORT id HC_conformsTo(Protocol *aProtocol);
+FOUNDATION_EXPORT id HC_conformsTo(Protocol *aProtocol);
 
 /**
  conformsTo(aProtocol) -

@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCHasCount.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,9 +9,12 @@
 
 #import "HCHasCount.h"
 
-#import "HCDescription.h"
 #import "HCIsEqualToNumber.h"
 
+
+@interface HCHasCount ()
+@property (nonatomic, readonly) id <HCMatcher> countMatcher;
+@end
 
 @implementation HCHasCount
 
@@ -24,23 +27,28 @@
 {
     self = [super init];
     if (self)
-        countMatcher = matcher;
+        _countMatcher = matcher;
     return self;
 }
 
 - (BOOL)matches:(id)item
 {
-    if (![item respondsToSelector:@selector(count)])
+    if (![self itemHasCount:item])
         return NO;
     
     NSNumber *count = @([item count]);
-    return [countMatcher matches:count];
+    return [self.countMatcher matches:count];
+}
+
+- (BOOL)itemHasCount:(id)item
+{
+    return [item respondsToSelector:@selector(count)];
 }
 
 - (void)describeMismatchOf:(id)item to:(id<HCDescription>)mismatchDescription
 {
     [mismatchDescription appendText:@"was "];
-    if ([item respondsToSelector:@selector(count)])
+    if ([self itemHasCount:item])
     {
         [[[mismatchDescription appendText:@"count of "]
                                appendDescriptionOf:@([item count])]
@@ -51,7 +59,7 @@
 
 - (void)describeTo:(id<HCDescription>)description
 {
-    [[description appendText:@"a collection with count of "] appendDescriptionOf:countMatcher];
+    [[description appendText:@"a collection with count of "] appendDescriptionOf:self.countMatcher];
 }
 
 @end

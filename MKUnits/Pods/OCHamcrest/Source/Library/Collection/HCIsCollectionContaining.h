@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsCollectionContaining.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,17 +11,14 @@
 
 
 @interface HCIsCollectionContaining : HCBaseMatcher
-{
-    id <HCMatcher> elementMatcher;
-}
 
-+ (instancetype)isCollectionContaining:(id <HCMatcher>)anElementMatcher;
-- (instancetype)initWithMatcher:(id <HCMatcher>)anElementMatcher;
++ (instancetype)isCollectionContaining:(id <HCMatcher>)elementMatcher;
+- (instancetype)initWithMatcher:(id <HCMatcher>)elementMatcher;
 
 @end
 
 
-OBJC_EXPORT id HC_hasItem(id itemMatch);
+FOUNDATION_EXPORT id HC_hasItem(id itemMatch);
 
 /**
  hasItem(aMatcher) -
@@ -45,7 +42,7 @@ OBJC_EXPORT id HC_hasItem(id itemMatch);
 #endif
 
 
-OBJC_EXPORT id HC_hasItems(id itemMatch, ...) NS_REQUIRES_NIL_TERMINATION;
+FOUNDATION_EXPORT id HC_hasItems(id itemMatch, ...) NS_REQUIRES_NIL_TERMINATION;
 
 /**
  hasItems(firstMatcher, ...) -

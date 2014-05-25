@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsDictionaryContaining.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,27 +9,32 @@
 
 #import "HCIsDictionaryContaining.h"
 
-#import "HCDescription.h"
 #import "HCRequireNonNilObject.h"
 #import "HCWrapInMatcher.h"
 
 
+@interface HCIsDictionaryContaining ()
+@property (nonatomic, readonly) id <HCMatcher> keyMatcher;
+@property (nonatomic, readonly) id <HCMatcher> valueMatcher;
+@end
+
+
 @implementation HCIsDictionaryContaining
 
-+ (instancetype)isDictionaryContainingKey:(id <HCMatcher>)aKeyMatcher
-                                    value:(id <HCMatcher>)aValueMatcher
++ (instancetype)isDictionaryContainingKey:(id <HCMatcher>)keyMatcher
+                                    value:(id <HCMatcher>)valueMatcher
 {
-    return [[self alloc] initWithKeyMatcher:aKeyMatcher valueMatcher:aValueMatcher];
+    return [[self alloc] initWithKeyMatcher:keyMatcher valueMatcher:valueMatcher];
 }
 
-- (instancetype)initWithKeyMatcher:(id <HCMatcher>)aKeyMatcher
-                      valueMatcher:(id <HCMatcher>)aValueMatcher
+- (instancetype)initWithKeyMatcher:(id <HCMatcher>)keyMatcher
+                      valueMatcher:(id <HCMatcher>)valueMatcher
 {
     self = [super init];
     if (self)
     {
-        keyMatcher = aKeyMatcher;
-        valueMatcher = aValueMatcher;
+        _keyMatcher = keyMatcher;
+        _valueMatcher = valueMatcher;
     }
     return self;
 }
@@ -38,7 +43,7 @@
 {
     if ([dict isKindOfClass:[NSDictionary class]])
         for (id oneKey in dict)
-            if ([keyMatcher matches:oneKey] && [valueMatcher matches:dict[oneKey]])
+            if ([self.keyMatcher matches:oneKey] && [self.valueMatcher matches:dict[oneKey]])
                 return YES;
     return NO;
 }
@@ -46,9 +51,9 @@
 - (void)describeTo:(id<HCDescription>)description
 {
     [[[[[description appendText:@"a dictionary containing { "]
-                     appendDescriptionOf:keyMatcher]
+                     appendDescriptionOf:self.keyMatcher]
                      appendText:@" = "]
-                     appendDescriptionOf:valueMatcher]
+                     appendDescriptionOf:self.valueMatcher]
                      appendText:@"; }"];
 }
 

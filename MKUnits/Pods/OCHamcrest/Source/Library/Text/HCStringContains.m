@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCStringContains.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -22,7 +22,7 @@
     if (![item respondsToSelector:@selector(rangeOfString:)])
         return NO;
     
-    return [item rangeOfString:substring].location != NSNotFound;
+    return [item rangeOfString:self.substring].location != NSNotFound;
 }
 
 - (NSString *)relationship

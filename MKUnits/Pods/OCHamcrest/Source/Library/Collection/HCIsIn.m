@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsIn.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,19 +9,21 @@
 
 #import "HCIsIn.h"
 
-#import "HCDescription.h"
 
+@interface HCIsIn ()
+@property (nonatomic, readonly) id collection;
+@end
 
 @implementation HCIsIn
 
-+ (instancetype)isInCollection:(id)aCollection
++ (instancetype)isInCollection:(id)collection
 {
-    return [[self alloc] initWithCollection:aCollection];
+    return [[self alloc] initWithCollection:collection];
 }
 
-- (instancetype)initWithCollection:(id)aCollection
+- (instancetype)initWithCollection:(id)collection
 {
-    if (![aCollection respondsToSelector:@selector(containsObject:)])
+    if (![collection respondsToSelector:@selector(containsObject:)])
     {
         @throw [NSException exceptionWithName:@"NotAContainer"
                                        reason:@"Object must respond to -containsObject:"
@@ -30,19 +32,19 @@
     
     self = [super init];
     if (self)
-        collection = aCollection;
+        _collection = collection;
     return self;
 }
 
 - (BOOL)matches:(id)item
 {
-    return [collection containsObject:item];
+    return [self.collection containsObject:item];
 }
 
 - (void)describeTo:(id<HCDescription>)description
 {
-    [description appendText:@"one of "];
-    [description appendList:collection start:@"{" separator:@", " end:@"}"];
+    [[description appendText:@"one of "]
+                  appendList:self.collection start:@"{" separator:@", " end:@"}"];
 }
 
 @end

@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsDictionaryContainingValue.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,17 +11,14 @@
 
 
 @interface HCIsDictionaryContainingValue : HCBaseMatcher
-{
-    id <HCMatcher> valueMatcher;
-}
 
-+ (instancetype)isDictionaryContainingValue:(id <HCMatcher>)theValueMatcher;
-- (instancetype)initWithValueMatcher:(id <HCMatcher>)theValueMatcher;
++ (instancetype)isDictionaryContainingValue:(id <HCMatcher>)valueMatcher;
+- (instancetype)initWithValueMatcher:(id <HCMatcher>)valueMatcher;
 
 @end
 
 
-OBJC_EXPORT id HC_hasValue(id valueMatch);
+FOUNDATION_EXPORT id HC_hasValue(id valueMatch);
 
 /**
  hasValue(valueMatcher) -

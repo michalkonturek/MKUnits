@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCDescribedAs.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,24 +11,19 @@
 
 
 @interface HCDescribedAs : HCBaseMatcher
-{
-    NSString *descriptionTemplate;
-    id <HCMatcher> matcher;
-    NSArray *values;
-}
 
 + (instancetype)describedAs:(NSString *)description
-                 forMatcher:(id <HCMatcher>)aMatcher
+                 forMatcher:(id <HCMatcher>)matcher
                  overValues:(NSArray *)templateValues;
 
 - (instancetype)initWithDescription:(NSString *)description
-                         forMatcher:(id <HCMatcher>)aMatcher
+                         forMatcher:(id <HCMatcher>)matcher
                          overValues:(NSArray *)templateValues;
 
 @end
 
 
-OBJC_EXPORT id HC_describedAs(NSString *description, id <HCMatcher> matcher, ...) NS_REQUIRES_NIL_TERMINATION;
+FOUNDATION_EXPORT id HC_describedAs(NSString *description, id <HCMatcher> matcher, ...) NS_REQUIRES_NIL_TERMINATION;
 
 /**
  describedAs(description, matcher, ...) -

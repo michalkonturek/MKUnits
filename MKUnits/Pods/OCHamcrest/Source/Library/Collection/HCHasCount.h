@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCHasCount.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,9 +11,6 @@
 
 
 @interface HCHasCount : HCBaseMatcher
-{
-    id <HCMatcher> countMatcher;
-}
 
 + (instancetype)hasCount:(id <HCMatcher>)matcher;
 - (instancetype)initWithCount:(id <HCMatcher>)matcher;
@@ -21,7 +18,7 @@
 @end
 
 
-OBJC_EXPORT id HC_hasCount(id <HCMatcher> matcher);
+FOUNDATION_EXPORT id HC_hasCount(id <HCMatcher> matcher);
 
 /**
  hasCount(aMatcher) -
@@ -42,12 +39,12 @@ OBJC_EXPORT id HC_hasCount(id <HCMatcher> matcher);
 #endif
 
 
-OBJC_EXPORT id HC_hasCountOf(NSUInteger count);
+FOUNDATION_EXPORT id HC_hasCountOf(NSUInteger count);
 
 /**
  hasCountOf(value) -
  Matches if object's @c -count equals a given value.
- 
+
  @param value  @c NSUInteger value to compare against as the expected value.
  
  This matcher invokes @c -count on the evaluated object to get the number of elements it

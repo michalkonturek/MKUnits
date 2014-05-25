@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCInvocationMatcher.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,76 +9,74 @@
 
 #import "HCInvocationMatcher.h"
 
-#import "HCDescription.h"
-
 
 @implementation HCInvocationMatcher
-
-@synthesize shortMismatchDescription;
-
-+ (NSInvocation *)invocationForSelector:(SEL)selector onClass:(Class)aClass
-{
-    NSMethodSignature* signature = [aClass instanceMethodSignatureForSelector:selector];
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-    [invocation setSelector:selector];
-    return invocation;
-}
 
 - (instancetype)initWithInvocation:(NSInvocation *)anInvocation matching:(id <HCMatcher>)aMatcher
 {
     self = [super init];
     if (self)
     {
-        invocation = anInvocation;
-        subMatcher = aMatcher;
+        _invocation = anInvocation;
+        _subMatcher = aMatcher;
     }
     return self;
 }
 
-- (NSString *)stringFromSelector
+- (BOOL)matches:(id)item
 {
-    return NSStringFromSelector([invocation selector]);
+    if ([self invocationNotSupportedForItem:item])
+        return NO;
+
+    return [_subMatcher matches:[self invokeOn:item]];
+}
+
+- (BOOL)invocationNotSupportedForItem:(id)item
+{
+    return ![item respondsToSelector:[_invocation selector]];
 }
 
 - (id)invokeOn:(id)item
 {
     __unsafe_unretained id result = nil;
-    [invocation invokeWithTarget:item];
-    [invocation getReturnValue:&result];
+    [_invocation invokeWithTarget:item];
+    [_invocation getReturnValue:&result];
     return result;
-}
-
-- (BOOL)matches:(id)item
-{
-    if (![item respondsToSelector:[invocation selector]])
-        return NO;
-    
-    return [subMatcher matches:[self invokeOn:item]];
 }
 
 - (void)describeMismatchOf:(id)item to:(id<HCDescription>)mismatchDescription
 {
-    if (![item respondsToSelector:[invocation selector]])
+    if ([self invocationNotSupportedForItem:item])
         [super describeMismatchOf:item to:mismatchDescription];
     else
     {
-        if (!self.shortMismatchDescription)
-        {
-            [[[[mismatchDescription appendDescriptionOf:item]
-                                    appendText:@" "]
-                                    appendText:[self stringFromSelector]]
-                                    appendText:@" "];
-        }
-        [subMatcher describeMismatchOf:[self invokeOn:item] to:mismatchDescription];
+        [self describeLongMismatchDescriptionOf:item to:mismatchDescription];
+        [_subMatcher describeMismatchOf:[self invokeOn:item] to:mismatchDescription];
+    }
+}
+
+- (void)describeLongMismatchDescriptionOf:(id)item to:(id <HCDescription>)mismatchDescription
+{
+    if (!self.shortMismatchDescription)
+    {
+        [[[[mismatchDescription appendDescriptionOf:item]
+                                appendText:@" "]
+                                appendText:[self stringFromSelector]]
+                                appendText:@" "];
     }
 }
 
 - (void)describeTo:(id<HCDescription>)description
 {
     [[[[description appendText:@"an object with "]
-                    appendText:[self stringFromSelector]]
-                    appendText:@" "]
-                    appendDescriptionOf:subMatcher];
+            appendText:[self stringFromSelector]]
+            appendText:@" "]
+            appendDescriptionOf:_subMatcher];
+}
+
+- (NSString *)stringFromSelector
+{
+    return NSStringFromSelector([_invocation selector]);
 }
 
 @end

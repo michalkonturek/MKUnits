@@ -1,19 +1,19 @@
 //
 //  OCHamcrest - HCAssertThat.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
 //  Source: https://github.com/hamcrest/OCHamcrest
 //
 
-#import <objc/objc-api.h>
+#import <Foundation/Foundation.h>
 
 @protocol HCMatcher;
 
 
-OBJC_EXPORT void HC_assertThatWithLocation(id testCase, id actual, id <HCMatcher> matcher,
-                                           const char *fileName, int lineNumber);
+FOUNDATION_EXPORT void HC_assertThatWithLocation(id testCase, id actual, id <HCMatcher> matcher,
+                                                 const char *fileName, int lineNumber);
 
 #define HC_assertThat(actual, matcher)  \
     HC_assertThatWithLocation(self, actual, matcher, __FILE__, __LINE__)

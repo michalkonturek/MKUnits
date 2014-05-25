@@ -1,13 +1,13 @@
 //
 //  OCHamcrest - HCWrapInMatcher.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
 //  Source: https://github.com/hamcrest/OCHamcrest
 //
 
-#import <objc/objc-api.h>
+#import <Foundation/Foundation.h>
 
 @protocol HCMatcher;
 
@@ -19,4 +19,4 @@
  
  @ingroup helpers
  */
-OBJC_EXPORT id <HCMatcher> HCWrapInMatcher(id matcherOrValue);
+FOUNDATION_EXPORT id <HCMatcher> HCWrapInMatcher(id matcherOrValue);

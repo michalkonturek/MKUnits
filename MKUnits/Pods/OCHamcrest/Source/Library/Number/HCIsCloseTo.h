@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsCloseTo.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,18 +11,14 @@
 
 
 @interface HCIsCloseTo : HCBaseMatcher
-{
-    double value;
-    double delta;
-}
 
-+ (instancetype)isCloseTo:(double)aValue within:(double)aDelta;
-- (instancetype)initWithValue:(double)aValue delta:(double)aDelta;
++ (instancetype)isCloseTo:(double)value within:(double)delta;
+- (instancetype)initWithValue:(double)value delta:(double)delta;
 
 @end
 
 
-OBJC_EXPORT id HC_closeTo(double aValue, double aDelta);
+FOUNDATION_EXPORT id HC_closeTo(double aValue, double aDelta);
 
 /**
  closeTo(aValue, aDelta) -

@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCAllOf.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,22 +9,25 @@
 
 #import "HCAllOf.h"
 
-#import "HCCollectMatchers.h"
-#import "HCDescription.h"
+#import "HCCollect.h"
 
+
+@interface HCAllOf ()
+@property (nonatomic, readonly) NSArray *matchers;
+@end
 
 @implementation HCAllOf
 
-+ (instancetype)allOf:(NSArray *)theMatchers
++ (instancetype)allOf:(NSArray *)matchers
 {
-    return [[self alloc] initWithMatchers:theMatchers];
+    return [[self alloc] initWithMatchers:matchers];
 }
 
-- (instancetype)initWithMatchers:(NSArray *)theMatchers
+- (instancetype)initWithMatchers:(NSArray *)matchers
 {
     self = [super init];
     if (self)
-        matchers = theMatchers;
+        _matchers = [matchers copy];
     return self;
 }
 
@@ -35,7 +38,7 @@
 
 - (BOOL)matches:(id)item describingMismatchTo:(id<HCDescription>)mismatchDescription
 {
-    for (id <HCMatcher> oneMatcher in matchers)
+    for (id <HCMatcher> oneMatcher in self.matchers)
     {
         if (![oneMatcher matches:item])
         {
@@ -54,7 +57,7 @@
 
 - (void)describeTo:(id<HCDescription>)description
 {
-    [description appendList:matchers start:@"(" separator:@" and " end:@")"];
+    [description appendList:self.matchers start:@"(" separator:@" and " end:@")"];
 }
 
 @end
