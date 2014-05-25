@@ -61,27 +61,14 @@
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
-//- (instancetype)multiplyBy:(MKQuantity *)other {
-//    [self _assert_that_is_convertible_with_unit:other.unit];
-//    
-//    id amount = [self.amount decimalNumberByMultiplyingBy:other.amount];
-//    return [[self class] createWithAmount:amount withUnit:self.unit];
-//}
-
 - (instancetype)multiplyBy:(NSNumber *)other {
     id amount = [self.amount decimalNumberByMultiplyingBy:[other mk_decimalNumber]];
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
-//- (instancetype)divideBy:(MKQuantity *)other {
-//    [self _assert_that_is_convertible_with_unit:other.unit];
-//    
-//    id amount = [self.amount decimalNumberByDividingBy:other.amount];
-//    return [[self class] createWithAmount:amount withUnit:self.unit];
-//}
-
 - (instancetype)divideBy:(NSNumber *)other {
-    return nil;
+    id amount = [self.amount decimalNumberByDividingBy:[other mk_decimalNumber]];
+    return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
 - (instancetype)negate {
