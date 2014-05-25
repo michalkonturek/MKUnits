@@ -30,6 +30,15 @@
 
 #import <MKFoundationKit/NSNumber+MK.h>
 
+
+@interface MKQuantity ()
+
+@property (nonatomic, copy) NSDecimalNumber *amount;
+@property (nonatomic, strong) MKUnit *unit;
+
+@end
+
+
 @implementation MKQuantity
 
 + (instancetype)createWithAmount:(NSNumber *)amount

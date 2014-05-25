@@ -32,8 +32,8 @@
 + (instancetype)createWithAmount:(NSNumber *)amount
                         withUnit:(MKUnit *)unit;
 
-@property (nonatomic, copy) NSDecimalNumber *amount;
-@property (nonatomic, strong) MKUnit *unit;
+@property (nonatomic, readonly, copy) NSDecimalNumber *amount;
+@property (nonatomic, readonly, strong) MKUnit *unit;
 
 - (id)initWithAmount:(NSNumber *)amount withUnit:(MKUnit *)unit;
 
