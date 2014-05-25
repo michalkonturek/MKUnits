@@ -25,7 +25,7 @@
 
 #import "Base_Tests.h"
 
-@interface MKQuantity_Precision_Tests : SenTestCase
+@interface MKQuantity_Precision_Tests : XCTestCase
 
 @property (nonatomic, strong) MKQuantity *quantity_1;
 @property (nonatomic, strong) MKQuantity *quantity_2;

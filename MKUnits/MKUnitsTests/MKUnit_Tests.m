@@ -25,7 +25,7 @@
 
 #import "Base_Tests.h"
 
-@interface MKUnit_Tests : SenTestCase
+@interface MKUnit_Tests : XCTestCase
 
 @property (nonatomic, strong) MKMassUnit *kilogram;
 @property (nonatomic, strong) MKMassUnit *gram;
@@ -52,11 +52,11 @@
 }
 
 - (void)test_convertAmountFromTo_no_exception_when_same_group {
-    STAssertNoThrow([self.kilogram convertAmount:@1 to:[MKMassUnit pound]], @"");
+    XCTAssertNoThrow([self.kilogram convertAmount:@1 to:[MKMassUnit pound]], @"");
 }
 
 - (void)test_convertAmountFromTo_throws_exception_when_diff_groups {
-    STAssertThrows([self.kilogram convertAmount:@1 to:[MKLengthUnit meter]], @"");
+    XCTAssertThrows([self.kilogram convertAmount:@1 to:[MKLengthUnit meter]], @"");
 }
 
 - (void)test_convertAmountFromTo_class_method {

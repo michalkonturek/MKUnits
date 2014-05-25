@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "90370083177D0BD400708FEA"
-               BuildableName = "MKUnitsTests.octest"
+               BuildableName = "MKUnitsTests.xctest"
                BlueprintName = "MKUnitsTests"
                ReferencedContainer = "container:MKUnits.xcodeproj">
             </BuildableReference>

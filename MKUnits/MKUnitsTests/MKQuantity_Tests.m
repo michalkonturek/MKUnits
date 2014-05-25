@@ -25,7 +25,7 @@
 
 #import "Base_Tests.h"
 
-@interface MKQuantity_Tests : SenTestCase
+@interface MKQuantity_Tests : XCTestCase
 
 @property (nonatomic, strong) MKQuantity *kilogram_2;
 @property (nonatomic, strong) MKQuantity *gram_300;
@@ -59,7 +59,7 @@
 }
 
 - (void)test_throws_exception_when_adding_diff_group_and_diff_units {
-    STAssertThrows([self.kilogram_2 add:[MKQuantity length_meterWithAmount:@1]], @"");
+    XCTAssertThrows([self.kilogram_2 add:[MKQuantity length_meterWithAmount:@1]], @"");
 }
 
 - (void)test_divides {
@@ -94,7 +94,7 @@
 }
 
 - (void)test_throws_exception_when_subtracting_diff_group {
-    STAssertThrows([self.gram_300 subtract:[MKQuantity length_millimeterWithAmount:@1]], @"");
+    XCTAssertThrows([self.gram_300 subtract:[MKQuantity length_millimeterWithAmount:@1]], @"");
 }
 
 - (void)test_convertTo_grams {
@@ -130,7 +130,7 @@
 }
 
 - (void)test_isTheSame_throws_exception_when_diff_group {
-    STAssertThrows([self.gram_300 isTheSame:[MKQuantity length_millimeterWithAmount:@1]], @"");
+    XCTAssertThrows([self.gram_300 isTheSame:[MKQuantity length_millimeterWithAmount:@1]], @"");
 }
 
 - (void)test_isGreaterThan_returns_true_same_group_same_units {
