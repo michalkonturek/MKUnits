@@ -65,13 +65,13 @@
 - (void)test_divides {
     id expected = [@1 mass_kilogram];
     id result = [[@3 mass_kilogram] divideBy:@3];
-    assertThatBool([result isTheSame:expected], equalToBool(YES));
+    assertThatBool([result isEqual:expected], equalToBool(YES));
 }
 
 - (void)test_multiply {
     id expected = [@3 mass_kilogram];
     id result = [[@1 mass_kilogram] multiplyBy:@3];
-    assertThatBool([result isTheSame:expected], equalToBool(YES));
+    assertThatBool([result isEqual:expected], equalToBool(YES));
 }
 
 - (void)test_negate {
