@@ -67,7 +67,11 @@
 }
 
 - (void)test_multiply {
-    TEST_PASSES
+    id expected = [@3 mass_kilogram];
+
+    id result = [[@1 mass_kilogram] multiplyBy:@3];
+    
+    assertThatBool([result isTheSame:expected], equalToBool(YES));
 }
 
 - (void)test_negate {

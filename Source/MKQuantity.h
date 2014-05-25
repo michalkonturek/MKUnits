@@ -39,8 +39,10 @@
 
 - (instancetype)add:(MKQuantity *)other;
 - (instancetype)subtract:(MKQuantity *)other;
-- (instancetype)multiplyBy:(MKQuantity *)other;
-- (instancetype)divideBy:(MKQuantity *)other;
+//- (instancetype)multiplyBy:(MKQuantity *)other;
+- (instancetype)multiplyBy:(NSNumber *)other;
+//- (instancetype)divideBy:(MKQuantity *)other;
+- (instancetype)divideBy:(NSNumber *)other;
 - (instancetype)negate;
 
 - (instancetype)convertTo:(MKUnit *)unit;
