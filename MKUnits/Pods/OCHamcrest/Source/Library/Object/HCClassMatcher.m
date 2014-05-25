@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCClassMatcher.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,7 +9,6 @@
 
 #import "HCClassMatcher.h"
 
-#import "HCDescription.h"
 #import "HCRequireNonNilObject.h"
 
 
@@ -26,20 +25,20 @@
     
     self = [super init];
     if (self)
-        theClass = aClass;
+        _theClass = aClass;
     return self;
 }
 
 - (void)describeTo:(id<HCDescription>)description
 {
     [[description appendText:[self expectation]]
-     appendText:NSStringFromClass(theClass)];
+                  appendText:NSStringFromClass(self.theClass)];
 }
 
 - (void)describeMismatchOf:(id)item to:(id<HCDescription>)mismatchDescription
 {
     [mismatchDescription appendText:@"was "];
-    if (item != nil)
+    if (item)
     {
         [[mismatchDescription appendText:NSStringFromClass([item class])]
                               appendText:@" instance "];

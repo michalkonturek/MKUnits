@@ -1,1 +1,1 @@
-../../OCHamcrest/Source/Core/HCTestFailure.h
+../../OCHamcrest/Source/Core/Helpers/TestFailureHandlers/HCTestFailure.h

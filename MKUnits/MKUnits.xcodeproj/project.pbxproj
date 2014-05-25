@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		849E9E641932A729007D5FD2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849E9E631932A729007D5FD2 /* XCTest.framework */; };
 		900E1D3518A4486B00DC1420 /* MKQuantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2B18A4486B00DC1420 /* MKQuantity.m */; };
 		900E1D3618A4486B00DC1420 /* MKQuantity+Precision.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2D18A4486B00DC1420 /* MKQuantity+Precision.m */; };
 		900E1D3718A4486B00DC1420 /* MKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2F18A4486B00DC1420 /* MKUnit.m */; };
@@ -37,7 +38,6 @@
 		9037007A177D0BD400708FEA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 90370079177D0BD400708FEA /* Default.png */; };
 		9037007C177D0BD400708FEA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9037007B177D0BD400708FEA /* Default@2x.png */; };
 		9037007E177D0BD400708FEA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9037007D177D0BD400708FEA /* Default-568h@2x.png */; };
-		90370086177D0BD400708FEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370085177D0BD400708FEA /* SenTestingKit.framework */; };
 		90370087177D0BD400708FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370067177D0BD400708FEA /* UIKit.framework */; };
 		90370088177D0BD400708FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90370069177D0BD400708FEA /* Foundation.framework */; };
 		90370090177D0BD400708FEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9037008E177D0BD400708FEA /* InfoPlist.strings */; };
@@ -61,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		13010856EB764246BC3F440C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		849E9E631932A729007D5FD2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8801CF4A5FB54F4EBBF7595B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		900E1D2918A4486B00DC1420 /* MKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMacros.h; sourceTree = "<group>"; };
 		900E1D2A18A4486B00DC1420 /* MKQuantity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKQuantity.h; sourceTree = "<group>"; };
@@ -113,8 +114,7 @@
 		90370079177D0BD400708FEA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9037007B177D0BD400708FEA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9037007D177D0BD400708FEA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		90370084177D0BD400708FEA /* MKUnitsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKUnitsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		90370085177D0BD400708FEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		90370084177D0BD400708FEA /* MKUnitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKUnitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9037008D177D0BD400708FEA /* MKUnitsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MKUnitsTests-Info.plist"; sourceTree = "<group>"; };
 		9037008F177D0BD400708FEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		904F619C177FC8A200CD4DFC /* MKLengthUnit_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLengthUnit_Tests.m; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90370086177D0BD400708FEA /* SenTestingKit.framework in Frameworks */,
+				849E9E641932A729007D5FD2 /* XCTest.framework in Frameworks */,
 				90370087177D0BD400708FEA /* UIKit.framework in Frameworks */,
 				90370088177D0BD400708FEA /* Foundation.framework in Frameworks */,
 				F01588EF7C664B74B8BBE5E8 /* libPods-MKUnitsTests.a in Frameworks */,
@@ -275,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				90370064177D0BD400708FEA /* MKUnits.app */,
-				90370084177D0BD400708FEA /* MKUnitsTests.octest */,
+				90370084177D0BD400708FEA /* MKUnitsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,10 +283,10 @@
 		90370066177D0BD400708FEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				849E9E631932A729007D5FD2 /* XCTest.framework */,
 				90370067177D0BD400708FEA /* UIKit.framework */,
 				90370069177D0BD400708FEA /* Foundation.framework */,
 				9037006B177D0BD400708FEA /* CoreGraphics.framework */,
-				90370085177D0BD400708FEA /* SenTestingKit.framework */,
 				F1F1D34DC47C415180711C40 /* libPods-MKUnitsTests.a */,
 				8801CF4A5FB54F4EBBF7595B /* libPods.a */,
 			);
@@ -389,8 +389,8 @@
 			);
 			name = MKUnitsTests;
 			productName = MKUnitsTests;
-			productReference = 90370084177D0BD400708FEA /* MKUnitsTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 90370084177D0BD400708FEA /* MKUnitsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -398,7 +398,8 @@
 		9037005C177D0BD400708FEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Michal Konturek";
 			};
 			buildConfigurationList = 9037005F177D0BD400708FEA /* Build configuration list for PBXProject "MKUnits" */;
@@ -591,7 +592,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -625,7 +625,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -684,13 +683,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MKUnits/MKUnits-Prefix.pch";
 				INFOPLIST_FILE = "MKUnitsTests/MKUnitsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -702,13 +702,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MKUnits/MKUnits-Prefix.pch";
 				INFOPLIST_FILE = "MKUnitsTests/MKUnitsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

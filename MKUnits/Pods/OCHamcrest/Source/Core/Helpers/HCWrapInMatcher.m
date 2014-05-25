@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCWrapInMatcher.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -19,6 +19,5 @@ id <HCMatcher> HCWrapInMatcher(id matcherOrValue)
     
     if ([matcherOrValue conformsToProtocol:@protocol(HCMatcher)])
         return matcherOrValue;
-    else
-        return HC_equalTo(matcherOrValue);
+    return HC_equalTo(matcherOrValue);
 }

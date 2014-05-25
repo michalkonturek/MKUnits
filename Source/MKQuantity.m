@@ -30,6 +30,15 @@
 
 #import <MKFoundationKit/NSNumber+MK.h>
 
+
+@interface MKQuantity ()
+
+@property (nonatomic, copy) NSDecimalNumber *amount;
+@property (nonatomic, strong) MKUnit *unit;
+
+@end
+
+
 @implementation MKQuantity
 
 + (instancetype)createWithAmount:(NSNumber *)amount
@@ -61,17 +70,13 @@
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
-- (instancetype)multiplyBy:(MKQuantity *)other {
-    [self _assert_that_is_convertible_with_unit:other.unit];
-    
-    id amount = [self.amount decimalNumberByMultiplyingBy:other.amount];
+- (instancetype)multiplyBy:(NSNumber *)other {
+    id amount = [self.amount decimalNumberByMultiplyingBy:[other mk_decimalNumber]];
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 
-- (instancetype)divideBy:(MKQuantity *)other {
-    [self _assert_that_is_convertible_with_unit:other.unit];
-    
-    id amount = [self.amount decimalNumberByDividingBy:other.amount];
+- (instancetype)divideBy:(NSNumber *)other {
+    id amount = [self.amount decimalNumberByDividingBy:[other mk_decimalNumber]];
     return [[self class] createWithAmount:amount withUnit:self.unit];
 }
 

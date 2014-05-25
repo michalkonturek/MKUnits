@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCAssertThat.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -35,7 +35,7 @@ void HC_assertThatWithLocation(id testCase, id actual, id <HCMatcher> matcher,
                                                                 fileName:[NSString stringWithUTF8String:fileName]
                                                               lineNumber:(NSUInteger)lineNumber
                                                                   reason:describeMismatch(matcher, actual)];
-        id <HCTestFailureHandler> chain = HC_testFailureHandlerChain();
+        HCTestFailureHandler *chain = HC_testFailureHandlerChain();
         [chain handleFailure:failure];
     }
 }

@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCDescribedAs.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,93 +9,112 @@
 
 #import "HCDescribedAs.h"
 
-#import "HCDescription.h"
 
-/**
-    Splits string into decimal number (-1 if not found) and remaining string.
- */
-static NSArray *separate(NSString *component)
+@interface NSString (OCHamcrest)
+@end
+
+@implementation NSString (OCHamcrest)
+
+// Parse decimal number (-1 if not found) and return remaining string.
+- (NSString *)och_getDecimalNumber:(int *)number
 {
-    int index = 0;
-    bool gotIndex = false;
-    
-    NSUInteger length = [component length];
-    NSUInteger charIndex;
-    for (charIndex = 0; charIndex < length; ++charIndex)
+    int decimal = 0;
+    BOOL readDigit = NO;
+
+    NSUInteger length = [self length];
+    NSUInteger index;
+    for (index = 0; index < length; ++index)
     {
-        unichar character = [component characterAtIndex:charIndex];
+        unichar character = [self characterAtIndex:index];
         if (!isdigit(character))
             break;
-        index = index * 10 + character - '0';
-        gotIndex = true;
+        decimal = decimal * 10 + character - '0';
+        readDigit = YES;
     }
-    
-    if (!gotIndex)
-        return @[@-1, component];
+
+    if (readDigit)
+    {
+        *number = decimal;
+        return [self substringFromIndex:index];
+    }
     else
-        return @[@(index), [component substringFromIndex:charIndex]];
+    {
+        *number = -1;
+        return self;
+    }
 }
+
+@end
+
+
+@interface HCDescribedAs ()
+@property (nonatomic, readonly) NSString *descriptionTemplate;
+@property (nonatomic, readonly) id <HCMatcher> matcher;
+@property (nonatomic, readonly) NSArray *values;
+@end
 
 
 @implementation HCDescribedAs
 
 + (instancetype)describedAs:(NSString *)description
-                 forMatcher:(id <HCMatcher>)aMatcher
+                 forMatcher:(id <HCMatcher>)matcher
                  overValues:(NSArray *)templateValues
 {
     return [[self alloc] initWithDescription:description
-                                  forMatcher:aMatcher
+                                  forMatcher:matcher
                                   overValues:templateValues];
 }
 
 - (instancetype)initWithDescription:(NSString *)description
-                         forMatcher:(id <HCMatcher>)aMatcher
+                         forMatcher:(id <HCMatcher>)matcher
                          overValues:(NSArray *)templateValues
 {
     self = [super init];
     if (self)
     {
-        descriptionTemplate = [description copy];
-        matcher = aMatcher;
-        values = templateValues;
+        _descriptionTemplate = [description copy];
+        _matcher = matcher;
+        _values = [templateValues copy];
     }
     return self;
 }
 
 - (BOOL)matches:(id)item
 {
-    return [matcher matches:item];
+    return [self.matcher matches:item];
 }
 
 - (void)describeMismatchOf:(id)item to:(id<HCDescription>)mismatchDescription
 {
-    [matcher describeMismatchOf:item to:mismatchDescription];
+    [self.matcher describeMismatchOf:item to:mismatchDescription];
 }
 
 - (void)describeTo:(id<HCDescription>)description
 {
-    NSArray *components = [descriptionTemplate componentsSeparatedByString:@"%"];
-    bool firstTime = true;
-    for (NSString *oneComponent in components)
+    NSArray *components = [self.descriptionTemplate componentsSeparatedByString:@"%"];
+    BOOL firstComponent = YES;
+    for (NSString *component in components)
     {
-        if (firstTime)
+        if (firstComponent)
         {
-            firstTime = false;
-            [description appendText:oneComponent];
+            firstComponent = NO;
+            [description appendText:component];
         }
         else
         {
-            NSArray *parseIndex = separate(oneComponent);
-            int index = [parseIndex[0] intValue];
-            if (index < 0)
-                [[description appendText:@"%"] appendText:oneComponent];
-            else
-            {
-                [description appendDescriptionOf:values[index]];
-                [description appendText:parseIndex[1]];
-            }
+            [self appendTemplateForComponent:component toDescription:description];
         }
     }
+}
+
+- (void)appendTemplateForComponent:(NSString *)component toDescription:(id <HCDescription>)description
+{
+    int index;
+    NSString *remainder = [component och_getDecimalNumber:&index];
+    if (index < 0)
+        [[description appendText:@"%"] appendText:component];
+    else
+        [[description appendDescriptionOf:self.values[index]] appendText:remainder];
 }
 
 @end

@@ -25,7 +25,7 @@
 
 #import "Base_Tests.h"
 
-@interface MKMassUnit_Imperial_Tests : SenTestCase
+@interface MKMassUnit_Imperial_Tests : XCTestCase
 
 @end
 

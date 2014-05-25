@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCInvocationMatcher.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -19,9 +19,8 @@
  */
 @interface HCInvocationMatcher : HCBaseMatcher
 {
-    NSInvocation *invocation;
-    id <HCMatcher> subMatcher;
-    BOOL shortMismatchDescription;
+    NSInvocation *_invocation;
+    id <HCMatcher> _subMatcher;
 }
 
 /**
@@ -31,13 +30,6 @@
  sub-matcher's mismatch diagnosis. Short form only has the sub-matcher's mismatch diagnosis.
  */
 @property (nonatomic, assign) BOOL shortMismatchDescription;
-
-/**
- Helper method for creating an invocation.
- 
- A class is specified only so we can determine the method signature.
- */
-+ (NSInvocation *)invocationForSelector:(SEL)selector onClass:(Class)aClass;
 
 /**
  Returns an HCInvocationMatcher object initialized with an invocation and a matcher.

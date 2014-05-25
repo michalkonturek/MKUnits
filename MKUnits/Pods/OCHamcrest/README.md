@@ -3,10 +3,12 @@
 What is OCHamcrest?
 -------------------
 
+[![Build Status](https://travis-ci.org/hamcrest/OCHamcrest.svg?branch=master)](https://travis-ci.org/hamcrest/OCHamcrest) [![Coverage Status](https://coveralls.io/repos/hamcrest/OCHamcrest/badge.png?branch=master)](https://coveralls.io/r/hamcrest/OCHamcrest?branch=master) [![Cocoapods Version](https://cocoapod-badges.herokuapp.com/v/OCHamcrest/badge.png)](http://cocoapods.org/?q=ochamcrest)
+
 OCHamcrest is an iOS and Mac OS X library providing:
 
-* a library of "matcher" objects that let you declare rules for whether a given
-  object matches the criteria or not.
+* a library of "matcher" objects for declaring rules to check whether a given
+  object matches those rules.
 * a framework for writing your own matchers.
 
 Matchers are useful for a variety of purposes, such as UI validation. But
@@ -28,7 +30,7 @@ include any pods from their main targets:
 
 ```ruby
 target :MyTests, :exclusive => true do
-  pod 'OCHamcrest', '~> 3.0'
+  pod 'OCHamcrest', '~> 4.0'
 end
 ```
 
@@ -46,7 +48,7 @@ The binaries are packaged as frameworks:
 * __OCHamcrest.framework__ for Mac OS X development
 
 Drag the appropriate framework into your project, specifying "Copy items into
-destination group's folder".
+destination group's folder". Then specify `-ObjC` in your "Other Linker Flags".
 
 #### iOS Development:
 

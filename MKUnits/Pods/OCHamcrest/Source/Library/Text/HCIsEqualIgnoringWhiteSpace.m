@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsEqualIgnoringWhiteSpace.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,7 +9,6 @@
 
 #import "HCIsEqualIgnoringWhiteSpace.h"
 
-#import "HCDescription.h"
 #import "HCRequireNonNilObject.h"
 
 
@@ -50,22 +49,27 @@ static NSMutableString *stripSpace(NSString *string)
 }
 
 
+@interface HCIsEqualIgnoringWhiteSpace ()
+@property (nonatomic, readonly) NSString *originalString;
+@property (nonatomic, readonly) NSString *strippedString;
+@end
+
 @implementation HCIsEqualIgnoringWhiteSpace
 
-+ (instancetype)isEqualIgnoringWhiteSpace:(NSString *)aString
++ (instancetype)isEqualIgnoringWhiteSpace:(NSString *)string
 {
-    return [[self alloc] initWithString:aString];
+    return [[self alloc] initWithString:string];
 }
 
-- (instancetype)initWithString:(NSString *)aString
+- (instancetype)initWithString:(NSString *)string
 {
-    HCRequireNonNilObject(aString);
+    HCRequireNonNilObject(string);
     
     self = [super init];
     if (self)
     {
-        originalString = [aString copy];
-        strippedString = stripSpace(aString);
+        _originalString = [string copy];
+        _strippedString = stripSpace(string);
     }
     return self;
 }
@@ -75,12 +79,12 @@ static NSMutableString *stripSpace(NSString *string)
     if (![item isKindOfClass:[NSString class]])
         return NO;
     
-    return [strippedString isEqualToString:stripSpace(item)];
+    return [self.strippedString isEqualToString:stripSpace(item)];
 }
 
 - (void)describeTo:(id<HCDescription>)description
 {
-    [[description appendDescriptionOf:originalString]
+    [[description appendDescriptionOf:self.originalString]
                   appendText:@" ignoring whitespace"];
 }
 

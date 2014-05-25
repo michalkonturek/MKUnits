@@ -9,6 +9,6 @@
 // MKFoundationKit/NSNumber
 #define COCOAPODS_POD_AVAILABLE_MKFoundationKit_NSNumber
 #define COCOAPODS_VERSION_MAJOR_MKFoundationKit_NSNumber 1
-#define COCOAPODS_VERSION_MINOR_MKFoundationKit_NSNumber 1
-#define COCOAPODS_VERSION_PATCH_MKFoundationKit_NSNumber 0
+#define COCOAPODS_VERSION_MINOR_MKFoundationKit_NSNumber 2
+#define COCOAPODS_VERSION_PATCH_MKFoundationKit_NSNumber 2
 

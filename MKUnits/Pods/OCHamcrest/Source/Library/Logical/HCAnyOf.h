@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCAnyOf.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,17 +11,14 @@
 
 
 @interface HCAnyOf : HCBaseMatcher
-{
-    NSArray *matchers;
-}
 
-+ (instancetype)anyOf:(NSArray *)theMatchers;
-- (instancetype)initWithMatchers:(NSArray *)theMatchers;
++ (instancetype)anyOf:(NSArray *)matchers;
+- (instancetype)initWithMatchers:(NSArray *)matchers;
 
 @end
 
 
-OBJC_EXPORT id HC_anyOf(id match, ...) NS_REQUIRES_NIL_TERMINATION;
+FOUNDATION_EXPORT id HC_anyOf(id match, ...) NS_REQUIRES_NIL_TERMINATION;
 
 /**
  anyOf(firstMatcher, ...) -

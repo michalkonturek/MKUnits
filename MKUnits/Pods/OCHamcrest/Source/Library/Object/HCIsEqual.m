@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsEqual.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,42 +9,45 @@
 
 #import "HCIsEqual.h"
 
-#import "HCDescription.h"
+
+@interface HCIsEqual ()
+
+@property (nonatomic, readonly) id object;
+@end
 
 
 @implementation HCIsEqual
 
-+ (instancetype)isEqualTo:(id)anObject
++ (instancetype)isEqualTo:(id)object
 {
-    return [[self alloc] initEqualTo:anObject];
+    return [[self alloc] initEqualTo:object];
 }
 
-- (instancetype)initEqualTo:(id)anObject
+- (instancetype)initEqualTo:(id)object
 {
     self = [super init];
     if (self)
-        object = anObject;
+        _object = object;
     return self;
 }
 
 - (BOOL)matches:(id)item
 {
     if (item == nil)
-        return object == nil;
-    else
-        return [item isEqual:object];
+        return self.object == nil;
+    return [item isEqual:self.object];
 }
 
 - (void)describeTo:(id<HCDescription>)description
 {
-    if ([object conformsToProtocol:@protocol(HCMatcher)])
+    if ([self.object conformsToProtocol:@protocol(HCMatcher)])
     {
         [[[description appendText:@"<"]
-                       appendDescriptionOf:object]
+                       appendDescriptionOf:self.object]
                        appendText:@">"];
     }
     else
-        [description appendDescriptionOf:object];
+        [description appendDescriptionOf:self.object];
 }
 
 @end

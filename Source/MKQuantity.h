@@ -32,15 +32,15 @@
 + (instancetype)createWithAmount:(NSNumber *)amount
                         withUnit:(MKUnit *)unit;
 
-@property (nonatomic, copy) NSDecimalNumber *amount;
-@property (nonatomic, strong) MKUnit *unit;
+@property (nonatomic, readonly, copy) NSDecimalNumber *amount;
+@property (nonatomic, readonly, strong) MKUnit *unit;
 
 - (id)initWithAmount:(NSNumber *)amount withUnit:(MKUnit *)unit;
 
 - (instancetype)add:(MKQuantity *)other;
 - (instancetype)subtract:(MKQuantity *)other;
-- (instancetype)multiplyBy:(MKQuantity *)other;
-- (instancetype)divideBy:(MKQuantity *)other;
+- (instancetype)multiplyBy:(NSNumber *)other;
+- (instancetype)divideBy:(NSNumber *)other;
 - (instancetype)negate;
 
 - (instancetype)convertTo:(MKUnit *)unit;

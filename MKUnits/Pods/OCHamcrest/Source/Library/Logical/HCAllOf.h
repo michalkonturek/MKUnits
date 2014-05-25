@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCAllOf.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,17 +11,14 @@
 
 
 @interface HCAllOf : HCBaseMatcher
-{
-    NSArray *matchers;
-}
 
-+ (instancetype)allOf:(NSArray *)theMatchers;
-- (instancetype)initWithMatchers:(NSArray *)theMatchers;
++ (instancetype)allOf:(NSArray *)matchers;
+- (instancetype)initWithMatchers:(NSArray *)matchers;
 
 @end
 
 
-OBJC_EXPORT id HC_allOf(id match, ...) NS_REQUIRES_NIL_TERMINATION;
+FOUNDATION_EXPORT id HC_allOf(id match, ...) NS_REQUIRES_NIL_TERMINATION;
 
 /**
  allOf(firstMatcher, ...) -

@@ -25,7 +25,7 @@
 
 #import "Base_Tests.h"
 
-@interface MKLengthUnit_Tests : SenTestCase
+@interface MKLengthUnit_Tests : XCTestCase
 
 @end
 

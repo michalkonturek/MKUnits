@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsIn.h
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -11,17 +11,14 @@
 
 
 @interface HCIsIn : HCBaseMatcher
-{
-    id collection;
-}
 
-+ (instancetype)isInCollection:(id)aCollection;
-- (instancetype)initWithCollection:(id)aCollection;
++ (instancetype)isInCollection:(id)collection;
+- (instancetype)initWithCollection:(id)collection;
 
 @end
 
 
-OBJC_EXPORT id HC_isIn(id aCollection);
+FOUNDATION_EXPORT id HC_isIn(id aCollection);
 
 /**
  isIn(aCollection) -
