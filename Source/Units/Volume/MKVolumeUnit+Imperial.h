@@ -23,12 +23,11 @@
 //  THE SOFTWARE.
 //
 
-#import "MKUnit.h"
-#import "MKQuantity.h"
+#import "MKVolumeUnit.h"
 
 //METRIC VOLUME MEASUREMENTS - created by Roz
 
-@interface MKVolumeUnit : MKUnit
+@interface MKVolumeUnit (Imperial)
 
 + (instancetype)gallon;
 + (instancetype)quart;
@@ -40,7 +39,7 @@
 
 @end
 
-@interface MKQuantity (MKVolumeUnit)
+@interface MKQuantity (MKVolumeUnit_Imperial)
 
 + (instancetype)volume_gallonWithAmount:(NSNumber *)amount;
 + (instancetype)volume_quartWithAmount:(NSNumber *)amount;
@@ -55,7 +54,7 @@
 
 @end
 
-@interface NSNumber (MKVolumeUnit)
+@interface NSNumber (MKVolumeUnit_Imperial)
 
 - (MKQuantity *)volume_gallon;
 - (MKQuantity *)volume_quart;

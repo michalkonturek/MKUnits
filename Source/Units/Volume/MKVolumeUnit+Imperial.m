@@ -25,7 +25,7 @@
 
 #import "MKVolumeUnit.h"
 
-@implementation MKVolumeUnit
+@implementation MKVolumeUnit (Imperial)
 
 + (instancetype)gallon {
     static NSString *name   = @"gallon";
@@ -99,7 +99,7 @@
 
 @end
 
-@implementation MKQuantity (MKVolumeUnit)
+@implementation MKQuantity (MKVolumeUnit_Imperial)
 
 + (instancetype)volume_gallonWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKVolumeUnit gallon]];
@@ -139,7 +139,7 @@
 
 @end
 
-@implementation NSNumber (MKVolumeUnit)
+@implementation NSNumber (MKVolumeUnit_Imperial)
 
 - (MKQuantity *)volume_gallon {
     return [MKQuantity volume_gallonWithAmount:self];

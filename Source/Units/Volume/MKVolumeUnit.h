@@ -7,7 +7,11 @@
 //
 
 #import "MKUnit.h"
+#import "MKQuantity.h"
 
 @interface MKVolumeUnit : MKUnit
+
++ (instancetype)mililitre;
++ (instancetype)litre;
 
 @end

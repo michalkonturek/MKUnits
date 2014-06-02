@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841B8617193C94350046EDDD /* MKVolumeUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B8616193C94350046EDDD /* MKVolumeUnit.m */; };
 		849E9E641932A729007D5FD2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849E9E631932A729007D5FD2 /* XCTest.framework */; };
-		84E53200193C832F00F03A74 /* MKVolumeUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E531FF193C832F00F03A74 /* MKVolumeUnit.m */; };
+		84E53200193C832F00F03A74 /* MKVolumeUnit+Imperial.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E531FF193C832F00F03A74 /* MKVolumeUnit+Imperial.m */; };
 		900E1D3518A4486B00DC1420 /* MKQuantity.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2B18A4486B00DC1420 /* MKQuantity.m */; };
 		900E1D3618A4486B00DC1420 /* MKQuantity+Precision.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2D18A4486B00DC1420 /* MKQuantity+Precision.m */; };
 		900E1D3718A4486B00DC1420 /* MKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 900E1D2F18A4486B00DC1420 /* MKUnit.m */; };
@@ -62,9 +63,11 @@
 
 /* Begin PBXFileReference section */
 		13010856EB764246BC3F440C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		841B8615193C94350046EDDD /* MKVolumeUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKVolumeUnit.h; sourceTree = "<group>"; };
+		841B8616193C94350046EDDD /* MKVolumeUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKVolumeUnit.m; sourceTree = "<group>"; };
 		849E9E631932A729007D5FD2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		84E531FE193C832F00F03A74 /* MKVolumeUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKVolumeUnit.h; sourceTree = "<group>"; };
-		84E531FF193C832F00F03A74 /* MKVolumeUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKVolumeUnit.m; sourceTree = "<group>"; };
+		84E531FE193C832F00F03A74 /* MKVolumeUnit+Imperial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKVolumeUnit+Imperial.h"; sourceTree = "<group>"; };
+		84E531FF193C832F00F03A74 /* MKVolumeUnit+Imperial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKVolumeUnit+Imperial.m"; sourceTree = "<group>"; };
 		8801CF4A5FB54F4EBBF7595B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		900E1D2918A4486B00DC1420 /* MKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMacros.h; sourceTree = "<group>"; };
 		900E1D2A18A4486B00DC1420 /* MKQuantity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKQuantity.h; sourceTree = "<group>"; };
@@ -157,8 +160,10 @@
 		84E531FD193C832F00F03A74 /* Volume */ = {
 			isa = PBXGroup;
 			children = (
-				84E531FE193C832F00F03A74 /* MKVolumeUnit.h */,
-				84E531FF193C832F00F03A74 /* MKVolumeUnit.m */,
+				84E531FE193C832F00F03A74 /* MKVolumeUnit+Imperial.h */,
+				84E531FF193C832F00F03A74 /* MKVolumeUnit+Imperial.m */,
+				841B8615193C94350046EDDD /* MKVolumeUnit.h */,
+				841B8616193C94350046EDDD /* MKVolumeUnit.m */,
 			);
 			path = Volume;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				90299BCC1899EA5700FF6782 /* MKLengthUnit.m in Sources */,
 				90299BCA1899EA5700FF6782 /* MKByteUnit.m in Sources */,
 				90299BCB1899EA5700FF6782 /* MKLengthUnit+Imperial.m in Sources */,
+				841B8617193C94350046EDDD /* MKVolumeUnit.m in Sources */,
 				90370074177D0BD400708FEA /* main.m in Sources */,
 				90299BC91899EA5700FF6782 /* MKAreaUnit.m in Sources */,
 				90299BC81899EA5700FF6782 /* MKAreaUnit+Imperial.m in Sources */,
@@ -550,7 +556,7 @@
 				900E1D3918A4486B00DC1420 /* MKUnit+Quantity.m in Sources */,
 				90299BCF1899EA5700FF6782 /* MKTimeUnit.m in Sources */,
 				900E1D3618A4486B00DC1420 /* MKQuantity+Precision.m in Sources */,
-				84E53200193C832F00F03A74 /* MKVolumeUnit.m in Sources */,
+				84E53200193C832F00F03A74 /* MKVolumeUnit+Imperial.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
