@@ -19,3 +19,25 @@
 + (instancetype)hectolitre;
 
 @end
+
+@interface MKQuantity (MKVolumeUnit)
+
++ (instancetype)volume_microlitreWithAmount:(NSNumber *)amount;
++ (instancetype)volume_millilitreWithAmount:(NSNumber *)amount;
++ (instancetype)volume_centilitreWithAmount:(NSNumber *)amount;
++ (instancetype)volume_decilitreWithAmount:(NSNumber *)amount;
++ (instancetype)volume_litreWithAmount:(NSNumber *)amount;
++ (instancetype)volume_hectolitreWithAmount:(NSNumber *)amount;
+
+@end
+
+@interface NSNumber (MKMassUnit)
+
+- (MKQuantity *)volume_microlitre;
+- (MKQuantity *)volume_millilitre;
+- (MKQuantity *)volume_centilitre;
+- (MKQuantity *)volume_decilitre;
+- (MKQuantity *)volume_litre;
+- (MKQuantity *)volume_hectolitre;
+
+@end
