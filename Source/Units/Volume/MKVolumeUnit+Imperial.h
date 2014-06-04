@@ -35,6 +35,7 @@
 + (instancetype)cup;
 + (instancetype)tablespoon;
 + (instancetype)teaspoon;
++ (instancetype)fluidram;
 + (instancetype)fluidounce;
 
 @end
@@ -47,10 +48,11 @@
 + (instancetype)volume_cupWithAmount:(NSNumber *)amount;
 + (instancetype)volume_tablespoonWithAmount:(NSNumber *)amount;
 + (instancetype)volume_teaspoonWithAmount:(NSNumber *)amount;
++ (instancetype)volume_fluidramWithAmount:(NSNumber *)amount;
 + (instancetype)volume_fluidounceWithAmount:(NSNumber *)amount;
 
-- (instancetype)volume_convertToCup;
-- (instancetype)volume_convertToFluidOunce;
+//- (instancetype)volume_convertToCup;
+//- (instancetype)volume_convertToFluidOunce;
 
 @end
 
@@ -62,6 +64,7 @@
 - (MKQuantity *)volume_cup;
 - (MKQuantity *)volume_tablespoon;
 - (MKQuantity *)volume_teaspoon;
+- (MKQuantity *)volume_fluidram;
 - (MKQuantity *)volume_fluidounce;
 
 @end

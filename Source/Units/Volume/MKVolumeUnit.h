@@ -31,7 +31,7 @@
 
 @end
 
-@interface NSNumber (MKMassUnit)
+@interface NSNumber (MKVolumeUnit)
 
 - (MKQuantity *)volume_microlitre;
 - (MKQuantity *)volume_millilitre;
