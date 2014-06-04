@@ -11,7 +11,11 @@
 
 @interface MKVolumeUnit : MKUnit
 
-+ (instancetype)mililitre;
++ (instancetype)microlitre;
++ (instancetype)millilitre;
++ (instancetype)centilitre;
++ (instancetype)decilitre;
 + (instancetype)litre;
++ (instancetype)hectolitre;
 
 @end
