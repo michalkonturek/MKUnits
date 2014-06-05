@@ -1,5 +1,5 @@
 //
-//  MKUnits.h
+//  MKVolumeUnit.h
 //  MKUnits
 //
 //  Copyright (c) 2013 Michal Konturek
@@ -23,24 +23,43 @@
 //  THE SOFTWARE.
 //
 
-#import "MKMacros.h"
-
-#import "MKUnit.h"
-#import "MKUnit+Conversion.h"
-#import "MKUnit+Quantity.h"
-#import "MKQuantity.h"
-#import "MKQuantity+Precision.h"
-
-#import "MKAreaUnit.h"
-#import "MKAreaUnit+Imperial.h"
-#import "MKByteUnit.h"
-#import "MKMassUnit.h"
-#import "MKMassUnit+Imperial.h"
-#import "MKLengthUnit.h"
-#import "MKLengthUnit+Imperial.h"
-#import "MKTimeUnit.h"
 #import "MKVolumeUnit.h"
-#import "MKVolumeUnit+Imperial.h"
-#import "MKVolumeUnit+US.h"
 
-#import <MKFoundationKit/NSNumber+MK.h>
+@interface MKVolumeUnit (Imperial)
+
++ (instancetype)fluidram;
++ (instancetype)teaspoon;
++ (instancetype)tablespoon;
++ (instancetype)fluidounce;
++ (instancetype)cup;
++ (instancetype)pint;
++ (instancetype)quart;
++ (instancetype)gallon;
+
+@end
+
+@interface MKQuantity (MKVolumeUnit_Imperial)
+
++ (instancetype)volume_fluidramWithAmount:(NSNumber *)amount;
++ (instancetype)volume_teaspoonWithAmount:(NSNumber *)amount;
++ (instancetype)volume_tablespoonWithAmount:(NSNumber *)amount;
++ (instancetype)volume_fluidounceWithAmount:(NSNumber *)amount;
++ (instancetype)volume_cupWithAmount:(NSNumber *)amount;
++ (instancetype)volume_pintWithAmount:(NSNumber *)amount;
++ (instancetype)volume_quartWithAmount:(NSNumber *)amount;
++ (instancetype)volume_gallonWithAmount:(NSNumber *)amount;
+
+@end
+
+@interface NSNumber (MKVolumeUnit_Imperial)
+
+- (MKQuantity *)volume_fluidram;
+- (MKQuantity *)volume_teaspoon;
+- (MKQuantity *)volume_tablespoon;
+- (MKQuantity *)volume_fluidounce;
+- (MKQuantity *)volume_cup;
+- (MKQuantity *)volume_pint;
+- (MKQuantity *)volume_quart;
+- (MKQuantity *)volume_gallon;
+
+@end
