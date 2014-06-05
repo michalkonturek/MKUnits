@@ -25,7 +25,7 @@
 
 @end
 
-@interface MKQuantity (MKVolumeUnit_Imperial)
+@interface MKQuantity (MKVolumeUnit_US)
 
 + (instancetype)volume_us_minimWithAmount:(NSNumber *)amount;
 + (instancetype)volume_us_fluidramWithAmount:(NSNumber *)amount;
@@ -42,7 +42,7 @@
 
 @end
 
-@interface NSNumber (MKVolumeUnit_Imperial)
+@interface NSNumber (MKVolumeUnit_US)
 
 - (MKQuantity *)volume_us_minim;
 - (MKQuantity *)volume_us_fluidram;
