@@ -43,7 +43,6 @@
 + (instancetype)teaspoon {
     static NSString *name   = @"teaspoon";
     static NSString *symbol = @"tsp";
-//    //    id ratio = [[NSDecimalNumber one] decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"6.0"]];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:591939 exponent:-8 isNegative:NO];
     
 //    0.00591939
@@ -57,13 +56,10 @@
 + (instancetype)tablespoon {
     static NSString *name   = @"tablespoon";
     static NSString *symbol = @"tbsp";
-//    //    id ratio = [NSDecimalNumber decimalNumberWithMantissa:5 exponent:-1 isNegative:NO];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:177581714 exponent:-10 isNegative:NO];
     
 //    17.7581714 ml
 //    177581714
-
-// 17.7582
     
     return [self createWithName:name
                      withSymbol:symbol
@@ -73,7 +69,6 @@
 + (instancetype)fluidounce {
     static NSString *name   = @"fluid ounce";
     static NSString *symbol = @"fl oz";
-//    id ratio = [NSDecimalNumber one];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:284130625 exponent:-10 isNegative:NO];
     
 //    28.4130625 mL
@@ -87,7 +82,6 @@
 + (instancetype)cup {
     static NSString *name   = @"cup";
     static NSString *symbol = @"cp";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:8 exponent:0 isNegative:NO];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:28413 exponent:-5 isNegative:NO];
     
 //    284.13 ml
@@ -101,7 +95,6 @@
 + (instancetype)pint {
     static NSString *name   = @"pint";
     static NSString *symbol = @"pt";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:16 exponent:0 isNegative:NO];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:56826125 exponent:-8 isNegative:NO];
     
 //    0.56826125 L
@@ -115,7 +108,6 @@
 + (instancetype)quart {
     static NSString *name   = @"quart";
     static NSString *symbol = @"qt";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:32 exponent:0 isNegative:NO];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:11365225 exponent:-7 isNegative:NO];
     
 //    1.1365225 L
@@ -129,7 +121,6 @@
 + (instancetype)gallon {
     static NSString *name   = @"gallon";
     static NSString *symbol = @"gal";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:128 exponent:0 isNegative:NO];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:454609 exponent:-5 isNegative:NO];
     
 //    4.54609 L
@@ -175,14 +166,6 @@
 + (instancetype)volume_gallonWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKVolumeUnit gallon]];
 }
-
-//- (instancetype)volume_convertToCup {
-//    return [self convertTo:[MKVolumeUnit cup]];
-//}
-//
-//- (instancetype)volume_convertToFluidOunce {
-//    return [self convertTo:[MKVolumeUnit fluidounce]];
-//}
 
 @end
 

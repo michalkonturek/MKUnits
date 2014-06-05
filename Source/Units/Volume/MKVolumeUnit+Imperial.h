@@ -25,8 +25,6 @@
 
 #import "MKVolumeUnit.h"
 
-//METRIC VOLUME MEASUREMENTS - created by Roz
-
 @interface MKVolumeUnit (Imperial)
 
 + (instancetype)fluidram;
@@ -50,9 +48,6 @@
 + (instancetype)volume_pintWithAmount:(NSNumber *)amount;
 + (instancetype)volume_quartWithAmount:(NSNumber *)amount;
 + (instancetype)volume_gallonWithAmount:(NSNumber *)amount;
-
-//- (instancetype)volume_convertToCup;
-//- (instancetype)volume_convertToFluidOunce;
 
 @end
 

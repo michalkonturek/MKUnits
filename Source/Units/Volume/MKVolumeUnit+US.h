@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Michal Konturek. All rights reserved.
 //
 
+/*
+ Contributor: Roslyn Cyrus (rozmichelle)
+ */
+
 #import "MKVolumeUnit.h"
 
 @interface MKVolumeUnit (US)
