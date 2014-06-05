@@ -27,70 +27,27 @@
 
 @implementation MKVolumeUnit (Imperial)
 
-+ (instancetype)gallon {
-    static NSString *name   = @"gallon";
-    static NSString *symbol = @"gal";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:128 exponent:0 isNegative:NO];
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:454609 exponent:-5 isNegative:NO];
++ (instancetype)fluidounce {
+    static NSString *name   = @"fluid ounce";
+    static NSString *symbol = @"fl oz";
+//    id ratio = [NSDecimalNumber one];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:284130625 exponent:-10 isNegative:NO];
     
-//    4.54609 L
-//    454609
-    
-    return [self createWithName:name
-                     withSymbol:symbol
-                      withRatio:ratio];
-}
-
-+ (instancetype)quart {
-    static NSString *name   = @"quart";
-    static NSString *symbol = @"qt";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:32 exponent:0 isNegative:NO];
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:11365225 exponent:-7 isNegative:NO];
-    
-//    1.1365225 L
-//    11365225
+//    28.4130625 mL
+//    284130625
     
     return [self createWithName:name
                      withSymbol:symbol
                       withRatio:ratio];
 }
 
-+ (instancetype)pint {
-    static NSString *name   = @"pint";
-    static NSString *symbol = @"pt";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:16 exponent:0 isNegative:NO];
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:56826125 exponent:-8 isNegative:NO];
++ (instancetype)fluidram {
+    static NSString *name   = @"fluid dram";
+    static NSString *symbol = @"fl dr";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:35516328125 exponent:-13 isNegative:NO];
     
-//    0.56826125 L
-//    56826125
-    
-    return [self createWithName:name
-                     withSymbol:symbol
-                      withRatio:ratio];
-}
-
-+ (instancetype)cup {
-    static NSString *name   = @"cup";
-    static NSString *symbol = @"c";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:8 exponent:0 isNegative:NO];
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:28413 exponent:-5 isNegative:NO];
-
-//    284.13 ml
-//    28413
-    
-    return [self createWithName:name
-                     withSymbol:symbol
-                      withRatio:ratio];
-}
-
-+ (instancetype)tablespoon {
-    static NSString *name   = @"tablespoon";
-    static NSString *symbol = @"tbsp";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:5 exponent:-1 isNegative:NO];
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:177581714 exponent:-10 isNegative:NO];
-    
-//    17.7581714 ml
-//    177581714
+//    3.5516328125 ml
+//    35516328125
     
     return [self createWithName:name
                      withSymbol:symbol
@@ -111,27 +68,70 @@
                       withRatio:ratio];
 }
 
-+ (instancetype)fluidram {
-    static NSString *name   = @"fluid dram";
-    static NSString *symbol = @"fl dr";
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:35516328125 exponent:-13 isNegative:NO];
++ (instancetype)tablespoon {
+    static NSString *name   = @"tablespoon";
+    static NSString *symbol = @"tbsp";
+//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:5 exponent:-1 isNegative:NO];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:177581714 exponent:-10 isNegative:NO];
     
-//    3.5516328125 ml
-//    35516328125
+//    17.7581714 ml
+//    177581714
     
     return [self createWithName:name
                      withSymbol:symbol
                       withRatio:ratio];
 }
 
-+ (instancetype)fluidounce {
-    static NSString *name   = @"fluid ounce";
-    static NSString *symbol = @"fl oz";
-//    id ratio = [NSDecimalNumber one];
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:284130625 exponent:-10 isNegative:NO];
++ (instancetype)cup {
+    static NSString *name   = @"cup";
+    static NSString *symbol = @"c";
+//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:8 exponent:0 isNegative:NO];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:28413 exponent:-5 isNegative:NO];
     
-//    28.4130625 mL
-//    284130625
+//    284.13 ml
+//    28413
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
++ (instancetype)pint {
+    static NSString *name   = @"pint";
+    static NSString *symbol = @"pt";
+//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:16 exponent:0 isNegative:NO];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:56826125 exponent:-8 isNegative:NO];
+    
+//    0.56826125 L
+//    56826125
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
++ (instancetype)quart {
+    static NSString *name   = @"quart";
+    static NSString *symbol = @"qt";
+//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:32 exponent:0 isNegative:NO];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:11365225 exponent:-7 isNegative:NO];
+    
+//    1.1365225 L
+//    11365225
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
++ (instancetype)gallon {
+    static NSString *name   = @"gallon";
+    static NSString *symbol = @"gal";
+//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:128 exponent:0 isNegative:NO];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:454609 exponent:-5 isNegative:NO];
+    
+//    4.54609 L
+//    454609
     
     return [self createWithName:name
                      withSymbol:symbol
@@ -142,36 +142,36 @@
 
 @implementation MKQuantity (MKVolumeUnit_Imperial)
 
-+ (instancetype)volume_gallonWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKVolumeUnit gallon]];
-}
-
-+ (instancetype)volume_quartWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKVolumeUnit quart]];
-}
-
-+ (instancetype)volume_pintWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKVolumeUnit pint]];
-}
-
-+ (instancetype)volume_cupWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKVolumeUnit cup]];
-}
-
-+ (instancetype)volume_tablespoonWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKVolumeUnit tablespoon]];
-}
-
-+ (instancetype)volume_teaspoonWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKVolumeUnit teaspoon]];
++ (instancetype)volume_fluidounceWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit fluidounce]];
 }
 
 + (instancetype)volume_fluidramWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKVolumeUnit fluidram]];
 }
 
-+ (instancetype)volume_fluidounceWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKVolumeUnit fluidounce]];
++ (instancetype)volume_teaspoonWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit teaspoon]];
+}
+
++ (instancetype)volume_tablespoonWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit tablespoon]];
+}
+
++ (instancetype)volume_cupWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit cup]];
+}
+
++ (instancetype)volume_pintWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit pint]];
+}
+
++ (instancetype)volume_quartWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit quart]];
+}
+
++ (instancetype)volume_gallonWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit gallon]];
 }
 
 //- (instancetype)volume_convertToCup {
@@ -186,36 +186,36 @@
 
 @implementation NSNumber (MKVolumeUnit_Imperial)
 
-- (MKQuantity *)volume_gallon {
-    return [MKQuantity volume_gallonWithAmount:self];
-}
-
-- (MKQuantity *)volume_quart {
-    return [MKQuantity volume_quartWithAmount:self];
-}
-
-- (MKQuantity *)volume_pint {
-    return [MKQuantity volume_pintWithAmount:self];
-}
-
-- (MKQuantity *)volume_cup {
-    return [MKQuantity volume_cupWithAmount:self];
-}
-
-- (MKQuantity *)volume_tablespoon {
-    return [MKQuantity volume_tablespoonWithAmount:self];
-}
-
-- (MKQuantity *)volume_teaspoon {
-    return [MKQuantity volume_teaspoonWithAmount:self];
+- (MKQuantity *)volume_fluidounce {
+    return [MKQuantity volume_fluidounceWithAmount:self];
 }
 
 - (MKQuantity *)volume_fluidram {
     return [MKQuantity volume_fluidramWithAmount:self];
 }
 
-- (MKQuantity *)volume_fluidounce {
-    return [MKQuantity volume_fluidounceWithAmount:self];
+- (MKQuantity *)volume_teaspoon {
+    return [MKQuantity volume_teaspoonWithAmount:self];
+}
+
+- (MKQuantity *)volume_tablespoon {
+    return [MKQuantity volume_tablespoonWithAmount:self];
+}
+
+- (MKQuantity *)volume_cup {
+    return [MKQuantity volume_cupWithAmount:self];
+}
+
+- (MKQuantity *)volume_pint {
+    return [MKQuantity volume_pintWithAmount:self];
+}
+
+- (MKQuantity *)volume_quart {
+    return [MKQuantity volume_quartWithAmount:self];
+}
+
+- (MKQuantity *)volume_gallon {
+    return [MKQuantity volume_gallonWithAmount:self];
 }
 
 @end

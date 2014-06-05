@@ -29,27 +29,27 @@
 
 @interface MKVolumeUnit (Imperial)
 
-+ (instancetype)gallon;
-+ (instancetype)quart;
-+ (instancetype)pint;
-+ (instancetype)cup;
-+ (instancetype)tablespoon;
-+ (instancetype)teaspoon;
-+ (instancetype)fluidram;
 + (instancetype)fluidounce;
++ (instancetype)fluidram;
++ (instancetype)teaspoon;
++ (instancetype)tablespoon;
++ (instancetype)cup;
++ (instancetype)pint;
++ (instancetype)quart;
++ (instancetype)gallon;
 
 @end
 
 @interface MKQuantity (MKVolumeUnit_Imperial)
 
-+ (instancetype)volume_gallonWithAmount:(NSNumber *)amount;
-+ (instancetype)volume_quartWithAmount:(NSNumber *)amount;
-+ (instancetype)volume_pintWithAmount:(NSNumber *)amount;
-+ (instancetype)volume_cupWithAmount:(NSNumber *)amount;
-+ (instancetype)volume_tablespoonWithAmount:(NSNumber *)amount;
-+ (instancetype)volume_teaspoonWithAmount:(NSNumber *)amount;
-+ (instancetype)volume_fluidramWithAmount:(NSNumber *)amount;
 + (instancetype)volume_fluidounceWithAmount:(NSNumber *)amount;
++ (instancetype)volume_fluidramWithAmount:(NSNumber *)amount;
++ (instancetype)volume_teaspoonWithAmount:(NSNumber *)amount;
++ (instancetype)volume_tablespoonWithAmount:(NSNumber *)amount;
++ (instancetype)volume_cupWithAmount:(NSNumber *)amount;
++ (instancetype)volume_pintWithAmount:(NSNumber *)amount;
++ (instancetype)volume_quartWithAmount:(NSNumber *)amount;
++ (instancetype)volume_gallonWithAmount:(NSNumber *)amount;
 
 //- (instancetype)volume_convertToCup;
 //- (instancetype)volume_convertToFluidOunce;
@@ -58,13 +58,13 @@
 
 @interface NSNumber (MKVolumeUnit_Imperial)
 
-- (MKQuantity *)volume_gallon;
-- (MKQuantity *)volume_quart;
-- (MKQuantity *)volume_pint;
-- (MKQuantity *)volume_cup;
-- (MKQuantity *)volume_tablespoon;
-- (MKQuantity *)volume_teaspoon;
-- (MKQuantity *)volume_fluidram;
 - (MKQuantity *)volume_fluidounce;
+- (MKQuantity *)volume_fluidram;
+- (MKQuantity *)volume_teaspoon;
+- (MKQuantity *)volume_tablespoon;
+- (MKQuantity *)volume_cup;
+- (MKQuantity *)volume_pint;
+- (MKQuantity *)volume_quart;
+- (MKQuantity *)volume_gallon;
 
 @end

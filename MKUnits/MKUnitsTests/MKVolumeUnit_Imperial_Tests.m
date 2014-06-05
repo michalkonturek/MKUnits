@@ -13,5 +13,11 @@
 @end
 
 @implementation MKVolumeUnit_Imperial_Tests
-
+- (void)test_one_hectolitre_is_100_litres {
+    MKQuantity *target = [@1 volume_hectolitre];
+    MKQuantity *expected = [@100 volume_litre];
+    
+    BOOL result = [expected isTheSame:target];
+    assertThatBool(result, equalToBool(YES));
+}
 @end
