@@ -27,20 +27,6 @@
 
 @implementation MKVolumeUnit (Imperial)
 
-+ (instancetype)fluidounce {
-    static NSString *name   = @"fluid ounce";
-    static NSString *symbol = @"fl oz";
-//    id ratio = [NSDecimalNumber one];
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:284130625 exponent:-10 isNegative:NO];
-    
-//    28.4130625 mL
-//    284130625
-    
-    return [self createWithName:name
-                     withSymbol:symbol
-                      withRatio:ratio];
-}
-
 + (instancetype)fluidram {
     static NSString *name   = @"fluid dram";
     static NSString *symbol = @"fl dr";
@@ -57,7 +43,7 @@
 + (instancetype)teaspoon {
     static NSString *name   = @"teaspoon";
     static NSString *symbol = @"tsp";
-//    id ratio = [[NSDecimalNumber one] decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"6.0"]];
+//    //    id ratio = [[NSDecimalNumber one] decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"6.0"]];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:591939 exponent:-8 isNegative:NO];
     
 //    0.00591939
@@ -71,11 +57,27 @@
 + (instancetype)tablespoon {
     static NSString *name   = @"tablespoon";
     static NSString *symbol = @"tbsp";
-//    id ratio = [NSDecimalNumber decimalNumberWithMantissa:5 exponent:-1 isNegative:NO];
+//    //    id ratio = [NSDecimalNumber decimalNumberWithMantissa:5 exponent:-1 isNegative:NO];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:177581714 exponent:-10 isNegative:NO];
     
 //    17.7581714 ml
 //    177581714
+
+// 17.7582
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
++ (instancetype)fluidounce {
+    static NSString *name   = @"fluid ounce";
+    static NSString *symbol = @"fl oz";
+//    id ratio = [NSDecimalNumber one];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:284130625 exponent:-10 isNegative:NO];
+    
+//    28.4130625 mL
+//    284130625
     
     return [self createWithName:name
                      withSymbol:symbol
@@ -142,10 +144,6 @@
 
 @implementation MKQuantity (MKVolumeUnit_Imperial)
 
-+ (instancetype)volume_fluidounceWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKVolumeUnit fluidounce]];
-}
-
 + (instancetype)volume_fluidramWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKVolumeUnit fluidram]];
 }
@@ -156,6 +154,10 @@
 
 + (instancetype)volume_tablespoonWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKVolumeUnit tablespoon]];
+}
+
++ (instancetype)volume_fluidounceWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit fluidounce]];
 }
 
 + (instancetype)volume_cupWithAmount:(NSNumber *)amount {
@@ -186,10 +188,6 @@
 
 @implementation NSNumber (MKVolumeUnit_Imperial)
 
-- (MKQuantity *)volume_fluidounce {
-    return [MKQuantity volume_fluidounceWithAmount:self];
-}
-
 - (MKQuantity *)volume_fluidram {
     return [MKQuantity volume_fluidramWithAmount:self];
 }
@@ -200,6 +198,10 @@
 
 - (MKQuantity *)volume_tablespoon {
     return [MKQuantity volume_tablespoonWithAmount:self];
+}
+
+- (MKQuantity *)volume_fluidounce {
+    return [MKQuantity volume_fluidounceWithAmount:self];
 }
 
 - (MKQuantity *)volume_cup {
