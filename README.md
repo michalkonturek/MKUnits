@@ -95,6 +95,7 @@ At the moment MKUnits supports the following quantities:
 * Mass (base unit: kilogram)
 * Length (base unit: meter)
 * Time (base unit: second)
+* Volume (base unit: litre)
 
 You can easily extend MKUnits by adding new [quantities](#new-quantity) or [units](#new-unit).
 
