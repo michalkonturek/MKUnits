@@ -10,6 +10,18 @@
 
 @implementation MKVolumeUnit (US)
 
++ (instancetype)us_minim {
+    static NSString *name   = @"minim";
+    static NSString *symbol = @"min";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:56826125 exponent:-8 isNegative:NO];
+    
+//    61.611519921875 μL
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
 + (instancetype)us_fluidram {
     static NSString *name   = @"US fluidram";
     static NSString *symbol = @"US fl dr";
@@ -146,6 +158,10 @@
 
 @implementation MKQuantity (MKVolumeUnit_Imperial)
 
++ (instancetype)volume_us_minimWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKVolumeUnit us_minim]];
+}
+
 + (instancetype)volume_us_fluidramWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKVolumeUnit us_fluidram]];
 }
@@ -193,6 +209,10 @@
 @end
 
 @implementation NSNumber (MKVolumeUnit_Imperial)
+
+- (MKQuantity *)volume_us_minim {
+    return [MKQuantity volume_us_minimWithAmount:self];
+}
 
 - (MKQuantity *)volume_us_fluidram {
     return [MKQuantity volume_us_fluidramWithAmount:self];

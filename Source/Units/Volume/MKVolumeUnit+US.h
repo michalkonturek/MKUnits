@@ -10,6 +10,7 @@
 
 @interface MKVolumeUnit (US)
 
++ (instancetype)us_minim;
 + (instancetype)us_fluidram;
 + (instancetype)us_teaspoon;
 + (instancetype)us_tablespoon;
@@ -26,6 +27,7 @@
 
 @interface MKQuantity (MKVolumeUnit_Imperial)
 
++ (instancetype)volume_us_minimWithAmount:(NSNumber *)amount;
 + (instancetype)volume_us_fluidramWithAmount:(NSNumber *)amount;
 + (instancetype)volume_us_teaspoonWithAmount:(NSNumber *)amount;
 + (instancetype)volume_us_tablespoonWithAmount:(NSNumber *)amount;
@@ -42,6 +44,7 @@
 
 @interface NSNumber (MKVolumeUnit_Imperial)
 
+- (MKQuantity *)volume_us_minim;
 - (MKQuantity *)volume_us_fluidram;
 - (MKQuantity *)volume_us_teaspoon;
 - (MKQuantity *)volume_us_tablespoon;

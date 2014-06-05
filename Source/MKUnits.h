@@ -41,5 +41,6 @@
 #import "MKTimeUnit.h"
 #import "MKVolumeUnit.h"
 #import "MKVolumeUnit+Imperial.h"
+#import "MKVolumeUnit+US.h"
 
 #import <MKFoundationKit/NSNumber+MK.h>
