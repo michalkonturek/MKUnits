@@ -14,4 +14,12 @@
 
 @implementation MKVolumeUnit_US_Tests
 
+- (void)test_one_gallon_is_4_quarts {
+    MKQuantity *target = [@1 volume_fluidounce];
+    MKQuantity *expected = [@4 volume_tablespoon];
+    
+    BOOL result = [expected isTheSame:target withPrecision:5];
+    assertThatBool(result, equalToBool(YES));
+}
+
 @end

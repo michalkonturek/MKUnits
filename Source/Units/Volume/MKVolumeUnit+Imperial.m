@@ -86,7 +86,7 @@
 
 + (instancetype)cup {
     static NSString *name   = @"cup";
-    static NSString *symbol = @"c";
+    static NSString *symbol = @"cp";
 //    id ratio = [NSDecimalNumber decimalNumberWithMantissa:8 exponent:0 isNegative:NO];
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:28413 exponent:-5 isNegative:NO];
     

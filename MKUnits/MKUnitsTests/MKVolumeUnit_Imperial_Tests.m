@@ -41,7 +41,6 @@
     assertThatBool(result, equalToBool(YES));
 }
 
-
 - (void)test_one_fluidonce_is_8_fluidrams {
     MKQuantity *target = [@1 volume_fluidounce];
     MKQuantity *expected = [@8 volume_fluidram];
