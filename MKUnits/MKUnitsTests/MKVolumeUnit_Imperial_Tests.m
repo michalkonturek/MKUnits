@@ -50,6 +50,22 @@
     assertThatBool(result, equalToBool(YES));
 }
 
+- (void)test_one_cup_is_10_fluidonces {
+    MKQuantity *target = [@1 volume_cup];           // 284.13 ml
+    MKQuantity *expected = [@10 volume_fluidounce]; // 284.130625 ml
+    
+    BOOL result = [expected isTheSame:target withPrecision:4];
+    assertThatBool(result, equalToBool(YES));
+}
+
+- (void)test_one_pint_is_2_cups {
+    MKQuantity *target = [@1 volume_pint];
+    MKQuantity *expected = [@2 volume_cup];
+    
+    BOOL result = [expected isTheSame:target withPrecision:5];
+    assertThatBool(result, equalToBool(YES));
+}
+
 - (void)test_one_pint_is_20_fluidounce {
     MKQuantity *target = [@1 volume_pint];
     MKQuantity *expected = [@20 volume_fluidounce];
