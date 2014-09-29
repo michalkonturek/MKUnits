@@ -1,13 +1,13 @@
 PODS:
-  - MKFoundationKit/NSNumber (1.2.2)
-  - OCHamcrest (4.0.0)
+  - MKFoundationKit/NSNumber (1.3.0)
+  - OCHamcrest (4.0.1)
 
 DEPENDENCIES:
   - MKFoundationKit/NSNumber (>= 1.1.0)
   - OCHamcrest (>= 3.0.0)
 
 SPEC CHECKSUMS:
-  MKFoundationKit: f8a268133483c1aa686f208d3944624cc0e68dd2
-  OCHamcrest: d930834b4f0f61e33c47fcd2c9f9505b4f87e0cd
+  MKFoundationKit: 70963bb9832074225e9586531451d7edff6184e4
+  OCHamcrest: b464725bbb48d0f1cd9c6f4ec3cb35fe0c4f2b94
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.1
