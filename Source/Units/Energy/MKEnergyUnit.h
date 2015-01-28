@@ -1,8 +1,8 @@
 //
-//  MKUnits.h
-//  MKUnits
+//  MKEnergyUnit.h
+//  MKUnitConverter
 //
-//  Copyright (c) 2013 Michal Konturek
+//  Copyright (c) 2014 Natalia Osiecka
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -23,25 +23,41 @@
 //  THE SOFTWARE.
 //
 
-#import "MKMacros.h"
-
 #import "MKUnit.h"
-#import "MKUnit+Conversion.h"
-#import "MKUnit+Quantity.h"
 #import "MKQuantity.h"
-#import "MKQuantity+Precision.h"
 
-#import "MKAreaUnit.h"
-#import "MKAreaUnit+Imperial.h"
-#import "MKByteUnit.h"
-#import "MKMassUnit.h"
-#import "MKMassUnit+Imperial.h"
-#import "MKLengthUnit.h"
-#import "MKLengthUnit+Imperial.h"
-#import "MKTimeUnit.h"
-#import "MKVolumeUnit.h"
-#import "MKVolumeUnit+Imperial.h"
-#import "MKVolumeUnit+US.h"
-#import "MKEnergyUnit.h"
+@interface MKEnergyUnit : MKUnit
 
-#import <MKFoundationKit/NSNumber+MK.h>
++ (instancetype)calorie;
++ (instancetype)kilocalorie;
+
++ (instancetype)joule;
++ (instancetype)kilojoule;
++ (instancetype)megajoule;
++ (instancetype)gigajoule;
+
+@end
+
+@interface MKQuantity (EnergyUnit)
+
++ (instancetype)energy_calorieWithAmount:(NSNumber *)amount;
++ (instancetype)energy_kilocalorieWithAmount:(NSNumber *)amount;
+
++ (instancetype)energy_jouleWithAmount:(NSNumber *)amount;
++ (instancetype)energy_kilojouleWithAmount:(NSNumber *)amount;
++ (instancetype)energy_megajouleWithAmount:(NSNumber *)amount;
++ (instancetype)energy_gigajouleWithAmount:(NSNumber *)amount;
+
+@end
+
+@interface NSNumber (EnergyUnit)
+
+- (MKQuantity *)energy_calorie;
+- (MKQuantity *)energy_kilocalorie;
+
+- (MKQuantity *)energy_joule;
+- (MKQuantity *)energy_kilojoule;
+- (MKQuantity *)energy_megajoule;
+- (MKQuantity *)energy_gigajoule;
+
+@end
