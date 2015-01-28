@@ -29,35 +29,35 @@
 @interface MKEnergyUnit : MKUnit
 
 + (instancetype)calorie;
-+ (instancetype)kiloCalorie;
++ (instancetype)kilocalorie;
 
 + (instancetype)joule;
-+ (instancetype)kiloJoule;
-+ (instancetype)megaJoule;
-+ (instancetype)gigaJoule;
++ (instancetype)kilojoule;
++ (instancetype)megajoule;
++ (instancetype)gigajoule;
 
 @end
 
 @interface MKQuantity (EnergyUnit)
 
 + (instancetype)energy_calorieWithAmount:(NSNumber *)amount;
-+ (instancetype)energy_kiloCalorieWithAmount:(NSNumber *)amount;
++ (instancetype)energy_kilocalorieWithAmount:(NSNumber *)amount;
 
 + (instancetype)energy_jouleWithAmount:(NSNumber *)amount;
-+ (instancetype)energy_kiloJouleWithAmount:(NSNumber *)amount;
-+ (instancetype)energy_megaJouleWithAmount:(NSNumber *)amount;
-+ (instancetype)energy_gigaJouleWithAmount:(NSNumber *)amount;
++ (instancetype)energy_kilojouleWithAmount:(NSNumber *)amount;
++ (instancetype)energy_megajouleWithAmount:(NSNumber *)amount;
++ (instancetype)energy_gigajouleWithAmount:(NSNumber *)amount;
 
 @end
 
 @interface NSNumber (EnergyUnit)
 
 - (MKQuantity *)energy_calorie;
-- (MKQuantity *)energy_kiloCalorie;
+- (MKQuantity *)energy_kilocalorie;
 
 - (MKQuantity *)energy_joule;
-- (MKQuantity *)energy_kiloJoule;
-- (MKQuantity *)energy_megaJoule;
-- (MKQuantity *)energy_gigaJoule;
+- (MKQuantity *)energy_kilojoule;
+- (MKQuantity *)energy_megajoule;
+- (MKQuantity *)energy_gigajoule;
 
 @end

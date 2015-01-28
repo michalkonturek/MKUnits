@@ -37,7 +37,7 @@
                       withRatio:ratio];
 }
 
-+ (instancetype)kiloCalorie {
++ (instancetype)kilocalorie {
     static NSString *name   = @"kiloCalorie";
     static NSString *symbol = @"kcal";
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:3 isNegative:NO];
@@ -57,7 +57,7 @@
                       withRatio:ratio];
 }
 
-+ (instancetype)kiloJoule {
++ (instancetype)kilojoule {
     static NSString *name   = @"kiloJoule";
     static NSString *symbol = @"kJ";
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:2388459 exponent:-4 isNegative:NO];
@@ -67,7 +67,7 @@
                       withRatio:ratio];
 }
 
-+ (instancetype)megaJoule {
++ (instancetype)megajoule {
     static NSString *name   = @"megaJoule";
     static NSString *symbol = @"MJ";
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:2388459 exponent:-1 isNegative:NO];
@@ -77,7 +77,7 @@
                       withRatio:ratio];
 }
 
-+ (instancetype)gigaJoule {
++ (instancetype)gigajoule {
     static NSString *name   = @"gigaJoule";
     static NSString *symbol = @"GJ";
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:2388459 exponent:2 isNegative:NO];
@@ -95,24 +95,24 @@
     return [self createWithAmount:amount withUnit:[MKEnergyUnit calorie]];
 }
     
-+ (instancetype)energy_kiloCalorieWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKEnergyUnit kiloCalorie]];
++ (instancetype)energy_kilocalorieWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKEnergyUnit kilocalorie]];
 }
 
 + (instancetype)energy_jouleWithAmount:(NSNumber *)amount {
     return [self createWithAmount:amount withUnit:[MKEnergyUnit joule]];
 }
 
-+ (instancetype)energy_kiloJouleWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKEnergyUnit kiloJoule]];
++ (instancetype)energy_kilojouleWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKEnergyUnit kilojoule]];
 }
 
-+ (instancetype)energy_megaJouleWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKEnergyUnit megaJoule]];
++ (instancetype)energy_megajouleWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKEnergyUnit megajoule]];
 }
 
-+ (instancetype)energy_gigaJouleWithAmount:(NSNumber *)amount {
-    return [self createWithAmount:amount withUnit:[MKEnergyUnit gigaJoule]];
++ (instancetype)energy_gigajouleWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKEnergyUnit gigajoule]];
 }
 
 @end
@@ -123,24 +123,24 @@
     return [MKQuantity energy_calorieWithAmount:self];
 }
 
-- (MKQuantity *)energy_kiloCalorie {
-    return [MKQuantity energy_kiloCalorieWithAmount:self];
+- (MKQuantity *)energy_kilocalorie {
+    return [MKQuantity energy_kilocalorieWithAmount:self];
 }
 
 - (MKQuantity *)energy_joule {
     return [MKQuantity energy_jouleWithAmount:self];
 }
 
-- (MKQuantity *)energy_kiloJoule {
-    return [MKQuantity energy_kiloJouleWithAmount:self];
+- (MKQuantity *)energy_kilojoule {
+    return [MKQuantity energy_kilojouleWithAmount:self];
 }
 
-- (MKQuantity *)energy_megaJoule {
-    return [MKQuantity energy_megaJouleWithAmount:self];
+- (MKQuantity *)energy_megajoule {
+    return [MKQuantity energy_megajouleWithAmount:self];
 }
 
-- (MKQuantity *)energy_gigaJoule {
-    return [MKQuantity energy_gigaJouleWithAmount:self];
+- (MKQuantity *)energy_gigajoule {
+    return [MKQuantity energy_gigajouleWithAmount:self];
 }
 
 @end
