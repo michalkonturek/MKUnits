@@ -48,12 +48,6 @@
     id amount_in_stones_2 = [[result amount] mk_roundedWithPrecision:3];
     NSLog(@"%@", amount_in_stones_2);
     // 0.945
-    
-    id cal = [@2689.4 energy_calorie];
-    id kcal = [cal convertTo:[MKEnergyUnit kiloCalorie]];
-    id joules = [cal convertTo:[MKEnergyUnit joule]];
-    NSLog(@"%@%@ == %@%@", [[kcal amount] mk_roundedWithPrecision:4], [kcal unit], [[joules amount] mk_roundedWithPrecision:2], [joules unit]);
-    // 2.6894kcal == 11259.98J
 }
 
 @end
