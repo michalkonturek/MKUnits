@@ -90,7 +90,7 @@ id amount_in_stones_2 = [[result amount] mk_roundedWithPrecision:3];;
 
 MKUnits works with Swift. 
 
-```
+```swift
 let kilograms = NSNumber.mass_kilogram(2)()
 let pounds = NSNumber.mass_pound(10)()
 let result = kilograms.add(pounds)
