@@ -86,6 +86,42 @@ id amount_in_stones_2 = [[result amount] mk_roundedWithPrecision:3];;
 // 0.945
 ```
 
+## Swift Integration
+
+MKUnits work with Swift. 
+
+Well, I guess I could add a code sample or a link to my blog entry http://michal.codes/integrating-cocoapods-with-a-swift-project/ how to use MKUnits with Swift.
+
+
+
+You need to create extension:
+
+```swift
+extension Int {
+
+    func mass_kilogram() -> MKQuantity {
+        return MKQuantity.mass_kilogramWithAmount(self)
+    }
+
+    func mass_pound() -> MKQuantity {
+        return MKQuantity.mass_poundWithAmount(self)
+    }
+}
+```
+
+and then you can do something like that:
+
+```swift
+let kilograms = 2.mass_kilogram()
+let pounds = 10.mass_pound()
+let result = kilograms.add(pounds)
+println(result)
+```
+
+Please refer to the [Integrating Cocoapods with a Swift project][blog]
+[blog]:http://michal.codes/integrating-cocoapods-with-a-swift-project/
+
+
 ## Supported Quantities 
 
 At the moment MKUnits supports the following quantities:
