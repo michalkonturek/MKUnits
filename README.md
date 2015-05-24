@@ -88,13 +88,16 @@ id amount_in_stones_2 = [[result amount] mk_roundedWithPrecision:3];;
 
 ## Swift Integration
 
-MKUnits work with Swift. 
+MKUnits works with Swift. 
 
-Well, I guess I could add a code sample or a link to my blog entry http://michal.codes/integrating-cocoapods-with-a-swift-project/ how to use MKUnits with Swift.
+```
+let kilograms = NSNumber.mass_kilogram(2)()
+let pounds = NSNumber.mass_pound(10)()
+let result = kilograms.add(pounds)
+println(result)
+```
 
-
-
-You need to create extension:
+You can also integrate imported Objective-C classes with Swift types. For example, by creating an extension for `Int`:
 
 ```swift
 extension Int {
@@ -118,7 +121,8 @@ let result = kilograms.add(pounds)
 println(result)
 ```
 
-Please refer to the [Integrating Cocoapods with a Swift project][blog]
+For Cocoapods Integration with Swift please refer to the my blog post [Integrating Cocoapods with a Swift project][blog].
+
 [blog]:http://michal.codes/integrating-cocoapods-with-a-swift-project/
 
 
