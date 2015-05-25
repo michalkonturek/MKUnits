@@ -19,7 +19,7 @@
     MKQuantity *expected = [@1000 volume_microlitre];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_centilitre_is_10_millilitres {
@@ -27,7 +27,7 @@
     MKQuantity *expected = [@10 volume_millilitre];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_decilitre_is_10_centilitre {
@@ -35,7 +35,7 @@
     MKQuantity *expected = [@10 volume_centilitre];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_litre_is_1000_millilitres {
@@ -43,7 +43,7 @@
     MKQuantity *expected = [@1000 volume_millilitre];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_hectolitre_is_100_litres {
@@ -51,7 +51,7 @@
     MKQuantity *expected = [@100 volume_litre];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 @end

@@ -81,25 +81,25 @@
 
 - (void)test_isEqual_returns_true {
     BOOL result = [self.kilogram isEqual:[MKMassUnit kilogram]];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_isEqual_returns_false_when_diff_units_but_same_group {
     BOOL result = [self.kilogram isEqual:[MKMassUnit gram]];
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 - (void)test_isEqual_returns_false_when_diff_units_and_diff_group {
     BOOL result = [self.kilogram isEqual:[MKLengthUnit centimeter]];
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 - (void)test_hash {
     BOOL result = ([[MKMassUnit kilogram] hash] == [[MKMassUnit grain] hash]);
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
     
     result = ([[MKMassUnit megagram] hash] == [[MKMassUnit milligram] hash]);
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 @end

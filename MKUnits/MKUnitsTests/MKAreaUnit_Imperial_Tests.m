@@ -34,35 +34,31 @@
 - (void)test_one_sq_inch_is_6_coma_4516_sq_centimeters {
     MKQuantity *expected = [MKQuantity area_square_centimeterWithAmount:@6.4516];
     BOOL result = [[MKQuantity area_square_inchWithAmount:@1]isTheSame:expected];
-    
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_sq_foot_is_144_sq_inches {
     MKQuantity *expected = [MKQuantity area_square_inchWithAmount:@144];
     BOOL result = [[MKQuantity area_square_footWithAmount:@1] isTheSame:expected];
-    
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_sq_yard_is_9_sq_feet {
     MKQuantity *expected = [MKQuantity area_square_footWithAmount:@9];
     BOOL result = [[MKQuantity area_square_yardWithAmount:@1] isTheSame:expected];
-    
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_acre_is_4840_sq_yards {
     MKQuantity *expected = [MKQuantity area_square_yardWithAmount:@4840];
     BOOL result = [[MKQuantity area_acreWithAmount:@1] isTheSame:expected];
-    
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_sq_mile_is_640_sq_acres {    
     MKQuantity *expected = [MKQuantity area_acreWithAmount:@640];
     BOOL result = [[MKQuantity area_square_mileWithAmount:@1] isTheSame:expected withPrecision:8];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
     
     /*
      640 acres is converted to 1.00000000012973032528709176197723934724 sq mi
