@@ -65,13 +65,13 @@
 - (void)test_divides {
     id expected = [@1 mass_kilogram];
     id result = [[@3 mass_kilogram] divideBy:@3];
-    assertThatBool([result isEqual:expected], equalToBool(YES));
+    assertThatBool([result isEqual:expected], isTrue());
 }
 
 - (void)test_multiply {
     id expected = [@3 mass_kilogram];
     id result = [[@1 mass_kilogram] multiplyBy:@3];
-    assertThatBool([result isEqual:expected], equalToBool(YES));
+    assertThatBool([result isEqual:expected], isTrue());
 }
 
 - (void)test_negate {
@@ -111,22 +111,22 @@
 
 - (void)test_isTheSame_returns_true_same_group_and_units {
     BOOL result = [self.kilogram_2 isTheSame:[MKQuantity mass_kilogramWithAmount:@2]];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_isTheSame_returns_true_same_group_diff_units {
     BOOL result = [self.kilogram_2 isTheSame:[MKQuantity mass_gramWithAmount:@2000]];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_isTheSame_returns_false_same_group_and_units {
     BOOL result = [self.kilogram_2 isTheSame:[MKQuantity mass_kilogramWithAmount:@1]];
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 - (void)test_isTheSame_returns_false_same_group_diff_units {
     BOOL result = [self.kilogram_2 isTheSame:[MKQuantity mass_gramWithAmount:@1000]];
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 - (void)test_isTheSame_throws_exception_when_diff_group {
@@ -135,27 +135,27 @@
 
 - (void)test_isGreaterThan_returns_true_same_group_same_units {
     BOOL result = [self.kilogram_2 isGreaterThan:[MKQuantity mass_kilogramWithAmount:@1]];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_isGreaterThan_returns_true_same_group_diff_units {
     BOOL result = [self.kilogram_2 isGreaterThan:[MKQuantity mass_gramWithAmount:@1]];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_isGreaterThan_returns_false {
     BOOL result = [self.gram_300 isGreaterThan:self.kilogram_2];
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 - (void)test_isLessThan_returns_true {
     BOOL result = [self.gram_300 isLessThan:self.kilogram_2];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_isLessThan_returns_false {
     BOOL result = [self.kilogram_2 isLessThan:self.gram_300];
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 - (void)test_hash_returns_true {
@@ -163,7 +163,7 @@
     MKQuantity *kg2 = [MKQuantity mass_gramWithAmount:@1];
     
     BOOL result = ([kg1 hash] == [kg2 hash]);
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_hash_returns_false_when_same_units_different_amounts {
@@ -171,7 +171,7 @@
     MKQuantity *q2 = [MKQuantity mass_gramWithAmount:@2];
     
     BOOL result = ([q1 hash] == [q2 hash]);
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 - (void)test_hash_returns_false_when_different_units_same_amounts {
@@ -179,7 +179,7 @@
     MKQuantity *q2 = [MKQuantity mass_milligramWithAmount:@1];
     
     BOOL result = ([q1 hash] == [q2 hash]);
-    assertThatBool(result, equalToBool(NO));
+    assertThatBool(result, isFalse());
 }
 
 @end

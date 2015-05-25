@@ -22,7 +22,7 @@
 //    id test2 = [expected convertTo:[MKVolumeUnit millilitre]];
     
     BOOL result = [expected isTheSame:target withPrecision:6];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_fluidonce_is_4_point_8_teaspoons {
@@ -30,7 +30,7 @@
     MKQuantity *expected = [@4.8 volume_teaspoon];  // 28.413072 ml
     
     BOOL result = [expected isTheSame:target withPrecision:5];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_fluidonce_is_1_point_6_tablespoon {
@@ -38,7 +38,7 @@
     MKQuantity *expected = [@1.6 volume_tablespoon];
     
     BOOL result = [expected isTheSame:target withPrecision:5];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_fluidonce_is_8_fluidrams {
@@ -46,7 +46,7 @@
     MKQuantity *expected = [@8 volume_fluidram];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_cup_is_10_fluidonces {
@@ -54,7 +54,7 @@
     MKQuantity *expected = [@10 volume_fluidounce]; // 284.130625 ml
     
     BOOL result = [expected isTheSame:target withPrecision:4];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_pint_is_2_cups {
@@ -62,7 +62,7 @@
     MKQuantity *expected = [@2 volume_cup];
     
     BOOL result = [expected isTheSame:target withPrecision:5];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_pint_is_20_fluidounce {
@@ -70,7 +70,7 @@
     MKQuantity *expected = [@20 volume_fluidounce];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_quart_is_2_pints {
@@ -78,7 +78,7 @@
     MKQuantity *expected = [@2 volume_pint];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_gallon_is_4_quarts {
@@ -86,7 +86,7 @@
     MKQuantity *expected = [@4 volume_quart];
     
     BOOL result = [expected isTheSame:target];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 @end

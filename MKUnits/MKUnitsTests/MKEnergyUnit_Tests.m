@@ -19,7 +19,7 @@
     MKQuantity *expected = [@1000 energy_calorie];
     
     BOOL result = [target isTheSame:expected];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_one_kilocalorie_is_4186_point_8_jules {
@@ -27,7 +27,7 @@
     MKQuantity *expected = [@4186.8 energy_joule];
  
     BOOL result = [expected isTheSame:target withPrecision:1];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_1_kilojoule_is_1000_joules {
@@ -35,7 +35,7 @@
     MKQuantity *expected = [@1000 energy_joule];
     
     BOOL result = [target isTheSame:expected];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_1_megajoule_is_1000_kilojoules {
@@ -43,7 +43,7 @@
     MKQuantity *expected = [@1000 energy_kilojoule];
     
     BOOL result = [target isTheSame:expected];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 - (void)test_1_gigajoule_is_1000_megajoules {
@@ -51,7 +51,7 @@
     MKQuantity *expected = [@1000 energy_megajoule];
     
     BOOL result = [target isTheSame:expected];
-    assertThatBool(result, equalToBool(YES));
+    assertThatBool(result, isTrue());
 }
 
 @end

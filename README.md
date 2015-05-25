@@ -86,6 +86,46 @@ id amount_in_stones_2 = [[result amount] mk_roundedWithPrecision:3];;
 // 0.945
 ```
 
+## Swift Integration
+
+MKUnits works with Swift. 
+
+```swift
+let kilograms = NSNumber.mass_kilogram(2)()
+let pounds = NSNumber.mass_pound(10)()
+let result = kilograms.add(pounds)
+println(result)
+```
+
+You can also integrate imported Objective-C classes with Swift types. For example, by creating an extension for `Int`:
+
+```swift
+extension Int {
+
+    func mass_kilogram() -> MKQuantity {
+        return MKQuantity.mass_kilogramWithAmount(self)
+    }
+
+    func mass_pound() -> MKQuantity {
+        return MKQuantity.mass_poundWithAmount(self)
+    }
+}
+```
+
+and then you can do something like that:
+
+```swift
+let kilograms = 2.mass_kilogram()
+let pounds = 10.mass_pound()
+let result = kilograms.add(pounds)
+println(result)
+```
+
+For Cocoapods Integration with Swift please refer to the my blog post [Integrating Cocoapods with a Swift project][blog].
+
+[blog]:http://michal.codes/integrating-cocoapods-with-a-swift-project/
+
+
 ## Supported Quantities 
 
 At the moment MKUnits supports the following quantities:
