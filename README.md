@@ -121,7 +121,7 @@ let result = kilograms.add(pounds)
 println(result)
 ```
 
-For Cocoapods Integration with Swift please refer to the my blog post [Integrating Cocoapods with a Swift project][blog].
+For CocoaPods Integration with Swift please refer to the my blog post [Integrating CocoaPods with a Swift project][blog].
 
 [blog]:http://michal.codes/integrating-cocoapods-with-a-swift-project/
 
