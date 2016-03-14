@@ -122,6 +122,18 @@
                       withRatio:ratio];
 }
 
++ (instancetype)shortton {
+    static NSString *name   = @"shortton";
+    static NSString *symbol = @"tn";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:90718475 exponent:-5 isNegative:NO];
+    
+//     907.18475 kg
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
 
 @end
 

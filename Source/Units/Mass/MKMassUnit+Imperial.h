@@ -35,6 +35,7 @@
 + (instancetype)quarter;
 + (instancetype)hundredweight;
 + (instancetype)ton;
++ (instancetype)shortton;
 
 @end
 
@@ -48,6 +49,7 @@
 + (instancetype)mass_quarterWithAmount:(NSNumber *)amount;
 + (instancetype)mass_hundredweightWithAmount:(NSNumber *)amount;
 + (instancetype)mass_tonWithAmount:(NSNumber *)amount;
++ (instancetype)mass_shorttonWithAmount:(NSNumber *)amount;
 
 @end
 
@@ -61,5 +63,6 @@
 - (MKQuantity *)mass_quarter;
 - (MKQuantity *)mass_hundredweight;
 - (MKQuantity *)mass_ton;
+- (MKQuantity *)mass_shortton;
 
 @end
