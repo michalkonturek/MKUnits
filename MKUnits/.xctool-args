@@ -1,5 +1,0 @@
-[
-  "-workspace", "MKUnits.xcworkspace",
-  "-scheme", "MKUnits",
-  "-sdk", "iphonesimulator"
-]
