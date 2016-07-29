@@ -1,9 +1,9 @@
 {
   "name": "MKUnits",
-  "version": "0.1.0",
-  "summary": "A short description of MKUnits.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/MKUnits",
+  "version": "3.0.0",
+  "summary": "Unit conversion library for Swift. It provides units of measurement of physical quantities and simplifies manipulation of them.",
+  "description": "Unit conversion library for Swift. It provides units of measurement of physical quantities and simplifies manipulation of them.",
+  "homepage": "https://github.com/michalkonturek/MKUnits",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,9 +12,10 @@
     "Michal Konturek": "michal.konturek@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/MKUnits.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/michalkonturek/MKUnits.git",
+    "tag": "3.0.0"
   },
+  "social_media_url": "https://twitter.com/michalkonturek",
   "platforms": {
     "ios": "8.0"
   },
