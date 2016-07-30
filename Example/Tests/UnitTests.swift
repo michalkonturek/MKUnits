@@ -54,6 +54,13 @@ class UnitTests: XCTestCase {
         let decagram = MassUnit.decagram
         XCTAssertFalse(self.sut.isConvertible(decagram))
     }
+    
+    func test_convert_from_to() {
+        let kilogram = MassUnit.kilogram
+        let decagram = MassUnit.decagram
+        let converted = kilogram.convert(1, from: kilogram, to: decagram)
+        XCTAssertEqual(converted, 100)
+    }
 }
 
 struct TestUnit: Unit {

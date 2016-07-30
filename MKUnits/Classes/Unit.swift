@@ -17,6 +17,7 @@ public protocol Unit: CustomStringConvertible, Equatable {
     func convertFromBaseUnit(amount: NSNumber) -> NSNumber
     func convertToBaseUnit(amount: NSNumber) -> NSNumber
     func isConvertible<T : Unit>(with: T) -> Bool
+    func convert<T : Unit>(amount: NSNumber, from: T, to: T) -> NSNumber;
 }
 
 extension Unit {
@@ -45,6 +46,14 @@ extension Unit {
 extension Unit {
     public var description: String {
         return self.symbol!
+    }
+}
+
+extension Unit {
+    public func convert<T : Unit>(amount: NSNumber, from: T, to: T) -> NSNumber {
+        let baseAmount = from.convertToBaseUnit(amount)
+        let converted = to.convertFromBaseUnit(baseAmount)
+        return converted
     }
 }
 
