@@ -11,7 +11,13 @@ import Foundation
 public struct Quantity {
     public let amount: NSDecimalNumber
     public let unit: Unit
-
+    
+    public init(amount: NSNumber, unit: Unit) {
+        self.amount = NSDecimalNumber(decimal: amount.decimalValue)
+        self.unit = unit
+    }
+    
+    
 //    public func convert(to: T) -> Quantity<T> {
 //        assert(self.unit.isConvertible(to))
 //    }

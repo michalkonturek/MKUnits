@@ -77,9 +77,9 @@
 		21F72C5C8CD1EAEEC19690C4BD399F22 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A749E4F377F6EC52F7EC14294FBC0B3B /* Unit.swift */,
 				B1B17E7E1D0DA48179F464D4CED7C5AD /* MassUnit.swift */,
 				F8864B0C8E02FA8FAB0B3D68D69103E0 /* Quantity.swift */,
+				A749E4F377F6EC52F7EC14294FBC0B3B /* Unit.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
