@@ -10,17 +10,10 @@ import XCTest
 @testable import MKUnits
 
 class QuantityTests: XCTestCase {
-//    var unit = Unit(name: "U", symbol: "u", ratio: 1)
-//    var sut = Quantity(amount: 100, unit: nil)
-//
-//    override func setUp() {
-//        super.setUp()
-//        
-//        self.sut = Quantity(amount: 100, unit: unit)
-//    }
-//
-//    func test_init() {
-//        XCTAssertEqual(self.sut.amount, 100)
-//        XCTAssertEqual(self.sut.unit, self.unit)
-//    }
+    var sut = Quantity<TestUnit>(amount: 100, unit: TestUnit.unit)
+
+    func test_init() {
+        XCTAssertEqual(sut.amount, 100)
+        XCTAssertEqual(sut.unit, TestUnit.unit)
+    }
 }

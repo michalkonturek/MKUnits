@@ -11,7 +11,7 @@ import XCTest
 @testable import MKUnits
 
 class UnitTests: XCTestCase {
-    let sut = TestUnit(name: "Unit", symbol: "U", ratio: 1)
+    let sut = TestUnit.unit
     
     func test_init() {
         XCTAssertEqual(self.sut.name!, "Unit")
@@ -40,7 +40,7 @@ class UnitTests: XCTestCase {
     }
     
     func test_equatable_returnsFalse() {
-        let other = TestUnit(name: "Zunit", symbol: "Z", ratio: NSDecimalNumber.one())
+        let other = TestUnit(name: "UnitZ", symbol: "Z", ratio: NSDecimalNumber.one())
         XCTAssertFalse(self.sut == other)
     }
     
@@ -57,6 +57,10 @@ class UnitTests: XCTestCase {
 }
 
 struct TestUnit: Unit {
+    internal static var unit: TestUnit {
+        return TestUnit(name: "Unit", symbol: "U", ratio: 1)
+    }
+    
     internal var name: String?
     internal var symbol: String?
     internal var ratio: NSDecimalNumber?

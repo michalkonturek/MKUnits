@@ -8,15 +8,22 @@
 
 import Foundation
 
-public struct Quantity {
-    let amount: NSDecimalNumber!
-//    let unit: Unit!
+protocol Unitable {
+    associatedtype UnitType
+    var amount: NSDecimalNumber { get }
+    var unit: UnitType { get }
     
-//    public init(amount: NSNumber!, unit:Unit!) {
-//        self.amount = NSDecimalNumber(decimal: amount.decimalValue)
-//        self.unit = unit
-//    }
+    init(amount: NSNumber, unit: UnitType)
+}
+
+public struct Quantity<T>: Unitable {
+    public let amount: NSDecimalNumber
+    public let unit: T
     
+    public init(amount: NSNumber, unit: T) {
+        self.amount = NSDecimalNumber(decimal: amount.decimalValue)
+        self.unit = unit
+    }
     
 }
 
