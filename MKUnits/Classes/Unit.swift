@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Unit: CustomStringConvertible, Equatable {
+public protocol Unit: CustomStringConvertible, UnitConversion, Equatable {
     var name: String? { get set }
     var symbol: String? { get set }
     var ratio: NSDecimalNumber? { get set }
@@ -16,8 +16,6 @@ public protocol Unit: CustomStringConvertible, Equatable {
     init()
     func convertFromBaseUnit(amount: NSNumber) -> NSNumber
     func convertToBaseUnit(amount: NSNumber) -> NSNumber
-    func isConvertible<T : Unit>(with: T) -> Bool
-    func convert<T : Unit>(amount: NSNumber, from: T, to: T) -> NSNumber;
 }
 
 extension Unit {
@@ -37,16 +35,19 @@ extension Unit {
         let converted = NSDecimalNumber(decimal: amount.decimalValue)
         return converted.decimalNumberByMultiplyingBy(self.ratio!)
     }
-    
-    public func isConvertible<T : Unit>(with: T) -> Bool {
-        return with.dynamicType == self.dynamicType
-    }
 }
 
+// MARK: - CustomStringConvertible
 extension Unit {
     public var description: String {
         return self.symbol!
     }
+}
+
+// MARK: - UnitConversion
+public protocol UnitConversion {
+    func convert<T : Unit>(amount: NSNumber, from: T, to: T) -> NSNumber;
+    func isConvertible<T : Unit>(with: T) -> Bool
 }
 
 extension Unit {
@@ -55,8 +56,13 @@ extension Unit {
         let converted = to.convertFromBaseUnit(baseAmount)
         return converted
     }
+    
+    public func isConvertible<T : Unit>(with: T) -> Bool {
+        return with.dynamicType == self.dynamicType
+    }
 }
 
+// MARK: - Equatable
 public func ==<T : Unit>(lhs: T, rhs: T) -> Bool {
     return lhs.symbol == rhs.symbol
 }

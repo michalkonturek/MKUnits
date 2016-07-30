@@ -16,7 +16,7 @@ protocol Unitable {
     init(amount: NSNumber, unit: UnitType)
 }
 
-public struct Quantity<T>: Unitable {
+public struct Quantity<T : Unit>: Unitable {
     public let amount: NSDecimalNumber
     public let unit: T
     
@@ -24,10 +24,17 @@ public struct Quantity<T>: Unitable {
         self.amount = NSDecimalNumber(decimal: amount.decimalValue)
         self.unit = unit
     }
-    
+
+//    public func convert(to: T) -> Quantity<T> {
+//        assert(self.unit.isConvertible(to))
+//    }
 }
 
-//func +(left: Quantity, right: Quantity) -> Quantity {
-//    assert(left.unit == right.unit)
+//func +<T : Unit, X : Unit>(left: Quantity<T>, right: Quantity<X>) -> Quantity<T> {
+//    assert(left.unit.isConvertible(right.unit))
+//    let other = right.
+////    return Quantity(amount: other, unit: <#T##T#>)
 //}
+
+
 //http://stackoverflow.com/questions/29644963/convert-nsdecimalnumbers-to-negative
