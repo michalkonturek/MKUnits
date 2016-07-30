@@ -17,10 +17,11 @@ public struct Quantity {
         self.unit = unit
     }
     
-    
-//    public func convert(to: T) -> Quantity<T> {
-//        assert(self.unit.isConvertible(to))
-//    }
+    public func converted(to: Unit) -> Quantity {
+        assert(self.unit.isConvertible(to))
+        let amount = self.unit.convert(self.amount, to: to)
+        return Quantity(amount: amount, unit: to)
+    }
 }
 
 // MARK: - Equatable
@@ -35,6 +36,29 @@ extension Quantity: Equatable {
 public func ==(lhs: Quantity, rhs: Quantity) -> Bool {
     return lhs.equals(rhs)
 }
+
+// MARK: - Comparable
+extension Quantity: Comparable {}
+public func <(lhs: Quantity, rhs: Quantity) -> Bool {
+    assert(lhs.unit.isConvertible(rhs.unit))
+    return true
+}
+
+public func <=(lhs: Quantity, rhs: Quantity) -> Bool {
+    assert(lhs.unit.isConvertible(rhs.unit))
+    return true
+}
+
+public func >=(lhs: Quantity, rhs: Quantity) -> Bool {
+    assert(lhs.unit.isConvertible(rhs.unit))
+    return true
+}
+
+public func >(lhs: Quantity, rhs: Quantity) -> Bool {
+    assert(lhs.unit.isConvertible(rhs.unit))
+    return true
+}
+
 
 //func +<T : Unit, X : Unit>(left: Quantity<T>, right: Quantity<X>) -> Quantity<T> {
 //    assert(left.unit.isConvertible(right.unit))
