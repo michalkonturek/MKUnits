@@ -1,12 +1,8 @@
 PODS:
   - MKUnits (3.0.0)
-  - Nimble (3.2.0)
-  - Quick (0.9.2)
 
 DEPENDENCIES:
   - MKUnits (from `../`)
-  - Nimble (~> 3.0)
-  - Quick (~> 0.8)
 
 EXTERNAL SOURCES:
   MKUnits:
@@ -14,9 +10,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   MKUnits: 5596e35619884aa09fb2eeeb2be54ad2e56e535d
-  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
-  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
-PODFILE CHECKSUM: 2de6096ec053c12a0a2f965b064a96c986189f3d
+PODFILE CHECKSUM: 6ad3966b6b135e03c67572ebf06260100a210a85
 
 COCOAPODS: 1.0.1

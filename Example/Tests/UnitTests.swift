@@ -11,16 +11,12 @@ import XCTest
 @testable import MKUnits
 
 class UnitTests: XCTestCase {
-    let sut: Unit = Unit(name: "Unit", symbol: "U", ratio: NSDecimalNumber.one())
-
-    override func setUp() {
-        super.setUp()
-    }
+    let sut = MassUnit(name: "Unit", symbol: "U", ratio: NSDecimalNumber.one())
     
     func test_init() {
-        XCTAssertEqual(sut.name, "Unit")
-        XCTAssertEqual(sut.symbol, "U")
-        XCTAssertEqual(sut.ratio, NSDecimalNumber.one())
+        XCTAssertEqual(sut.name!, "Unit")
+        XCTAssertEqual(sut.symbol!, "U")
+        XCTAssertEqual(sut.ratio!, NSDecimalNumber.one())
     }
     
     func test_convertFromBaseUnit() {
@@ -39,12 +35,18 @@ class UnitTests: XCTestCase {
     }
 
     func test_equatable_returnsTrue() {
-        let other = Unit(name: "Unit", symbol: "U", ratio: NSDecimalNumber.one())
+        let other = MassUnit(name: "Unit", symbol: "U", ratio: NSDecimalNumber.one())
         XCTAssertTrue(self.sut == other)
     }
     
     func test_equatable_returnsFalse() {
-        let other = Unit(name: "Zunit", symbol: "Z", ratio: NSDecimalNumber.one())
+        let other = MassUnit(name: "Zunit", symbol: "Z", ratio: NSDecimalNumber.one())
         XCTAssertFalse(self.sut == other)
+    }
+    
+    func test_isConvertible_returnsTrue() {
+        let kilogram = MassUnit.kilogram
+        let decagram = MassUnit.decagram
+        XCTAssertTrue(kilogram.isConvertible(decagram))
     }
 }
