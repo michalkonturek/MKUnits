@@ -78,6 +78,3 @@ extension Unit: Equatable {
 public func ==<T where T: Unit>(lhs: T, rhs: T) -> Bool {
     return lhs.equals(rhs)
 }
-//public func ==(lhs: Unit, rhs: Unit) -> Bool {
-//    return lhs.symbol == rhs.symbol
-//}

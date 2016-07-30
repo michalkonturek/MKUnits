@@ -23,10 +23,23 @@ public struct Quantity {
 //    }
 }
 
+// MARK: - Equatable
+extension Quantity: Equatable {
+    public func equals(other: Quantity) -> Bool {
+        if self.unit != other.unit {
+            return false
+        }
+        return self.amount == other.amount
+    }
+}
+public func ==(lhs: Quantity, rhs: Quantity) -> Bool {
+    return lhs.equals(rhs)
+}
+
 //func +<T : Unit, X : Unit>(left: Quantity<T>, right: Quantity<X>) -> Quantity<T> {
 //    assert(left.unit.isConvertible(right.unit))
 //    let other = right.
-////    return Quantity(amount: other, unit: <#T##T#>)
+////    return Quantity(amount: other, unit: )
 //}
 
 
