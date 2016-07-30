@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MassUnit: Unit {
+public final class MassUnit: Unit {
     
     static var decagram: MassUnit {
         return MassUnit(
@@ -25,10 +25,4 @@ public struct MassUnit: Unit {
             ratio: NSDecimalNumber.one()
         )
     }
-    
-    public var name: String?
-    public var symbol: String?
-    public var ratio: NSDecimalNumber?
-    
-    public init() {}
 }

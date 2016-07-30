@@ -8,22 +8,9 @@
 
 import Foundation
 
-protocol Unitable {
-    associatedtype UnitType
-    var amount: NSDecimalNumber { get }
-    var unit: UnitType { get }
-    
-    init(amount: NSNumber, unit: UnitType)
-}
-
-public struct Quantity<T : Unit>: Unitable {
+public struct Quantity {
     public let amount: NSDecimalNumber
-    public let unit: T
-    
-    public init(amount: NSNumber, unit: T) {
-        self.amount = NSDecimalNumber(decimal: amount.decimalValue)
-        self.unit = unit
-    }
+    public let unit: Unit
 
 //    public func convert(to: T) -> Quantity<T> {
 //        assert(self.unit.isConvertible(to))

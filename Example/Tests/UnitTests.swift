@@ -14,10 +14,10 @@ class UnitTests: XCTestCase {
     let sut = TestUnit.unitA
     
     func test_init() {
-        XCTAssertEqual(self.sut.name!, "Unit A")
-        XCTAssertEqual(self.sut.symbol!, "A")
-        XCTAssertEqual(self.sut.ratio!, NSDecimalNumber.one())
-        XCTAssertTrue(self.sut.ratio!.dynamicType == NSDecimalNumber.self)
+        XCTAssertEqual(self.sut.name, "Unit A")
+        XCTAssertEqual(self.sut.symbol, "A")
+        XCTAssertEqual(self.sut.ratio, NSDecimalNumber.one())
+        XCTAssertTrue(self.sut.ratio.dynamicType == NSDecimalNumber.self)
     }
     
     func test_convertFromBaseUnit() {
@@ -46,12 +46,26 @@ class UnitTests: XCTestCase {
         let decagram = MassUnit.decagram
         XCTAssertFalse(self.sut.isConvertible(decagram))
     }
+
+    func test_convert_from() {
+        let unitA = TestUnit.unitA
+        let unitB = TestUnit.unitB
+        let converted = unitA.convert(10, from: unitB)
+        XCTAssertEqual(converted, 100)
+    }
     
     func test_convert_from_to() {
-        let kilogram = MassUnit.kilogram
-        let decagram = MassUnit.decagram
-        let converted = kilogram.convert(1, from: kilogram, to: decagram)
+        let unitA = TestUnit.unitA
+        let unitB = TestUnit.unitB
+        let converted = unitA.convert(10, from: unitB, to: unitA)
         XCTAssertEqual(converted, 100)
+    }
+    
+    func test_convert_to() {
+        let unitA = TestUnit.unitA
+        let unitB = TestUnit.unitB
+        let converted = unitA.convert(10, to: unitB)
+        XCTAssertEqual(converted, 1)
     }
     
     // MARK: - Equatable
@@ -61,12 +75,15 @@ class UnitTests: XCTestCase {
     }
     
     func test_equatable_returnsFalse() {
-        let other = TestUnit.unitB
+        var other = TestUnit.unitB
+        XCTAssertFalse(self.sut == other)
+        
+        other = TestOtherUnit.unit
         XCTAssertFalse(self.sut == other)
     }
 }
 
-struct TestUnit: Unit {
+class TestUnit: Unit {
     
     internal static var unitA: TestUnit {
         return TestUnit(name: "Unit A", symbol: "A", ratio: 1)
@@ -75,10 +92,11 @@ struct TestUnit: Unit {
     internal static var unitB: TestUnit {
         return TestUnit(name: "Unit B", symbol: "B", ratio: 10)
     }
+}
+
+class TestOtherUnit: TestUnit {
     
-    internal var name: String?
-    internal var symbol: String?
-    internal var ratio: NSDecimalNumber?
-    
-    internal init() {}
+    internal static var unit: TestOtherUnit {
+        return TestOtherUnit(name: "Unit A", symbol: "A", ratio: 1)
+    }
 }
