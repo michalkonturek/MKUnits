@@ -20,11 +20,11 @@ public protocol Unit: CustomStringConvertible, Equatable {
 }
 
 extension Unit {
-    public init(name: String, symbol: String, ratio: NSDecimalNumber) {
+    public init(name: String, symbol: String, ratio: NSNumber) {
         self.init()
         self.name = name
         self.symbol = symbol
-        self.ratio = ratio
+        self.ratio = NSDecimalNumber(decimal: ratio.decimalValue)
     }
 
     public func convertFromBaseUnit(amount: NSNumber) -> NSNumber {

@@ -3,7 +3,7 @@
 //  MKUnits
 //
 //  Created by Michal Konturek on 29/07/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
+//
 //
 
 import XCTest
@@ -11,12 +11,13 @@ import XCTest
 @testable import MKUnits
 
 class UnitTests: XCTestCase {
-    let sut = MassUnit(name: "Unit", symbol: "U", ratio: NSDecimalNumber.one())
+    let sut = TestUnit(name: "Unit", symbol: "U", ratio: 1)
     
     func test_init() {
-        XCTAssertEqual(sut.name!, "Unit")
-        XCTAssertEqual(sut.symbol!, "U")
-        XCTAssertEqual(sut.ratio!, NSDecimalNumber.one())
+        XCTAssertEqual(self.sut.name!, "Unit")
+        XCTAssertEqual(self.sut.symbol!, "U")
+        XCTAssertEqual(self.sut.ratio!, NSDecimalNumber.one())
+        XCTAssertTrue(self.sut.ratio!.dynamicType == NSDecimalNumber.self)
     }
     
     func test_convertFromBaseUnit() {
@@ -27,7 +28,6 @@ class UnitTests: XCTestCase {
     func test_convertToBaseUnit() {
         let value = self.sut.convertFromBaseUnit(100)
         XCTAssertEqual(value, 100)
-        print(sut)
     }
 
     func test_description() {
@@ -35,12 +35,12 @@ class UnitTests: XCTestCase {
     }
 
     func test_equatable_returnsTrue() {
-        let other = MassUnit(name: "Unit", symbol: "U", ratio: NSDecimalNumber.one())
+        let other = TestUnit(name: "Unit", symbol: "U", ratio: NSDecimalNumber.one())
         XCTAssertTrue(self.sut == other)
     }
     
     func test_equatable_returnsFalse() {
-        let other = MassUnit(name: "Zunit", symbol: "Z", ratio: NSDecimalNumber.one())
+        let other = TestUnit(name: "Zunit", symbol: "Z", ratio: NSDecimalNumber.one())
         XCTAssertFalse(self.sut == other)
     }
     
@@ -49,4 +49,17 @@ class UnitTests: XCTestCase {
         let decagram = MassUnit.decagram
         XCTAssertTrue(kilogram.isConvertible(decagram))
     }
+    
+    func test_isConvertible_returnsFalse() {
+        let decagram = MassUnit.decagram
+        XCTAssertFalse(self.sut.isConvertible(decagram))
+    }
+}
+
+struct TestUnit: Unit {
+    internal var name: String?
+    internal var symbol: String?
+    internal var ratio: NSDecimalNumber?
+    
+    internal init() {}
 }
