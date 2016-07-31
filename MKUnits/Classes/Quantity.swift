@@ -1,6 +1,6 @@
 //
 //  Quantity.swift
-//  Pods
+//  MKUnits
 //
 //  Created by Michal Konturek on 29/07/2016.
 //
@@ -96,10 +96,12 @@ extension Quantity: CustomStringConvertible {
 
 extension Quantity: Equatable {
     public func equals(other: Quantity) -> Bool {
-        if self.unit != other.unit {
+        if self.unit.isConvertible(other.unit) {
+            let converted = other.converted(self.unit)
+            return self.amount == converted.amount
+        } else {
             return false
         }
-        return self.amount == other.amount
     }
 }
 public func ==(lhs: Quantity, rhs: Quantity) -> Bool {

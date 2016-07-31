@@ -94,7 +94,10 @@ class QuantityTests: XCTestCase {
     // MARK: - Equatable
     
     func test_equatable_returnsTrue() {
-        let other = Quantity(amount: 100, unit: TestUnit.unitA)
+        var other = Quantity(amount: 100, unit: TestUnit.unitA)
+        XCTAssertTrue(self.sut == other)
+        
+        other = Quantity(amount: 10, unit: TestUnit.unitB)
         XCTAssertTrue(self.sut == other)
     }
     
