@@ -31,11 +31,13 @@ class UnitTests: XCTestCase {
     }
 
     // MARK: - CustomStringConvertible
+    
     func test_description() {
         XCTAssertEqual(self.sut.description, "A")
     }
     
     // MARK: - CustomStringConvertible
+    
     func test_isConvertible_returnsTrue() {
         let kilogram = MassUnit.kilogram
         let decagram = MassUnit.decagram
@@ -69,6 +71,7 @@ class UnitTests: XCTestCase {
     }
     
     // MARK: - Equatable
+    
     func test_equatable_returnsTrue() {
         let other = TestUnit.unitA
         XCTAssertTrue(self.sut == other)

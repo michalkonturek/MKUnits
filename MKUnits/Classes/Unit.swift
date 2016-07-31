@@ -31,6 +31,7 @@ public class Unit {
 }
 
 // MARK: - CustomStringConvertible
+
 extension Unit: CustomStringConvertible {
     public var description: String {
         return self.symbol
@@ -38,6 +39,7 @@ extension Unit: CustomStringConvertible {
 }
 
 // MARK: - UnitConversion
+
 public protocol UnitConversion {
     func convert(amount: NSNumber, to: Unit) -> NSNumber
     func convert(amount: NSNumber, from: Unit) -> NSNumber
@@ -67,6 +69,7 @@ extension Unit: UnitConversion {
 }
 
 // MARK: - Equatable
+
 extension Unit: Equatable {
     public func equals(other: Unit) -> Bool {
         if other.dynamicType !== self.dynamicType {

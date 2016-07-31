@@ -15,7 +15,7 @@ class QuantityTests: XCTestCase {
 
     func test_init() {
         XCTAssertEqual(self.sut.amount, 100)
-        XCTAssertTrue(self.sut.unit == TestUnit.unitA)
+        XCTAssertEqual(self.sut.unit, TestUnit.unitA)
     }
     
     func test_converted() {
@@ -24,12 +24,69 @@ class QuantityTests: XCTestCase {
         XCTAssertTrue(converted.unit == TestUnit.unitB)
     }
     
+    // MARK: - Arithmetic Operators
+    
+    func test_operator_addition() {
+        var other = Quantity(amount: 100, unit: TestUnit.unitA)
+        var target = self.sut + other
+        XCTAssertEqual(target.amount, 200)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+        
+        other = Quantity(amount: 100, unit: TestUnit.unitB)
+        target = self.sut + other
+        XCTAssertEqual(target.amount, 1100)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+    }
+    
+    func test_operator_subtraction() {
+        var other = Quantity(amount: 60, unit: TestUnit.unitA)
+        var target = self.sut - other
+        XCTAssertEqual(target.amount, 40)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+        
+        other = Quantity(amount: 20, unit: TestUnit.unitB)
+        target = self.sut - other
+        XCTAssertEqual(target.amount, -100)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+    }
+    
+    func test_operator_multiplication() {
+        var target = self.sut * 2
+        XCTAssertEqual(target.amount, 200)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+        
+        target = 1.5 * self.sut
+        XCTAssertEqual(target.amount, 150)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+        
+        target = self.sut * NSNumber(integer: 3)
+        XCTAssertEqual(target.amount, 300)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+    }
+    
+    func test_operator_multiplication_reversed() {
+        var target = 2 * self.sut
+        XCTAssertEqual(target.amount, 200)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+        
+        target = 1.5 * self.sut
+        XCTAssertEqual(target.amount, 150)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+        
+        target = NSNumber(integer: 3) * self.sut
+        XCTAssertEqual(target.amount, 300)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+    }
+    
+    
     // MARK: - CustomStringConvertible
+    
     func test_description() {
         XCTAssertEqual(self.sut.description, "100 A")
     }
     
     // MARK: - Equatable
+    
     func test_equatable_returnsTrue() {
         let other = Quantity(amount: 100, unit: TestUnit.unitA)
         XCTAssertTrue(self.sut == other)
@@ -44,6 +101,7 @@ class QuantityTests: XCTestCase {
     }
     
     // MARK: - Comparable
+    
     func test_comparable_lessThan_returnsTrue() {
         var other = Quantity(amount: 200, unit: TestUnit.unitA)
         XCTAssertTrue(self.sut < other)
