@@ -3,15 +3,14 @@ Pod::Spec.new do |s|
   s.name             = 'MKUnits'
   s.version          = '3.0.0'
   s.summary          = 'Unit conversion library for Swift. It provides units of measurement of physical quantities and simplifies manipulation of them.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
-  Unit conversion library for Swift. It provides units of measurement of physical quantities and simplifies manipulation of them.
+  Extendable unit conversion and manipulation library which supports many unit types.
+  Beyond basic conversion functionality the features of MKUnits include:
+  – The ability to easily add/subtract between different unit measurements
+  – Easy conversion of different unit sizes to another
+  – High precision, and the ability toround off results
+  – Support for many unit types for area, bytes, mass, length and time
+  – Easy unit type additions by extending the MKUnit class
                        DESC
 
   s.homepage         = 'https://github.com/michalkonturek/MKUnits'
