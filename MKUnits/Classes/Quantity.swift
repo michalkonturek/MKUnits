@@ -22,6 +22,10 @@ public struct Quantity {
         let amount = self.unit.convert(self.amount, to: to)
         return Quantity(amount: amount, unit: to)
     }
+    
+    public func negative() -> Quantity {
+        return self * -1;
+    }
 }
 
 // MARK: - Arithmetic Operators

@@ -73,15 +73,3 @@ public extension NSNumber {
         return Quantity(amount: self, unit: MassUnit.milligram)
     }
 }
-
-//protocol Numeric { }
-//
-//extension Float: Numeric {}
-//extension Double: Numeric {}
-//extension Int: Numeric {}
-
-//public extension Comparable {
-//    public func kilogram() -> Quantity {
-//        return Quantity(amount: Self, unit: MassUnit.kilogram)
-//    }
-//}

@@ -24,6 +24,12 @@ class QuantityTests: XCTestCase {
         XCTAssertTrue(converted.unit == TestUnit.unitB)
     }
     
+    func test_negative() {
+        let target = self.sut.negative()
+        XCTAssertEqual(target.amount, -100)
+        XCTAssertEqual(target.unit, TestUnit.unitA)
+    }
+    
     // MARK: - Arithmetic Operators
     
     func test_operator_addition() {
