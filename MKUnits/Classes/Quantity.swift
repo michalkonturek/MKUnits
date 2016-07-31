@@ -24,6 +24,13 @@ public struct Quantity {
     }
 }
 
+// MARK: - CustomStringConvertible
+extension Quantity: CustomStringConvertible {
+    public var description: String {
+        return "\(self.amount) \(self.unit)"
+    }
+}
+
 // MARK: - Equatable
 extension Quantity: Equatable {
     public func equals(other: Quantity) -> Bool {

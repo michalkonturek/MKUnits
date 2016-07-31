@@ -24,6 +24,11 @@ class QuantityTests: XCTestCase {
         XCTAssertTrue(converted.unit == TestUnit.unitB)
     }
     
+    // MARK: - CustomStringConvertible
+    func test_description() {
+        XCTAssertEqual(self.sut.description, "100 A")
+    }
+    
     // MARK: - Equatable
     func test_equatable_returnsTrue() {
         let other = Quantity(amount: 100, unit: TestUnit.unitA)
