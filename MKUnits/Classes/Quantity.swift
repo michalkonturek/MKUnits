@@ -41,22 +41,26 @@ public func ==(lhs: Quantity, rhs: Quantity) -> Bool {
 extension Quantity: Comparable {}
 public func <(lhs: Quantity, rhs: Quantity) -> Bool {
     assert(lhs.unit.isConvertible(rhs.unit))
-    return true
+    let converted = lhs.converted(rhs.unit)
+    return converted.amount.compare(rhs.amount) == .OrderedAscending
 }
 
 public func <=(lhs: Quantity, rhs: Quantity) -> Bool {
     assert(lhs.unit.isConvertible(rhs.unit))
-    return true
-}
-
-public func >=(lhs: Quantity, rhs: Quantity) -> Bool {
-    assert(lhs.unit.isConvertible(rhs.unit))
-    return true
+    let converted = lhs.converted(rhs.unit)
+    return converted.amount.compare(rhs.amount) != .OrderedDescending
 }
 
 public func >(lhs: Quantity, rhs: Quantity) -> Bool {
     assert(lhs.unit.isConvertible(rhs.unit))
-    return true
+    let converted = lhs.converted(rhs.unit)
+    return converted.amount.compare(rhs.amount) == .OrderedDescending
+}
+
+public func >=(lhs: Quantity, rhs: Quantity) -> Bool {
+    assert(lhs.unit.isConvertible(rhs.unit))
+    let converted = lhs.converted(rhs.unit)
+    return converted.amount.compare(rhs.amount) != .OrderedAscending
 }
 
 

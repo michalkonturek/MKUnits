@@ -39,7 +39,85 @@ class QuantityTests: XCTestCase {
     }
     
     // MARK: - Comparable
-    func test_comparable_less() {
+    func test_comparable_lessThan_returnsTrue() {
+        var other = Quantity(amount: 200, unit: TestUnit.unitA)
+        XCTAssertTrue(self.sut < other)
+
+        other = Quantity(amount: 11, unit: TestUnit.unitB)
+        XCTAssertTrue(self.sut < other)
+    }
+    
+    func test_comparable_lessThan_returnsFalse() {
+        var other = Quantity(amount: 10, unit: TestUnit.unitA)
+        XCTAssertFalse(self.sut < other)
         
+        other = Quantity(amount: 100, unit: TestUnit.unitA)
+        XCTAssertFalse(self.sut < other)
+        
+        other = Quantity(amount: 1, unit: TestUnit.unitB)
+        XCTAssertFalse(self.sut < other)
+    }
+    
+    func test_comparable_lessThanOrEqual_returnsTrue() {
+        var other = Quantity(amount: 100, unit: TestUnit.unitA)
+        XCTAssertTrue(self.sut <= other)
+        
+        other = Quantity(amount: 200, unit: TestUnit.unitA)
+        XCTAssertTrue(self.sut <= other)
+        
+        other = Quantity(amount: 10, unit: TestUnit.unitB)
+        XCTAssertTrue(self.sut <= other)
+        
+        other = Quantity(amount: 11, unit: TestUnit.unitB)
+        XCTAssertTrue(self.sut <= other)
+    }
+    
+    func test_comparable_lessThanOrEqual_returnsFalse() {
+        var other = Quantity(amount: 20, unit: TestUnit.unitA)
+        XCTAssertFalse(self.sut <= other)
+        
+        other = Quantity(amount: 1, unit: TestUnit.unitB)
+        XCTAssertFalse(self.sut <= other)
+    }
+    
+    func test_comparable_greaterThan_returnsTrue() {
+        var other = Quantity(amount: 10, unit: TestUnit.unitA)
+        XCTAssertTrue(self.sut > other)
+        
+        other = Quantity(amount: 1, unit: TestUnit.unitB)
+        XCTAssertTrue(self.sut > other)
+    }
+    
+    func test_comparable_greaterThan_returnsFalse() {
+        var other = Quantity(amount: 200, unit: TestUnit.unitA)
+        XCTAssertFalse(self.sut > other)
+        
+        other = Quantity(amount: 100, unit: TestUnit.unitA)
+        XCTAssertFalse(self.sut > other)
+        
+        other = Quantity(amount: 11, unit: TestUnit.unitB)
+        XCTAssertFalse(self.sut > other)
+    }
+    
+    func test_comparable_greaterThanOrEqual_returnsTrue() {
+        var other = Quantity(amount: 10, unit: TestUnit.unitA)
+        XCTAssertTrue(self.sut >= other)
+        
+        other = Quantity(amount: 100, unit: TestUnit.unitA)
+        XCTAssertTrue(self.sut >= other)
+        
+        other = Quantity(amount: 10, unit: TestUnit.unitB)
+        XCTAssertTrue(self.sut >= other)
+        
+        other = Quantity(amount: 9, unit: TestUnit.unitB)
+        XCTAssertTrue(self.sut >= other)
+    }
+    
+    func test_comparable_greaterThanOrEqual_returnsFalse() {
+        var other = Quantity(amount: 200, unit: TestUnit.unitA)
+        XCTAssertFalse(self.sut >= other)
+        
+        other = Quantity(amount: 11, unit: TestUnit.unitB)
+        XCTAssertFalse(self.sut >= other)
     }
 }
