@@ -1,6 +1,6 @@
 //
 //  LengthUnit+Imperial.swift
-//  Pods
+//  MKUnits
 //
 //  Created by Michal Konturek on 01/08/2016.
 //
