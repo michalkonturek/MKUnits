@@ -11,6 +11,8 @@
 		900FEA861D4AEBE9003B1D6A /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA851D4AEBE9003B1D6A /* UnitTests.swift */; };
 		900FEA8A1D4BEF1B003B1D6A /* QuantityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA891D4BEF1B003B1D6A /* QuantityTests.swift */; };
 		900FEA901D4D398A003B1D6A /* MassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA8F1D4D398A003B1D6A /* MassUnitTests.swift */; };
+		900FEA941D4E5F62003B1D6A /* TimeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA931D4E5F62003B1D6A /* TimeUnitTests.swift */; };
+		900FEA981D4E6022003B1D6A /* EnergyUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA971D4E6022003B1D6A /* EnergyUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		900FEA851D4AEBE9003B1D6A /* UnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 		900FEA891D4BEF1B003B1D6A /* QuantityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuantityTests.swift; sourceTree = "<group>"; };
 		900FEA8F1D4D398A003B1D6A /* MassUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassUnitTests.swift; sourceTree = "<group>"; };
+		900FEA931D4E5F62003B1D6A /* TimeUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUnitTests.swift; sourceTree = "<group>"; };
+		900FEA971D4E6022003B1D6A /* EnergyUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyUnitTests.swift; sourceTree = "<group>"; };
 		A4B45273001DEE325A419DCE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C206E3C2CE30C81C1E1F5A3D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CB51FC6B42C8E9D666E48D27 /* Pods-MKUnits_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKUnits_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MKUnits_Tests/Pods-MKUnits_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,9 +74,11 @@
 			isa = PBXGroup;
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				900FEA971D4E6022003B1D6A /* EnergyUnitTests.swift */,
+				900FEA8F1D4D398A003B1D6A /* MassUnitTests.swift */,
+				900FEA931D4E5F62003B1D6A /* TimeUnitTests.swift */,
 				900FEA851D4AEBE9003B1D6A /* UnitTests.swift */,
 				900FEA891D4BEF1B003B1D6A /* QuantityTests.swift */,
-				900FEA8F1D4D398A003B1D6A /* MassUnitTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900FEA941D4E5F62003B1D6A /* TimeUnitTests.swift in Sources */,
 				900FEA8A1D4BEF1B003B1D6A /* QuantityTests.swift in Sources */,
 				900FEA861D4AEBE9003B1D6A /* UnitTests.swift in Sources */,
+				900FEA981D4E6022003B1D6A /* EnergyUnitTests.swift in Sources */,
 				900FEA901D4D398A003B1D6A /* MassUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

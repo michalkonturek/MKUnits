@@ -84,7 +84,6 @@ class QuantityTests: XCTestCase {
         XCTAssertEqual(target.unit, TestUnit.unitA)
     }
     
-    
     // MARK: - CustomStringConvertible
     
     func test_description() {

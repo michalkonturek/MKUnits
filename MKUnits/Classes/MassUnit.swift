@@ -1,6 +1,6 @@
 //
 //  MassUnit.swift
-//  Pods
+//  MKUnits
 //
 //  Created by Michal Konturek on 29/07/2016.
 //
