@@ -15,6 +15,7 @@
 		505B5DBAF35FF17AA808152BA25516D0 /* MassUnit+Imperial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6261DBBEC904C9831B984202D34063 /* MassUnit+Imperial.swift */; };
 		81C456D5071230473B99F57CA4316EFB /* MKUnits-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4FF7F3FA60D3F5832ECEFD5042588D4 /* MKUnits-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87662228055DE1EE12D8DF441199F0BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		90106EB11D4FA46400DFB3D3 /* LengthUnit+Imperial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90106EB01D4FA46400DFB3D3 /* LengthUnit+Imperial.swift */; };
 		ABFD2F9407E315F2CECE29CA69E54ABD /* Pods-MKUnits_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E56878FF0191C1A461DDD84E7D1A2419 /* Pods-MKUnits_Tests-dummy.m */; };
 		B222CF97202144DF85C0074830937B3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		B345B5529993D74EB292356D3EE91052 /* MassUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B439F45C49321DFF733139AD53F94 /* MassUnit.swift */; };
@@ -49,6 +50,7 @@
 		7F99D0FBD44F8FAA91E429E790F97D3B /* Pods-MKUnits_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MKUnits_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		83096CA7E93716A142F6DA428D8C0DDE /* Pods-MKUnits_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MKUnits_Tests-umbrella.h"; sourceTree = "<group>"; };
 		88CC229F09E941D6DA87986FC13DF37E /* Pods-MKUnits_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MKUnits_Tests-resources.sh"; sourceTree = "<group>"; };
+		90106EB01D4FA46400DFB3D3 /* LengthUnit+Imperial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LengthUnit+Imperial.swift"; sourceTree = "<group>"; };
 		91069399DD0B77B627CF2A2420AD182C /* Pods-MKUnits_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MKUnits_Tests.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95FD2A6A0E158A08AC0792770748F321 /* Pods-MKUnits_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MKUnits_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				1AC2D1E358628D51AAB890C853B3A68C /* EnergyUnit.swift */,
 				F0DC6B25203453E93E8ABD4F5D5DD7A3 /* LengthUnit.swift */,
+				90106EB01D4FA46400DFB3D3 /* LengthUnit+Imperial.swift */,
 				494B439F45C49321DFF733139AD53F94 /* MassUnit.swift */,
 				5D6261DBBEC904C9831B984202D34063 /* MassUnit+Imperial.swift */,
 				6E695011E535A23BC8C973EF7D094285 /* Quantity.swift */,
@@ -294,6 +297,7 @@
 				B3581F099D6B0E3E5C5551F174890267 /* MKUnits-dummy.m in Sources */,
 				398EECCF3DD57261EDFDF71CC739A36F /* Quantity.swift in Sources */,
 				0CE6704A5BA56DFEB4578D6D8B81F0D7 /* TimeUnit.swift in Sources */,
+				90106EB11D4FA46400DFB3D3 /* LengthUnit+Imperial.swift in Sources */,
 				453136C4F9BEC4BE93261EBB1165967D /* Unit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
