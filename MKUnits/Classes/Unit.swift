@@ -38,16 +38,16 @@ extension Unit: CustomStringConvertible {
     }
 }
 
-// MARK: - UnitConversion
+// MARK: - UnitConvertible
 
-public protocol UnitConversion {
+public protocol UnitConvertible {
     func convert(amount: NSNumber, to: Unit) -> NSNumber
     func convert(amount: NSNumber, from: Unit) -> NSNumber
     func convert(amount: NSNumber, from: Unit, to: Unit) -> NSNumber
     func isConvertible(with: Unit) -> Bool
 }
 
-extension Unit: UnitConversion {
+extension Unit: UnitConvertible {
 
     public func convert(amount: NSNumber, to: Unit) -> NSNumber {
         return self.convert(amount, from: self, to: to)

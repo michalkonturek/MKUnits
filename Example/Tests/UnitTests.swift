@@ -36,7 +36,7 @@ class UnitTests: XCTestCase {
         XCTAssertEqual(self.sut.description, "A")
     }
     
-    // MARK: - CustomStringConvertible
+    // MARK: - UnitConvertible
     
     func test_isConvertible_returnsTrue() {
         let kilogram = MassUnit.kilogram
