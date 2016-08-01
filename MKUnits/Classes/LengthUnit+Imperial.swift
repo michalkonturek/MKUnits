@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension LengthUnit {
+extension LengthUnit {
     
-    static var nauticalMile: LengthUnit {
+    public static var nauticalMile: LengthUnit {
         return LengthUnit(
             name: "nautical mile",
             symbol: "nmi",
@@ -18,7 +18,7 @@ public extension LengthUnit {
         )
     }
     
-    static var mile: LengthUnit {
+    public static var mile: LengthUnit {
         return LengthUnit(
             name: "mile",
             symbol: "mi",
@@ -26,7 +26,7 @@ public extension LengthUnit {
         )
     }
     
-    static var furlong: LengthUnit {
+    public static var furlong: LengthUnit {
         return LengthUnit(
             name: "furlong",
             symbol: "fur",
@@ -34,7 +34,7 @@ public extension LengthUnit {
         )
     }
     
-    static var chain: LengthUnit {
+    public static var chain: LengthUnit {
         return LengthUnit(
             name: "chain",
             symbol: "ch",
@@ -42,7 +42,7 @@ public extension LengthUnit {
         )
     }
     
-    static var yard: LengthUnit {
+    public static var yard: LengthUnit {
         return LengthUnit(
             name: "yard",
             symbol: "yd",
@@ -50,7 +50,7 @@ public extension LengthUnit {
         )
     }
     
-    static var foot: LengthUnit {
+    public static var foot: LengthUnit {
         return LengthUnit(
             name: "foot",
             symbol: "ft",
@@ -58,7 +58,7 @@ public extension LengthUnit {
         )
     }
     
-    static var inch: LengthUnit {
+    public static var inch: LengthUnit {
         return LengthUnit(
             name: "inch",
             symbol: "in",
@@ -67,7 +67,7 @@ public extension LengthUnit {
     }
 }
 
-public extension NSNumber {
+extension NSNumber {
     
     public func nauticalMile() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.nauticalMile)

@@ -10,7 +10,7 @@ import Foundation
 
 public final class EnergyUnit: Unit {
     
-    static var gigajoule: EnergyUnit {
+    public static var gigajoule: EnergyUnit {
         return EnergyUnit(
             name: "gigajoule",
             symbol: "GJ",
@@ -18,7 +18,7 @@ public final class EnergyUnit: Unit {
         )
     }
     
-    static var megajoule: EnergyUnit {
+    public static var megajoule: EnergyUnit {
         return EnergyUnit(
             name: "megajoule",
             symbol: "MJ",
@@ -26,7 +26,7 @@ public final class EnergyUnit: Unit {
         )
     }
     
-    static var kilojoule: EnergyUnit {
+    public static var kilojoule: EnergyUnit {
         return EnergyUnit(
             name: "kilojoule",
             symbol: "kJ",
@@ -34,7 +34,7 @@ public final class EnergyUnit: Unit {
         )
     }
     
-    static var joule: EnergyUnit {
+    public static var joule: EnergyUnit {
         return EnergyUnit(
             name: "joule",
             symbol: "J",
@@ -42,7 +42,7 @@ public final class EnergyUnit: Unit {
         )
     }
     
-    static var kilocalorie: EnergyUnit {
+    public static var kilocalorie: EnergyUnit {
         return EnergyUnit(
             name: "kilocalorie",
             symbol: "kcal",
@@ -50,7 +50,7 @@ public final class EnergyUnit: Unit {
         )
     }
 
-    static var calorie: EnergyUnit {
+    public static var calorie: EnergyUnit {
         return EnergyUnit(
             name: "calorie",
             symbol: "cal",
@@ -59,7 +59,7 @@ public final class EnergyUnit: Unit {
     }
 }
 
-public extension NSNumber {
+extension NSNumber {
     
     public func gigajoule() -> Quantity {
         return Quantity(amount: self, unit: EnergyUnit.gigajoule)

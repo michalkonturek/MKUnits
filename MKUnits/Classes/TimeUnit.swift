@@ -10,7 +10,7 @@ import Foundation
 
 public final class TimeUnit: Unit {
 
-    static var century: TimeUnit {
+    public static var century: TimeUnit {
         return TimeUnit(
             name: "century",
             symbol: "c",
@@ -18,7 +18,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var decade: TimeUnit {
+    public static var decade: TimeUnit {
         return TimeUnit(
             name: "decade",
             symbol: "dec",
@@ -26,7 +26,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var year: TimeUnit {
+    public static var year: TimeUnit {
         return TimeUnit(
             name: "year",
             symbol: "y",
@@ -34,7 +34,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var month: TimeUnit {
+    public static var month: TimeUnit {
         return TimeUnit(
             name: "month",
             symbol: "mo",
@@ -42,7 +42,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var week: TimeUnit {
+    public static var week: TimeUnit {
         return TimeUnit(
             name: "week",
             symbol: "wk",
@@ -50,7 +50,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var day: TimeUnit {
+    public static var day: TimeUnit {
         return TimeUnit(
             name: "day",
             symbol: "d",
@@ -58,7 +58,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var hour: TimeUnit {
+    public static var hour: TimeUnit {
         return TimeUnit(
             name: "hour",
             symbol: "h",
@@ -66,7 +66,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var minute: TimeUnit {
+    public static var minute: TimeUnit {
         return TimeUnit(
             name: "minute",
             symbol: "m",
@@ -74,7 +74,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var second: TimeUnit {
+    public static var second: TimeUnit {
         return TimeUnit(
             name: "second",
             symbol: "s",
@@ -82,7 +82,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var millisecond: TimeUnit {
+    public static var millisecond: TimeUnit {
         return TimeUnit(
             name: "millisecond",
             symbol: "ms",
@@ -90,7 +90,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var microsecond: TimeUnit {
+    public static var microsecond: TimeUnit {
         return TimeUnit(
             name: "microsecond",
             symbol: "μs",
@@ -98,7 +98,7 @@ public final class TimeUnit: Unit {
         )
     }
     
-    static var nanosecond: TimeUnit {
+    public static var nanosecond: TimeUnit {
         return TimeUnit(
             name: "nanosecond",
             symbol: "ns",
@@ -107,7 +107,7 @@ public final class TimeUnit: Unit {
     }
 }
 
-public extension NSNumber {
+extension NSNumber {
     
     public func century() -> Quantity {
         return Quantity(amount: self, unit: TimeUnit.century)

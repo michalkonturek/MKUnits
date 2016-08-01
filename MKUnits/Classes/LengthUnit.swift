@@ -10,7 +10,7 @@ import Foundation
 
 public final class LengthUnit: Unit {
     
-    static var kilometer: LengthUnit {
+    public static var kilometer: LengthUnit {
         return LengthUnit(
             name: "kilometer",
             symbol: "km",
@@ -18,7 +18,7 @@ public final class LengthUnit: Unit {
         )
     }
     
-    static var meter: LengthUnit {
+    public static var meter: LengthUnit {
         return LengthUnit(
             name: "meter",
             symbol: "m",
@@ -26,7 +26,7 @@ public final class LengthUnit: Unit {
         )
     }
     
-    static var centimeter: LengthUnit {
+    public static var centimeter: LengthUnit {
         return LengthUnit(
             name: "centimeter",
             symbol: "cm",
@@ -34,7 +34,7 @@ public final class LengthUnit: Unit {
         )
     }
     
-    static var millimeter: LengthUnit {
+    public static var millimeter: LengthUnit {
         return LengthUnit(
             name: "millimeter",
             symbol: "mm",
@@ -43,7 +43,7 @@ public final class LengthUnit: Unit {
     }
 }
 
-public extension NSNumber {
+extension NSNumber {
     
     public func kilometer() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.kilometer)

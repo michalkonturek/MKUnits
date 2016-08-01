@@ -9,9 +9,9 @@
 import Foundation
 
 public class Unit {
-    let name: String
-    let symbol: String
-    let ratio: NSDecimalNumber
+    public let name: String
+    public let symbol: String
+    public let ratio: NSDecimalNumber
     
     public init(name: String, symbol: String, ratio: NSNumber) {
         self.name = name

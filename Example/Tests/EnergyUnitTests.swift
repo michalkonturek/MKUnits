@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import MKUnits
+import MKUnits
 
 class EnergyUnitTests: XCTestCase {
 

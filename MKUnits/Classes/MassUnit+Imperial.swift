@@ -10,7 +10,7 @@ import Foundation
 
 public extension MassUnit {
     
-    static var ton: MassUnit {
+    public static var ton: MassUnit {
         return MassUnit(
             name: "ton",
             symbol: "t",
@@ -18,7 +18,7 @@ public extension MassUnit {
         )
     }
     
-    static var hundredweight: MassUnit {
+    public static var hundredweight: MassUnit {
         return MassUnit(
             name: "hundredweight",
             symbol: "cwt",
@@ -26,7 +26,7 @@ public extension MassUnit {
         )
     }
     
-    static var quarter: MassUnit {
+    public static var quarter: MassUnit {
         return MassUnit(
             name: "quarter",
             symbol: "qtr",
@@ -34,7 +34,7 @@ public extension MassUnit {
         )
     }
     
-    static var stone: MassUnit {
+    public static var stone: MassUnit {
         return MassUnit(
             name: "stone",
             symbol: "st",
@@ -42,7 +42,7 @@ public extension MassUnit {
         )
     }
     
-    static var pound: MassUnit {
+    public static var pound: MassUnit {
         return MassUnit(
             name: "pound",
             symbol: "lb",
@@ -50,7 +50,7 @@ public extension MassUnit {
         )
     }
     
-    static var ounce: MassUnit {
+    public static var ounce: MassUnit {
         return MassUnit(
             name: "ounce",
             symbol: "oz",
@@ -58,7 +58,7 @@ public extension MassUnit {
         )
     }
     
-    static var drachm: MassUnit {
+    public static var drachm: MassUnit {
         return MassUnit(
             name: "drachm",
             symbol: "dr",
@@ -66,7 +66,7 @@ public extension MassUnit {
         )
     }
     
-    static var grain: MassUnit {
+    public static var grain: MassUnit {
         return MassUnit(
             name: "grain",
             symbol: "gr",
@@ -75,7 +75,7 @@ public extension MassUnit {
     }
 }
 
-public extension NSNumber {
+extension NSNumber {
     
     public func ton() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.ton)

@@ -10,7 +10,7 @@ import Foundation
 
 public final class MassUnit: Unit {
     
-    static var megagram: MassUnit {
+    public static var megagram: MassUnit {
         return MassUnit(
             name: "megagram",
             symbol: "Mg",
@@ -18,7 +18,7 @@ public final class MassUnit: Unit {
         )
     }
     
-    static var kilogram: MassUnit {
+    public static var kilogram: MassUnit {
         return MassUnit(
             name: "kilogram",
             symbol: "kg",
@@ -26,7 +26,7 @@ public final class MassUnit: Unit {
         )
     }
     
-    static var decagram: MassUnit {
+    public static var decagram: MassUnit {
         return MassUnit(
             name: "decagram",
             symbol: "dag",
@@ -34,7 +34,7 @@ public final class MassUnit: Unit {
         )
     }
     
-    static var gram: MassUnit {
+    public static var gram: MassUnit {
         return MassUnit(
             name: "gram",
             symbol: "g",
@@ -42,7 +42,7 @@ public final class MassUnit: Unit {
         )
     }
     
-    static var milligram: MassUnit {
+    public static var milligram: MassUnit {
         return MassUnit(
             name: "milligram",
             symbol: "mg",
@@ -51,7 +51,7 @@ public final class MassUnit: Unit {
     }
 }
 
-public extension NSNumber {
+extension NSNumber {
 
     public func megagram() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.megagram)

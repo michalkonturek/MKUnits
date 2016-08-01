@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import MKUnits
+import MKUnits
 
 class QuantityTests: XCTestCase {
     var sut = Quantity(amount: 100, unit: TestUnit.unitA)
