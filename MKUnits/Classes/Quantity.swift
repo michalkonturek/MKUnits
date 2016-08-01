@@ -27,7 +27,7 @@ public struct Quantity {
         return self * -1;
     }
     
-    public func rounded(with precision:Int16) -> Quantity {
+    public func rounded(precision:Int16) -> Quantity {
         assert(precision >= 0)
         let rounded = self.amount.decimalNumberByRoundingAccordingToBehavior(
             NSDecimalNumberHandler(

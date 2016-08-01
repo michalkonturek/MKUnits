@@ -23,7 +23,7 @@ class EnergyUnitTests: XCTestCase {
         
         XCTAssertTrue(1.kilocalorie()
             .converted(EnergyUnit.joule)
-            .rounded(with: 1) == 4186.8.joule())
+            .rounded(1) == 4186.8.joule())
     }
     
     func test_extension() {

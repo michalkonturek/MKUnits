@@ -25,15 +25,15 @@ class VolumeUnitImperialTests: XCTestCase {
         
         XCTAssertTrue(1.pint()
             .converted(VolumeUnit.cup)
-            .rounded(with: 5) == 2.cup())
+            .rounded(5) == 2.cup())
         
         XCTAssertTrue(1.cup()
             .converted(VolumeUnit.fluidounce)
-            .rounded(with: 4) == 10.fluidounce())
+            .rounded(4) == 10.fluidounce())
         
         XCTAssertTrue(1.tablespoon()
             .converted(VolumeUnit.teaspoon)
-            .rounded(with: 6) == 3.teaspoon())
+            .rounded(6) == 3.teaspoon())
     }
     
     func test_extension() {
