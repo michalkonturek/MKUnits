@@ -168,8 +168,8 @@
 			children = (
 				F90C27946789DEB7AC8B42059BB7BCFB /* EnergyUnit.swift */,
 				3147B6586928A4EBF37B226180EF2332 /* MassUnit.swift */,
-				06F86EA32ADB9A49B6E885F434F8EEAE /* TimeUnit.swift */,
 				EACE9D4F562DC65C8DCDC330E560C739 /* Quantity.swift */,
+				06F86EA32ADB9A49B6E885F434F8EEAE /* TimeUnit.swift */,
 				2F93C1E192E438DBD40230D67607F996 /* Unit.swift */,
 			);
 			path = Classes;
