@@ -14,6 +14,7 @@
 		900FEA941D4E5F62003B1D6A /* TimeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA931D4E5F62003B1D6A /* TimeUnitTests.swift */; };
 		900FEA981D4E6022003B1D6A /* EnergyUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA971D4E6022003B1D6A /* EnergyUnitTests.swift */; };
 		90106EA71D4F946200DFB3D3 /* MassUnitImperialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90106EA61D4F946200DFB3D3 /* MassUnitImperialTests.swift */; };
+		90106EAD1D4F9FE000DFB3D3 /* LengthUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90106EAC1D4F9FE000DFB3D3 /* LengthUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		900FEA931D4E5F62003B1D6A /* TimeUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeUnitTests.swift; sourceTree = "<group>"; };
 		900FEA971D4E6022003B1D6A /* EnergyUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyUnitTests.swift; sourceTree = "<group>"; };
 		90106EA61D4F946200DFB3D3 /* MassUnitImperialTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassUnitImperialTests.swift; sourceTree = "<group>"; };
+		90106EAC1D4F9FE000DFB3D3 /* LengthUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthUnitTests.swift; sourceTree = "<group>"; };
 		A4B45273001DEE325A419DCE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C206E3C2CE30C81C1E1F5A3D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CB51FC6B42C8E9D666E48D27 /* Pods-MKUnits_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKUnits_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MKUnits_Tests/Pods-MKUnits_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +77,11 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				90106EA91D4F9F3D00DFB3D3 /* Units */,
+				900FEA971D4E6022003B1D6A /* EnergyUnitTests.swift */,
+				900FEA8F1D4D398A003B1D6A /* MassUnitTests.swift */,
+				90106EA61D4F946200DFB3D3 /* MassUnitImperialTests.swift */,
+				90106EAC1D4F9FE000DFB3D3 /* LengthUnitTests.swift */,
+				900FEA931D4E5F62003B1D6A /* TimeUnitTests.swift */,
 				900FEA851D4AEBE9003B1D6A /* UnitTests.swift */,
 				900FEA891D4BEF1B003B1D6A /* QuantityTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -99,17 +105,6 @@
 				A4B45273001DEE325A419DCE /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		90106EA91D4F9F3D00DFB3D3 /* Units */ = {
-			isa = PBXGroup;
-			children = (
-				900FEA971D4E6022003B1D6A /* EnergyUnitTests.swift */,
-				900FEA8F1D4D398A003B1D6A /* MassUnitTests.swift */,
-				90106EA61D4F946200DFB3D3 /* MassUnitImperialTests.swift */,
-				900FEA931D4E5F62003B1D6A /* TimeUnitTests.swift */,
-			);
-			name = Units;
 			sourceTree = "<group>";
 		};
 		CCDC78258D34126725528C2C /* Pods */ = {
@@ -242,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				900FEA941D4E5F62003B1D6A /* TimeUnitTests.swift in Sources */,
+				90106EAD1D4F9FE000DFB3D3 /* LengthUnitTests.swift in Sources */,
 				900FEA8A1D4BEF1B003B1D6A /* QuantityTests.swift in Sources */,
 				900FEA861D4AEBE9003B1D6A /* UnitTests.swift in Sources */,
 				900FEA981D4E6022003B1D6A /* EnergyUnitTests.swift in Sources */,
