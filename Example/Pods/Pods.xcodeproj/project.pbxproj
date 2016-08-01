@@ -143,6 +143,17 @@
 			);
 			sourceTree = "<group>";
 		};
+		90106EA81D4F9F2B00DFB3D3 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				2EDE8CEC0FE24EF6547C2154DB2CBDE2 /* EnergyUnit.swift */,
+				C01935D7029DCF9DEDAFEC46CA352DA5 /* MassUnit.swift */,
+				BF34508E564C2AAC698618010B96BA2D /* MassUnit+Imperial.swift */,
+				5799BBD858E0B2919B56B48583055FFC /* TimeUnit.swift */,
+			);
+			name = Units;
+			sourceTree = "<group>";
+		};
 		953705B773D01BB93D7074DA057BC081 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,11 +187,8 @@
 		DAA7C7312B0DDC6477C4757501024E6E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2EDE8CEC0FE24EF6547C2154DB2CBDE2 /* EnergyUnit.swift */,
-				C01935D7029DCF9DEDAFEC46CA352DA5 /* MassUnit.swift */,
-				BF34508E564C2AAC698618010B96BA2D /* MassUnit+Imperial.swift */,
+				90106EA81D4F9F2B00DFB3D3 /* Units */,
 				362E3300F4333FC1C737A1AD6EFAF5E7 /* Quantity.swift */,
-				5799BBD858E0B2919B56B48583055FFC /* TimeUnit.swift */,
 				3F2CC07B987CD5AD548FFE2ECFF26D82 /* Unit.swift */,
 			);
 			path = Classes;
