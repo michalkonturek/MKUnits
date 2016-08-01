@@ -30,6 +30,33 @@ class QuantityTests: XCTestCase {
         XCTAssertEqual(target.unit, TestUnit.unitA)
     }
     
+    func test_rounded() {
+        var target = Quantity(amount: 1.2, unit: TestUnit.unitA)
+        var rounded = target.rounded(with: 1)
+        XCTAssertEqual(rounded.amount, 1.2)
+        XCTAssertEqual(rounded.unit, TestUnit.unitA)
+        
+        target = Quantity(amount: 1.21, unit: TestUnit.unitA)
+        rounded = target.rounded(with: 1)
+        XCTAssertEqual(rounded.amount, 1.2)
+        XCTAssertEqual(rounded.unit, TestUnit.unitA)
+        
+        target = Quantity(amount: 1.24, unit: TestUnit.unitA)
+        rounded = target.rounded(with: 1)
+        XCTAssertEqual(rounded.amount, 1.2)
+        XCTAssertEqual(rounded.unit, TestUnit.unitA)
+        
+        target = Quantity(amount: 1.25, unit: TestUnit.unitA)
+        rounded = target.rounded(with: 1)
+        XCTAssertEqual(rounded.amount, 1.3)
+        XCTAssertEqual(rounded.unit, TestUnit.unitA)
+        
+        target = Quantity(amount: 1.2, unit: TestUnit.unitA)
+        rounded = target.rounded(with: 1)
+        XCTAssertEqual(rounded.amount, 1.2)
+        XCTAssertEqual(rounded.unit, TestUnit.unitA)
+    }
+    
     // MARK: - Arithmetic Operators
     
     func test_operator_addition() {

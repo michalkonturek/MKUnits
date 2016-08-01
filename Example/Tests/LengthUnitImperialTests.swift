@@ -17,6 +17,7 @@ class LengthUnitImperialTests: XCTestCase {
         XCTAssertTrue(1.mile() == 5280.foot())
         XCTAssertTrue(1.furlong() == 10.chain())
         XCTAssertTrue(1.chain() == 22.yard())
+        
         XCTAssertTrue(1.yard() == 3.foot())
         XCTAssertTrue(1.foot() == 12.inch())
     }

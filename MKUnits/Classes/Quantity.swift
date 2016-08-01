@@ -26,6 +26,21 @@ public struct Quantity {
     public func negative() -> Quantity {
         return self * -1;
     }
+    
+    public func rounded(with precision:Int16) -> Quantity {
+        assert(precision >= 0)
+        let rounded = self.amount.decimalNumberByRoundingAccordingToBehavior(
+            NSDecimalNumberHandler(
+                roundingMode: .RoundPlain,
+                scale: precision,
+                raiseOnExactness: false,
+                raiseOnOverflow: false,
+                raiseOnUnderflow: false,
+                raiseOnDivideByZero: false
+            )
+        )
+        return Quantity(amount: rounded, unit: self.unit)
+    }
 }
 
 // MARK: - Arithmetic Operators

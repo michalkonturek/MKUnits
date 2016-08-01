@@ -92,8 +92,8 @@
 				900FEA851D4AEBE9003B1D6A /* UnitTests.swift */,
 				900FEA891D4BEF1B003B1D6A /* QuantityTests.swift */,
 				90106EB61D4FB07D00DFB3D3 /* VolumeUnitTests.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
 				90106EBA1D4FC23000DFB3D3 /* VolumeUnitImperialTests.swift */,
+				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
