@@ -6,8 +6,10 @@
 [![License](https://img.shields.io/cocoapods/l/MKUnits.svg)](http://cocoapods.org/pods/MKUnits)
 [![Twitter](https://img.shields.io/badge/contact-@MichalKonturek-blue.svg)](http://twitter.com/michalkonturek)
 
-MKUnits is extremely precise unit conversion library for Swift. It provides units of measurement of physical quantities and simplifies manipulation of them.
+MKUnits is extremely precise unit conversion library for `Swift`. It provides units of measurement of physical quantities and simplifies manipulation of them.
 
+**NB** For `Objective-C` implementation, please refer to MKUnits pod 2.2.1 or visit [archived branch][archive-branch].
+[archive-branch]:https://github.com/michalkonturek/MKUnits/tree/archive-objc
 
 ## License
 
