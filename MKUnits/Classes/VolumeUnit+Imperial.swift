@@ -9,7 +9,7 @@
 import Foundation
 
 extension VolumeUnit {
-    
+
     public static var gallon: VolumeUnit {
         return VolumeUnit(
             name: "gallon",
@@ -17,7 +17,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 454609, exponent: -5, isNegative: false)
         )
     }
-    
+
     public static var quart: VolumeUnit {
         return VolumeUnit(
             name: "quart",
@@ -25,7 +25,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 11365225, exponent: -7, isNegative: false)
         )
     }
-    
+
     public static var pint: VolumeUnit {
         return VolumeUnit(
             name: "pint",
@@ -33,7 +33,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 56826125, exponent: -8, isNegative: false)
         )
     }
-    
+
     public static var cup: VolumeUnit {
         return VolumeUnit(
             name: "cup",
@@ -41,7 +41,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 28413, exponent: -5, isNegative: false)
         )
     }
-    
+
     public static var fluidounce: VolumeUnit {
         return VolumeUnit(
             name: "fluid ounce",
@@ -49,7 +49,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 284130625, exponent: -10, isNegative: false)
         )
     }
-    
+
     public static var tablespoon: VolumeUnit {
         return VolumeUnit(
             name: "tablespoon",
@@ -57,7 +57,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 177581714, exponent: -10, isNegative: false)
         )
     }
-    
+
     public static var teaspoon: VolumeUnit {
         return VolumeUnit(
             name: "teaspoon",
@@ -65,7 +65,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 591939, exponent: -8, isNegative: false)
         )
     }
-    
+
     public static var fluidram: VolumeUnit {
         return VolumeUnit(
             name: "fluidram",
@@ -76,35 +76,35 @@ extension VolumeUnit {
 }
 
 extension NSNumber {
-    
+
     public func gallon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.gallon)
     }
-    
+
     public func quart() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.quart)
     }
-    
+
     public func pint() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.pint)
     }
-    
+
     public func cup() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.cup)
     }
-    
+
     public func fluidounce() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.fluidounce)
     }
-    
+
     public func tablespoon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.tablespoon)
     }
-    
+
     public func teaspoon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.teaspoon)
     }
-    
+
     public func fluidram() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.fluidram)
     }

@@ -12,18 +12,18 @@ public class Unit {
     public let name: String
     public let symbol: String
     public let ratio: NSDecimalNumber
-    
+
     public init(name: String, symbol: String, ratio: NSNumber) {
         self.name = name
         self.symbol = symbol
         self.ratio = NSDecimalNumber(decimal: ratio.decimalValue)
     }
-    
+
     public func convertFromBaseUnit(amount: NSNumber) -> NSNumber {
         let converted = NSDecimalNumber(decimal: amount.decimalValue)
         return converted.decimalNumberByDividingBy(self.ratio)
     }
-    
+
     public func convertToBaseUnit(amount: NSNumber) -> NSNumber {
         let converted = NSDecimalNumber(decimal: amount.decimalValue)
         return converted.decimalNumberByMultiplyingBy(self.ratio)
@@ -52,17 +52,17 @@ extension Unit: UnitConvertible {
     public func convert(amount: NSNumber, to: Unit) -> NSNumber {
         return self.convert(amount, from: self, to: to)
     }
-    
+
     public func convert(amount: NSNumber, from: Unit) -> NSNumber {
         return self.convert(amount, from: from, to: self)
     }
-    
+
     public func convert(amount: NSNumber, from: Unit, to: Unit) -> NSNumber {
         let baseAmount = from.convertToBaseUnit(amount)
         let converted = to.convertFromBaseUnit(baseAmount)
         return converted
     }
-    
+
     public func isConvertible(with: Unit) -> Bool {
         return with.dynamicType == self.dynamicType
     }

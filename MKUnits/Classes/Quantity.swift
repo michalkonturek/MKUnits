@@ -11,23 +11,23 @@ import Foundation
 public struct Quantity {
     public let amount: NSDecimalNumber
     public let unit: Unit
-    
+
     public init(amount: NSNumber, unit: Unit) {
         self.amount = NSDecimalNumber(decimal: amount.decimalValue)
         self.unit = unit
     }
-    
+
     public func converted(to: Unit) -> Quantity {
         assert(self.unit.isConvertible(to))
         let amount = self.unit.convert(self.amount, to: to)
         return Quantity(amount: amount, unit: to)
     }
-    
+
     public func negative() -> Quantity {
-        return self * -1;
+        return self * -1
     }
-    
-    public func rounded(precision:Int16) -> Quantity {
+
+    public func rounded(precision: Int16) -> Quantity {
         assert(precision >= 0)
         let rounded = self.amount.decimalNumberByRoundingAccordingToBehavior(
             NSDecimalNumberHandler(

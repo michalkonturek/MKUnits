@@ -9,7 +9,7 @@
 import Foundation
 
 public final class LengthUnit: Unit {
-    
+
     public static var kilometer: LengthUnit {
         return LengthUnit(
             name: "kilometer",
@@ -17,7 +17,7 @@ public final class LengthUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: 3, isNegative: false)
         )
     }
-    
+
     public static var meter: LengthUnit {
         return LengthUnit(
             name: "meter",
@@ -25,7 +25,7 @@ public final class LengthUnit: Unit {
             ratio: NSDecimalNumber.one()
         )
     }
-    
+
     public static var centimeter: LengthUnit {
         return LengthUnit(
             name: "centimeter",
@@ -33,7 +33,7 @@ public final class LengthUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: -2, isNegative: false)
         )
     }
-    
+
     public static var millimeter: LengthUnit {
         return LengthUnit(
             name: "millimeter",
@@ -44,24 +44,24 @@ public final class LengthUnit: Unit {
 }
 
 extension NSNumber {
-    
+
     public func kilometer() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.kilometer)
-        
+
     }
-    
+
     public func meter() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.meter)
-        
+
     }
-    
+
     public func centimeter() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.centimeter)
-        
+
     }
-    
+
     public func millimeter() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.millimeter)
-        
+
     }
 }

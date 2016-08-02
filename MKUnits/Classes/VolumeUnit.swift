@@ -9,7 +9,7 @@
 import Foundation
 
 public final class VolumeUnit: Unit {
-    
+
     public static var hectolitre: VolumeUnit {
         return VolumeUnit(
             name: "hectolitre",
@@ -17,7 +17,7 @@ public final class VolumeUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: 2, isNegative: false)
         )
     }
-    
+
     public static var litre: VolumeUnit {
         return VolumeUnit(
             name: "litre",
@@ -25,7 +25,7 @@ public final class VolumeUnit: Unit {
             ratio: NSDecimalNumber.one()
         )
     }
-    
+
     public static var decilitre: VolumeUnit {
         return VolumeUnit(
             name: "decilitre",
@@ -33,7 +33,7 @@ public final class VolumeUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: -1, isNegative: false)
         )
     }
-    
+
     public static var centilitre: VolumeUnit {
         return VolumeUnit(
             name: "centilitre",
@@ -41,7 +41,7 @@ public final class VolumeUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: -2, isNegative: false)
         )
     }
-    
+
     public static var millilitre: VolumeUnit {
         return VolumeUnit(
             name: "millilitre",
@@ -49,7 +49,7 @@ public final class VolumeUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: -3, isNegative: false)
         )
     }
-    
+
     public static var microlitre: VolumeUnit {
         return VolumeUnit(
             name: "microlitre",
@@ -60,27 +60,27 @@ public final class VolumeUnit: Unit {
 }
 
 extension NSNumber {
-    
+
     public func hectolitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.hectolitre)
     }
-    
+
     public func litre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.litre)
     }
-    
+
     public func decilitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.decilitre)
     }
-    
+
     public func centilitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.centilitre)
     }
-    
+
     public func millilitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.millilitre)
     }
-    
+
     public func microlitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.microlitre)
     }

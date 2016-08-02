@@ -9,7 +9,7 @@
 import Foundation
 
 extension VolumeUnit {
-    
+
     public static var us_hogshead: VolumeUnit {
         return VolumeUnit(
             name: "hogshead",
@@ -17,7 +17,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 238480942392, exponent: -9, isNegative: false)
         )
     }
-    
+
     public static var us_barrel: VolumeUnit {
         return VolumeUnit(
             name: "barrel",
@@ -25,7 +25,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 119240471196, exponent: -9, isNegative: false)
         )
     }
-    
+
     public static var us_gallon: VolumeUnit {
         return VolumeUnit(
             name: "US gallon",
@@ -33,7 +33,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 3785411784, exponent: -9, isNegative: false)
         )
     }
-    
+
     public static var us_quart: VolumeUnit {
         return VolumeUnit(
             name: "US quart",
@@ -41,7 +41,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 946352946, exponent: -9, isNegative: false)
         )
     }
-    
+
     public static var us_pint: VolumeUnit {
         return VolumeUnit(
             name: "US pint",
@@ -57,7 +57,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 2365882365, exponent: -10, isNegative: false)
         )
     }
-    
+
     public static var us_gill: VolumeUnit {
         return VolumeUnit(
             name: "US gill",
@@ -65,7 +65,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 11829411825, exponent: -11, isNegative: false)
         )
     }
-    
+
     public static var us_fluidounce: VolumeUnit {
         return VolumeUnit(
             name: "US fluid ounce",
@@ -73,7 +73,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 295735295625, exponent: -13, isNegative: false)
         )
     }
-    
+
     public static var us_tablespoon: VolumeUnit {
         return VolumeUnit(
             name: "US tablespoon",
@@ -81,7 +81,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 1478676478125, exponent: -14, isNegative: false)
         )
     }
-    
+
     public static var us_teaspoon: VolumeUnit {
         return VolumeUnit(
             name: "US teaspoon",
@@ -89,7 +89,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 492892159375, exponent: -14, isNegative: false)
         )
     }
-    
+
     public static var us_fluidram: VolumeUnit {
         return VolumeUnit(
             name: "US fluidram",
@@ -97,7 +97,7 @@ extension VolumeUnit {
             ratio: NSDecimalNumber(mantissa: 36966911953125, exponent: -16, isNegative: false)
         )
     }
-    
+
     public static var us_minim: VolumeUnit {
         return VolumeUnit(
             name: "minim",
@@ -108,7 +108,7 @@ extension VolumeUnit {
 }
 
 extension NSNumber {
-    
+
     public func us_hogshead() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_hogshead)
     }
@@ -116,11 +116,11 @@ extension NSNumber {
     public func us_barrel() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_barrel)
     }
-    
+
     public func us_gallon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_gallon)
     }
-    
+
     public func us_quart() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_quart)
     }
@@ -128,31 +128,31 @@ extension NSNumber {
     public func us_pint() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_pint)
     }
-    
+
     public func us_cup() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_cup)
     }
-    
+
     public func us_gill() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_gill)
     }
-    
+
     public func us_fluidounce() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_fluidounce)
     }
-    
+
     public func us_tablespoon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_tablespoon)
     }
-    
+
     public func us_teaspoon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_teaspoon)
     }
-    
+
     public func us_fluidram() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_fluidram)
     }
-    
+
     public func us_minim() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_minim)
     }
