@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/michalkonturek/MKUnits/tree/HEAD)
+
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/2.2.1...HEAD)
+
+**Merged pull requests:**
+
+- Swift implementation [\#11](https://github.com/michalkonturek/MKUnits/pull/11) ([michalkonturek](https://github.com/michalkonturek))
+
 ## [2.2.1](https://github.com/michalkonturek/MKUnits/tree/2.2.1) (2015-05-25)
 [Full Changelog](https://github.com/michalkonturek/MKUnits/compare/2.2.0...2.2.1)
 
