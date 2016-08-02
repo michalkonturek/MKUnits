@@ -50,7 +50,7 @@ Then we add all of the above togehter and subtract 0.0001 **[kg]** in milligrams
 
 ```swift
 let milligrams = 100.milligram()
-var result = killograms + grams + pounds - milligrams
+var result = kilograms + grams + pounds - milligrams
 ```
 
 The result amount is 6.5358237 **[kg]**.
