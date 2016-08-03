@@ -17,6 +17,7 @@
 		5EF923F30956BBCF8822B41C529DF9E5 /* MassUnit+Imperial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC81B7C069CEE90BE285446BAA73E78 /* MassUnit+Imperial.swift */; };
 		7C3251566CBC36CBE4A9F6783D206CA7 /* LengthUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2A7D2BA4F9A9E873BF1052150B038 /* LengthUnit.swift */; };
 		87662228055DE1EE12D8DF441199F0BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		90E52FAD1D52B25F0098C61D /* AreaUnit+Imperial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E52FAC1D52B25F0098C61D /* AreaUnit+Imperial.swift */; };
 		9C31321CE2EFE7943646762F2FC3C005 /* Quantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D14FE37BC057AD75265CB5ADAB723A /* Quantity.swift */; };
 		ABFD2F9407E315F2CECE29CA69E54ABD /* Pods-MKUnits_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E56878FF0191C1A461DDD84E7D1A2419 /* Pods-MKUnits_Tests-dummy.m */; };
 		ACB62DD88F5771960C108F0376B598F0 /* VolumeUnit+Imperial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594E8710BF0E75B909D4DE0C64F36C5 /* VolumeUnit+Imperial.swift */; };
@@ -55,6 +56,7 @@
 		83096CA7E93716A142F6DA428D8C0DDE /* Pods-MKUnits_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MKUnits_Tests-umbrella.h"; sourceTree = "<group>"; };
 		88CC229F09E941D6DA87986FC13DF37E /* Pods-MKUnits_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MKUnits_Tests-resources.sh"; sourceTree = "<group>"; };
 		89C5158FD9A7461D388D12EC0F6B035C /* LengthUnit+Imperial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "LengthUnit+Imperial.swift"; sourceTree = "<group>"; };
+		90E52FAC1D52B25F0098C61D /* AreaUnit+Imperial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AreaUnit+Imperial.swift"; sourceTree = "<group>"; };
 		91069399DD0B77B627CF2A2420AD182C /* Pods-MKUnits_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MKUnits_Tests.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9594E8710BF0E75B909D4DE0C64F36C5 /* VolumeUnit+Imperial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "VolumeUnit+Imperial.swift"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A12CBC0F28FF8C800A72EDE9042C38FF /* AreaUnit.swift */,
+				90E52FAC1D52B25F0098C61D /* AreaUnit+Imperial.swift */,
 				3FECA5084687D4D38955F2FE233FA28C /* EnergyUnit.swift */,
 				52F2A7D2BA4F9A9E873BF1052150B038 /* LengthUnit.swift */,
 				89C5158FD9A7461D388D12EC0F6B035C /* LengthUnit+Imperial.swift */,
@@ -305,6 +308,7 @@
 				0563AE7BE35BF4F28F29628BFEB1E224 /* AreaUnit.swift in Sources */,
 				AD028F8C04B9CEAA3823B451469837DA /* EnergyUnit.swift in Sources */,
 				09DA9C70568C59D32D984FA4053DDA08 /* LengthUnit+Imperial.swift in Sources */,
+				90E52FAD1D52B25F0098C61D /* AreaUnit+Imperial.swift in Sources */,
 				7C3251566CBC36CBE4A9F6783D206CA7 /* LengthUnit.swift in Sources */,
 				5EF923F30956BBCF8822B41C529DF9E5 /* MassUnit+Imperial.swift in Sources */,
 				DE394C10C4BE4330DA75FB5B9DB60E46 /* MassUnit.swift in Sources */,
