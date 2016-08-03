@@ -19,6 +19,7 @@
 		90106EB31D4FA60500DFB3D3 /* LengthUnitImperialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90106EB21D4FA60500DFB3D3 /* LengthUnitImperialTests.swift */; };
 		90106EB71D4FB07D00DFB3D3 /* VolumeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90106EB61D4FB07D00DFB3D3 /* VolumeUnitTests.swift */; };
 		90106EBB1D4FC23000DFB3D3 /* VolumeUnitImperialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90106EBA1D4FC23000DFB3D3 /* VolumeUnitImperialTests.swift */; };
+		90E52FA71D52ABA70098C61D /* AreaUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E52FA61D52ABA70098C61D /* AreaUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		90106EB21D4FA60500DFB3D3 /* LengthUnitImperialTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthUnitImperialTests.swift; sourceTree = "<group>"; };
 		90106EB61D4FB07D00DFB3D3 /* VolumeUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnitTests.swift; sourceTree = "<group>"; };
 		90106EBA1D4FC23000DFB3D3 /* VolumeUnitImperialTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnitImperialTests.swift; sourceTree = "<group>"; };
+		90E52FA61D52ABA70098C61D /* AreaUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaUnitTests.swift; sourceTree = "<group>"; };
 		A4B45273001DEE325A419DCE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C206E3C2CE30C81C1E1F5A3D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CB51FC6B42C8E9D666E48D27 /* Pods-MKUnits_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKUnits_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MKUnits_Tests/Pods-MKUnits_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				90E52FA61D52ABA70098C61D /* AreaUnitTests.swift */,
 				900FEA971D4E6022003B1D6A /* EnergyUnitTests.swift */,
 				900FEA8F1D4D398A003B1D6A /* MassUnitTests.swift */,
 				90106EA61D4F946200DFB3D3 /* MassUnitImperialTests.swift */,
@@ -258,6 +261,7 @@
 				900FEA981D4E6022003B1D6A /* EnergyUnitTests.swift in Sources */,
 				90106EA71D4F946200DFB3D3 /* MassUnitImperialTests.swift in Sources */,
 				900FEA901D4D398A003B1D6A /* MassUnitTests.swift in Sources */,
+				90E52FA71D52ABA70098C61D /* AreaUnitTests.swift in Sources */,
 				90106EB71D4FB07D00DFB3D3 /* VolumeUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
