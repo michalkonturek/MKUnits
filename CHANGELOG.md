@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/michalkonturek/MKUnits/tree/HEAD)
-
-[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/2.2.1...HEAD)
+## [3.0.0](https://github.com/michalkonturek/MKUnits/tree/2.2.1) (2016-08-04)
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/2.2.1...3.0.0)
 
 **Merged pull requests:**
 
