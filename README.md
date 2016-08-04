@@ -98,7 +98,7 @@ let rounded = result.rounded(3)
 At the moment MKUnits supports the following `group units`:
 
 * Area (base unit: square meter)
-* Bytes (base unit: bit) 
+<!-- * Bytes (base unit: bit)  -->
 * Mass (base unit: kilogram)
 * Length (base unit: meter)
 * Time (base unit: second)
