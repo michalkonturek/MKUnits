@@ -26,7 +26,7 @@
 import Foundation
 
 public final class AreaUnit: Unit {
-    
+
     public static var squareKilometer: AreaUnit {
         return AreaUnit(
             name: "square",
@@ -34,7 +34,7 @@ public final class AreaUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: 6, isNegative: false)
         )
     }
-    
+
     public static var hectare: AreaUnit {
         return AreaUnit(
             name: "hectare",
@@ -42,7 +42,7 @@ public final class AreaUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: 4, isNegative: false)
         )
     }
-    
+
     public static var are: AreaUnit {
         return AreaUnit(
             name: "are",
@@ -50,7 +50,7 @@ public final class AreaUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: 2, isNegative: false)
         )
     }
-    
+
     public static var squareMeter: AreaUnit {
         return AreaUnit(
             name: "square meter",
@@ -58,7 +58,7 @@ public final class AreaUnit: Unit {
             ratio: NSDecimalNumber.one()
         )
     }
-    
+
     public static var squareDecimeter: AreaUnit {
         return AreaUnit(
             name: "square decimeter",
@@ -66,7 +66,7 @@ public final class AreaUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: -2, isNegative: false)
         )
     }
-    
+
     public static var squareCentimeter: AreaUnit {
         return AreaUnit(
             name: "square centimeter",
@@ -74,7 +74,7 @@ public final class AreaUnit: Unit {
             ratio: NSDecimalNumber(mantissa: 1, exponent: -4, isNegative: false)
         )
     }
-    
+
     public static var squareMillimeter: AreaUnit {
         return AreaUnit(
             name: "square millimeter",
@@ -85,7 +85,7 @@ public final class AreaUnit: Unit {
 }
 
 extension NSNumber {
-    
+
     public func squareKilometer() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareKilometer)
     }
@@ -93,23 +93,23 @@ extension NSNumber {
     public func hectare() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.hectare)
     }
-    
+
     public func are() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.are)
     }
-    
+
     public func squareMeter() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareMeter)
     }
-    
+
     public func squareDecimeter() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareDecimeter)
     }
-    
+
     public func squareCentimeter() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareCentimeter)
     }
-    
+
     public func squareMillimeter() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareMillimeter)
     }

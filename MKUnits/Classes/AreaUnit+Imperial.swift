@@ -26,7 +26,7 @@
 import Foundation
 
 extension AreaUnit {
-    
+
     public static var squareMile: AreaUnit {
         return AreaUnit(
             name: "square",
@@ -34,7 +34,7 @@ extension AreaUnit {
             ratio: NSDecimalNumber(mantissa: 258998811, exponent: -2, isNegative: false)
         )
     }
-    
+
     public static var acre: AreaUnit {
         return AreaUnit(
             name: "acre",
@@ -42,7 +42,7 @@ extension AreaUnit {
             ratio: NSDecimalNumber(mantissa: 40468564224, exponent: -7, isNegative: false)
         )
     }
-    
+
     public static var squareYard: AreaUnit {
         return AreaUnit(
             name: "square yard",
@@ -50,7 +50,7 @@ extension AreaUnit {
             ratio: NSDecimalNumber(mantissa: 83612736, exponent: -8, isNegative: false)
         )
     }
-    
+
     public static var squareFoot: AreaUnit {
         return AreaUnit(
             name: "square foot",
@@ -58,7 +58,7 @@ extension AreaUnit {
             ratio: NSDecimalNumber(mantissa: 9290304, exponent: -8, isNegative: false)
         )
     }
-    
+
     public static var squareInch: AreaUnit {
         return AreaUnit(
             name: "square inch",
@@ -69,23 +69,23 @@ extension AreaUnit {
 }
 
 extension NSNumber {
- 
+
     public func squareMile() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareMile)
     }
-    
+
     public func acre() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.acre)
     }
-    
+
     public func squareYard() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareYard)
     }
-    
+
     public func squareFoot() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareFoot)
     }
-    
+
     public func squareInch() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareInch)
     }
