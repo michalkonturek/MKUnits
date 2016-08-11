@@ -87,23 +87,38 @@ extension Unit: CustomStringConvertible {
 public protocol UnitConvertible {
     
     /**
-     Converts `amount` to a interconvertible `unit`.
+     Converts `amount` from a `current unit` to a `destination unit`.
      
-     - parameter amount: given `amount` in the `current unit`
-     - parameter to: given destination `unit`
+     - parameter amount: the given `amount` in the `current unit`.
+     - parameter to: given `destination unit`.
      
-     - returns: `amount` converted to given `unit`
+     - returns: `amount` converted to `destination unit`.
      */
     func convert(amount: NSNumber, to: Unit) -> NSNumber
     
-    /***/
+    /**
+     Converts `amount` from a `source unit` to the `current unit`.
+     
+     - parameter amount: the given `amount` int the `source unit`.
+     - parameter from: given `source unit`.
+     
+     - returns: `amount` converted from a `source unit` to the `current unit`.
+     */
     func convert(amount: NSNumber, from: Unit) -> NSNumber
     
-    /***/
+    /**
+     Converts `amount` from a `source unit` to a `destination unit`.
+     
+     - parameter amount: `amount` to be converted.
+     - parameter from: `source unit`.
+     - parameter to: `destination unit`.
+     
+     - returns: `amount` converted from a `source unit` to a `destination unit`.
+     */
     func convert(amount: NSNumber, from: Unit, to: Unit) -> NSNumber
     
     /**
-     Indicates if a `unit` is convertible with given `unit`.
+     Indicates if a `current unit` is convertible with an `other unit`.
      */
     func isConvertible(with: Unit) -> Bool
 }
