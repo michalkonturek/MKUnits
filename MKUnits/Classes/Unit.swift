@@ -89,7 +89,7 @@ public protocol UnitConvertible {
     /**
      Converts `amount` from a `current unit` to a `destination unit`.
      
-     - parameter amount: the given `amount` in the `current unit`.
+     - parameter amount: given `amount` in the `current unit`.
      - parameter to: given `destination unit`.
      
      - returns: `amount` converted to `destination unit`.
@@ -99,7 +99,7 @@ public protocol UnitConvertible {
     /**
      Converts `amount` from a `source unit` to the `current unit`.
      
-     - parameter amount: the given `amount` int the `source unit`.
+     - parameter amount: given `amount` in the `source unit`.
      - parameter from: given `source unit`.
      
      - returns: `amount` converted from a `source unit` to the `current unit`.
@@ -125,24 +125,48 @@ public protocol UnitConvertible {
 
 extension Unit: UnitConvertible {
 
-    /***/
+    /**
+     Converts `amount` from a `current unit` to a `destination unit`.
+     
+     - parameter amount: given `amount` in the `current unit`.
+     - parameter to: given `destination unit`.
+     
+     - returns: `amount` converted to `destination unit`.
+     */
     public func convert(amount: NSNumber, to: Unit) -> NSNumber {
         return self.convert(amount, from: self, to: to)
     }
 
-    /***/
+    /**
+     Converts `amount` from a `source unit` to the `current unit`.
+     
+     - parameter amount: given `amount` in the `source unit`.
+     - parameter from: given `source unit`.
+     
+     - returns: `amount` converted from a `source unit` to the `current unit`.
+     */
     public func convert(amount: NSNumber, from: Unit) -> NSNumber {
         return self.convert(amount, from: from, to: self)
     }
 
-    /***/
+    /**
+     Converts `amount` from a `source unit` to a `destination unit`.
+     
+     - parameter amount: `amount` to be converted.
+     - parameter from: `source unit`.
+     - parameter to: `destination unit`.
+     
+     - returns: `amount` converted from a `source unit` to a `destination unit`.
+     */
     public func convert(amount: NSNumber, from: Unit, to: Unit) -> NSNumber {
         let baseAmount = from.convertToBaseUnit(amount)
         let converted = to.convertFromBaseUnit(baseAmount)
         return converted
     }
 
-    /***/
+    /**
+     Indicates if a `current unit` is convertible with an `other unit`.
+     */
     public func isConvertible(with: Unit) -> Bool {
         return with.dynamicType == self.dynamicType
     }
@@ -153,10 +177,11 @@ extension Unit: UnitConvertible {
 extension Unit: Equatable {
     
     /**
-     Compares instance to a conforming type.
+     Checks if `current unit` is the same as `other unit`.
+     
+     - important: Comparison is done on `type` and `unit symbol`.
      
      - parameter other: given `unit` to compare
-     - returns:
      */
     public func equals(other: Unit) -> Bool {
         if other.dynamicType !== self.dynamicType {
