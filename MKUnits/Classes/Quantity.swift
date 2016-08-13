@@ -25,25 +25,59 @@
 
 import Foundation
 
+/**
+ A `value type` representing an amount of an `Unit`.
+ 
+ - author: Michal Konturek
+ */
 public struct Quantity {
     public let amount: NSDecimalNumber
     public let unit: Unit
 
+    /**
+     Instantiates an `Quantity` object.
+     
+     - important: convertes `amount` type to `NSDecimalNumber`.
+     
+     - parameter amount: `amount` of `unit`.
+     - parameter unit: `unit` of measurement.
+     
+     - author: Michal Konturek
+     */
     public init(amount: NSNumber, unit: Unit) {
         self.amount = NSDecimalNumber(decimal: amount.decimalValue)
         self.unit = unit
     }
 
+    /**
+     Returns new `Quantity` instance with `amount` converted to given `unit`.
+     
+     - parameter to: `destination unit`.
+     
+     - author: Michal Konturek
+     */
     public func converted(to: Unit) -> Quantity {
         assert(self.unit.isConvertible(to))
         let amount = self.unit.convert(self.amount, to: to)
         return Quantity(amount: amount, unit: to)
     }
 
+    /**
+     Returns new `Quantity` instance with reversed `amount` sign.
+     
+     - author: Michal Konturek
+     */
     public func negative() -> Quantity {
         return self * -1
     }
 
+    /**
+     Returns new `Quantity` instance with `amount` rounded with `precision`.
+     
+     - parameter precision: `precision` used for rounding.
+     
+     - author: Michal Konturek
+     */
     public func rounded(precision: Int16) -> Quantity {
         assert(precision >= 0)
         let rounded = self.amount.decimalNumberByRoundingAccordingToBehavior(
@@ -127,6 +161,16 @@ extension Quantity: CustomStringConvertible {
 // MARK: - Equatable
 
 extension Quantity: Equatable {
+    
+    /**
+     Returns `true` if `this quantity` has exact `amount` as `other quantity`.
+     
+     - important: Comparison with a non-convertible `quantity` returns `false`
+     
+     - parameter other: `other quantity` to compare with.
+     
+     - author: Michal Konturek
+     */
     public func equals(other: Quantity) -> Bool {
         if self.unit.isConvertible(other.unit) {
             let converted = other.converted(self.unit)
@@ -143,6 +187,7 @@ public func == (lhs: Quantity, rhs: Quantity) -> Bool {
 // MARK: - Comparable
 
 extension Quantity: Comparable {}
+
 public func < (lhs: Quantity, rhs: Quantity) -> Bool {
     assert(lhs.unit.isConvertible(rhs.unit))
     let converted = lhs.converted(rhs.unit)

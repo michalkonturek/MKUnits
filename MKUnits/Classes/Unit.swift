@@ -27,6 +27,8 @@ import Foundation
 
 /**
  Represents an `unit of measurement`.
+ 
+ - author: Michal Konturek
  */
 public class Unit {
     public let name: String
@@ -89,6 +91,8 @@ extension Unit: CustomStringConvertible {
 
 /**
  A type with ability to convert between units.
+ 
+ - author: Michal Konturek
  */
 public protocol UnitConvertible {
     
