@@ -34,11 +34,11 @@ public class Unit {
     public let ratio: NSDecimalNumber
 
     /**
-     Instantiates an `unit` object.
+     Instantiates an `Unit` object.
      
-     - parameter name: unit name.
-     - parameter symbol: unit symbol.
-     - parameter ratio: conversion ratio to a base unit.
+     - parameter name: `unit name`.
+     - parameter symbol: `unit symbol`.
+     - parameter ratio: conversion ratio to a `base unit`.
      
      - author: Michal Konturek
      */
@@ -49,11 +49,11 @@ public class Unit {
     }
 
     /**
-     Converts given amount from a `base unit` to the `current unit`.
+     Converts given `amount` from `base unit` to `this unit`.
      
-     - parameter amount: `amount` in a `base unit`.
+     - parameter amount: `amount` in `base unit`.
      
-     - returns: `amount` converted to the `current unit`.
+     - returns: `amount` converted to `this unit`.
      
      - author: Michal Konturek
      */
@@ -63,11 +63,11 @@ public class Unit {
     }
 
     /**
-     Converts given amount from the current unit to a base unit.
+     Converts given `amount` from `this unit` to `base unit`.
      
-     - parameter amount: `amount` in the `current unit`.
+     - parameter amount: `amount` in `this unit`.
      
-     - returns: `amount` converted to a `base unit`.
+     - returns: `amount` converted to `base unit`.
      
      - author: Michal Konturek
      */
@@ -88,15 +88,15 @@ extension Unit: CustomStringConvertible {
 // MARK: - UnitConvertible
 
 /**
- Ability to convert between units.
+ A type with ability to convert between units.
  */
 public protocol UnitConvertible {
     
     /**
-     Converts `amount` from a `current unit` to a `destination unit`.
+     Converts `amount` from `this unit` to `destination unit`.
      
-     - parameter amount: given `amount` in the `current unit`.
-     - parameter to: given `destination unit`.
+     - parameter amount: `amount` in `this unit`.
+     - parameter to: `destination unit`.
      
      - returns: `amount` converted to `destination unit`.
      
@@ -105,34 +105,34 @@ public protocol UnitConvertible {
     func convert(amount: NSNumber, to: Unit) -> NSNumber
     
     /**
-     Converts `amount` from a `source unit` to the `current unit`.
+     Converts `amount` from `source unit` to `this unit`.
      
-     - parameter amount: given `amount` in the `source unit`.
-     - parameter from: given `source unit`.
+     - parameter amount: `amount` in `source unit`.
+     - parameter from: `source unit`.
      
-     - returns: `amount` converted from a `source unit` to the `current unit`.
+     - returns: `amount` converted from `source unit` to `this unit`.
      
      - author: Michal Konturek
      */
     func convert(amount: NSNumber, from: Unit) -> NSNumber
     
     /**
-     Converts `amount` from a `source unit` to a `destination unit`.
+     Converts `amount` from `source unit` to `destination unit`.
      
-     - parameter amount: `amount` to be converted.
+     - parameter amount: `amount` in `source unit`.
      - parameter from: `source unit`.
      - parameter to: `destination unit`.
      
-     - returns: `amount` converted from a `source unit` to a `destination unit`.
+     - returns: `amount` converted from `source unit` to `destination unit`.
      
      - author: Michal Konturek
      */
     func convert(amount: NSNumber, from: Unit, to: Unit) -> NSNumber
     
     /**
-     Returns `true` if a `current unit` is convertible with an `other unit`.
+     Returns `true` if `this unit` is convertible with `other unit`.
      
-     - parameter with: given `other unit` to compare with.
+     - parameter with: `other unit` to compare with.
      
      - author: Michal Konturek
      */
@@ -142,10 +142,10 @@ public protocol UnitConvertible {
 extension Unit: UnitConvertible {
 
     /**
-     Converts `amount` from a `current unit` to a `destination unit`.
+     Converts `amount` from `this unit` to `destination unit`.
      
-     - parameter amount: given `amount` in the `current unit`.
-     - parameter to: given `destination unit`.
+     - parameter amount: `amount` in `this unit`.
+     - parameter to: `destination unit`.
      
      - returns: `amount` converted to `destination unit`.
      
@@ -156,12 +156,12 @@ extension Unit: UnitConvertible {
     }
 
     /**
-     Converts `amount` from a `source unit` to the `current unit`.
+     Converts `amount` from `source unit` to `this unit`.
      
-     - parameter amount: given `amount` in the `source unit`.
-     - parameter from: given `source unit`.
+     - parameter amount: `amount` in `source unit`.
+     - parameter from: `source unit`.
      
-     - returns: `amount` converted from a `source unit` to the `current unit`.
+     - returns: `amount` converted from `source unit` to `this unit`.
      
      - author: Michal Konturek
      */
@@ -170,13 +170,13 @@ extension Unit: UnitConvertible {
     }
 
     /**
-     Converts `amount` from a `source unit` to a `destination unit`.
+     Converts `amount` from `source unit` to `destination unit`.
      
-     - parameter amount: `amount` to be converted.
+     - parameter amount: `amount` in `source unit`.
      - parameter from: `source unit`.
      - parameter to: `destination unit`.
      
-     - returns: `amount` converted from a `source unit` to a `destination unit`.
+     - returns: `amount` converted from `source unit` to `destination unit`.
      
      - author: Michal Konturek
      */
@@ -187,7 +187,11 @@ extension Unit: UnitConvertible {
     }
 
     /**
-     Indicates if a `current unit` is convertible with an `other unit`.
+     Returns `true` if `this unit` is convertible with `other unit`.
+     
+     - parameter with: `other unit` to compare with.
+     
+     - author: Michal Konturek
      */
     public func isConvertible(with: Unit) -> Bool {
         return with.dynamicType == self.dynamicType
@@ -199,11 +203,11 @@ extension Unit: UnitConvertible {
 extension Unit: Equatable {
     
     /**
-     Checks if `current unit` is the same as `other unit`.
+     Returns `true` if `this unit` is the same as `other unit`.
      
      - important: Comparison is done on `type` and `unit symbol`.
      
-     - parameter other: given `other unit` to compare with.
+     - parameter other: `other unit` to compare with.
      
      - author: Michal Konturek
      */
