@@ -28,7 +28,7 @@ import Foundation
 public final class EnergyUnit: Unit {
 
     /**
-     Returns gigajoule `[GJ]` area unit.
+     Returns gigajoule `[GJ]` energy unit.
      
      - author: Michal Konturek
      */
@@ -41,7 +41,7 @@ public final class EnergyUnit: Unit {
     }
 
     /**
-     Returns megajoule `[MJ]` area unit.
+     Returns megajoule `[MJ]` energy unit.
      
      - author: Michal Konturek
      */
@@ -54,7 +54,7 @@ public final class EnergyUnit: Unit {
     }
 
     /**
-     Returns kilojoule `[kJ]` area unit.
+     Returns kilojoule `[kJ]` energy unit.
      
      - author: Michal Konturek
      */
@@ -67,7 +67,7 @@ public final class EnergyUnit: Unit {
     }
 
     /**
-     Returns joule `[J]` area unit.
+     Returns joule `[J]` energy unit.
      
      - author: Michal Konturek
      */
@@ -80,7 +80,7 @@ public final class EnergyUnit: Unit {
     }
 
     /**
-     Returns kilocalorie `[kcal]` area unit.
+     Returns kilocalorie `[kcal]` energy unit.
      
      - author: Michal Konturek
      */
@@ -93,7 +93,7 @@ public final class EnergyUnit: Unit {
     }
 
     /**
-     Returns calorie `[cal]` area unit.
+     Returns calorie `[cal]` energy unit.
      
      - author: Michal Konturek
      */
