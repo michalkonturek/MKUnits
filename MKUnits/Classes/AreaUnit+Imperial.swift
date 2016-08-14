@@ -27,6 +27,11 @@ import Foundation
 
 extension AreaUnit {
 
+    /**
+     Returns square mile `[mi²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareMile: AreaUnit {
         return AreaUnit(
             name: "square",
@@ -35,6 +40,11 @@ extension AreaUnit {
         )
     }
 
+    /**
+     Returns acre `[ac]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var acre: AreaUnit {
         return AreaUnit(
             name: "acre",
@@ -43,6 +53,11 @@ extension AreaUnit {
         )
     }
 
+    /**
+     Returns square yard `[yd²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareYard: AreaUnit {
         return AreaUnit(
             name: "square yard",
@@ -51,6 +66,11 @@ extension AreaUnit {
         )
     }
 
+    /**
+     Returns square foot `[ft²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareFoot: AreaUnit {
         return AreaUnit(
             name: "square foot",
@@ -59,6 +79,11 @@ extension AreaUnit {
         )
     }
 
+    /**
+     Returns square inch `[in²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareInch: AreaUnit {
         return AreaUnit(
             name: "square inch",
@@ -70,22 +95,47 @@ extension AreaUnit {
 
 extension NSNumber {
 
+    /**
+     Converts instance into square mile quantity.
+     
+     - author: Michal Konturek
+     */
     public func squareMile() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareMile)
     }
 
+    /**
+     Converts instance into acre quantity.
+     
+     - author: Michal Konturek
+     */
     public func acre() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.acre)
     }
 
+    /**
+     Converts instance into square yard quantity.
+     
+     - author: Michal Konturek
+     */
     public func squareYard() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareYard)
     }
 
+    /**
+     Converts instance into square foot quantity.
+     
+     - author: Michal Konturek
+     */
     public func squareFoot() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareFoot)
     }
 
+    /**
+     Converts instance into square inch quantity.
+     
+     - author: Michal Konturek
+     */
     public func squareInch() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareInch)
     }
