@@ -27,6 +27,11 @@ import Foundation
 
 public final class MassUnit: Unit {
 
+    /**
+     Returns megagram `[Mg]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var megagram: MassUnit {
         return MassUnit(
             name: "megagram",
@@ -35,6 +40,11 @@ public final class MassUnit: Unit {
         )
     }
 
+    /**
+     Returns kilogram `[kg]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var kilogram: MassUnit {
         return MassUnit(
             name: "kilogram",
@@ -43,6 +53,11 @@ public final class MassUnit: Unit {
         )
     }
 
+    /**
+     Returns decagram `[dag]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var decagram: MassUnit {
         return MassUnit(
             name: "decagram",
@@ -51,6 +66,11 @@ public final class MassUnit: Unit {
         )
     }
 
+    /**
+     Returns gram `[g]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var gram: MassUnit {
         return MassUnit(
             name: "gram",
@@ -59,6 +79,11 @@ public final class MassUnit: Unit {
         )
     }
 
+    /**
+     Returns milligram `[mg]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var milligram: MassUnit {
         return MassUnit(
             name: "milligram",
@@ -70,22 +95,47 @@ public final class MassUnit: Unit {
 
 extension NSNumber {
 
+    /**
+     Returns instance converted as megagram quantity.
+     
+     - author: Michal Konturek
+     */
     public func megagram() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.megagram)
     }
 
+    /**
+     Returns instance converted as kilogram quantity.
+     
+     - author: Michal Konturek
+     */
     public func kilogram() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.kilogram)
     }
 
+    /**
+     Returns instance converted as decagram quantity.
+     
+     - author: Michal Konturek
+     */
     public func decagram() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.decagram)
     }
 
+    /**
+     Returns instance converted as gram quantity.
+     
+     - author: Michal Konturek
+     */
     public func gram() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.gram)
     }
 
+    /**
+     Returns instance converted as milligram quantity.
+     
+     - author: Michal Konturek
+     */
     public func milligram() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.milligram)
     }
