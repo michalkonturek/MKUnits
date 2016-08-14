@@ -27,6 +27,11 @@ import Foundation
 
 extension VolumeUnit {
 
+    /**
+     Returns gallon `[gal]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var gallon: VolumeUnit {
         return VolumeUnit(
             name: "gallon",
@@ -35,6 +40,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns quart `[qt]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var quart: VolumeUnit {
         return VolumeUnit(
             name: "quart",
@@ -43,6 +53,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns pint `[pt]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var pint: VolumeUnit {
         return VolumeUnit(
             name: "pint",
@@ -51,6 +66,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns cup `[cp]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var cup: VolumeUnit {
         return VolumeUnit(
             name: "cup",
@@ -59,6 +79,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns fluidounce `[fl oz]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var fluidounce: VolumeUnit {
         return VolumeUnit(
             name: "fluid ounce",
@@ -67,6 +92,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns tablespoon `[tbsp]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var tablespoon: VolumeUnit {
         return VolumeUnit(
             name: "tablespoon",
@@ -75,6 +105,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns teaspoon `[tsp]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var teaspoon: VolumeUnit {
         return VolumeUnit(
             name: "teaspoon",
@@ -83,6 +118,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns fluidram `[fl dr]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var fluidram: VolumeUnit {
         return VolumeUnit(
             name: "fluidram",
@@ -94,34 +134,74 @@ extension VolumeUnit {
 
 extension NSNumber {
 
+    /**
+     Returns instance converted as gallon quantity.
+     
+     - author: Michal Konturek
+     */
     public func gallon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.gallon)
     }
 
+    /**
+     Returns instance converted as quart quantity.
+     
+     - author: Michal Konturek
+     */
     public func quart() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.quart)
     }
 
+    /**
+     Returns instance converted as pint quantity.
+     
+     - author: Michal Konturek
+     */
     public func pint() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.pint)
     }
 
+    /**
+     Returns instance converted as cup quantity.
+     
+     - author: Michal Konturek
+     */
     public func cup() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.cup)
     }
 
+    /**
+     Returns instance converted as fluidounce quantity.
+     
+     - author: Michal Konturek
+     */
     public func fluidounce() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.fluidounce)
     }
 
+    /**
+     Returns instance converted as tablespoon quantity.
+     
+     - author: Michal Konturek
+     */
     public func tablespoon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.tablespoon)
     }
 
+    /**
+     Returns instance converted as teaspoon quantity.
+     
+     - author: Michal Konturek
+     */
     public func teaspoon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.teaspoon)
     }
 
+    /**
+     Returns instance converted as fluidram quantity.
+     
+     - author: Michal Konturek
+     */
     public func fluidram() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.fluidram)
     }
