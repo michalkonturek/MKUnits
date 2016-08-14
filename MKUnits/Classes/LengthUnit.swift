@@ -27,6 +27,11 @@ import Foundation
 
 public final class LengthUnit: Unit {
 
+    /**
+     Returns kilometer `[km]` length unit.
+     
+     - author: Michal Konturek
+     */
     public static var kilometer: LengthUnit {
         return LengthUnit(
             name: "kilometer",
@@ -35,6 +40,11 @@ public final class LengthUnit: Unit {
         )
     }
 
+    /**
+     Returns meter `[m]` length unit.
+     
+     - author: Michal Konturek
+     */
     public static var meter: LengthUnit {
         return LengthUnit(
             name: "meter",
@@ -43,6 +53,11 @@ public final class LengthUnit: Unit {
         )
     }
 
+    /**
+     Returns centimeter `[cm]` length unit.
+     
+     - author: Michal Konturek
+     */
     public static var centimeter: LengthUnit {
         return LengthUnit(
             name: "centimeter",
@@ -51,6 +66,11 @@ public final class LengthUnit: Unit {
         )
     }
 
+    /**
+     Returns millimeter `[mm]` length unit.
+     
+     - author: Michal Konturek
+     */
     public static var millimeter: LengthUnit {
         return LengthUnit(
             name: "millimeter",
@@ -62,21 +82,41 @@ public final class LengthUnit: Unit {
 
 extension NSNumber {
 
+    /**
+     Returns instance converted as kilometer quantity.
+     
+     - author: Michal Konturek
+     */
     public func kilometer() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.kilometer)
 
     }
 
+    /**
+     Returns instance converted as meter quantity.
+     
+     - author: Michal Konturek
+     */
     public func meter() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.meter)
 
     }
 
+    /**
+     Returns instance converted as centimeter quantity.
+     
+     - author: Michal Konturek
+     */
     public func centimeter() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.centimeter)
 
     }
 
+    /**
+     Returns instance converted as millimeter quantity.
+     
+     - author: Michal Konturek
+     */
     public func millimeter() -> Quantity {
         return Quantity(amount: self, unit: LengthUnit.millimeter)
 
