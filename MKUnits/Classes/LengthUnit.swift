@@ -43,6 +43,8 @@ public final class LengthUnit: Unit {
     /**
      Returns meter `[m]` length unit.
      
+     - important: This is a base unit.
+     
      - author: Michal Konturek
      */
     public static var meter: LengthUnit {

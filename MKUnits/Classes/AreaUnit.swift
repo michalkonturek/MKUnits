@@ -69,6 +69,8 @@ public final class AreaUnit: Unit {
     /**
      Returns square meter `[m²]` area unit.
      
+     - important: This is a base unit.
+     
      - author: Michal Konturek
      */
     public static var squareMeter: AreaUnit {

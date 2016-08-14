@@ -43,6 +43,8 @@ public final class VolumeUnit: Unit {
     /**
      Returns litre `[l]` volume unit.
      
+     - important: This is a base unit.
+     
      - author: Michal Konturek
      */
     public static var litre: VolumeUnit {

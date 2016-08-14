@@ -43,6 +43,8 @@ public final class MassUnit: Unit {
     /**
      Returns kilogram `[kg]` mass unit.
      
+     - important: This is a base unit.
+     
      - author: Michal Konturek
      */
     public static var kilogram: MassUnit {
