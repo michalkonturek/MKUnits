@@ -27,6 +27,11 @@ import Foundation
 
 public extension MassUnit {
 
+    /**
+     Returns ton `[t]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var ton: MassUnit {
         return MassUnit(
             name: "ton",
@@ -35,6 +40,11 @@ public extension MassUnit {
         )
     }
 
+    /**
+     Returns hundredweight `[cwt]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var hundredweight: MassUnit {
         return MassUnit(
             name: "hundredweight",
@@ -43,6 +53,11 @@ public extension MassUnit {
         )
     }
 
+    /**
+     Returns quarter `[qtr]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var quarter: MassUnit {
         return MassUnit(
             name: "quarter",
@@ -51,6 +66,11 @@ public extension MassUnit {
         )
     }
 
+    /**
+     Returns stone `[st]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var stone: MassUnit {
         return MassUnit(
             name: "stone",
@@ -59,6 +79,11 @@ public extension MassUnit {
         )
     }
 
+    /**
+     Returns pound `[lb]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var pound: MassUnit {
         return MassUnit(
             name: "pound",
@@ -67,6 +92,11 @@ public extension MassUnit {
         )
     }
 
+    /**
+     Returns ounce `[oz]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var ounce: MassUnit {
         return MassUnit(
             name: "ounce",
@@ -75,6 +105,11 @@ public extension MassUnit {
         )
     }
 
+    /**
+     Returns drachm `[dr]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var drachm: MassUnit {
         return MassUnit(
             name: "drachm",
@@ -83,6 +118,11 @@ public extension MassUnit {
         )
     }
 
+    /**
+     Returns grain `[gr]` mass unit.
+     
+     - author: Michal Konturek
+     */
     public static var grain: MassUnit {
         return MassUnit(
             name: "grain",
@@ -94,34 +134,74 @@ public extension MassUnit {
 
 extension NSNumber {
 
+    /**
+     Returns instance converted as ton quantity.
+     
+     - author: Michal Konturek
+     */
     public func ton() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.ton)
     }
 
+    /**
+     Returns instance converted as hundredweight quantity.
+     
+     - author: Michal Konturek
+     */
     public func hundredweight() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.hundredweight)
     }
 
+    /**
+     Returns instance converted as quarter quantity.
+     
+     - author: Michal Konturek
+     */
     public func quarter() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.quarter)
     }
 
+    /**
+     Returns instance converted as stone quantity.
+     
+     - author: Michal Konturek
+     */
     public func stone() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.stone)
     }
 
+    /**
+     Returns instance converted as pound quantity.
+     
+     - author: Michal Konturek
+     */
     public func pound() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.pound)
     }
 
+    /**
+     Returns instance converted as ounce quantity.
+     
+     - author: Michal Konturek
+     */
     public func ounce() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.ounce)
     }
 
+    /**
+     Returns instance converted as drachm quantity.
+     
+     - author: Michal Konturek
+     */
     public func drachm() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.drachm)
     }
 
+    /**
+     Returns instance converted as grain quantity.
+     
+     - author: Michal Konturek
+     */
     public func grain() -> Quantity {
         return Quantity(amount: self, unit: MassUnit.grain)
     }
