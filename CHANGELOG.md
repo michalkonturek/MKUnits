@@ -1,6 +1,9 @@
 # Change Log
 
-## [3.0.0](https://github.com/michalkonturek/MKUnits/tree/2.2.1) (2016-08-04)
+## [3.1.0](https://github.com/michalkonturek/MKUnits/tree/3.1.0) (2016-08-14)
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/3.0.0...3.1.0)
+
+## [3.0.0](https://github.com/michalkonturek/MKUnits/tree/3.0.0) (2016-08-04)
 [Full Changelog](https://github.com/michalkonturek/MKUnits/compare/2.2.1...3.0.0)
 
 **Merged pull requests:**
@@ -55,10 +58,7 @@
 [Full Changelog](https://github.com/michalkonturek/MKUnits/compare/1.1.1...1.1.2)
 
 ## [1.1.1](https://github.com/michalkonturek/MKUnits/tree/1.1.1) (2013-10-19)
-[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/1.1.1-RC1...1.1.1)
-
-## [1.1.1-RC1](https://github.com/michalkonturek/MKUnits/tree/1.1.1-RC1) (2013-10-19)
-[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/1.1.0...1.1.1-RC1)
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/1.1.0...1.1.1)
 
 ## [1.1.0](https://github.com/michalkonturek/MKUnits/tree/1.1.0) (2013-07-02)
 [Full Changelog](https://github.com/michalkonturek/MKUnits/compare/1.0.2...1.1.0)
