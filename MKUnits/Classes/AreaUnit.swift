@@ -27,6 +27,11 @@ import Foundation
 
 public final class AreaUnit: Unit {
 
+    /**
+     Returns square kilomoter `[km²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareKilometer: AreaUnit {
         return AreaUnit(
             name: "square",
@@ -35,6 +40,11 @@ public final class AreaUnit: Unit {
         )
     }
 
+    /**
+     Returns hectare `[ha]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var hectare: AreaUnit {
         return AreaUnit(
             name: "hectare",
@@ -43,6 +53,11 @@ public final class AreaUnit: Unit {
         )
     }
 
+    /**
+     Returns are `[a]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var are: AreaUnit {
         return AreaUnit(
             name: "are",
@@ -51,6 +66,11 @@ public final class AreaUnit: Unit {
         )
     }
 
+    /**
+     Returns square meter `[m²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareMeter: AreaUnit {
         return AreaUnit(
             name: "square meter",
@@ -59,6 +79,11 @@ public final class AreaUnit: Unit {
         )
     }
 
+    /**
+     Returns square decimeter `[dm²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareDecimeter: AreaUnit {
         return AreaUnit(
             name: "square decimeter",
@@ -67,6 +92,11 @@ public final class AreaUnit: Unit {
         )
     }
 
+    /**
+     Returns square centimeter `[cm²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareCentimeter: AreaUnit {
         return AreaUnit(
             name: "square centimeter",
@@ -75,6 +105,11 @@ public final class AreaUnit: Unit {
         )
     }
 
+    /**
+     Returns square millimeter `[mm²]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var squareMillimeter: AreaUnit {
         return AreaUnit(
             name: "square millimeter",
@@ -86,30 +121,65 @@ public final class AreaUnit: Unit {
 
 extension NSNumber {
 
+    /**
+     Converts instance into square kilometer quantity.
+    
+     - author: Michal Konturek
+     */
     public func squareKilometer() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareKilometer)
     }
 
+    /**
+     Converts instance into hectare quantity.
+     
+     - author: Michal Konturek
+     */
     public func hectare() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.hectare)
     }
 
+    /**
+     Converts instance into are quantity.
+     
+     - author: Michal Konturek
+     */
     public func are() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.are)
     }
 
+    /**
+     Converts instance into square meter quantity.
+     
+     - author: Michal Konturek
+     */
     public func squareMeter() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareMeter)
     }
 
+    /**
+     Converts instance into square decimeter quantity.
+     
+     - author: Michal Konturek
+     */
     public func squareDecimeter() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareDecimeter)
     }
 
+    /**
+     Converts instance into square centimeter quantity.
+     
+     - author: Michal Konturek
+     */
     public func squareCentimeter() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareCentimeter)
     }
 
+    /**
+     Converts instance into square millimeter quantity.
+     
+     - author: Michal Konturek
+     */
     public func squareMillimeter() -> Quantity {
         return Quantity(amount: self, unit: AreaUnit.squareMillimeter)
     }
