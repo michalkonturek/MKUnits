@@ -96,7 +96,7 @@ extension AreaUnit {
 extension NSNumber {
 
     /**
-     Converts instance into square mile quantity.
+     Returns instance converted as square mile quantity.
      
      - author: Michal Konturek
      */
@@ -105,7 +105,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into acre quantity.
+     Returns instance converted as acre quantity.
      
      - author: Michal Konturek
      */
@@ -114,7 +114,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into square yard quantity.
+     Returns instance converted as square yard quantity.
      
      - author: Michal Konturek
      */
@@ -123,7 +123,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into square foot quantity.
+     Returns instance converted as square foot quantity.
      
      - author: Michal Konturek
      */
@@ -132,7 +132,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into square inch quantity.
+     Returns instance converted as square inch quantity.
      
      - author: Michal Konturek
      */

@@ -122,7 +122,7 @@ public final class AreaUnit: Unit {
 extension NSNumber {
 
     /**
-     Converts instance into square kilometer quantity.
+     Returns instance converted as square kilometer quantity.
     
      - author: Michal Konturek
      */
@@ -131,7 +131,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into hectare quantity.
+     Returns instance converted as hectare quantity.
      
      - author: Michal Konturek
      */
@@ -140,7 +140,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into are quantity.
+     Returns instance converted as are quantity.
      
      - author: Michal Konturek
      */
@@ -149,7 +149,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into square meter quantity.
+     Returns instance converted as square meter quantity.
      
      - author: Michal Konturek
      */
@@ -158,7 +158,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into square decimeter quantity.
+     Returns instance converted as square decimeter quantity.
      
      - author: Michal Konturek
      */
@@ -167,7 +167,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into square centimeter quantity.
+     Returns instance converted as square centimeter quantity.
      
      - author: Michal Konturek
      */
@@ -176,7 +176,7 @@ extension NSNumber {
     }
 
     /**
-     Converts instance into square millimeter quantity.
+     Returns instance converted as square millimeter quantity.
      
      - author: Michal Konturek
      */
