@@ -27,6 +27,11 @@ import Foundation
 
 public final class VolumeUnit: Unit {
 
+    /**
+     Returns hectolitre `[hl]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var hectolitre: VolumeUnit {
         return VolumeUnit(
             name: "hectolitre",
@@ -35,6 +40,11 @@ public final class VolumeUnit: Unit {
         )
     }
 
+    /**
+     Returns litre `[l]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var litre: VolumeUnit {
         return VolumeUnit(
             name: "litre",
@@ -43,6 +53,11 @@ public final class VolumeUnit: Unit {
         )
     }
 
+    /**
+     Returns decilitre `[dl]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var decilitre: VolumeUnit {
         return VolumeUnit(
             name: "decilitre",
@@ -51,6 +66,11 @@ public final class VolumeUnit: Unit {
         )
     }
 
+    /**
+     Returns centilitre `[cl]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var centilitre: VolumeUnit {
         return VolumeUnit(
             name: "centilitre",
@@ -59,6 +79,11 @@ public final class VolumeUnit: Unit {
         )
     }
 
+    /**
+     Returns millilitre `[ml]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var millilitre: VolumeUnit {
         return VolumeUnit(
             name: "millilitre",
@@ -67,6 +92,11 @@ public final class VolumeUnit: Unit {
         )
     }
 
+    /**
+     Returns microlitre `[µl]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var microlitre: VolumeUnit {
         return VolumeUnit(
             name: "microlitre",
@@ -78,26 +108,56 @@ public final class VolumeUnit: Unit {
 
 extension NSNumber {
 
+    /**
+     Returns instance converted as hectolitre quantity.
+     
+     - author: Michal Konturek
+     */
     public func hectolitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.hectolitre)
     }
 
+    /**
+     Returns instance converted as litre quantity.
+     
+     - author: Michal Konturek
+     */
     public func litre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.litre)
     }
 
+    /**
+     Returns instance converted as decilitre quantity.
+     
+     - author: Michal Konturek
+     */
     public func decilitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.decilitre)
     }
 
+    /**
+     Returns instance converted as centilitre quantity.
+     
+     - author: Michal Konturek
+     */
     public func centilitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.centilitre)
     }
 
+    /**
+     Returns instance converted as millilitre quantity.
+     
+     - author: Michal Konturek
+     */
     public func millilitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.millilitre)
     }
 
+    /**
+     Returns instance converted as microlitre quantity.
+     
+     - author: Michal Konturek
+     */
     public func microlitre() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.microlitre)
     }
