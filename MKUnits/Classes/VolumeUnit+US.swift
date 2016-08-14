@@ -27,22 +27,37 @@ import Foundation
 
 extension VolumeUnit {
 
+    /**
+     Returns US hogshead `[US hhd]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_hogshead: VolumeUnit {
         return VolumeUnit(
-            name: "hogshead",
-            symbol: "hogshead",
+            name: "US hogshead",
+            symbol: "US hhd",
             ratio: NSDecimalNumber(mantissa: 238480942392, exponent: -9, isNegative: false)
         )
     }
 
+    /**
+     Returns US barrel `[US bbl]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_barrel: VolumeUnit {
         return VolumeUnit(
-            name: "barrel",
-            symbol: "bbl",
+            name: "US barrel",
+            symbol: "US bbl",
             ratio: NSDecimalNumber(mantissa: 119240471196, exponent: -9, isNegative: false)
         )
     }
 
+    /**
+     Returns US gallon `[US gal]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_gallon: VolumeUnit {
         return VolumeUnit(
             name: "US gallon",
@@ -51,6 +66,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns US quart `[US qt]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_quart: VolumeUnit {
         return VolumeUnit(
             name: "US quart",
@@ -59,6 +79,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns US pint `[US pt]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_pint: VolumeUnit {
         return VolumeUnit(
             name: "US pint",
@@ -67,6 +92,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns US cup `[US cp]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_cup: VolumeUnit {
         return VolumeUnit(
             name: "US cup",
@@ -75,6 +105,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns US gill `[US gi]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_gill: VolumeUnit {
         return VolumeUnit(
             name: "US gill",
@@ -83,6 +118,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns US fluid ounce `[US fl oz]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_fluidounce: VolumeUnit {
         return VolumeUnit(
             name: "US fluid ounce",
@@ -91,6 +131,11 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns US tablespoon `[US tbsp]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_tablespoon: VolumeUnit {
         return VolumeUnit(
             name: "US tablespoon",
@@ -99,14 +144,24 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns US teaspoon `[US tsp]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_teaspoon: VolumeUnit {
         return VolumeUnit(
             name: "US teaspoon",
-            symbol: "tsp",
+            symbol: "US tsp",
             ratio: NSDecimalNumber(mantissa: 492892159375, exponent: -14, isNegative: false)
         )
     }
 
+    /**
+     Returns US fluidram `[US fl dr]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_fluidram: VolumeUnit {
         return VolumeUnit(
             name: "US fluidram",
@@ -115,10 +170,15 @@ extension VolumeUnit {
         )
     }
 
+    /**
+     Returns US minim `[US min]` volume unit.
+     
+     - author: Michal Konturek
+     */
     public static var us_minim: VolumeUnit {
         return VolumeUnit(
-            name: "minim",
-            symbol: "min",
+            name: "US minim",
+            symbol: "US min",
             ratio: NSDecimalNumber(mantissa: 61611519921875, exponent: -18, isNegative: false)
         )
     }
@@ -126,50 +186,110 @@ extension VolumeUnit {
 
 extension NSNumber {
 
+    /**
+     Returns instance converted as US hogshead quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_hogshead() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_hogshead)
     }
 
+    /**
+     Returns instance converted as US barrel quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_barrel() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_barrel)
     }
 
+    /**
+     Returns instance converted as US gallon quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_gallon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_gallon)
     }
 
+    /**
+     Returns instance converted as US quart quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_quart() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_quart)
     }
 
+    /**
+     Returns instance converted as US pint quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_pint() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_pint)
     }
 
+    /**
+     Returns instance converted as US cup quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_cup() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_cup)
     }
 
+    /**
+     Returns instance converted as US gill quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_gill() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_gill)
     }
 
+    /**
+     Returns instance converted as US fluidounce quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_fluidounce() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_fluidounce)
     }
 
+    /**
+     Returns instance converted as US tablespoon quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_tablespoon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_tablespoon)
     }
 
+    /**
+     Returns instance converted as US teaspoon quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_teaspoon() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_teaspoon)
     }
 
+    /**
+     Returns instance converted as US fluidram quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_fluidram() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_fluidram)
     }
 
+    /**
+     Returns instance converted as US minim quantity.
+     
+     - author: Michal Konturek
+     */
     public func us_minim() -> Quantity {
         return Quantity(amount: self, unit: VolumeUnit.us_minim)
     }
