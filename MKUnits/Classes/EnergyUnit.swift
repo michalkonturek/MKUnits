@@ -27,6 +27,11 @@ import Foundation
 
 public final class EnergyUnit: Unit {
 
+    /**
+     Returns gigajoule `[GJ]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var gigajoule: EnergyUnit {
         return EnergyUnit(
             name: "gigajoule",
@@ -35,6 +40,11 @@ public final class EnergyUnit: Unit {
         )
     }
 
+    /**
+     Returns megajoule `[MJ]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var megajoule: EnergyUnit {
         return EnergyUnit(
             name: "megajoule",
@@ -43,6 +53,11 @@ public final class EnergyUnit: Unit {
         )
     }
 
+    /**
+     Returns kilojoule `[kJ]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var kilojoule: EnergyUnit {
         return EnergyUnit(
             name: "kilojoule",
@@ -51,6 +66,11 @@ public final class EnergyUnit: Unit {
         )
     }
 
+    /**
+     Returns joule `[J]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var joule: EnergyUnit {
         return EnergyUnit(
             name: "joule",
@@ -59,6 +79,11 @@ public final class EnergyUnit: Unit {
         )
     }
 
+    /**
+     Returns kilocalorie `[kcal]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var kilocalorie: EnergyUnit {
         return EnergyUnit(
             name: "kilocalorie",
@@ -67,6 +92,11 @@ public final class EnergyUnit: Unit {
         )
     }
 
+    /**
+     Returns calorie `[cal]` area unit.
+     
+     - author: Michal Konturek
+     */
     public static var calorie: EnergyUnit {
         return EnergyUnit(
             name: "calorie",
@@ -78,26 +108,56 @@ public final class EnergyUnit: Unit {
 
 extension NSNumber {
 
+    /**
+     Returns instance converted as gigajoule quantity.
+     
+     - author: Michal Konturek
+     */
     public func gigajoule() -> Quantity {
         return Quantity(amount: self, unit: EnergyUnit.gigajoule)
     }
 
+    /**
+     Returns instance converted as megajoule quantity.
+     
+     - author: Michal Konturek
+     */
     public func megajoule() -> Quantity {
         return Quantity(amount: self, unit: EnergyUnit.megajoule)
     }
 
+    /**
+     Returns instance converted as kilojoule quantity.
+     
+     - author: Michal Konturek
+     */
     public func kilojoule() -> Quantity {
         return Quantity(amount: self, unit: EnergyUnit.kilojoule)
     }
 
+    /**
+     Returns instance converted as joule quantity.
+     
+     - author: Michal Konturek
+     */
     public func joule() -> Quantity {
         return Quantity(amount: self, unit: EnergyUnit.joule)
     }
 
+    /**
+     Returns instance converted as kilocalorie quantity.
+     
+     - author: Michal Konturek
+     */
     public func kilocalorie() -> Quantity {
         return Quantity(amount: self, unit: EnergyUnit.kilocalorie)
     }
 
+    /**
+     Returns instance converted as calorie quantity.
+     
+     - author: Michal Konturek
+     */
     public func calorie() -> Quantity {
         return Quantity(amount: self, unit: EnergyUnit.calorie)
     }
