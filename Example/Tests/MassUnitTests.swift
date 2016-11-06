@@ -45,7 +45,7 @@ class MassUnitTests: XCTestCase {
         self.assert(1.milligram(), expectedAmount: 1, expectedUnit: MassUnit.milligram)
     }
     
-    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: MKUnits.Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }

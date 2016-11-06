@@ -48,7 +48,7 @@ class AreaUnitTests: XCTestCase {
         self.assert(1.squareMillimeter(), expectedAmount: 1, expectedUnit: AreaUnit.squareMillimeter)
     }
     
-    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: MKUnits.Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }

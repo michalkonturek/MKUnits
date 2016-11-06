@@ -82,7 +82,7 @@ public final class LengthUnit: Unit {
     }
 }
 
-extension NSNumber {
+extension IntegerLiteralConvertible {
 
     /**
      Returns instance converted as kilometer quantity.
@@ -90,7 +90,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func kilometer() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.kilometer)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.kilometer)
 
     }
 
@@ -100,7 +100,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func meter() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.meter)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.meter)
 
     }
 
@@ -110,7 +110,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func centimeter() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.centimeter)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.centimeter)
 
     }
 
@@ -120,7 +120,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func millimeter() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.millimeter)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.millimeter)
 
     }
 }

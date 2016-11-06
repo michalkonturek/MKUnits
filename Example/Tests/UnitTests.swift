@@ -103,7 +103,7 @@ class UnitTests: XCTestCase {
     }
 }
 
-class TestUnit: Unit {
+class TestUnit: MKUnits.Unit {
     
     internal static var unitA: TestUnit {
         return TestUnit(name: "Unit A", symbol: "A", ratio: 1)

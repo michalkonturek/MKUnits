@@ -121,7 +121,7 @@ public final class AreaUnit: Unit {
     }
 }
 
-extension NSNumber {
+extension IntegerLiteralConvertible {
 
     /**
      Returns instance converted as square kilometer quantity.
@@ -129,7 +129,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareKilometer() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareKilometer)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareKilometer)
     }
 
     /**
@@ -138,7 +138,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func hectare() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.hectare)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.hectare)
     }
 
     /**
@@ -147,7 +147,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func are() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.are)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.are)
     }
 
     /**
@@ -156,7 +156,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareMeter() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareMeter)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareMeter)
     }
 
     /**
@@ -165,7 +165,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareDecimeter() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareDecimeter)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareDecimeter)
     }
 
     /**
@@ -174,7 +174,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareCentimeter() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareCentimeter)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareCentimeter)
     }
 
     /**
@@ -183,6 +183,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareMillimeter() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareMillimeter)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareMillimeter)
     }
 }

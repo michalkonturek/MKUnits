@@ -184,7 +184,7 @@ extension VolumeUnit {
     }
 }
 
-extension NSNumber {
+extension IntegerLiteralConvertible {
 
     /**
      Returns instance converted as US hogshead quantity.
@@ -192,7 +192,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_hogshead() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_hogshead)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_hogshead)
     }
 
     /**
@@ -201,7 +201,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_barrel() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_barrel)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_barrel)
     }
 
     /**
@@ -210,7 +210,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_gallon() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_gallon)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_gallon)
     }
 
     /**
@@ -219,7 +219,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_quart() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_quart)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_quart)
     }
 
     /**
@@ -228,7 +228,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_pint() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_pint)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_pint)
     }
 
     /**
@@ -237,7 +237,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_cup() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_cup)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_cup)
     }
 
     /**
@@ -246,7 +246,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_gill() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_gill)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_gill)
     }
 
     /**
@@ -255,7 +255,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_fluidounce() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_fluidounce)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_fluidounce)
     }
 
     /**
@@ -264,7 +264,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_tablespoon() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_tablespoon)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_tablespoon)
     }
 
     /**
@@ -273,7 +273,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_teaspoon() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_teaspoon)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_teaspoon)
     }
 
     /**
@@ -282,7 +282,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_fluidram() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_fluidram)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_fluidram)
     }
 
     /**
@@ -291,6 +291,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func us_minim() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.us_minim)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.us_minim)
     }
 }
