@@ -53,7 +53,7 @@ class EnergyUnitTests: XCTestCase {
         self.assert(1.calorie(), expectedAmount: 1, expectedUnit: EnergyUnit.calorie)
     }
     
-    func assert(item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: MKUnits.Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }

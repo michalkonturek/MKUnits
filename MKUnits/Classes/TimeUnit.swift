@@ -140,7 +140,7 @@ public final class TimeUnit: Unit {
         return TimeUnit(
             name: "second",
             symbol: "s",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 
@@ -184,7 +184,7 @@ public final class TimeUnit: Unit {
     }
 }
 
-extension NSNumber {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as century quantity.
@@ -192,7 +192,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func century() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.century)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.century)
     }
 
     /**
@@ -201,7 +201,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func decade() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.decade)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.decade)
     }
 
     /**
@@ -210,7 +210,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func year() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.year)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.year)
     }
 
     /**
@@ -219,7 +219,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func month() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.month)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.month)
     }
 
     /**
@@ -228,7 +228,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func week() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.week)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.week)
     }
 
     /**
@@ -237,7 +237,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func day() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.day)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.day)
     }
 
     /**
@@ -246,7 +246,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func hour() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.hour)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.hour)
     }
 
     /**
@@ -255,7 +255,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func minute() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.minute)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.minute)
     }
 
     /**
@@ -264,7 +264,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func second() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.second)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.second)
     }
 
     /**
@@ -273,7 +273,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func millisecond() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.millisecond)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.millisecond)
     }
 
     /**
@@ -282,7 +282,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func microsecond() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.microsecond)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.microsecond)
     }
 
     /**
@@ -291,6 +291,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func nanosecond() -> Quantity {
-        return Quantity(amount: self, unit: TimeUnit.nanosecond)
+        return Quantity(amount: self as! NSNumber, unit: TimeUnit.nanosecond)
     }
 }

@@ -132,7 +132,7 @@ public extension MassUnit {
     }
 }
 
-extension NSNumber {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as ton quantity.
@@ -140,7 +140,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func ton() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.ton)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.ton)
     }
 
     /**
@@ -149,7 +149,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func hundredweight() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.hundredweight)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.hundredweight)
     }
 
     /**
@@ -158,7 +158,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func quarter() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.quarter)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.quarter)
     }
 
     /**
@@ -167,7 +167,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func stone() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.stone)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.stone)
     }
 
     /**
@@ -176,7 +176,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func pound() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.pound)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.pound)
     }
 
     /**
@@ -185,7 +185,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func ounce() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.ounce)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.ounce)
     }
 
     /**
@@ -194,7 +194,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func drachm() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.drachm)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.drachm)
     }
 
     /**
@@ -203,6 +203,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func grain() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.grain)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.grain)
     }
 }

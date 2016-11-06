@@ -30,10 +30,10 @@ import Foundation
  
  - author: Michal Konturek
  */
-public class Unit {
-    public let name: String
-    public let symbol: String
-    public let ratio: NSDecimalNumber
+open class Unit {
+    open let name: String
+    open let symbol: String
+    open let ratio: NSDecimalNumber
 
     /**
      Instantiates an `Unit` object.
@@ -59,9 +59,9 @@ public class Unit {
      
      - author: Michal Konturek
      */
-    public func convertFromBaseUnit(amount: NSNumber) -> NSNumber {
+    open func convertFromBaseUnit(_ amount: NSNumber) -> NSNumber {
         let converted = NSDecimalNumber(decimal: amount.decimalValue)
-        return converted.decimalNumberByDividingBy(self.ratio)
+        return converted.dividing(by: self.ratio)
     }
 
     /**
@@ -73,9 +73,9 @@ public class Unit {
      
      - author: Michal Konturek
      */
-    public func convertToBaseUnit(amount: NSNumber) -> NSNumber {
+    open func convertToBaseUnit(_ amount: NSNumber) -> NSNumber {
         let converted = NSDecimalNumber(decimal: amount.decimalValue)
-        return converted.decimalNumberByMultiplyingBy(self.ratio)
+        return converted.multiplying(by: self.ratio)
     }
 }
 
@@ -106,7 +106,7 @@ public protocol UnitConvertible {
      
      - author: Michal Konturek
      */
-    func convert(amount: NSNumber, to: Unit) -> NSNumber
+    func convert(_ amount: NSNumber, to: Unit) -> NSNumber
     
     /**
      Converts `amount` from `source unit` to `this unit`.
@@ -118,7 +118,7 @@ public protocol UnitConvertible {
      
      - author: Michal Konturek
      */
-    func convert(amount: NSNumber, from: Unit) -> NSNumber
+    func convert(_ amount: NSNumber, from: Unit) -> NSNumber
     
     /**
      Converts `amount` from `source unit` to `destination unit`.
@@ -131,7 +131,7 @@ public protocol UnitConvertible {
      
      - author: Michal Konturek
      */
-    func convert(amount: NSNumber, from: Unit, to: Unit) -> NSNumber
+    func convert(_ amount: NSNumber, from: Unit, to: Unit) -> NSNumber
     
     /**
      Returns `true` if `this unit` is convertible with `other unit`.
@@ -140,7 +140,7 @@ public protocol UnitConvertible {
      
      - author: Michal Konturek
      */
-    func isConvertible(with: Unit) -> Bool
+    func isConvertible(_ with: Unit) -> Bool
 }
 
 extension Unit: UnitConvertible {
@@ -155,7 +155,7 @@ extension Unit: UnitConvertible {
      
      - author: Michal Konturek
      */
-    public func convert(amount: NSNumber, to: Unit) -> NSNumber {
+    public func convert(_ amount: NSNumber, to: Unit) -> NSNumber {
         return self.convert(amount, from: self, to: to)
     }
 
@@ -169,7 +169,7 @@ extension Unit: UnitConvertible {
      
      - author: Michal Konturek
      */
-    public func convert(amount: NSNumber, from: Unit) -> NSNumber {
+    public func convert(_ amount: NSNumber, from: Unit) -> NSNumber {
         return self.convert(amount, from: from, to: self)
     }
 
@@ -184,7 +184,7 @@ extension Unit: UnitConvertible {
      
      - author: Michal Konturek
      */
-    public func convert(amount: NSNumber, from: Unit, to: Unit) -> NSNumber {
+    public func convert(_ amount: NSNumber, from: Unit, to: Unit) -> NSNumber {
         let baseAmount = from.convertToBaseUnit(amount)
         let converted = to.convertFromBaseUnit(baseAmount)
         return converted
@@ -197,8 +197,8 @@ extension Unit: UnitConvertible {
      
      - author: Michal Konturek
      */
-    public func isConvertible(with: Unit) -> Bool {
-        return with.dynamicType == self.dynamicType
+    public func isConvertible(_ with: Unit) -> Bool {
+        return type(of: with) == type(of: self)
     }
 }
 
@@ -215,13 +215,13 @@ extension Unit: Equatable {
      
      - author: Michal Konturek
      */
-    public func equals(other: Unit) -> Bool {
-        if other.dynamicType !== self.dynamicType {
+    public func equals(_ other: Unit) -> Bool {
+        if type(of: other) !== type(of: self) {
             return false
         }
         return self.symbol == other.symbol
     }
 }
-public func == <T where T: Unit>(lhs: T, rhs: T) -> Bool {
+public func == <T>(lhs: T, rhs: T) -> Bool where T: Unit {
     return lhs.equals(rhs)
 }

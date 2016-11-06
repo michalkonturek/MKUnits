@@ -93,7 +93,7 @@ extension AreaUnit {
     }
 }
 
-extension NSNumber {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as square mile quantity.
@@ -101,7 +101,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareMile() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareMile)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareMile)
     }
 
     /**
@@ -110,7 +110,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func acre() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.acre)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.acre)
     }
 
     /**
@@ -119,7 +119,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareYard() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareYard)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareYard)
     }
 
     /**
@@ -128,7 +128,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareFoot() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareFoot)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareFoot)
     }
 
     /**
@@ -137,6 +137,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func squareInch() -> Quantity {
-        return Quantity(amount: self, unit: AreaUnit.squareInch)
+        return Quantity(amount: self as! NSNumber, unit: AreaUnit.squareInch)
     }
 }

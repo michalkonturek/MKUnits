@@ -43,7 +43,7 @@ class LengthUnitTests: XCTestCase {
         self.assert(1.millimeter(), expectedAmount: 1, expectedUnit: LengthUnit.millimeter)
     }
     
-    func assert(item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: MKUnits.Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }

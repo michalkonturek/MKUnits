@@ -51,7 +51,7 @@ public final class MassUnit: Unit {
         return MassUnit(
             name: "kilogram",
             symbol: "kg",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 
@@ -95,7 +95,7 @@ public final class MassUnit: Unit {
     }
 }
 
-extension NSNumber {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as megagram quantity.
@@ -103,7 +103,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func megagram() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.megagram)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.megagram)
     }
 
     /**
@@ -112,7 +112,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func kilogram() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.kilogram)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.kilogram)
     }
 
     /**
@@ -121,7 +121,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func decagram() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.decagram)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.decagram)
     }
 
     /**
@@ -130,7 +130,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func gram() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.gram)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.gram)
     }
 
     /**
@@ -139,6 +139,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func milligram() -> Quantity {
-        return Quantity(amount: self, unit: MassUnit.milligram)
+        return Quantity(amount: self as! NSNumber, unit: MassUnit.milligram)
     }
 }

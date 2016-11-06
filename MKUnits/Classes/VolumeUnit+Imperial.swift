@@ -132,7 +132,7 @@ extension VolumeUnit {
     }
 }
 
-extension NSNumber {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as gallon quantity.
@@ -140,7 +140,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func gallon() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.gallon)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.gallon)
     }
 
     /**
@@ -149,7 +149,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func quart() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.quart)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.quart)
     }
 
     /**
@@ -158,7 +158,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func pint() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.pint)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.pint)
     }
 
     /**
@@ -167,7 +167,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func cup() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.cup)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.cup)
     }
 
     /**
@@ -176,7 +176,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func fluidounce() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.fluidounce)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.fluidounce)
     }
 
     /**
@@ -185,7 +185,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func tablespoon() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.tablespoon)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.tablespoon)
     }
 
     /**
@@ -194,7 +194,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func teaspoon() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.teaspoon)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.teaspoon)
     }
 
     /**
@@ -203,6 +203,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func fluidram() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.fluidram)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.fluidram)
     }
 }

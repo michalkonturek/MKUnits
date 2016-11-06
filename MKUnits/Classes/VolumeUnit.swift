@@ -51,7 +51,7 @@ public final class VolumeUnit: Unit {
         return VolumeUnit(
             name: "litre",
             symbol: "l",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 
@@ -108,7 +108,7 @@ public final class VolumeUnit: Unit {
     }
 }
 
-extension NSNumber {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as hectolitre quantity.
@@ -116,7 +116,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func hectolitre() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.hectolitre)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.hectolitre)
     }
 
     /**
@@ -125,7 +125,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func litre() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.litre)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.litre)
     }
 
     /**
@@ -134,7 +134,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func decilitre() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.decilitre)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.decilitre)
     }
 
     /**
@@ -143,7 +143,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func centilitre() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.centilitre)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.centilitre)
     }
 
     /**
@@ -152,7 +152,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func millilitre() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.millilitre)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.millilitre)
     }
 
     /**
@@ -161,6 +161,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func microlitre() -> Quantity {
-        return Quantity(amount: self, unit: VolumeUnit.microlitre)
+        return Quantity(amount: self as! NSNumber, unit: VolumeUnit.microlitre)
     }
 }

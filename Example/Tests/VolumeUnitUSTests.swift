@@ -65,7 +65,7 @@ class VolumeUnitUSTests: XCTestCase {
         self.assert(1.us_minim(), expectedAmount: 1, expectedUnit: VolumeUnit.us_minim)
     }
     
-    func assert(item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: MKUnits.Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }

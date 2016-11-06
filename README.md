@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/cocoapods/v/MKUnits.svg)](http://cocoapods.org/pods/MKUnits)
 [![Build Status](https://travis-ci.org/michalkonturek/MKUnits.svg?branch=master)](https://travis-ci.org/michalkonturek/MKUnits)
-[![Swift](https://img.shields.io/badge/%20compatible-swift%202.2-orange.svg)](http://swift.org)
+[![Swift](https://img.shields.io/badge/%20compatible-swift%203.0-orange.svg)](http://swift.org)
 [![License](https://img.shields.io/cocoapods/l/MKUnits.svg)](http://cocoapods.org/pods/MKUnits)
 [![Twitter](https://img.shields.io/badge/contact-@MichalKonturek-blue.svg)](http://twitter.com/michalkonturek)
 

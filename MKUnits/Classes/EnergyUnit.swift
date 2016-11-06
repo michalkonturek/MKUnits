@@ -101,12 +101,12 @@ public final class EnergyUnit: Unit {
         return EnergyUnit(
             name: "calorie",
             symbol: "cal",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 }
 
-extension NSNumber {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as gigajoule quantity.
@@ -114,7 +114,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func gigajoule() -> Quantity {
-        return Quantity(amount: self, unit: EnergyUnit.gigajoule)
+        return Quantity(amount: self as! NSNumber, unit: EnergyUnit.gigajoule)
     }
 
     /**
@@ -123,7 +123,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func megajoule() -> Quantity {
-        return Quantity(amount: self, unit: EnergyUnit.megajoule)
+        return Quantity(amount: self as! NSNumber, unit: EnergyUnit.megajoule)
     }
 
     /**
@@ -132,7 +132,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func kilojoule() -> Quantity {
-        return Quantity(amount: self, unit: EnergyUnit.kilojoule)
+        return Quantity(amount: self as! NSNumber, unit: EnergyUnit.kilojoule)
     }
 
     /**
@@ -141,7 +141,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func joule() -> Quantity {
-        return Quantity(amount: self, unit: EnergyUnit.joule)
+        return Quantity(amount: self as! NSNumber, unit: EnergyUnit.joule)
     }
 
     /**
@@ -150,7 +150,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func kilocalorie() -> Quantity {
-        return Quantity(amount: self, unit: EnergyUnit.kilocalorie)
+        return Quantity(amount: self as! NSNumber, unit: EnergyUnit.kilocalorie)
     }
 
     /**
@@ -159,6 +159,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func calorie() -> Quantity {
-        return Quantity(amount: self, unit: EnergyUnit.calorie)
+        return Quantity(amount: self as! NSNumber, unit: EnergyUnit.calorie)
     }
 }

@@ -49,7 +49,7 @@ class AreaUnitImperialTests: XCTestCase {
         self.assert(1.squareInch(), expectedAmount: 1, expectedUnit: AreaUnit.squareInch)
     }
     
-    func assert(item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: MKUnits.Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }

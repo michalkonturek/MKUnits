@@ -119,7 +119,7 @@ extension LengthUnit {
     }
 }
 
-extension NSNumber {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as nautical mile quantity.
@@ -127,7 +127,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func nauticalMile() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.nauticalMile)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.nauticalMile)
     }
 
     /**
@@ -136,7 +136,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func mile() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.mile)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.mile)
     }
 
     /**
@@ -145,7 +145,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func furlong() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.furlong)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.furlong)
     }
 
     /**
@@ -154,7 +154,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func chain() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.chain)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.chain)
     }
 
     /**
@@ -163,7 +163,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func yard() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.yard)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.yard)
     }
 
     /**
@@ -172,7 +172,7 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func foot() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.foot)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.foot)
     }
 
     /**
@@ -181,6 +181,6 @@ extension NSNumber {
      - author: Michal Konturek
      */
     public func inch() -> Quantity {
-        return Quantity(amount: self, unit: LengthUnit.inch)
+        return Quantity(amount: self as! NSNumber, unit: LengthUnit.inch)
     }
 }
