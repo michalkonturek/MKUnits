@@ -6,5 +6,5 @@ before_install:
 - gem install cocoapods -v 1.1.1
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -workspace Example/MKUnits.xcworkspace -scheme MKUnits-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/MKUnits.xcworkspace -scheme MKUnits-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
