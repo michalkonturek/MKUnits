@@ -56,7 +56,7 @@ public struct Quantity {
      
      - author: Michal Konturek
      */
-    public func converted(to: Unit) -> Quantity {
+    public func converted(_ to: Unit) -> Quantity {
         assert(self.unit.isConvertible(to))
         let amount = self.unit.convert(self.amount, to: to)
         return Quantity(amount: amount, unit: to)
@@ -78,11 +78,11 @@ public struct Quantity {
      
      - author: Michal Konturek
      */
-    public func rounded(precision: Int16) -> Quantity {
+    public func rounded(_ precision: Int16) -> Quantity {
         assert(precision >= 0)
-        let rounded = self.amount.decimalNumberByRoundingAccordingToBehavior(
-            NSDecimalNumberHandler(
-                roundingMode: .RoundPlain,
+        let rounded = self.amount.rounding(
+            accordingToBehavior: NSDecimalNumberHandler(
+                roundingMode: .plain,
                 scale: precision,
                 raiseOnExactness: false,
                 raiseOnOverflow: false,
@@ -99,54 +99,54 @@ public struct Quantity {
 public func + (lhs: Quantity, rhs: Quantity) -> Quantity {
     assert(lhs.unit.isConvertible(rhs.unit))
     let converted = rhs.converted(lhs.unit).amount
-    let amount = lhs.amount.decimalNumberByAdding(converted)
+    let amount = lhs.amount.adding(converted)
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
 public func - (lhs: Quantity, rhs: Quantity) -> Quantity {
     assert(lhs.unit.isConvertible(rhs.unit))
     let converted = rhs.converted(lhs.unit).amount
-    let amount = lhs.amount.decimalNumberBySubtracting(converted)
+    let amount = lhs.amount.subtracting(converted)
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
 public func * (lhs: Quantity, rhs: Int) -> Quantity {
-    let amount = lhs.amount.decimalNumberByMultiplyingBy(NSDecimalNumber(integer: rhs))
+    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs as Int))
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
 public func * (lhs: Quantity, rhs: Double) -> Quantity {
-    let amount = lhs.amount.decimalNumberByMultiplyingBy(NSDecimalNumber(double: rhs))
+    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs as Double))
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
 public func * (lhs: Quantity, rhs: Float) -> Quantity {
-    let amount = lhs.amount.decimalNumberByMultiplyingBy(NSDecimalNumber(float: rhs))
+    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs as Float))
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
 public func * (lhs: Quantity, rhs: NSNumber) -> Quantity {
-    let amount = lhs.amount.decimalNumberByMultiplyingBy(NSDecimalNumber(decimal: rhs.decimalValue))
+    let amount = lhs.amount.multiplying(by: NSDecimalNumber(decimal: rhs.decimalValue))
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
 public func * (lhs: Int, rhs: Quantity) -> Quantity {
-    let amount = rhs.amount.decimalNumberByMultiplyingBy(NSDecimalNumber(integer: lhs))
+    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs as Int))
     return Quantity(amount: amount, unit: rhs.unit)
 }
 
 public func * (lhs: Double, rhs: Quantity) -> Quantity {
-    let amount = rhs.amount.decimalNumberByMultiplyingBy(NSDecimalNumber(double: lhs))
+    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs as Double))
     return Quantity(amount: amount, unit: rhs.unit)
 }
 
 public func * (lhs: Float, rhs: Quantity) -> Quantity {
-    let amount = rhs.amount.decimalNumberByMultiplyingBy(NSDecimalNumber(float: lhs))
+    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs as Float))
     return Quantity(amount: amount, unit: rhs.unit)
 }
 
 public func * (lhs: NSNumber, rhs: Quantity) -> Quantity {
-    let amount = rhs.amount.decimalNumberByMultiplyingBy(NSDecimalNumber(decimal: lhs.decimalValue))
+    let amount = rhs.amount.multiplying(by: NSDecimalNumber(decimal: lhs.decimalValue))
     return Quantity(amount: amount, unit: rhs.unit)
 }
 
@@ -171,7 +171,7 @@ extension Quantity: Equatable {
      
      - author: Michal Konturek
      */
-    public func equals(other: Quantity) -> Bool {
+    public func equals(_ other: Quantity) -> Bool {
         if self.unit.isConvertible(other.unit) {
             let converted = other.converted(self.unit)
             return self.amount == converted.amount
@@ -191,23 +191,23 @@ extension Quantity: Comparable {}
 public func < (lhs: Quantity, rhs: Quantity) -> Bool {
     assert(lhs.unit.isConvertible(rhs.unit))
     let converted = lhs.converted(rhs.unit)
-    return converted.amount.compare(rhs.amount) == .OrderedAscending
+    return converted.amount.compare(rhs.amount) == .orderedAscending
 }
 
 public func <= (lhs: Quantity, rhs: Quantity) -> Bool {
     assert(lhs.unit.isConvertible(rhs.unit))
     let converted = lhs.converted(rhs.unit)
-    return converted.amount.compare(rhs.amount) != .OrderedDescending
+    return converted.amount.compare(rhs.amount) != .orderedDescending
 }
 
 public func > (lhs: Quantity, rhs: Quantity) -> Bool {
     assert(lhs.unit.isConvertible(rhs.unit))
     let converted = lhs.converted(rhs.unit)
-    return converted.amount.compare(rhs.amount) == .OrderedDescending
+    return converted.amount.compare(rhs.amount) == .orderedDescending
 }
 
 public func >= (lhs: Quantity, rhs: Quantity) -> Bool {
     assert(lhs.unit.isConvertible(rhs.unit))
     let converted = lhs.converted(rhs.unit)
-    return converted.amount.compare(rhs.amount) != .OrderedAscending
+    return converted.amount.compare(rhs.amount) != .orderedAscending
 }

@@ -55,7 +55,7 @@ class MassUnitImperialTests: XCTestCase {
         self.assert(1.grain(), expectedAmount: 1, expectedUnit: MassUnit.grain)
     }
     
-    func assert(item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }

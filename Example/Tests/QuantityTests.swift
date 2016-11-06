@@ -109,7 +109,7 @@ class QuantityTests: XCTestCase {
         XCTAssertEqual(target.amount, 150)
         XCTAssertEqual(target.unit, TestUnit.unitA)
         
-        target = self.sut * NSNumber(integer: 3)
+        target = self.sut * NSNumber(value: 3 as Int)
         XCTAssertEqual(target.amount, 300)
         XCTAssertEqual(target.unit, TestUnit.unitA)
     }
@@ -123,7 +123,7 @@ class QuantityTests: XCTestCase {
         XCTAssertEqual(target.amount, 150)
         XCTAssertEqual(target.unit, TestUnit.unitA)
         
-        target = NSNumber(integer: 3) * self.sut
+        target = NSNumber(value: 3 as Int) * self.sut
         XCTAssertEqual(target.amount, 300)
         XCTAssertEqual(target.unit, TestUnit.unitA)
     }

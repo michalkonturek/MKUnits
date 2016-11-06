@@ -51,7 +51,7 @@ public final class MassUnit: Unit {
         return MassUnit(
             name: "kilogram",
             symbol: "kg",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 

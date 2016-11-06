@@ -65,7 +65,7 @@ class VolumeUnitImperialTests: XCTestCase {
         self.assert(1.fluidram(), expectedAmount: 1, expectedUnit: VolumeUnit.fluidram)
     }
     
-    func assert(item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }

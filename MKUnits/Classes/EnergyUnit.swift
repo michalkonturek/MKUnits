@@ -101,7 +101,7 @@ public final class EnergyUnit: Unit {
         return EnergyUnit(
             name: "calorie",
             symbol: "cal",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 }

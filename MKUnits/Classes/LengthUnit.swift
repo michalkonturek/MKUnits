@@ -51,7 +51,7 @@ public final class LengthUnit: Unit {
         return LengthUnit(
             name: "meter",
             symbol: "m",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 

@@ -51,7 +51,7 @@ public final class VolumeUnit: Unit {
         return VolumeUnit(
             name: "litre",
             symbol: "l",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 

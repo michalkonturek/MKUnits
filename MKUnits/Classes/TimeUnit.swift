@@ -140,7 +140,7 @@ public final class TimeUnit: Unit {
         return TimeUnit(
             name: "second",
             symbol: "s",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 

@@ -33,8 +33,8 @@ class UnitTests: XCTestCase {
     func test_init() {
         XCTAssertEqual(self.sut.name, "Unit A")
         XCTAssertEqual(self.sut.symbol, "A")
-        XCTAssertEqual(self.sut.ratio, NSDecimalNumber.one())
-        XCTAssertTrue(self.sut.ratio.dynamicType == NSDecimalNumber.self)
+        XCTAssertEqual(self.sut.ratio, NSDecimalNumber.one)
+        XCTAssertTrue(type(of: self.sut.ratio) == NSDecimalNumber.self)
     }
     
     func test_convertFromBaseUnit() {

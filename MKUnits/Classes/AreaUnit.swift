@@ -77,7 +77,7 @@ public final class AreaUnit: Unit {
         return AreaUnit(
             name: "square meter",
             symbol: "m²",
-            ratio: NSDecimalNumber.one()
+            ratio: NSDecimalNumber.one
         )
     }
 

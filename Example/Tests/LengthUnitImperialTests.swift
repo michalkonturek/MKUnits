@@ -50,7 +50,7 @@ class LengthUnitImperialTests: XCTestCase {
         self.assert(1.inch(), expectedAmount: 1, expectedUnit: LengthUnit.inch)
     }
     
-    func assert(item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
+    func assert(_ item: Quantity, expectedAmount: NSNumber, expectedUnit: Unit) {
         XCTAssertEqual(item.amount, expectedAmount)
         XCTAssertEqual(item.unit, expectedUnit)
     }
