@@ -184,7 +184,7 @@ extension VolumeUnit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as US hogshead quantity.

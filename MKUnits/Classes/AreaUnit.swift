@@ -121,7 +121,7 @@ public final class AreaUnit: Unit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as square kilometer quantity.

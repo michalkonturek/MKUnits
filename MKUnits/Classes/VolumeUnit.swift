@@ -108,7 +108,7 @@ public final class VolumeUnit: Unit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as hectolitre quantity.

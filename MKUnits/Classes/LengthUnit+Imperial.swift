@@ -119,7 +119,7 @@ extension LengthUnit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as nautical mile quantity.

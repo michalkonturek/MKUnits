@@ -82,7 +82,7 @@ public final class LengthUnit: Unit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as kilometer quantity.

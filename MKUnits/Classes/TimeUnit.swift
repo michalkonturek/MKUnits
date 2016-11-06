@@ -184,7 +184,7 @@ public final class TimeUnit: Unit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as century quantity.

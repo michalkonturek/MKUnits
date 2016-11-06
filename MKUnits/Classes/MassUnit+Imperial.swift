@@ -132,7 +132,7 @@ public extension MassUnit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as ton quantity.

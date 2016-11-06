@@ -93,7 +93,7 @@ extension AreaUnit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as square mile quantity.

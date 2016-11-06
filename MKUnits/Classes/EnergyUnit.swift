@@ -106,7 +106,7 @@ public final class EnergyUnit: Unit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as gigajoule quantity.

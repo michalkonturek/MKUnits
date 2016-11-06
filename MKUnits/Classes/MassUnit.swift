@@ -95,7 +95,7 @@ public final class MassUnit: Unit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as megagram quantity.

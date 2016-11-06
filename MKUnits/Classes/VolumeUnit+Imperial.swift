@@ -132,7 +132,7 @@ extension VolumeUnit {
     }
 }
 
-extension IntegerLiteralConvertible {
+extension ExpressibleByIntegerLiteral {
 
     /**
      Returns instance converted as gallon quantity.
