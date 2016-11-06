@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MKUnits'
-  s.version          = '3.1.0'
+  s.version          = '4.0.0'
   s.summary          = 'Unit conversion library for Swift. It provides units of measurement of physical quantities and simplifies manipulation of them.'
 
   s.homepage         = 'https://github.com/michalkonturek/MKUnits'
