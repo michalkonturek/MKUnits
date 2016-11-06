@@ -1,5 +1,12 @@
 # Change Log
 
+## [4.0.0](https://github.com/michalkonturek/MKUnits/tree/4.0.0) (2016-11-06)
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/3.1.0...4.0.0)
+
+**Merged pull requests:**
+
+- Transition to Swift 3.0 [\#13](https://github.com/michalkonturek/MKUnits/pull/13) ([michalkonturek](https://github.com/michalkonturek))
+
 ## [3.1.0](https://github.com/michalkonturek/MKUnits/tree/3.1.0) (2016-08-14)
 [Full Changelog](https://github.com/michalkonturek/MKUnits/compare/3.0.0...3.1.0)
 
