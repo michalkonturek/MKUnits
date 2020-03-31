@@ -8,9 +8,6 @@
 
 MKUnits is extremely precise unit conversion library for `Swift`. It provides units of measurement of physical quantities and simplifies manipulation of them.
 
-**NB** For `Objective-C` implementation, please refer to MKUnits pod 2.2.1 or visit [archived branch][archive-branch].
-[archive-branch]:https://github.com/michalkonturek/MKUnits/tree/archive-objc
-
 ## License
 
 MKUnits is available under the MIT license. See the [LICENSE][LICENSE] file for more info.
@@ -26,6 +23,14 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "MKUnits"
 ```
+
+### Swift Package Manager
+To add MKUnits to a [Swift Package Manager](https://swift.org/package-manager/) based project, add:
+
+```swift
+.package(url: "https://github.com/rkohl/MKUnits.git", .upToNextMajor(from: "5.0.0")),
+```
+to your `Package.swift` files `dependencies` array.
 
 ## Example
 
