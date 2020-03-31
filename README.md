@@ -2,14 +2,11 @@
 
 [![Version](https://img.shields.io/cocoapods/v/MKUnits.svg)](http://cocoapods.org/pods/MKUnits)
 [![Build Status](https://travis-ci.org/michalkonturek/MKUnits.svg?branch=master)](https://travis-ci.org/michalkonturek/MKUnits)
-[![Swift](https://img.shields.io/badge/%20compatible-swift%203.0-orange.svg)](http://swift.org)
+[![Swift](https://img.shields.io/badge/%20compatible-swift%205.0-green.svg)](http://swift.org)
 [![License](https://img.shields.io/cocoapods/l/MKUnits.svg)](http://cocoapods.org/pods/MKUnits)
 [![Twitter](https://img.shields.io/badge/contact-@MichalKonturek-blue.svg)](http://twitter.com/michalkonturek)
 
 MKUnits is extremely precise unit conversion library for `Swift`. It provides units of measurement of physical quantities and simplifies manipulation of them.
-
-**NB** For `Objective-C` implementation, please refer to MKUnits pod 2.2.1 or visit [archived branch][archive-branch].
-[archive-branch]:https://github.com/michalkonturek/MKUnits/tree/archive-objc
 
 ## License
 
@@ -26,6 +23,14 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "MKUnits"
 ```
+
+### Swift Package Manager
+To add MKUnits to a [Swift Package Manager](https://swift.org/package-manager/) based project, add:
+
+```swift
+.package(url: "https://github.com/rkohl/MKUnits.git", .upToNextMajor(from: "5.0.0")),
+```
+to your `Package.swift` files `dependencies` array.
 
 ## Example
 
