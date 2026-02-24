@@ -8,7 +8,7 @@ MKUnits is a precise unit conversion library for Swift. It provides units of mea
 
 **NOTE** 
 * legacy `master` branch https://github.com/michalkonturek/MKUnits/tree/master
-* Objective-C implementation, please refer to MKUnits pod 2.2.1 or see :https://github.com/michalkonturek/MKUnits/tree/archive-objc
+* Objective-C implementation, please refer to MKUnits pod 2.2.1 or see: https://github.com/michalkonturek/MKUnits/tree/archive-objc
 
 ## License
 
