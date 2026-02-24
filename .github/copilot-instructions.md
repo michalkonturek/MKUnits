@@ -43,6 +43,13 @@ extension Int {
 - Omit `self.` unless required for disambiguation (e.g. inside `init` or closures).
 - Every source file includes the MIT license header.
 
+### Formatting
+
+- Indent with 4 spaces (no tabs).
+- No trailing whitespace on any line (including blank lines).
+- Single trailing newline at end of file.
+- No automated formatter is configured; follow existing conventions manually.
+
 ## Adding a New Unit Group
 
 1. Create `Sources/MKUnits/NewUnit.swift`:
@@ -50,8 +57,10 @@ extension Int {
    - Define `static let` constants with ratios relative to the base unit (ratio = 1).
    - Add `Int` and `Double` extensions.
 2. Create `Tests/MKUnitsTests/NewUnitTests.swift`:
-   - `test_correctness()` — verify cross-unit conversions are equal.
-   - `test_extension()` — verify Int/Double extension methods produce correct `Quantity`.
+   - `@Suite struct NewUnitTests { ... }`
+   - `@Test func correctness()` — verify cross-unit conversions are equal using `#expect()`.
+   - `@Test func fluentAPI()` — verify Int/Double extension methods produce correct `Quantity`.
+   - Add a `private func assert(...)` helper for common quantity assertions.
 
 ## Adding a Unit to an Existing Group
 
@@ -59,8 +68,10 @@ Add a `public static let` to the existing unit class and corresponding Int/Doubl
 
 ## Testing
 
-- Framework: XCTest
-- 52 tests across 13 files (correctness + extension tests per unit group, plus `UnitTests` and `QuantityTests`).
+- Framework: Swift Testing (`import Testing`)
+- 52 tests across 13 suites (correctness + fluent API tests per unit group, plus `UnitTests` and `QuantityTests`).
+- Test suites are `@Suite struct` types with `@Test func` methods.
+- Assertions use `#expect()` macros (not `XCTAssert*`).
 - `TestUnit` and `TestOtherUnit` are defined in `UnitTests.swift` and reused by `QuantityTests`.
 - Run: `swift test`
 - Build: `swift build`
@@ -79,7 +90,7 @@ GitHub Actions (`.github/workflows/tests.yml`): runs `swift build` and `swift te
 
 ```
 Sources/MKUnits/     — library sources
-Tests/MKUnitsTests/  — XCTest test files
+Tests/MKUnitsTests/  — Swift Testing test files
 Package.swift        — SPM manifest (iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, visionOS 1+)
 MKUnits.podspec      — CocoaPods spec (v6.0.0)
 ```
