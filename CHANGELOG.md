@@ -1,5 +1,16 @@
 # Change Log
 
+## [6.0.0](https://github.com/michalkonturek/MKUnits/tree/6.0.0) (2026-02-24)
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/5.0.0...6.0.0)
+
+- Restructured as SPM-first project (standard `Sources/` and `Tests/` layout)
+- Replaced `NSDecimalNumber`/`NSNumber` with Swift's native `Decimal` type throughout
+- Replaced `ExpressibleByIntegerLiteral` extensions with `Int` and `Double` extensions
+- Added multi-platform support: iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, visionOS 1+
+- Removed Xcode project, CocoaPods workspace, and Travis CI configuration
+- Simplified `Quantity` to use `Sendable` (no longer `@unchecked`)
+- Updated README with modernized code examples
+
 ## [5.0.0](https://github.com/michalkonturek/MKUnits/tree/5.0.0) (2026-02-24)
 [Full Changelog](https://github.com/michalkonturek/MKUnits/compare/4.0.0...5.0.0)
 
