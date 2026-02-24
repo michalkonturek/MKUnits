@@ -64,7 +64,7 @@ import MKUnits
         self.assert(1.nanosecond(), expectedAmount: 1, expectedUnit: TimeUnit.nanosecond)
     }
     
-    func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
         #expect(item.amount == expectedAmount)
         #expect(item.unit == expectedUnit)
     }
