@@ -27,129 +27,129 @@ import Foundation
 
 extension VolumeUnit {
 
-    /// Returns gallon `[gal]` volume unit.
-    public static let gallon = VolumeUnit(
-        name: "gallon",
-        symbol: "gal",
-        ratio: Decimal(string: "4.54609")!
-    )
+  /// Returns gallon `[gal]` volume unit.
+  public static let gallon = VolumeUnit(
+    name: "gallon",
+    symbol: "gal",
+    ratio: Decimal(string: "4.54609")!
+  )
 
-    /// Returns quart `[qt]` volume unit.
-    public static let quart = VolumeUnit(
-        name: "quart",
-        symbol: "qt",
-        ratio: Decimal(string: "1.1365225")!
-    )
+  /// Returns quart `[qt]` volume unit.
+  public static let quart = VolumeUnit(
+    name: "quart",
+    symbol: "qt",
+    ratio: Decimal(string: "1.1365225")!
+  )
 
-    /// Returns pint `[pt]` volume unit.
-    public static let pint = VolumeUnit(
-        name: "pint",
-        symbol: "pt",
-        ratio: Decimal(string: "0.56826125")!
-    )
+  /// Returns pint `[pt]` volume unit.
+  public static let pint = VolumeUnit(
+    name: "pint",
+    symbol: "pt",
+    ratio: Decimal(string: "0.56826125")!
+  )
 
-    /// Returns cup `[cp]` volume unit.
-    public static let cup = VolumeUnit(
-        name: "cup",
-        symbol: "cp",
-        ratio: Decimal(string: "0.28413")!
-    )
+  /// Returns cup `[cp]` volume unit.
+  public static let cup = VolumeUnit(
+    name: "cup",
+    symbol: "cp",
+    ratio: Decimal(string: "0.28413")!
+  )
 
-    /// Returns fluidounce `[fl oz]` volume unit.
-    public static let fluidounce = VolumeUnit(
-        name: "fluid ounce",
-        symbol: "fl oz",
-        ratio: Decimal(string: "0.0284130625")!
-    )
+  /// Returns fluidounce `[fl oz]` volume unit.
+  public static let fluidounce = VolumeUnit(
+    name: "fluid ounce",
+    symbol: "fl oz",
+    ratio: Decimal(string: "0.0284130625")!
+  )
 
-    /// Returns tablespoon `[tbsp]` volume unit.
-    public static let tablespoon = VolumeUnit(
-        name: "tablespoon",
-        symbol: "tbsp",
-        ratio: Decimal(string: "0.0177581714")!
-    )
+  /// Returns tablespoon `[tbsp]` volume unit.
+  public static let tablespoon = VolumeUnit(
+    name: "tablespoon",
+    symbol: "tbsp",
+    ratio: Decimal(string: "0.0177581714")!
+  )
 
-    /// Returns teaspoon `[tsp]` volume unit.
-    public static let teaspoon = VolumeUnit(
-        name: "teaspoon",
-        symbol: "tsp",
-        ratio: Decimal(string: "0.00591939")!
-    )
+  /// Returns teaspoon `[tsp]` volume unit.
+  public static let teaspoon = VolumeUnit(
+    name: "teaspoon",
+    symbol: "tsp",
+    ratio: Decimal(string: "0.00591939")!
+  )
 
-    /// Returns fluidram `[fl dr]` volume unit.
-    public static let fluidram = VolumeUnit(
-        name: "fluidram",
-        symbol: "fl dr",
-        ratio: Decimal(string: "0.0035516328125")!
-    )
+  /// Returns fluidram `[fl dr]` volume unit.
+  public static let fluidram = VolumeUnit(
+    name: "fluidram",
+    symbol: "fl dr",
+    ratio: Decimal(string: "0.0035516328125")!
+  )
 }
 
 extension Int {
-    /// Returns instance converted as gallon quantity.
-    public func gallon() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.gallon)
-    }
-    /// Returns instance converted as quart quantity.
-    public func quart() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.quart)
-    }
-    /// Returns instance converted as pint quantity.
-    public func pint() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.pint)
-    }
-    /// Returns instance converted as cup quantity.
-    public func cup() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.cup)
-    }
-    /// Returns instance converted as fluidounce quantity.
-    public func fluidounce() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.fluidounce)
-    }
-    /// Returns instance converted as tablespoon quantity.
-    public func tablespoon() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.tablespoon)
-    }
-    /// Returns instance converted as teaspoon quantity.
-    public func teaspoon() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.teaspoon)
-    }
-    /// Returns instance converted as fluidram quantity.
-    public func fluidram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.fluidram)
-    }
+  /// Returns instance converted as gallon quantity.
+  public func gallon() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.gallon)
+  }
+  /// Returns instance converted as quart quantity.
+  public func quart() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.quart)
+  }
+  /// Returns instance converted as pint quantity.
+  public func pint() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.pint)
+  }
+  /// Returns instance converted as cup quantity.
+  public func cup() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.cup)
+  }
+  /// Returns instance converted as fluidounce quantity.
+  public func fluidounce() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.fluidounce)
+  }
+  /// Returns instance converted as tablespoon quantity.
+  public func tablespoon() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.tablespoon)
+  }
+  /// Returns instance converted as teaspoon quantity.
+  public func teaspoon() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.teaspoon)
+  }
+  /// Returns instance converted as fluidram quantity.
+  public func fluidram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.fluidram)
+  }
 }
 
 extension Double {
-    /// Returns instance converted as gallon quantity.
-    public func gallon() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.gallon)
-    }
-    /// Returns instance converted as quart quantity.
-    public func quart() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.quart)
-    }
-    /// Returns instance converted as pint quantity.
-    public func pint() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.pint)
-    }
-    /// Returns instance converted as cup quantity.
-    public func cup() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.cup)
-    }
-    /// Returns instance converted as fluidounce quantity.
-    public func fluidounce() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.fluidounce)
-    }
-    /// Returns instance converted as tablespoon quantity.
-    public func tablespoon() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.tablespoon)
-    }
-    /// Returns instance converted as teaspoon quantity.
-    public func teaspoon() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.teaspoon)
-    }
-    /// Returns instance converted as fluidram quantity.
-    public func fluidram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: VolumeUnit.fluidram)
-    }
+  /// Returns instance converted as gallon quantity.
+  public func gallon() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.gallon)
+  }
+  /// Returns instance converted as quart quantity.
+  public func quart() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.quart)
+  }
+  /// Returns instance converted as pint quantity.
+  public func pint() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.pint)
+  }
+  /// Returns instance converted as cup quantity.
+  public func cup() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.cup)
+  }
+  /// Returns instance converted as fluidounce quantity.
+  public func fluidounce() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.fluidounce)
+  }
+  /// Returns instance converted as tablespoon quantity.
+  public func tablespoon() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.tablespoon)
+  }
+  /// Returns instance converted as teaspoon quantity.
+  public func teaspoon() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.teaspoon)
+  }
+  /// Returns instance converted as fluidram quantity.
+  public func fluidram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: VolumeUnit.fluidram)
+  }
 }

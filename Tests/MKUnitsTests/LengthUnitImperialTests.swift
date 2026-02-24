@@ -24,35 +24,34 @@
 //
 
 import Foundation
-import Testing
-
 import MKUnits
+import Testing
 
 @Suite struct LengthUnitImperialTests {
 
-    @Test func correctness() {
-        #expect(1.nauticalMile() == 6080.foot())
-        #expect(1.mile() == 5280.foot())
-        #expect(1.furlong() == 10.chain())
-        #expect(1.chain() == 22.yard())
+  @Test func correctness() {
+    #expect(1.nauticalMile() == 6080.foot())
+    #expect(1.mile() == 5280.foot())
+    #expect(1.furlong() == 10.chain())
+    #expect(1.chain() == 22.yard())
 
-        #expect(1.yard() == 3.foot())
-        #expect(1.foot() == 12.inch())
-    }
+    #expect(1.yard() == 3.foot())
+    #expect(1.foot() == 12.inch())
+  }
 
-    @Test func fluentAPI() {
-        self.assert(1.nauticalMile(), expectedAmount: 1, expectedUnit: LengthUnit.nauticalMile)
-        self.assert(1.5.mile(), expectedAmount: 1.5, expectedUnit: LengthUnit.mile)
-        self.assert(0.00001.furlong(), expectedAmount: 0.00001, expectedUnit: LengthUnit.furlong)
-        self.assert(1.chain(), expectedAmount: 1, expectedUnit: LengthUnit.chain)
+  @Test func fluentAPI() {
+    self.assert(1.nauticalMile(), expectedAmount: 1, expectedUnit: LengthUnit.nauticalMile)
+    self.assert(1.5.mile(), expectedAmount: 1.5, expectedUnit: LengthUnit.mile)
+    self.assert(0.00001.furlong(), expectedAmount: 0.00001, expectedUnit: LengthUnit.furlong)
+    self.assert(1.chain(), expectedAmount: 1, expectedUnit: LengthUnit.chain)
 
-        self.assert(1.yard(), expectedAmount: 1, expectedUnit: LengthUnit.yard)
-        self.assert(1.foot(), expectedAmount: 1, expectedUnit: LengthUnit.foot)
-        self.assert(1.inch(), expectedAmount: 1, expectedUnit: LengthUnit.inch)
-    }
+    self.assert(1.yard(), expectedAmount: 1, expectedUnit: LengthUnit.yard)
+    self.assert(1.foot(), expectedAmount: 1, expectedUnit: LengthUnit.foot)
+    self.assert(1.inch(), expectedAmount: 1, expectedUnit: LengthUnit.inch)
+  }
 
-    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        #expect(item.amount == expectedAmount)
-        #expect(item.unit == expectedUnit)
-    }
+  private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    #expect(item.amount == expectedAmount)
+    #expect(item.unit == expectedUnit)
+  }
 }

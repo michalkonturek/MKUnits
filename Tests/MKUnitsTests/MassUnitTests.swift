@@ -24,30 +24,29 @@
 //
 
 import Foundation
-import Testing
-
 import MKUnits
+import Testing
 
 @Suite struct MassUnitTests {
 
-    @Test func correctness() {
-        #expect(1.megagram() == 1000.kilogram())
-        #expect(1.kilogram() == 100.decagram())
-        #expect(1.decagram() == 10.gram())
-        #expect(1.gram() == 1000.milligram())
-        #expect(1000.milligram() == 0.001.kilogram())
-    }
+  @Test func correctness() {
+    #expect(1.megagram() == 1000.kilogram())
+    #expect(1.kilogram() == 100.decagram())
+    #expect(1.decagram() == 10.gram())
+    #expect(1.gram() == 1000.milligram())
+    #expect(1000.milligram() == 0.001.kilogram())
+  }
 
-    @Test func fluentAPI() {
-        self.assert(1.megagram(), expectedAmount: 1, expectedUnit: MassUnit.megagram)
-        self.assert(1.5.kilogram(), expectedAmount: 1.5, expectedUnit: MassUnit.kilogram)
-        self.assert(0.00001.decagram(), expectedAmount: 0.00001, expectedUnit: MassUnit.decagram)
-        self.assert(1.gram(), expectedAmount: 1, expectedUnit: MassUnit.gram)
-        self.assert(1.milligram(), expectedAmount: 1, expectedUnit: MassUnit.milligram)
-    }
+  @Test func fluentAPI() {
+    self.assert(1.megagram(), expectedAmount: 1, expectedUnit: MassUnit.megagram)
+    self.assert(1.5.kilogram(), expectedAmount: 1.5, expectedUnit: MassUnit.kilogram)
+    self.assert(0.00001.decagram(), expectedAmount: 0.00001, expectedUnit: MassUnit.decagram)
+    self.assert(1.gram(), expectedAmount: 1, expectedUnit: MassUnit.gram)
+    self.assert(1.milligram(), expectedAmount: 1, expectedUnit: MassUnit.milligram)
+  }
 
-    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        #expect(item.amount == expectedAmount)
-        #expect(item.unit == expectedUnit)
-    }
+  private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    #expect(item.amount == expectedAmount)
+    #expect(item.unit == expectedUnit)
+  }
 }

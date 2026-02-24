@@ -30,9 +30,9 @@ Every unit group provides `Int` and `Double` extensions for a fluent API:
 
 ```swift
 extension Int {
-    public func kilogram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.kilogram)
-    }
+  public func kilogram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.kilogram)
+  }
 }
 ```
 
@@ -45,10 +45,14 @@ extension Int {
 
 ### Formatting
 
-- Indent with 4 spaces (no tabs).
+- **Formatter**: Apple's `swift-format` (bundled with Xcode toolchain).
+- **Configuration**: `.swift-format` at the repo root.
+- Indent with 2 spaces (Apple standard).
 - No trailing whitespace on any line (including blank lines).
 - Single trailing newline at end of file.
-- No automated formatter is configured; follow existing conventions manually.
+- Imports sorted alphabetically.
+- Format all files: `xcrun swift-format format --recursive --in-place Sources/ Tests/ Package.swift`
+- Lint check: `xcrun swift-format lint --strict --recursive Sources/ Tests/ Package.swift`
 
 ## Adding a New Unit Group
 
@@ -84,7 +88,7 @@ Add a `public static let` to the existing unit class and corresponding Int/Doubl
 
 ## CI
 
-GitHub Actions (`.github/workflows/tests.yml`): runs `swift build` and `swift test` on macOS-15 and ubuntu-latest with Swift 6.0.
+GitHub Actions (`.github/workflows/tests.yml`): runs `swift-format lint --strict` (macOS only), `swift build`, and `swift test` on macOS-15 and ubuntu-latest with Swift 6.0.
 
 ## Package Structure
 
@@ -93,4 +97,5 @@ Sources/MKUnits/     — library sources
 Tests/MKUnitsTests/  — Swift Testing test files
 Package.swift        — SPM manifest (iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, visionOS 1+)
 MKUnits.podspec      — CocoaPods spec (v6.0.0)
+.swift-format        — swift-format configuration
 ```

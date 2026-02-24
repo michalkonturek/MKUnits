@@ -24,34 +24,34 @@
 //
 
 import Foundation
-import Testing
-
 import MKUnits
+import Testing
 
 @Suite struct AreaUnitImperialTests {
 
-    @Test func correctness() {
+  @Test func correctness() {
 
-        #expect(1.squareMile()
-            .converted(AreaUnit.acre)
-            .rounded(6) == 640.acre())
+    #expect(
+      1.squareMile()
+        .converted(AreaUnit.acre)
+        .rounded(6) == 640.acre())
 
-        #expect(1.acre() == 4840.squareYard())
-        #expect(1.squareYard() == 9.squareFoot())
-        #expect(1.squareFoot() == 144.squareInch())
-        #expect(1.squareInch() == 6.4516.squareCentimeter())
-    }
+    #expect(1.acre() == 4840.squareYard())
+    #expect(1.squareYard() == 9.squareFoot())
+    #expect(1.squareFoot() == 144.squareInch())
+    #expect(1.squareInch() == 6.4516.squareCentimeter())
+  }
 
-    @Test func fluentAPI() {
-        self.assert(1.squareMile(), expectedAmount: 1, expectedUnit: AreaUnit.squareMile)
-        self.assert(1.acre(), expectedAmount: 1, expectedUnit: AreaUnit.acre)
-        self.assert(1.squareYard(), expectedAmount: 1, expectedUnit: AreaUnit.squareYard)
-        self.assert(1.squareFoot(), expectedAmount: 1, expectedUnit: AreaUnit.squareFoot)
-        self.assert(1.squareInch(), expectedAmount: 1, expectedUnit: AreaUnit.squareInch)
-    }
+  @Test func fluentAPI() {
+    self.assert(1.squareMile(), expectedAmount: 1, expectedUnit: AreaUnit.squareMile)
+    self.assert(1.acre(), expectedAmount: 1, expectedUnit: AreaUnit.acre)
+    self.assert(1.squareYard(), expectedAmount: 1, expectedUnit: AreaUnit.squareYard)
+    self.assert(1.squareFoot(), expectedAmount: 1, expectedUnit: AreaUnit.squareFoot)
+    self.assert(1.squareInch(), expectedAmount: 1, expectedUnit: AreaUnit.squareInch)
+  }
 
-    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        #expect(item.amount == expectedAmount)
-        #expect(item.unit == expectedUnit)
-    }
+  private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    #expect(item.amount == expectedAmount)
+    #expect(item.unit == expectedUnit)
+  }
 }

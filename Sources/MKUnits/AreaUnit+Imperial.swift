@@ -27,84 +27,84 @@ import Foundation
 
 extension AreaUnit {
 
-    /// Returns square mile `[mi²]` area unit.
-    public static let squareMile = AreaUnit(
-        name: "square",
-        symbol: "mi²",
-        ratio: Decimal(string: "2589988.11")!
-    )
+  /// Returns square mile `[mi²]` area unit.
+  public static let squareMile = AreaUnit(
+    name: "square",
+    symbol: "mi²",
+    ratio: Decimal(string: "2589988.11")!
+  )
 
-    /// Returns acre `[ac]` area unit.
-    public static let acre = AreaUnit(
-        name: "acre",
-        symbol: "ac",
-        ratio: Decimal(string: "4046.8564224")!
-    )
+  /// Returns acre `[ac]` area unit.
+  public static let acre = AreaUnit(
+    name: "acre",
+    symbol: "ac",
+    ratio: Decimal(string: "4046.8564224")!
+  )
 
-    /// Returns square yard `[yd²]` area unit.
-    public static let squareYard = AreaUnit(
-        name: "square yard",
-        symbol: "yd²",
-        ratio: Decimal(string: "0.83612736")!
-    )
+  /// Returns square yard `[yd²]` area unit.
+  public static let squareYard = AreaUnit(
+    name: "square yard",
+    symbol: "yd²",
+    ratio: Decimal(string: "0.83612736")!
+  )
 
-    /// Returns square foot `[ft²]` area unit.
-    public static let squareFoot = AreaUnit(
-        name: "square foot",
-        symbol: "ft²",
-        ratio: Decimal(string: "0.09290304")!
-    )
+  /// Returns square foot `[ft²]` area unit.
+  public static let squareFoot = AreaUnit(
+    name: "square foot",
+    symbol: "ft²",
+    ratio: Decimal(string: "0.09290304")!
+  )
 
-    /// Returns square inch `[in²]` area unit.
-    public static let squareInch = AreaUnit(
-        name: "square inch",
-        symbol: "in²",
-        ratio: Decimal(string: "0.00064516")!
-    )
+  /// Returns square inch `[in²]` area unit.
+  public static let squareInch = AreaUnit(
+    name: "square inch",
+    symbol: "in²",
+    ratio: Decimal(string: "0.00064516")!
+  )
 }
 
 extension Int {
-    /// Returns instance converted as square mile quantity.
-    public func squareMile() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.squareMile)
-    }
-    /// Returns instance converted as acre quantity.
-    public func acre() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.acre)
-    }
-    /// Returns instance converted as square yard quantity.
-    public func squareYard() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.squareYard)
-    }
-    /// Returns instance converted as square foot quantity.
-    public func squareFoot() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.squareFoot)
-    }
-    /// Returns instance converted as square inch quantity.
-    public func squareInch() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.squareInch)
-    }
+  /// Returns instance converted as square mile quantity.
+  public func squareMile() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.squareMile)
+  }
+  /// Returns instance converted as acre quantity.
+  public func acre() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.acre)
+  }
+  /// Returns instance converted as square yard quantity.
+  public func squareYard() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.squareYard)
+  }
+  /// Returns instance converted as square foot quantity.
+  public func squareFoot() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.squareFoot)
+  }
+  /// Returns instance converted as square inch quantity.
+  public func squareInch() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.squareInch)
+  }
 }
 
 extension Double {
-    /// Returns instance converted as square mile quantity.
-    public func squareMile() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.squareMile)
-    }
-    /// Returns instance converted as acre quantity.
-    public func acre() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.acre)
-    }
-    /// Returns instance converted as square yard quantity.
-    public func squareYard() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.squareYard)
-    }
-    /// Returns instance converted as square foot quantity.
-    public func squareFoot() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.squareFoot)
-    }
-    /// Returns instance converted as square inch quantity.
-    public func squareInch() -> Quantity {
-        Quantity(amount: Decimal(self), unit: AreaUnit.squareInch)
-    }
+  /// Returns instance converted as square mile quantity.
+  public func squareMile() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.squareMile)
+  }
+  /// Returns instance converted as acre quantity.
+  public func acre() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.acre)
+  }
+  /// Returns instance converted as square yard quantity.
+  public func squareYard() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.squareYard)
+  }
+  /// Returns instance converted as square foot quantity.
+  public func squareFoot() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.squareFoot)
+  }
+  /// Returns instance converted as square inch quantity.
+  public func squareInch() -> Quantity {
+    Quantity(amount: Decimal(self), unit: AreaUnit.squareInch)
+  }
 }

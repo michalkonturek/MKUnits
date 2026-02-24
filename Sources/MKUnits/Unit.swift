@@ -27,45 +27,45 @@ import Foundation
 
 /// Represents a unit of measurement.
 open class Unit: @unchecked Sendable {
-    public let name: String
-    public let symbol: String
-    public let ratio: Decimal
+  public let name: String
+  public let symbol: String
+  public let ratio: Decimal
 
-    /// Instantiates a `Unit` object.
-    ///
-    /// - Parameters:
-    ///   - name: unit name.
-    ///   - symbol: unit symbol.
-    ///   - ratio: conversion ratio to a base unit.
-    public init(name: String, symbol: String, ratio: Decimal) {
-        self.name = name
-        self.symbol = symbol
-        self.ratio = ratio
-    }
+  /// Instantiates a `Unit` object.
+  ///
+  /// - Parameters:
+  ///   - name: unit name.
+  ///   - symbol: unit symbol.
+  ///   - ratio: conversion ratio to a base unit.
+  public init(name: String, symbol: String, ratio: Decimal) {
+    self.name = name
+    self.symbol = symbol
+    self.ratio = ratio
+  }
 
-    /// Converts given `amount` from base unit to this unit.
-    ///
-    /// - Parameter amount: amount in base unit.
-    /// - Returns: amount converted to this unit.
-    open func convertFromBaseUnit(_ amount: Decimal) -> Decimal {
-        amount / ratio
-    }
+  /// Converts given `amount` from base unit to this unit.
+  ///
+  /// - Parameter amount: amount in base unit.
+  /// - Returns: amount converted to this unit.
+  open func convertFromBaseUnit(_ amount: Decimal) -> Decimal {
+    amount / ratio
+  }
 
-    /// Converts given `amount` from this unit to base unit.
-    ///
-    /// - Parameter amount: amount in this unit.
-    /// - Returns: amount converted to base unit.
-    open func convertToBaseUnit(_ amount: Decimal) -> Decimal {
-        amount * ratio
-    }
+  /// Converts given `amount` from this unit to base unit.
+  ///
+  /// - Parameter amount: amount in this unit.
+  /// - Returns: amount converted to base unit.
+  open func convertToBaseUnit(_ amount: Decimal) -> Decimal {
+    amount * ratio
+  }
 }
 
 // MARK: - CustomStringConvertible
 
 extension Unit: CustomStringConvertible {
-    public var description: String {
-        symbol
-    }
+  public var description: String {
+    symbol
+  }
 }
 
 // MARK: - UnitConvertible
@@ -73,49 +73,49 @@ extension Unit: CustomStringConvertible {
 /// A type with ability to convert between units.
 public protocol UnitConvertible {
 
-    /// Converts `amount` from this unit to destination unit.
-    func convert(_ amount: Decimal, to: Unit) -> Decimal
+  /// Converts `amount` from this unit to destination unit.
+  func convert(_ amount: Decimal, to: Unit) -> Decimal
 
-    /// Converts `amount` from source unit to this unit.
-    func convert(_ amount: Decimal, from: Unit) -> Decimal
+  /// Converts `amount` from source unit to this unit.
+  func convert(_ amount: Decimal, from: Unit) -> Decimal
 
-    /// Converts `amount` from source unit to destination unit.
-    func convert(_ amount: Decimal, from: Unit, to: Unit) -> Decimal
+  /// Converts `amount` from source unit to destination unit.
+  func convert(_ amount: Decimal, from: Unit, to: Unit) -> Decimal
 
-    /// Returns `true` if this unit is convertible with the other unit.
-    func isConvertible(_ with: Unit) -> Bool
+  /// Returns `true` if this unit is convertible with the other unit.
+  func isConvertible(_ with: Unit) -> Bool
 }
 
 extension Unit: UnitConvertible {
 
-    public func convert(_ amount: Decimal, to: Unit) -> Decimal {
-        convert(amount, from: self, to: to)
-    }
+  public func convert(_ amount: Decimal, to: Unit) -> Decimal {
+    convert(amount, from: self, to: to)
+  }
 
-    public func convert(_ amount: Decimal, from: Unit) -> Decimal {
-        convert(amount, from: from, to: self)
-    }
+  public func convert(_ amount: Decimal, from: Unit) -> Decimal {
+    convert(amount, from: from, to: self)
+  }
 
-    public func convert(_ amount: Decimal, from: Unit, to: Unit) -> Decimal {
-        to.convertFromBaseUnit(from.convertToBaseUnit(amount))
-    }
+  public func convert(_ amount: Decimal, from: Unit, to: Unit) -> Decimal {
+    to.convertFromBaseUnit(from.convertToBaseUnit(amount))
+  }
 
-    public func isConvertible(_ with: Unit) -> Bool {
-        type(of: with) == type(of: self)
-    }
+  public func isConvertible(_ with: Unit) -> Bool {
+    type(of: with) == type(of: self)
+  }
 }
 
 // MARK: - Equatable
 
 extension Unit: Equatable {
 
-    public func equals(_ other: Unit) -> Bool {
-        if type(of: other) != type(of: self) {
-            return false
-        }
-        return symbol == other.symbol
+  public func equals(_ other: Unit) -> Bool {
+    if type(of: other) != type(of: self) {
+      return false
     }
+    return symbol == other.symbol
+  }
 }
 public func == <T>(lhs: T, rhs: T) -> Bool where T: Unit {
-    lhs.equals(rhs)
+  lhs.equals(rhs)
 }
