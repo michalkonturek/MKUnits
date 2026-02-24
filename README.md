@@ -6,6 +6,10 @@
 
 MKUnits is a precise unit conversion library for Swift. It provides units of measurement of physical quantities and simplifies manipulation of them.
 
+**NOTE** 
+* legacy `master` branch https://github.com/michalkonturek/MKUnits/tree/master
+* Objective-C implementation, please refer to MKUnits pod 2.2.1 or see :https://github.com/michalkonturek/MKUnits/tree/archive-objc
+
 ## License
 
 MKUnits is available under the MIT license. See the [LICENSE][LICENSE] file for more info.
