@@ -27,214 +27,116 @@ import Foundation
 
 public final class AreaUnit: Unit, @unchecked Sendable {
 
-    /**
-     Returns square kilomoter `[km²]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareKilometer: AreaUnit {
-        return AreaUnit(
-            name: "square",
-            symbol: "km²",
-            ratio: Decimal(sign: .plus, exponent: 6, significand: 1)
-        )
-    }
+    /// Returns square kilomoter `[km²]` area unit.
+    public static let squareKilometer = AreaUnit(
+        name: "square",
+        symbol: "km²",
+        ratio: 1_000_000
+    )
 
-    /**
-     Returns hectare `[ha]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var hectare: AreaUnit {
-        return AreaUnit(
-            name: "hectare",
-            symbol: "ha",
-            ratio: Decimal(sign: .plus, exponent: 4, significand: 1)
-        )
-    }
+    /// Returns hectare `[ha]` area unit.
+    public static let hectare = AreaUnit(
+        name: "hectare",
+        symbol: "ha",
+        ratio: 10_000
+    )
 
-    /**
-     Returns are `[a]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var are: AreaUnit {
-        return AreaUnit(
-            name: "are",
-            symbol: "a",
-            ratio: Decimal(sign: .plus, exponent: 2, significand: 1)
-        )
-    }
+    /// Returns are `[a]` area unit.
+    public static let are = AreaUnit(
+        name: "are",
+        symbol: "a",
+        ratio: 100
+    )
 
-    /**
-     Returns square meter `[m²]` area unit.
-     
-     - important: This is a base unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareMeter: AreaUnit {
-        return AreaUnit(
-            name: "square meter",
-            symbol: "m²",
-            ratio: Decimal(1)
-        )
-    }
+    /// Returns square meter `[m²]` area unit.
+    ///
+    /// This is a base unit.
+    public static let squareMeter = AreaUnit(
+        name: "square meter",
+        symbol: "m²",
+        ratio: 1
+    )
 
-    /**
-     Returns square decimeter `[dm²]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareDecimeter: AreaUnit {
-        return AreaUnit(
-            name: "square decimeter",
-            symbol: "dm²",
-            ratio: Decimal(sign: .plus, exponent: -2, significand: 1)
-        )
-    }
+    /// Returns square decimeter `[dm²]` area unit.
+    public static let squareDecimeter = AreaUnit(
+        name: "square decimeter",
+        symbol: "dm²",
+        ratio: Decimal(string: "0.01")!
+    )
 
-    /**
-     Returns square centimeter `[cm²]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareCentimeter: AreaUnit {
-        return AreaUnit(
-            name: "square centimeter",
-            symbol: "cm²",
-            ratio: Decimal(sign: .plus, exponent: -4, significand: 1)
-        )
-    }
+    /// Returns square centimeter `[cm²]` area unit.
+    public static let squareCentimeter = AreaUnit(
+        name: "square centimeter",
+        symbol: "cm²",
+        ratio: Decimal(string: "0.0001")!
+    )
 
-    /**
-     Returns square millimeter `[mm²]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareMillimeter: AreaUnit {
-        return AreaUnit(
-            name: "square millimeter",
-            symbol: "mm²",
-            ratio: Decimal(sign: .plus, exponent: -6, significand: 1)
-        )
-    }
+    /// Returns square millimeter `[mm²]` area unit.
+    public static let squareMillimeter = AreaUnit(
+        name: "square millimeter",
+        symbol: "mm²",
+        ratio: Decimal(string: "0.000001")!
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as square kilometer quantity.
-    
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square kilometer quantity.
     public func squareKilometer() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareKilometer)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareKilometer)
     }
-    /**
-     Returns instance converted as hectare quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as hectare quantity.
     public func hectare() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.hectare)
+        Quantity(amount: Decimal(self), unit: AreaUnit.hectare)
     }
-    /**
-     Returns instance converted as are quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as are quantity.
     public func are() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.are)
+        Quantity(amount: Decimal(self), unit: AreaUnit.are)
     }
-    /**
-     Returns instance converted as square meter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square meter quantity.
     public func squareMeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareMeter)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareMeter)
     }
-    /**
-     Returns instance converted as square decimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square decimeter quantity.
     public func squareDecimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareDecimeter)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareDecimeter)
     }
-    /**
-     Returns instance converted as square centimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square centimeter quantity.
     public func squareCentimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareCentimeter)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareCentimeter)
     }
-    /**
-     Returns instance converted as square millimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square millimeter quantity.
     public func squareMillimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareMillimeter)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareMillimeter)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as square kilometer quantity.
-    
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square kilometer quantity.
     public func squareKilometer() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareKilometer)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareKilometer)
     }
-    /**
-     Returns instance converted as hectare quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as hectare quantity.
     public func hectare() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.hectare)
+        Quantity(amount: Decimal(self), unit: AreaUnit.hectare)
     }
-    /**
-     Returns instance converted as are quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as are quantity.
     public func are() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.are)
+        Quantity(amount: Decimal(self), unit: AreaUnit.are)
     }
-    /**
-     Returns instance converted as square meter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square meter quantity.
     public func squareMeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareMeter)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareMeter)
     }
-    /**
-     Returns instance converted as square decimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square decimeter quantity.
     public func squareDecimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareDecimeter)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareDecimeter)
     }
-    /**
-     Returns instance converted as square centimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square centimeter quantity.
     public func squareCentimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareCentimeter)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareCentimeter)
     }
-    /**
-     Returns instance converted as square millimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square millimeter quantity.
     public func squareMillimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareMillimeter)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareMillimeter)
     }
 }

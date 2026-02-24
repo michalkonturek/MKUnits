@@ -27,241 +27,129 @@ import Foundation
 
 public extension MassUnit {
 
-    /**
-     Returns ton `[t]` mass unit.
-     
-     - author: Michal Konturek
-     */
-    static var ton: MassUnit {
-        return MassUnit(
-            name: "ton",
-            symbol: "t",
-            ratio: Decimal(sign: .plus, exponent: -7, significand: 10160469088)
-        )
-    }
+    /// Returns ton `[t]` mass unit.
+    static let ton = MassUnit(
+        name: "ton",
+        symbol: "t",
+        ratio: Decimal(string: "1016.0469088")!
+    )
 
-    /**
-     Returns hundredweight `[cwt]` mass unit.
-     
-     - author: Michal Konturek
-     */
-    static var hundredweight: MassUnit {
-        return MassUnit(
-            name: "hundredweight",
-            symbol: "cwt",
-            ratio: Decimal(sign: .plus, exponent: -8, significand: 5080234544)
-        )
-    }
+    /// Returns hundredweight `[cwt]` mass unit.
+    static let hundredweight = MassUnit(
+        name: "hundredweight",
+        symbol: "cwt",
+        ratio: Decimal(string: "50.80234544")!
+    )
 
-    /**
-     Returns quarter `[qtr]` mass unit.
-     
-     - author: Michal Konturek
-     */
-    static var quarter: MassUnit {
-        return MassUnit(
-            name: "quarter",
-            symbol: "qtr",
-            ratio: Decimal(sign: .plus, exponent: -8, significand: 1270058636)
-        )
-    }
+    /// Returns quarter `[qtr]` mass unit.
+    static let quarter = MassUnit(
+        name: "quarter",
+        symbol: "qtr",
+        ratio: Decimal(string: "12.70058636")!
+    )
 
-    /**
-     Returns stone `[st]` mass unit.
-     
-     - author: Michal Konturek
-     */
-    static var stone: MassUnit {
-        return MassUnit(
-            name: "stone",
-            symbol: "st",
-            ratio: Decimal(sign: .plus, exponent: -5, significand: 635029)
-        )
-    }
+    /// Returns stone `[st]` mass unit.
+    static let stone = MassUnit(
+        name: "stone",
+        symbol: "st",
+        ratio: Decimal(string: "6.35029")!
+    )
 
-    /**
-     Returns pound `[lb]` mass unit.
-     
-     - author: Michal Konturek
-     */
-    static var pound: MassUnit {
-        return MassUnit(
-            name: "pound",
-            symbol: "lb",
-            ratio: Decimal(sign: .plus, exponent: -8, significand: 45359237)
-        )
-    }
+    /// Returns pound `[lb]` mass unit.
+    static let pound = MassUnit(
+        name: "pound",
+        symbol: "lb",
+        ratio: Decimal(string: "0.45359237")!
+    )
 
-    /**
-     Returns ounce `[oz]` mass unit.
-     
-     - author: Michal Konturek
-     */
-    static var ounce: MassUnit {
-        return MassUnit(
-            name: "ounce",
-            symbol: "oz",
-            ratio: Decimal(sign: .plus, exponent: -12, significand: 28349523125)
-        )
-    }
+    /// Returns ounce `[oz]` mass unit.
+    static let ounce = MassUnit(
+        name: "ounce",
+        symbol: "oz",
+        ratio: Decimal(string: "0.028349523125")!
+    )
 
-    /**
-     Returns drachm `[dr]` mass unit.
-     
-     - author: Michal Konturek
-     */
-    static var drachm: MassUnit {
-        return MassUnit(
-            name: "drachm",
-            symbol: "dr",
-            ratio: Decimal(sign: .plus, exponent: -16, significand: 17718451953125)
-        )
-    }
+    /// Returns drachm `[dr]` mass unit.
+    static let drachm = MassUnit(
+        name: "drachm",
+        symbol: "dr",
+        ratio: Decimal(string: "0.0017718451953125")!
+    )
 
-    /**
-     Returns grain `[gr]` mass unit.
-     
-     - author: Michal Konturek
-     */
-    static var grain: MassUnit {
-        return MassUnit(
-            name: "grain",
-            symbol: "gr",
-            ratio: Decimal(sign: .plus, exponent: -11, significand: 6479891)
-        )
-    }
+    /// Returns grain `[gr]` mass unit.
+    static let grain = MassUnit(
+        name: "grain",
+        symbol: "gr",
+        ratio: Decimal(string: "0.00006479891")!
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as ton quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as ton quantity.
     public func ton() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.ton)
+        Quantity(amount: Decimal(self), unit: MassUnit.ton)
     }
-    /**
-     Returns instance converted as hundredweight quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as hundredweight quantity.
     public func hundredweight() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.hundredweight)
+        Quantity(amount: Decimal(self), unit: MassUnit.hundredweight)
     }
-    /**
-     Returns instance converted as quarter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as quarter quantity.
     public func quarter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.quarter)
+        Quantity(amount: Decimal(self), unit: MassUnit.quarter)
     }
-    /**
-     Returns instance converted as stone quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as stone quantity.
     public func stone() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.stone)
+        Quantity(amount: Decimal(self), unit: MassUnit.stone)
     }
-    /**
-     Returns instance converted as pound quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as pound quantity.
     public func pound() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.pound)
+        Quantity(amount: Decimal(self), unit: MassUnit.pound)
     }
-    /**
-     Returns instance converted as ounce quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as ounce quantity.
     public func ounce() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.ounce)
+        Quantity(amount: Decimal(self), unit: MassUnit.ounce)
     }
-    /**
-     Returns instance converted as drachm quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as drachm quantity.
     public func drachm() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.drachm)
+        Quantity(amount: Decimal(self), unit: MassUnit.drachm)
     }
-    /**
-     Returns instance converted as grain quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as grain quantity.
     public func grain() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.grain)
+        Quantity(amount: Decimal(self), unit: MassUnit.grain)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as ton quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as ton quantity.
     public func ton() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.ton)
+        Quantity(amount: Decimal(self), unit: MassUnit.ton)
     }
-    /**
-     Returns instance converted as hundredweight quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as hundredweight quantity.
     public func hundredweight() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.hundredweight)
+        Quantity(amount: Decimal(self), unit: MassUnit.hundredweight)
     }
-    /**
-     Returns instance converted as quarter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as quarter quantity.
     public func quarter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.quarter)
+        Quantity(amount: Decimal(self), unit: MassUnit.quarter)
     }
-    /**
-     Returns instance converted as stone quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as stone quantity.
     public func stone() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.stone)
+        Quantity(amount: Decimal(self), unit: MassUnit.stone)
     }
-    /**
-     Returns instance converted as pound quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as pound quantity.
     public func pound() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.pound)
+        Quantity(amount: Decimal(self), unit: MassUnit.pound)
     }
-    /**
-     Returns instance converted as ounce quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as ounce quantity.
     public func ounce() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.ounce)
+        Quantity(amount: Decimal(self), unit: MassUnit.ounce)
     }
-    /**
-     Returns instance converted as drachm quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as drachm quantity.
     public func drachm() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.drachm)
+        Quantity(amount: Decimal(self), unit: MassUnit.drachm)
     }
-    /**
-     Returns instance converted as grain quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as grain quantity.
     public func grain() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: MassUnit.grain)
+        Quantity(amount: Decimal(self), unit: MassUnit.grain)
     }
 }

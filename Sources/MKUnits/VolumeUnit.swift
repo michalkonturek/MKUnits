@@ -27,185 +27,101 @@ import Foundation
 
 public final class VolumeUnit: Unit, @unchecked Sendable {
 
-    /**
-     Returns hectolitre `[hl]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var hectolitre: VolumeUnit {
-        return VolumeUnit(
-            name: "hectolitre",
-            symbol: "hl",
-            ratio: Decimal(sign: .plus, exponent: 2, significand: 1)
-        )
-    }
+    /// Returns hectolitre `[hl]` volume unit.
+    public static let hectolitre = VolumeUnit(
+        name: "hectolitre",
+        symbol: "hl",
+        ratio: 100
+    )
 
-    /**
-     Returns litre `[l]` volume unit.
-     
-     - important: This is a base unit.
-     
-     - author: Michal Konturek
-     */
-    public static var litre: VolumeUnit {
-        return VolumeUnit(
-            name: "litre",
-            symbol: "l",
-            ratio: Decimal(1)
-        )
-    }
+    /// Returns litre `[l]` volume unit.
+    ///
+    /// This is a base unit.
+    public static let litre = VolumeUnit(
+        name: "litre",
+        symbol: "l",
+        ratio: 1
+    )
 
-    /**
-     Returns decilitre `[dl]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var decilitre: VolumeUnit {
-        return VolumeUnit(
-            name: "decilitre",
-            symbol: "dl",
-            ratio: Decimal(sign: .plus, exponent: -1, significand: 1)
-        )
-    }
+    /// Returns decilitre `[dl]` volume unit.
+    public static let decilitre = VolumeUnit(
+        name: "decilitre",
+        symbol: "dl",
+        ratio: Decimal(string: "0.1")!
+    )
 
-    /**
-     Returns centilitre `[cl]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var centilitre: VolumeUnit {
-        return VolumeUnit(
-            name: "centilitre",
-            symbol: "cl",
-            ratio: Decimal(sign: .plus, exponent: -2, significand: 1)
-        )
-    }
+    /// Returns centilitre `[cl]` volume unit.
+    public static let centilitre = VolumeUnit(
+        name: "centilitre",
+        symbol: "cl",
+        ratio: Decimal(string: "0.01")!
+    )
 
-    /**
-     Returns millilitre `[ml]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var millilitre: VolumeUnit {
-        return VolumeUnit(
-            name: "millilitre",
-            symbol: "ml",
-            ratio: Decimal(sign: .plus, exponent: -3, significand: 1)
-        )
-    }
+    /// Returns millilitre `[ml]` volume unit.
+    public static let millilitre = VolumeUnit(
+        name: "millilitre",
+        symbol: "ml",
+        ratio: Decimal(string: "0.001")!
+    )
 
-    /**
-     Returns microlitre `[µl]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var microlitre: VolumeUnit {
-        return VolumeUnit(
-            name: "microlitre",
-            symbol: "µl",
-            ratio: Decimal(sign: .plus, exponent: -6, significand: 1)
-        )
-    }
+    /// Returns microlitre `[µl]` volume unit.
+    public static let microlitre = VolumeUnit(
+        name: "microlitre",
+        symbol: "µl",
+        ratio: Decimal(string: "0.000001")!
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as hectolitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as hectolitre quantity.
     public func hectolitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.hectolitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.hectolitre)
     }
-    /**
-     Returns instance converted as litre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as litre quantity.
     public func litre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.litre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.litre)
     }
-    /**
-     Returns instance converted as decilitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as decilitre quantity.
     public func decilitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.decilitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.decilitre)
     }
-    /**
-     Returns instance converted as centilitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as centilitre quantity.
     public func centilitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.centilitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.centilitre)
     }
-    /**
-     Returns instance converted as millilitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as millilitre quantity.
     public func millilitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.millilitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.millilitre)
     }
-    /**
-     Returns instance converted as microlitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as microlitre quantity.
     public func microlitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.microlitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.microlitre)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as hectolitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as hectolitre quantity.
     public func hectolitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.hectolitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.hectolitre)
     }
-    /**
-     Returns instance converted as litre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as litre quantity.
     public func litre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.litre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.litre)
     }
-    /**
-     Returns instance converted as decilitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as decilitre quantity.
     public func decilitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.decilitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.decilitre)
     }
-    /**
-     Returns instance converted as centilitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as centilitre quantity.
     public func centilitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.centilitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.centilitre)
     }
-    /**
-     Returns instance converted as millilitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as millilitre quantity.
     public func millilitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.millilitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.millilitre)
     }
-    /**
-     Returns instance converted as microlitre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as microlitre quantity.
     public func microlitre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.microlitre)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.microlitre)
     }
 }

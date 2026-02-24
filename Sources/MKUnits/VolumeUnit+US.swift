@@ -27,357 +27,189 @@ import Foundation
 
 extension VolumeUnit {
 
-    /**
-     Returns US hogshead `[US hhd]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_hogshead: VolumeUnit {
-        return VolumeUnit(
-            name: "US hogshead",
-            symbol: "US hhd",
-            ratio: Decimal(sign: .plus, exponent: -9, significand: 238480942392)
-        )
-    }
+    /// Returns US hogshead `[US hhd]` volume unit.
+    public static let us_hogshead = VolumeUnit(
+        name: "US hogshead",
+        symbol: "US hhd",
+        ratio: Decimal(string: "238.480942392")!
+    )
 
-    /**
-     Returns US barrel `[US bbl]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_barrel: VolumeUnit {
-        return VolumeUnit(
-            name: "US barrel",
-            symbol: "US bbl",
-            ratio: Decimal(sign: .plus, exponent: -9, significand: 119240471196)
-        )
-    }
+    /// Returns US barrel `[US bbl]` volume unit.
+    public static let us_barrel = VolumeUnit(
+        name: "US barrel",
+        symbol: "US bbl",
+        ratio: Decimal(string: "119.240471196")!
+    )
 
-    /**
-     Returns US gallon `[US gal]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_gallon: VolumeUnit {
-        return VolumeUnit(
-            name: "US gallon",
-            symbol: "US gal",
-            ratio: Decimal(sign: .plus, exponent: -9, significand: 3785411784)
-        )
-    }
+    /// Returns US gallon `[US gal]` volume unit.
+    public static let us_gallon = VolumeUnit(
+        name: "US gallon",
+        symbol: "US gal",
+        ratio: Decimal(string: "3.785411784")!
+    )
 
-    /**
-     Returns US quart `[US qt]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_quart: VolumeUnit {
-        return VolumeUnit(
-            name: "US quart",
-            symbol: "US qt",
-            ratio: Decimal(sign: .plus, exponent: -9, significand: 946352946)
-        )
-    }
+    /// Returns US quart `[US qt]` volume unit.
+    public static let us_quart = VolumeUnit(
+        name: "US quart",
+        symbol: "US qt",
+        ratio: Decimal(string: "0.946352946")!
+    )
 
-    /**
-     Returns US pint `[US pt]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_pint: VolumeUnit {
-        return VolumeUnit(
-            name: "US pint",
-            symbol: "US pt",
-            ratio: Decimal(sign: .plus, exponent: -9, significand: 473176473)
-        )
-    }
+    /// Returns US pint `[US pt]` volume unit.
+    public static let us_pint = VolumeUnit(
+        name: "US pint",
+        symbol: "US pt",
+        ratio: Decimal(string: "0.473176473")!
+    )
 
-    /**
-     Returns US cup `[US cp]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_cup: VolumeUnit {
-        return VolumeUnit(
-            name: "US cup",
-            symbol: "US cp",
-            ratio: Decimal(sign: .plus, exponent: -10, significand: 2365882365)
-        )
-    }
+    /// Returns US cup `[US cp]` volume unit.
+    public static let us_cup = VolumeUnit(
+        name: "US cup",
+        symbol: "US cp",
+        ratio: Decimal(string: "0.2365882365")!
+    )
 
-    /**
-     Returns US gill `[US gi]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_gill: VolumeUnit {
-        return VolumeUnit(
-            name: "US gill",
-            symbol: "US gi",
-            ratio: Decimal(sign: .plus, exponent: -11, significand: 11829411825)
-        )
-    }
+    /// Returns US gill `[US gi]` volume unit.
+    public static let us_gill = VolumeUnit(
+        name: "US gill",
+        symbol: "US gi",
+        ratio: Decimal(string: "0.11829411825")!
+    )
 
-    /**
-     Returns US fluid ounce `[US fl oz]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_fluidounce: VolumeUnit {
-        return VolumeUnit(
-            name: "US fluid ounce",
-            symbol: "US fl oz",
-            ratio: Decimal(sign: .plus, exponent: -13, significand: 295735295625)
-        )
-    }
+    /// Returns US fluid ounce `[US fl oz]` volume unit.
+    public static let us_fluidounce = VolumeUnit(
+        name: "US fluid ounce",
+        symbol: "US fl oz",
+        ratio: Decimal(string: "0.0295735295625")!
+    )
 
-    /**
-     Returns US tablespoon `[US tbsp]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_tablespoon: VolumeUnit {
-        return VolumeUnit(
-            name: "US tablespoon",
-            symbol: "US tbsp",
-            ratio: Decimal(sign: .plus, exponent: -14, significand: 1478676478125)
-        )
-    }
+    /// Returns US tablespoon `[US tbsp]` volume unit.
+    public static let us_tablespoon = VolumeUnit(
+        name: "US tablespoon",
+        symbol: "US tbsp",
+        ratio: Decimal(string: "0.01478676478125")!
+    )
 
-    /**
-     Returns US teaspoon `[US tsp]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_teaspoon: VolumeUnit {
-        return VolumeUnit(
-            name: "US teaspoon",
-            symbol: "US tsp",
-            ratio: Decimal(sign: .plus, exponent: -14, significand: 492892159375)
-        )
-    }
+    /// Returns US teaspoon `[US tsp]` volume unit.
+    public static let us_teaspoon = VolumeUnit(
+        name: "US teaspoon",
+        symbol: "US tsp",
+        ratio: Decimal(string: "0.00492892159375")!
+    )
 
-    /**
-     Returns US fluidram `[US fl dr]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_fluidram: VolumeUnit {
-        return VolumeUnit(
-            name: "US fluidram",
-            symbol: "US fl dr",
-            ratio: Decimal(sign: .plus, exponent: -16, significand: 36966911953125)
-        )
-    }
+    /// Returns US fluidram `[US fl dr]` volume unit.
+    public static let us_fluidram = VolumeUnit(
+        name: "US fluidram",
+        symbol: "US fl dr",
+        ratio: Decimal(string: "0.0036966911953125")!
+    )
 
-    /**
-     Returns US minim `[US min]` volume unit.
-     
-     - author: Michal Konturek
-     */
-    public static var us_minim: VolumeUnit {
-        return VolumeUnit(
-            name: "US minim",
-            symbol: "US min",
-            ratio: Decimal(sign: .plus, exponent: -18, significand: 61611519921875)
-        )
-    }
+    /// Returns US minim `[US min]` volume unit.
+    public static let us_minim = VolumeUnit(
+        name: "US minim",
+        symbol: "US min",
+        ratio: Decimal(string: "0.000061611519921875")!
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as US hogshead quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US hogshead quantity.
     public func us_hogshead() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_hogshead)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_hogshead)
     }
-    /**
-     Returns instance converted as US barrel quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US barrel quantity.
     public func us_barrel() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_barrel)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_barrel)
     }
-    /**
-     Returns instance converted as US gallon quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US gallon quantity.
     public func us_gallon() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_gallon)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_gallon)
     }
-    /**
-     Returns instance converted as US quart quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US quart quantity.
     public func us_quart() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_quart)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_quart)
     }
-    /**
-     Returns instance converted as US pint quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US pint quantity.
     public func us_pint() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_pint)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_pint)
     }
-    /**
-     Returns instance converted as US cup quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US cup quantity.
     public func us_cup() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_cup)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_cup)
     }
-    /**
-     Returns instance converted as US gill quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US gill quantity.
     public func us_gill() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_gill)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_gill)
     }
-    /**
-     Returns instance converted as US fluidounce quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US fluidounce quantity.
     public func us_fluidounce() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_fluidounce)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_fluidounce)
     }
-    /**
-     Returns instance converted as US tablespoon quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US tablespoon quantity.
     public func us_tablespoon() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_tablespoon)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_tablespoon)
     }
-    /**
-     Returns instance converted as US teaspoon quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US teaspoon quantity.
     public func us_teaspoon() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_teaspoon)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_teaspoon)
     }
-    /**
-     Returns instance converted as US fluidram quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US fluidram quantity.
     public func us_fluidram() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_fluidram)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_fluidram)
     }
-    /**
-     Returns instance converted as US minim quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US minim quantity.
     public func us_minim() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_minim)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_minim)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as US hogshead quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US hogshead quantity.
     public func us_hogshead() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_hogshead)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_hogshead)
     }
-    /**
-     Returns instance converted as US barrel quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US barrel quantity.
     public func us_barrel() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_barrel)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_barrel)
     }
-    /**
-     Returns instance converted as US gallon quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US gallon quantity.
     public func us_gallon() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_gallon)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_gallon)
     }
-    /**
-     Returns instance converted as US quart quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US quart quantity.
     public func us_quart() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_quart)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_quart)
     }
-    /**
-     Returns instance converted as US pint quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US pint quantity.
     public func us_pint() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_pint)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_pint)
     }
-    /**
-     Returns instance converted as US cup quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US cup quantity.
     public func us_cup() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_cup)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_cup)
     }
-    /**
-     Returns instance converted as US gill quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US gill quantity.
     public func us_gill() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_gill)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_gill)
     }
-    /**
-     Returns instance converted as US fluidounce quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US fluidounce quantity.
     public func us_fluidounce() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_fluidounce)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_fluidounce)
     }
-    /**
-     Returns instance converted as US tablespoon quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US tablespoon quantity.
     public func us_tablespoon() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_tablespoon)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_tablespoon)
     }
-    /**
-     Returns instance converted as US teaspoon quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US teaspoon quantity.
     public func us_teaspoon() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_teaspoon)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_teaspoon)
     }
-    /**
-     Returns instance converted as US fluidram quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US fluidram quantity.
     public func us_fluidram() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_fluidram)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_fluidram)
     }
-    /**
-     Returns instance converted as US minim quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as US minim quantity.
     public func us_minim() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: VolumeUnit.us_minim)
+        Quantity(amount: Decimal(self), unit: VolumeUnit.us_minim)
     }
 }

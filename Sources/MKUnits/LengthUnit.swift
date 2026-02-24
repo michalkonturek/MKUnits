@@ -27,127 +27,71 @@ import Foundation
 
 public final class LengthUnit: Unit, @unchecked Sendable {
 
-    /**
-     Returns kilometer `[km]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var kilometer: LengthUnit {
-        return LengthUnit(
-            name: "kilometer",
-            symbol: "km",
-            ratio: Decimal(sign: .plus, exponent: 3, significand: 1)
-        )
-    }
+    /// Returns kilometer `[km]` length unit.
+    public static let kilometer = LengthUnit(
+        name: "kilometer",
+        symbol: "km",
+        ratio: 1_000
+    )
 
-    /**
-     Returns meter `[m]` length unit.
-     
-     - important: This is a base unit.
-     
-     - author: Michal Konturek
-     */
-    public static var meter: LengthUnit {
-        return LengthUnit(
-            name: "meter",
-            symbol: "m",
-            ratio: Decimal(1)
-        )
-    }
+    /// Returns meter `[m]` length unit.
+    ///
+    /// This is a base unit.
+    public static let meter = LengthUnit(
+        name: "meter",
+        symbol: "m",
+        ratio: 1
+    )
 
-    /**
-     Returns centimeter `[cm]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var centimeter: LengthUnit {
-        return LengthUnit(
-            name: "centimeter",
-            symbol: "cm",
-            ratio: Decimal(sign: .plus, exponent: -2, significand: 1)
-        )
-    }
+    /// Returns centimeter `[cm]` length unit.
+    public static let centimeter = LengthUnit(
+        name: "centimeter",
+        symbol: "cm",
+        ratio: Decimal(string: "0.01")!
+    )
 
-    /**
-     Returns millimeter `[mm]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var millimeter: LengthUnit {
-        return LengthUnit(
-            name: "millimeter",
-            symbol: "mm",
-            ratio: Decimal(sign: .plus, exponent: -3, significand: 1)
-        )
-    }
+    /// Returns millimeter `[mm]` length unit.
+    public static let millimeter = LengthUnit(
+        name: "millimeter",
+        symbol: "mm",
+        ratio: Decimal(string: "0.001")!
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as kilometer quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as kilometer quantity.
     public func kilometer() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.kilometer)
+        Quantity(amount: Decimal(self), unit: LengthUnit.kilometer)
     }
-    /**
-     Returns instance converted as meter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as meter quantity.
     public func meter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.meter)
+        Quantity(amount: Decimal(self), unit: LengthUnit.meter)
     }
-    /**
-     Returns instance converted as centimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as centimeter quantity.
     public func centimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.centimeter)
+        Quantity(amount: Decimal(self), unit: LengthUnit.centimeter)
     }
-    /**
-     Returns instance converted as millimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as millimeter quantity.
     public func millimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.millimeter)
+        Quantity(amount: Decimal(self), unit: LengthUnit.millimeter)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as kilometer quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as kilometer quantity.
     public func kilometer() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.kilometer)
+        Quantity(amount: Decimal(self), unit: LengthUnit.kilometer)
     }
-    /**
-     Returns instance converted as meter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as meter quantity.
     public func meter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.meter)
+        Quantity(amount: Decimal(self), unit: LengthUnit.meter)
     }
-    /**
-     Returns instance converted as centimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as centimeter quantity.
     public func centimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.centimeter)
+        Quantity(amount: Decimal(self), unit: LengthUnit.centimeter)
     }
-    /**
-     Returns instance converted as millimeter quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as millimeter quantity.
     public func millimeter() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.millimeter)
+        Quantity(amount: Decimal(self), unit: LengthUnit.millimeter)
     }
 }

@@ -27,154 +27,84 @@ import Foundation
 
 extension AreaUnit {
 
-    /**
-     Returns square mile `[mi²]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareMile: AreaUnit {
-        return AreaUnit(
-            name: "square",
-            symbol: "mi²",
-            ratio: Decimal(sign: .plus, exponent: -2, significand: 258998811)
-        )
-    }
+    /// Returns square mile `[mi²]` area unit.
+    public static let squareMile = AreaUnit(
+        name: "square",
+        symbol: "mi²",
+        ratio: Decimal(string: "2589988.11")!
+    )
 
-    /**
-     Returns acre `[ac]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var acre: AreaUnit {
-        return AreaUnit(
-            name: "acre",
-            symbol: "ac",
-            ratio: Decimal(sign: .plus, exponent: -7, significand: 40468564224)
-        )
-    }
+    /// Returns acre `[ac]` area unit.
+    public static let acre = AreaUnit(
+        name: "acre",
+        symbol: "ac",
+        ratio: Decimal(string: "4046.8564224")!
+    )
 
-    /**
-     Returns square yard `[yd²]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareYard: AreaUnit {
-        return AreaUnit(
-            name: "square yard",
-            symbol: "yd²",
-            ratio: Decimal(sign: .plus, exponent: -8, significand: 83612736)
-        )
-    }
+    /// Returns square yard `[yd²]` area unit.
+    public static let squareYard = AreaUnit(
+        name: "square yard",
+        symbol: "yd²",
+        ratio: Decimal(string: "0.83612736")!
+    )
 
-    /**
-     Returns square foot `[ft²]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareFoot: AreaUnit {
-        return AreaUnit(
-            name: "square foot",
-            symbol: "ft²",
-            ratio: Decimal(sign: .plus, exponent: -8, significand: 9290304)
-        )
-    }
+    /// Returns square foot `[ft²]` area unit.
+    public static let squareFoot = AreaUnit(
+        name: "square foot",
+        symbol: "ft²",
+        ratio: Decimal(string: "0.09290304")!
+    )
 
-    /**
-     Returns square inch `[in²]` area unit.
-     
-     - author: Michal Konturek
-     */
-    public static var squareInch: AreaUnit {
-        return AreaUnit(
-            name: "square inch",
-            symbol: "in²",
-            ratio: Decimal(sign: .plus, exponent: -8, significand: 64516)
-        )
-    }
+    /// Returns square inch `[in²]` area unit.
+    public static let squareInch = AreaUnit(
+        name: "square inch",
+        symbol: "in²",
+        ratio: Decimal(string: "0.00064516")!
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as square mile quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square mile quantity.
     public func squareMile() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareMile)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareMile)
     }
-    /**
-     Returns instance converted as acre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as acre quantity.
     public func acre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.acre)
+        Quantity(amount: Decimal(self), unit: AreaUnit.acre)
     }
-    /**
-     Returns instance converted as square yard quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square yard quantity.
     public func squareYard() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareYard)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareYard)
     }
-    /**
-     Returns instance converted as square foot quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square foot quantity.
     public func squareFoot() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareFoot)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareFoot)
     }
-    /**
-     Returns instance converted as square inch quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square inch quantity.
     public func squareInch() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareInch)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareInch)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as square mile quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square mile quantity.
     public func squareMile() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareMile)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareMile)
     }
-    /**
-     Returns instance converted as acre quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as acre quantity.
     public func acre() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.acre)
+        Quantity(amount: Decimal(self), unit: AreaUnit.acre)
     }
-    /**
-     Returns instance converted as square yard quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square yard quantity.
     public func squareYard() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareYard)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareYard)
     }
-    /**
-     Returns instance converted as square foot quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square foot quantity.
     public func squareFoot() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareFoot)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareFoot)
     }
-    /**
-     Returns instance converted as square inch quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as square inch quantity.
     public func squareInch() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: AreaUnit.squareInch)
+        Quantity(amount: Decimal(self), unit: AreaUnit.squareInch)
     }
 }
