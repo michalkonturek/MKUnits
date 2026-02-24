@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: macos-15
+            swift: "6.0"
+          - os: ubuntu-latest
+            swift: "6.0"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Swift
+        if: runner.os == 'Linux'
+        uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: ${{ matrix.swift }}
+
+      - name: Build
+        run: swift build
+
+      - name: Run tests
+        run: swift test
