@@ -24,50 +24,51 @@
 //
 
 import Foundation
-import Testing
-
 import MKUnits
+import Testing
 
 @Suite struct VolumeUnitUSTests {
 
-    @Test func correctness() {
-        #expect(1.us_hogshead() == 63.us_gallon())
-        #expect(1.us_hogshead() == 2.us_barrel())
-        #expect(1.us_barrel() == 31.5.us_gallon())
-        #expect(1.us_gallon() == 4.us_quart())
-        #expect(1.us_quart() == 2.us_pint())
+  @Test func correctness() {
+    #expect(1.us_hogshead() == 63.us_gallon())
+    #expect(1.us_hogshead() == 2.us_barrel())
+    #expect(1.us_barrel() == 31.5.us_gallon())
+    #expect(1.us_gallon() == 4.us_quart())
+    #expect(1.us_quart() == 2.us_pint())
 
-        #expect(1.us_pint() == 2.us_cup())
-        #expect(1.us_cup() == 2.us_gill())
-        #expect(1.us_gill() == 4.us_fluidounce())
-        #expect(1.us_fluidounce() == 2.us_tablespoon())
+    #expect(1.us_pint() == 2.us_cup())
+    #expect(1.us_cup() == 2.us_gill())
+    #expect(1.us_gill() == 4.us_fluidounce())
+    #expect(1.us_fluidounce() == 2.us_tablespoon())
 
-        #expect(1.us_tablespoon() == 3.us_teaspoon())
-        #expect(1.us_tablespoon() == 4.us_fluidram())
-        #expect(1.us_teaspoon() == 80.us_minim())
-        #expect(1.us_fluidram() == 60.us_minim())
-        #expect(1.us_minim() == Quantity(amount: Decimal(string: "0.061611519921875")!, unit: VolumeUnit.millilitre))
-    }
+    #expect(1.us_tablespoon() == 3.us_teaspoon())
+    #expect(1.us_tablespoon() == 4.us_fluidram())
+    #expect(1.us_teaspoon() == 80.us_minim())
+    #expect(1.us_fluidram() == 60.us_minim())
+    #expect(
+      1.us_minim()
+        == Quantity(amount: Decimal(string: "0.061611519921875")!, unit: VolumeUnit.millilitre))
+  }
 
-    @Test func fluentAPI() {
-        self.assert(1.us_hogshead(), expectedAmount: 1, expectedUnit: VolumeUnit.us_hogshead)
-        self.assert(1.us_barrel(), expectedAmount: 1, expectedUnit: VolumeUnit.us_barrel)
-        self.assert(1.us_gallon(), expectedAmount: 1, expectedUnit: VolumeUnit.us_gallon)
-        self.assert(1.5.us_quart(), expectedAmount: 1.5, expectedUnit: VolumeUnit.us_quart)
+  @Test func fluentAPI() {
+    self.assert(1.us_hogshead(), expectedAmount: 1, expectedUnit: VolumeUnit.us_hogshead)
+    self.assert(1.us_barrel(), expectedAmount: 1, expectedUnit: VolumeUnit.us_barrel)
+    self.assert(1.us_gallon(), expectedAmount: 1, expectedUnit: VolumeUnit.us_gallon)
+    self.assert(1.5.us_quart(), expectedAmount: 1.5, expectedUnit: VolumeUnit.us_quart)
 
-        self.assert(0.00001.us_pint(), expectedAmount: 0.00001, expectedUnit: VolumeUnit.us_pint)
-        self.assert(1.us_cup(), expectedAmount: 1, expectedUnit: VolumeUnit.us_cup)
-        self.assert(1.us_gill(), expectedAmount: 1, expectedUnit: VolumeUnit.us_gill)
-        self.assert(1.us_fluidounce(), expectedAmount: 1, expectedUnit: VolumeUnit.us_fluidounce)
+    self.assert(0.00001.us_pint(), expectedAmount: 0.00001, expectedUnit: VolumeUnit.us_pint)
+    self.assert(1.us_cup(), expectedAmount: 1, expectedUnit: VolumeUnit.us_cup)
+    self.assert(1.us_gill(), expectedAmount: 1, expectedUnit: VolumeUnit.us_gill)
+    self.assert(1.us_fluidounce(), expectedAmount: 1, expectedUnit: VolumeUnit.us_fluidounce)
 
-        self.assert(1.us_tablespoon(), expectedAmount: 1, expectedUnit: VolumeUnit.us_tablespoon)
-        self.assert(1.us_teaspoon(), expectedAmount: 1, expectedUnit: VolumeUnit.us_teaspoon)
-        self.assert(1.us_fluidram(), expectedAmount: 1, expectedUnit: VolumeUnit.us_fluidram)
-        self.assert(1.us_minim(), expectedAmount: 1, expectedUnit: VolumeUnit.us_minim)
-    }
+    self.assert(1.us_tablespoon(), expectedAmount: 1, expectedUnit: VolumeUnit.us_tablespoon)
+    self.assert(1.us_teaspoon(), expectedAmount: 1, expectedUnit: VolumeUnit.us_teaspoon)
+    self.assert(1.us_fluidram(), expectedAmount: 1, expectedUnit: VolumeUnit.us_fluidram)
+    self.assert(1.us_minim(), expectedAmount: 1, expectedUnit: VolumeUnit.us_minim)
+  }
 
-    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        #expect(item.amount == expectedAmount)
-        #expect(item.unit == expectedUnit)
-    }
+  private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    #expect(item.amount == expectedAmount)
+    #expect(item.unit == expectedUnit)
+  }
 }

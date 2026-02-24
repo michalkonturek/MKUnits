@@ -24,28 +24,27 @@
 //
 
 import Foundation
-import Testing
-
 import MKUnits
+import Testing
 
 @Suite struct LengthUnitTests {
 
-    @Test func correctness() {
-        #expect(1.kilometer() == 1000.meter())
-        #expect(1.meter() == 100.centimeter())
-        #expect(1.centimeter() == 10.millimeter())
-        #expect(1.millimeter() == 0.001.meter())
-    }
+  @Test func correctness() {
+    #expect(1.kilometer() == 1000.meter())
+    #expect(1.meter() == 100.centimeter())
+    #expect(1.centimeter() == 10.millimeter())
+    #expect(1.millimeter() == 0.001.meter())
+  }
 
-    @Test func fluentAPI() {
-        self.assert(1.kilometer(), expectedAmount: 1, expectedUnit: LengthUnit.kilometer)
-        self.assert(1.5.meter(), expectedAmount: 1.5, expectedUnit: LengthUnit.meter)
-        self.assert(0.00001.centimeter(), expectedAmount: 0.00001, expectedUnit: LengthUnit.centimeter)
-        self.assert(1.millimeter(), expectedAmount: 1, expectedUnit: LengthUnit.millimeter)
-    }
+  @Test func fluentAPI() {
+    self.assert(1.kilometer(), expectedAmount: 1, expectedUnit: LengthUnit.kilometer)
+    self.assert(1.5.meter(), expectedAmount: 1.5, expectedUnit: LengthUnit.meter)
+    self.assert(0.00001.centimeter(), expectedAmount: 0.00001, expectedUnit: LengthUnit.centimeter)
+    self.assert(1.millimeter(), expectedAmount: 1, expectedUnit: LengthUnit.millimeter)
+  }
 
-    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        #expect(item.amount == expectedAmount)
-        #expect(item.unit == expectedUnit)
-    }
+  private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    #expect(item.amount == expectedAmount)
+    #expect(item.unit == expectedUnit)
+  }
 }

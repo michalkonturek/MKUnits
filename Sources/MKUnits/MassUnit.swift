@@ -27,86 +27,86 @@ import Foundation
 
 public final class MassUnit: Unit, @unchecked Sendable {
 
-    /// Returns megagram `[Mg]` mass unit.
-    public static let megagram = MassUnit(
-        name: "megagram",
-        symbol: "Mg",
-        ratio: 1_000
-    )
+  /// Returns megagram `[Mg]` mass unit.
+  public static let megagram = MassUnit(
+    name: "megagram",
+    symbol: "Mg",
+    ratio: 1_000
+  )
 
-    /// Returns kilogram `[kg]` mass unit.
-    ///
-    /// This is a base unit.
-    public static let kilogram = MassUnit(
-        name: "kilogram",
-        symbol: "kg",
-        ratio: 1
-    )
+  /// Returns kilogram `[kg]` mass unit.
+  ///
+  /// This is a base unit.
+  public static let kilogram = MassUnit(
+    name: "kilogram",
+    symbol: "kg",
+    ratio: 1
+  )
 
-    /// Returns decagram `[dag]` mass unit.
-    public static let decagram = MassUnit(
-        name: "decagram",
-        symbol: "dag",
-        ratio: Decimal(string: "0.01")!
-    )
+  /// Returns decagram `[dag]` mass unit.
+  public static let decagram = MassUnit(
+    name: "decagram",
+    symbol: "dag",
+    ratio: Decimal(string: "0.01")!
+  )
 
-    /// Returns gram `[g]` mass unit.
-    public static let gram = MassUnit(
-        name: "gram",
-        symbol: "g",
-        ratio: Decimal(string: "0.001")!
-    )
+  /// Returns gram `[g]` mass unit.
+  public static let gram = MassUnit(
+    name: "gram",
+    symbol: "g",
+    ratio: Decimal(string: "0.001")!
+  )
 
-    /// Returns milligram `[mg]` mass unit.
-    public static let milligram = MassUnit(
-        name: "milligram",
-        symbol: "mg",
-        ratio: Decimal(string: "0.000001")!
-    )
+  /// Returns milligram `[mg]` mass unit.
+  public static let milligram = MassUnit(
+    name: "milligram",
+    symbol: "mg",
+    ratio: Decimal(string: "0.000001")!
+  )
 }
 
 extension Int {
-    /// Returns instance converted as megagram quantity.
-    public func megagram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.megagram)
-    }
-    /// Returns instance converted as kilogram quantity.
-    public func kilogram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.kilogram)
-    }
-    /// Returns instance converted as decagram quantity.
-    public func decagram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.decagram)
-    }
-    /// Returns instance converted as gram quantity.
-    public func gram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.gram)
-    }
-    /// Returns instance converted as milligram quantity.
-    public func milligram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.milligram)
-    }
+  /// Returns instance converted as megagram quantity.
+  public func megagram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.megagram)
+  }
+  /// Returns instance converted as kilogram quantity.
+  public func kilogram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.kilogram)
+  }
+  /// Returns instance converted as decagram quantity.
+  public func decagram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.decagram)
+  }
+  /// Returns instance converted as gram quantity.
+  public func gram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.gram)
+  }
+  /// Returns instance converted as milligram quantity.
+  public func milligram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.milligram)
+  }
 }
 
 extension Double {
-    /// Returns instance converted as megagram quantity.
-    public func megagram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.megagram)
-    }
-    /// Returns instance converted as kilogram quantity.
-    public func kilogram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.kilogram)
-    }
-    /// Returns instance converted as decagram quantity.
-    public func decagram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.decagram)
-    }
-    /// Returns instance converted as gram quantity.
-    public func gram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.gram)
-    }
-    /// Returns instance converted as milligram quantity.
-    public func milligram() -> Quantity {
-        Quantity(amount: Decimal(self), unit: MassUnit.milligram)
-    }
+  /// Returns instance converted as megagram quantity.
+  public func megagram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.megagram)
+  }
+  /// Returns instance converted as kilogram quantity.
+  public func kilogram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.kilogram)
+  }
+  /// Returns instance converted as decagram quantity.
+  public func decagram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.decagram)
+  }
+  /// Returns instance converted as gram quantity.
+  public func gram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.gram)
+  }
+  /// Returns instance converted as milligram quantity.
+  public func milligram() -> Quantity {
+    Quantity(amount: Decimal(self), unit: MassUnit.milligram)
+  }
 }

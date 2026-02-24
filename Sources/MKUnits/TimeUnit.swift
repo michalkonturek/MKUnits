@@ -27,189 +27,189 @@ import Foundation
 
 public final class TimeUnit: Unit, @unchecked Sendable {
 
-    /// Returns century `[c]` time unit.
-    public static let century = TimeUnit(
-        name: "century",
-        symbol: "c",
-        ratio: 3_155_760_000
-    )
+  /// Returns century `[c]` time unit.
+  public static let century = TimeUnit(
+    name: "century",
+    symbol: "c",
+    ratio: 3_155_760_000
+  )
 
-    /// Returns decade `[dec]` time unit.
-    public static let decade = TimeUnit(
-        name: "decade",
-        symbol: "dec",
-        ratio: 315_576_000
-    )
+  /// Returns decade `[dec]` time unit.
+  public static let decade = TimeUnit(
+    name: "decade",
+    symbol: "dec",
+    ratio: 315_576_000
+  )
 
-    /// Returns year `[y]` time unit.
-    public static let year = TimeUnit(
-        name: "year",
-        symbol: "y",
-        ratio: 31_557_600
-    )
+  /// Returns year `[y]` time unit.
+  public static let year = TimeUnit(
+    name: "year",
+    symbol: "y",
+    ratio: 31_557_600
+  )
 
-    /// Returns month `[mo]` time unit.
-    public static let month = TimeUnit(
-        name: "month",
-        symbol: "mo",
-        ratio: 2_592_000
-    )
+  /// Returns month `[mo]` time unit.
+  public static let month = TimeUnit(
+    name: "month",
+    symbol: "mo",
+    ratio: 2_592_000
+  )
 
-    /// Returns week `[wk]` time unit.
-    public static let week = TimeUnit(
-        name: "week",
-        symbol: "wk",
-        ratio: 604_800
-    )
+  /// Returns week `[wk]` time unit.
+  public static let week = TimeUnit(
+    name: "week",
+    symbol: "wk",
+    ratio: 604_800
+  )
 
-    /// Returns day `[d]` time unit.
-    public static let day = TimeUnit(
-        name: "day",
-        symbol: "d",
-        ratio: 86_400
-    )
+  /// Returns day `[d]` time unit.
+  public static let day = TimeUnit(
+    name: "day",
+    symbol: "d",
+    ratio: 86_400
+  )
 
-    /// Returns hour `[h]` time unit.
-    public static let hour = TimeUnit(
-        name: "hour",
-        symbol: "h",
-        ratio: 3_600
-    )
+  /// Returns hour `[h]` time unit.
+  public static let hour = TimeUnit(
+    name: "hour",
+    symbol: "h",
+    ratio: 3_600
+  )
 
-    /// Returns minute `[m]` time unit.
-    public static let minute = TimeUnit(
-        name: "minute",
-        symbol: "m",
-        ratio: 60
-    )
+  /// Returns minute `[m]` time unit.
+  public static let minute = TimeUnit(
+    name: "minute",
+    symbol: "m",
+    ratio: 60
+  )
 
-    /// Returns second `[s]` time unit.
-    public static let second = TimeUnit(
-        name: "second",
-        symbol: "s",
-        ratio: 1
-    )
+  /// Returns second `[s]` time unit.
+  public static let second = TimeUnit(
+    name: "second",
+    symbol: "s",
+    ratio: 1
+  )
 
-    /// Returns millisecond `[ms]` time unit.
-    public static let millisecond = TimeUnit(
-        name: "millisecond",
-        symbol: "ms",
-        ratio: Decimal(string: "0.001")!
-    )
+  /// Returns millisecond `[ms]` time unit.
+  public static let millisecond = TimeUnit(
+    name: "millisecond",
+    symbol: "ms",
+    ratio: Decimal(string: "0.001")!
+  )
 
-    /// Returns microsecond `[μs]` time unit.
-    public static let microsecond = TimeUnit(
-        name: "microsecond",
-        symbol: "μs",
-        ratio: Decimal(string: "0.000001")!
-    )
+  /// Returns microsecond `[μs]` time unit.
+  public static let microsecond = TimeUnit(
+    name: "microsecond",
+    symbol: "μs",
+    ratio: Decimal(string: "0.000001")!
+  )
 
-    /// Returns nanosecond `[ns]` time unit.
-    public static let nanosecond = TimeUnit(
-        name: "nanosecond",
-        symbol: "ns",
-        ratio: Decimal(string: "0.000000001")!
-    )
+  /// Returns nanosecond `[ns]` time unit.
+  public static let nanosecond = TimeUnit(
+    name: "nanosecond",
+    symbol: "ns",
+    ratio: Decimal(string: "0.000000001")!
+  )
 }
 
 extension Int {
-    /// Returns instance converted as century quantity.
-    public func century() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.century)
-    }
-    /// Returns instance converted as decade quantity.
-    public func decade() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.decade)
-    }
-    /// Returns instance converted as year quantity.
-    public func year() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.year)
-    }
-    /// Returns instance converted as month quantity.
-    public func month() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.month)
-    }
-    /// Returns instance converted as week quantity.
-    public func week() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.week)
-    }
-    /// Returns instance converted as day quantity.
-    public func day() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.day)
-    }
-    /// Returns instance converted as hour quantity.
-    public func hour() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.hour)
-    }
-    /// Returns instance converted as minute quantity.
-    public func minute() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.minute)
-    }
-    /// Returns instance converted as second quantity.
-    public func second() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.second)
-    }
-    /// Returns instance converted as millisecond quantity.
-    public func millisecond() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.millisecond)
-    }
-    /// Returns instance converted as microsecond quantity.
-    public func microsecond() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.microsecond)
-    }
-    /// Returns instance converted as nanosecond quantity.
-    public func nanosecond() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.nanosecond)
-    }
+  /// Returns instance converted as century quantity.
+  public func century() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.century)
+  }
+  /// Returns instance converted as decade quantity.
+  public func decade() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.decade)
+  }
+  /// Returns instance converted as year quantity.
+  public func year() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.year)
+  }
+  /// Returns instance converted as month quantity.
+  public func month() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.month)
+  }
+  /// Returns instance converted as week quantity.
+  public func week() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.week)
+  }
+  /// Returns instance converted as day quantity.
+  public func day() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.day)
+  }
+  /// Returns instance converted as hour quantity.
+  public func hour() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.hour)
+  }
+  /// Returns instance converted as minute quantity.
+  public func minute() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.minute)
+  }
+  /// Returns instance converted as second quantity.
+  public func second() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.second)
+  }
+  /// Returns instance converted as millisecond quantity.
+  public func millisecond() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.millisecond)
+  }
+  /// Returns instance converted as microsecond quantity.
+  public func microsecond() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.microsecond)
+  }
+  /// Returns instance converted as nanosecond quantity.
+  public func nanosecond() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.nanosecond)
+  }
 }
 
 extension Double {
-    /// Returns instance converted as century quantity.
-    public func century() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.century)
-    }
-    /// Returns instance converted as decade quantity.
-    public func decade() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.decade)
-    }
-    /// Returns instance converted as year quantity.
-    public func year() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.year)
-    }
-    /// Returns instance converted as month quantity.
-    public func month() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.month)
-    }
-    /// Returns instance converted as week quantity.
-    public func week() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.week)
-    }
-    /// Returns instance converted as day quantity.
-    public func day() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.day)
-    }
-    /// Returns instance converted as hour quantity.
-    public func hour() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.hour)
-    }
-    /// Returns instance converted as minute quantity.
-    public func minute() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.minute)
-    }
-    /// Returns instance converted as second quantity.
-    public func second() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.second)
-    }
-    /// Returns instance converted as millisecond quantity.
-    public func millisecond() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.millisecond)
-    }
-    /// Returns instance converted as microsecond quantity.
-    public func microsecond() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.microsecond)
-    }
-    /// Returns instance converted as nanosecond quantity.
-    public func nanosecond() -> Quantity {
-        Quantity(amount: Decimal(self), unit: TimeUnit.nanosecond)
-    }
+  /// Returns instance converted as century quantity.
+  public func century() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.century)
+  }
+  /// Returns instance converted as decade quantity.
+  public func decade() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.decade)
+  }
+  /// Returns instance converted as year quantity.
+  public func year() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.year)
+  }
+  /// Returns instance converted as month quantity.
+  public func month() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.month)
+  }
+  /// Returns instance converted as week quantity.
+  public func week() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.week)
+  }
+  /// Returns instance converted as day quantity.
+  public func day() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.day)
+  }
+  /// Returns instance converted as hour quantity.
+  public func hour() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.hour)
+  }
+  /// Returns instance converted as minute quantity.
+  public func minute() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.minute)
+  }
+  /// Returns instance converted as second quantity.
+  public func second() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.second)
+  }
+  /// Returns instance converted as millisecond quantity.
+  public func millisecond() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.millisecond)
+  }
+  /// Returns instance converted as microsecond quantity.
+  public func microsecond() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.microsecond)
+  }
+  /// Returns instance converted as nanosecond quantity.
+  public func nanosecond() -> Quantity {
+    Quantity(amount: Decimal(self), unit: TimeUnit.nanosecond)
+  }
 }

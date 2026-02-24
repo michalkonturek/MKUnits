@@ -24,48 +24,47 @@
 //
 
 import Foundation
-import Testing
-
 import MKUnits
+import Testing
 
 @Suite struct TimeUnitTests {
 
-    @Test func correctness() {
-        #expect(1.century() == 10.decade())
-        #expect(1.century() == 100.year())
-        #expect(1.decade() == 10.year())
-        #expect(1.year() == 365.25.day())
+  @Test func correctness() {
+    #expect(1.century() == 10.decade())
+    #expect(1.century() == 100.year())
+    #expect(1.decade() == 10.year())
+    #expect(1.year() == 365.25.day())
 
-        #expect(1.month() == 30.day())
-        #expect(1.week() == 7.day())
-        #expect(1.day() == 24.hour())
-        #expect(1.hour() == 60.minute())
+    #expect(1.month() == 30.day())
+    #expect(1.week() == 7.day())
+    #expect(1.day() == 24.hour())
+    #expect(1.hour() == 60.minute())
 
-        #expect(1.minute() == 60.second())
-        #expect(1.second() == 1000.millisecond())
-        #expect(1.millisecond() == 1000.microsecond())
-        #expect(1.microsecond() == 1000.nanosecond())
-    }
+    #expect(1.minute() == 60.second())
+    #expect(1.second() == 1000.millisecond())
+    #expect(1.millisecond() == 1000.microsecond())
+    #expect(1.microsecond() == 1000.nanosecond())
+  }
 
-    @Test func fluentAPI() {
-        self.assert(1.century(), expectedAmount: 1, expectedUnit: TimeUnit.century)
-        self.assert(1.5.decade(), expectedAmount: 1.5, expectedUnit: TimeUnit.decade)
-        self.assert(0.00001.year(), expectedAmount: 0.00001, expectedUnit: TimeUnit.year)
-        self.assert(1.month(), expectedAmount: 1, expectedUnit: TimeUnit.month)
+  @Test func fluentAPI() {
+    self.assert(1.century(), expectedAmount: 1, expectedUnit: TimeUnit.century)
+    self.assert(1.5.decade(), expectedAmount: 1.5, expectedUnit: TimeUnit.decade)
+    self.assert(0.00001.year(), expectedAmount: 0.00001, expectedUnit: TimeUnit.year)
+    self.assert(1.month(), expectedAmount: 1, expectedUnit: TimeUnit.month)
 
-        self.assert(1.week(), expectedAmount: 1, expectedUnit: TimeUnit.week)
-        self.assert(1.day(), expectedAmount: 1, expectedUnit: TimeUnit.day)
-        self.assert(1.hour(), expectedAmount: 1, expectedUnit: TimeUnit.hour)
-        self.assert(1.minute(), expectedAmount: 1, expectedUnit: TimeUnit.minute)
+    self.assert(1.week(), expectedAmount: 1, expectedUnit: TimeUnit.week)
+    self.assert(1.day(), expectedAmount: 1, expectedUnit: TimeUnit.day)
+    self.assert(1.hour(), expectedAmount: 1, expectedUnit: TimeUnit.hour)
+    self.assert(1.minute(), expectedAmount: 1, expectedUnit: TimeUnit.minute)
 
-        self.assert(1.second(), expectedAmount: 1, expectedUnit: TimeUnit.second)
-        self.assert(1.millisecond(), expectedAmount: 1, expectedUnit: TimeUnit.millisecond)
-        self.assert(1.microsecond(), expectedAmount: 1, expectedUnit: TimeUnit.microsecond)
-        self.assert(1.nanosecond(), expectedAmount: 1, expectedUnit: TimeUnit.nanosecond)
-    }
+    self.assert(1.second(), expectedAmount: 1, expectedUnit: TimeUnit.second)
+    self.assert(1.millisecond(), expectedAmount: 1, expectedUnit: TimeUnit.millisecond)
+    self.assert(1.microsecond(), expectedAmount: 1, expectedUnit: TimeUnit.microsecond)
+    self.assert(1.nanosecond(), expectedAmount: 1, expectedUnit: TimeUnit.nanosecond)
+  }
 
-    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        #expect(item.amount == expectedAmount)
-        #expect(item.unit == expectedUnit)
-    }
+  private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    #expect(item.amount == expectedAmount)
+    #expect(item.unit == expectedUnit)
+  }
 }

@@ -27,71 +27,71 @@ import Foundation
 
 public final class LengthUnit: Unit, @unchecked Sendable {
 
-    /// Returns kilometer `[km]` length unit.
-    public static let kilometer = LengthUnit(
-        name: "kilometer",
-        symbol: "km",
-        ratio: 1_000
-    )
+  /// Returns kilometer `[km]` length unit.
+  public static let kilometer = LengthUnit(
+    name: "kilometer",
+    symbol: "km",
+    ratio: 1_000
+  )
 
-    /// Returns meter `[m]` length unit.
-    ///
-    /// This is a base unit.
-    public static let meter = LengthUnit(
-        name: "meter",
-        symbol: "m",
-        ratio: 1
-    )
+  /// Returns meter `[m]` length unit.
+  ///
+  /// This is a base unit.
+  public static let meter = LengthUnit(
+    name: "meter",
+    symbol: "m",
+    ratio: 1
+  )
 
-    /// Returns centimeter `[cm]` length unit.
-    public static let centimeter = LengthUnit(
-        name: "centimeter",
-        symbol: "cm",
-        ratio: Decimal(string: "0.01")!
-    )
+  /// Returns centimeter `[cm]` length unit.
+  public static let centimeter = LengthUnit(
+    name: "centimeter",
+    symbol: "cm",
+    ratio: Decimal(string: "0.01")!
+  )
 
-    /// Returns millimeter `[mm]` length unit.
-    public static let millimeter = LengthUnit(
-        name: "millimeter",
-        symbol: "mm",
-        ratio: Decimal(string: "0.001")!
-    )
+  /// Returns millimeter `[mm]` length unit.
+  public static let millimeter = LengthUnit(
+    name: "millimeter",
+    symbol: "mm",
+    ratio: Decimal(string: "0.001")!
+  )
 }
 
 extension Int {
-    /// Returns instance converted as kilometer quantity.
-    public func kilometer() -> Quantity {
-        Quantity(amount: Decimal(self), unit: LengthUnit.kilometer)
-    }
-    /// Returns instance converted as meter quantity.
-    public func meter() -> Quantity {
-        Quantity(amount: Decimal(self), unit: LengthUnit.meter)
-    }
-    /// Returns instance converted as centimeter quantity.
-    public func centimeter() -> Quantity {
-        Quantity(amount: Decimal(self), unit: LengthUnit.centimeter)
-    }
-    /// Returns instance converted as millimeter quantity.
-    public func millimeter() -> Quantity {
-        Quantity(amount: Decimal(self), unit: LengthUnit.millimeter)
-    }
+  /// Returns instance converted as kilometer quantity.
+  public func kilometer() -> Quantity {
+    Quantity(amount: Decimal(self), unit: LengthUnit.kilometer)
+  }
+  /// Returns instance converted as meter quantity.
+  public func meter() -> Quantity {
+    Quantity(amount: Decimal(self), unit: LengthUnit.meter)
+  }
+  /// Returns instance converted as centimeter quantity.
+  public func centimeter() -> Quantity {
+    Quantity(amount: Decimal(self), unit: LengthUnit.centimeter)
+  }
+  /// Returns instance converted as millimeter quantity.
+  public func millimeter() -> Quantity {
+    Quantity(amount: Decimal(self), unit: LengthUnit.millimeter)
+  }
 }
 
 extension Double {
-    /// Returns instance converted as kilometer quantity.
-    public func kilometer() -> Quantity {
-        Quantity(amount: Decimal(self), unit: LengthUnit.kilometer)
-    }
-    /// Returns instance converted as meter quantity.
-    public func meter() -> Quantity {
-        Quantity(amount: Decimal(self), unit: LengthUnit.meter)
-    }
-    /// Returns instance converted as centimeter quantity.
-    public func centimeter() -> Quantity {
-        Quantity(amount: Decimal(self), unit: LengthUnit.centimeter)
-    }
-    /// Returns instance converted as millimeter quantity.
-    public func millimeter() -> Quantity {
-        Quantity(amount: Decimal(self), unit: LengthUnit.millimeter)
-    }
+  /// Returns instance converted as kilometer quantity.
+  public func kilometer() -> Quantity {
+    Quantity(amount: Decimal(self), unit: LengthUnit.kilometer)
+  }
+  /// Returns instance converted as meter quantity.
+  public func meter() -> Quantity {
+    Quantity(amount: Decimal(self), unit: LengthUnit.meter)
+  }
+  /// Returns instance converted as centimeter quantity.
+  public func centimeter() -> Quantity {
+    Quantity(amount: Decimal(self), unit: LengthUnit.centimeter)
+  }
+  /// Returns instance converted as millimeter quantity.
+  public func millimeter() -> Quantity {
+    Quantity(amount: Decimal(self), unit: LengthUnit.millimeter)
+  }
 }
