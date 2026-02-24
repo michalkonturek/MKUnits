@@ -102,7 +102,7 @@ You can easily extend MKUnits by adding new [group units](#new-group-unit) or [u
 Create a class that extends `Unit` and follow the convention below. Make sure that unit symbols are unique across your new group unit.
 
 ```swift
-public final class NewUnit: Unit {
+public final class NewUnit: Unit, @unchecked Sendable {
 
     public static var unitA: NewUnit {
         return NewUnit(
@@ -125,7 +125,6 @@ extension Int {
     public func unitA() -> Quantity {
         return Quantity(amount: Decimal(self), unit: NewUnit.unitA)
     }
-    
     public func unitB() -> Quantity {
         return Quantity(amount: Decimal(self), unit: NewUnit.unitB)
     }
@@ -135,7 +134,6 @@ extension Double {
     public func unitA() -> Quantity {
         return Quantity(amount: Decimal(self), unit: NewUnit.unitA)
     }
-    
     public func unitB() -> Quantity {
         return Quantity(amount: Decimal(self), unit: NewUnit.unitB)
     }
