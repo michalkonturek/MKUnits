@@ -27,183 +27,99 @@ import Foundation
 
 public final class EnergyUnit: Unit, @unchecked Sendable {
 
-    /**
-     Returns gigajoule `[GJ]` energy unit.
-     
-     - author: Michal Konturek
-     */
-    public static var gigajoule: EnergyUnit {
-        return EnergyUnit(
-            name: "gigajoule",
-            symbol: "GJ",
-            ratio: Decimal(sign: .plus, exponent: 2, significand: 2388459)
-        )
-    }
+    /// Returns gigajoule `[GJ]` energy unit.
+    public static let gigajoule = EnergyUnit(
+        name: "gigajoule",
+        symbol: "GJ",
+        ratio: 238_845_900
+    )
 
-    /**
-     Returns megajoule `[MJ]` energy unit.
-     
-     - author: Michal Konturek
-     */
-    public static var megajoule: EnergyUnit {
-        return EnergyUnit(
-            name: "megajoule",
-            symbol: "MJ",
-            ratio: Decimal(sign: .plus, exponent: -1, significand: 2388459)
-        )
-    }
+    /// Returns megajoule `[MJ]` energy unit.
+    public static let megajoule = EnergyUnit(
+        name: "megajoule",
+        symbol: "MJ",
+        ratio: Decimal(string: "238845.9")!
+    )
 
-    /**
-     Returns kilojoule `[kJ]` energy unit.
-     
-     - author: Michal Konturek
-     */
-    public static var kilojoule: EnergyUnit {
-        return EnergyUnit(
-            name: "kilojoule",
-            symbol: "kJ",
-            ratio: Decimal(sign: .plus, exponent: -4, significand: 2388459)
-        )
-    }
+    /// Returns kilojoule `[kJ]` energy unit.
+    public static let kilojoule = EnergyUnit(
+        name: "kilojoule",
+        symbol: "kJ",
+        ratio: Decimal(string: "238.8459")!
+    )
 
-    /**
-     Returns joule `[J]` energy unit.
-     
-     - author: Michal Konturek
-     */
-    public static var joule: EnergyUnit {
-        return EnergyUnit(
-            name: "joule",
-            symbol: "J",
-            ratio: Decimal(sign: .plus, exponent: -7, significand: 2388459)
-        )
-    }
+    /// Returns joule `[J]` energy unit.
+    public static let joule = EnergyUnit(
+        name: "joule",
+        symbol: "J",
+        ratio: Decimal(string: "0.2388459")!
+    )
 
-    /**
-     Returns kilocalorie `[kcal]` energy unit.
-     
-     - author: Michal Konturek
-     */
-    public static var kilocalorie: EnergyUnit {
-        return EnergyUnit(
-            name: "kilocalorie",
-            symbol: "kcal",
-            ratio: Decimal(sign: .plus, exponent: 3, significand: 1)
-        )
-    }
+    /// Returns kilocalorie `[kcal]` energy unit.
+    public static let kilocalorie = EnergyUnit(
+        name: "kilocalorie",
+        symbol: "kcal",
+        ratio: 1_000
+    )
 
-    /**
-     Returns calorie `[cal]` energy unit.
-     
-     - author: Michal Konturek
-     */
-    public static var calorie: EnergyUnit {
-        return EnergyUnit(
-            name: "calorie",
-            symbol: "cal",
-            ratio: Decimal(1)
-        )
-    }
+    /// Returns calorie `[cal]` energy unit.
+    public static let calorie = EnergyUnit(
+        name: "calorie",
+        symbol: "cal",
+        ratio: 1
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as gigajoule quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as gigajoule quantity.
     public func gigajoule() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.gigajoule)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.gigajoule)
     }
-    /**
-     Returns instance converted as megajoule quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as megajoule quantity.
     public func megajoule() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.megajoule)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.megajoule)
     }
-    /**
-     Returns instance converted as kilojoule quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as kilojoule quantity.
     public func kilojoule() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.kilojoule)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.kilojoule)
     }
-    /**
-     Returns instance converted as joule quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as joule quantity.
     public func joule() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.joule)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.joule)
     }
-    /**
-     Returns instance converted as kilocalorie quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as kilocalorie quantity.
     public func kilocalorie() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.kilocalorie)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.kilocalorie)
     }
-    /**
-     Returns instance converted as calorie quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as calorie quantity.
     public func calorie() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.calorie)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.calorie)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as gigajoule quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as gigajoule quantity.
     public func gigajoule() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.gigajoule)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.gigajoule)
     }
-    /**
-     Returns instance converted as megajoule quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as megajoule quantity.
     public func megajoule() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.megajoule)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.megajoule)
     }
-    /**
-     Returns instance converted as kilojoule quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as kilojoule quantity.
     public func kilojoule() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.kilojoule)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.kilojoule)
     }
-    /**
-     Returns instance converted as joule quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as joule quantity.
     public func joule() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.joule)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.joule)
     }
-    /**
-     Returns instance converted as kilocalorie quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as kilocalorie quantity.
     public func kilocalorie() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.kilocalorie)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.kilocalorie)
     }
-    /**
-     Returns instance converted as calorie quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as calorie quantity.
     public func calorie() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: EnergyUnit.calorie)
+        Quantity(amount: Decimal(self), unit: EnergyUnit.calorie)
     }
 }

@@ -27,212 +27,114 @@ import Foundation
 
 extension LengthUnit {
 
-    /**
-     Returns nautical mile `[nmi]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var nauticalMile: LengthUnit {
-        return LengthUnit(
-            name: "nautical mile",
-            symbol: "nmi",
-            ratio: Decimal(sign: .plus, exponent: -3, significand: 1853184)
-        )
-    }
+    /// Returns nautical mile `[nmi]` length unit.
+    public static let nauticalMile = LengthUnit(
+        name: "nautical mile",
+        symbol: "nmi",
+        ratio: Decimal(string: "1853.184")!
+    )
 
-    /**
-     Returns mile `[mi]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var mile: LengthUnit {
-        return LengthUnit(
-            name: "mile",
-            symbol: "mi",
-            ratio: Decimal(sign: .plus, exponent: -3, significand: 1609344)
-        )
-    }
+    /// Returns mile `[mi]` length unit.
+    public static let mile = LengthUnit(
+        name: "mile",
+        symbol: "mi",
+        ratio: Decimal(string: "1609.344")!
+    )
 
-    /**
-     Returns furlong `[fur]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var furlong: LengthUnit {
-        return LengthUnit(
-            name: "furlong",
-            symbol: "fur",
-            ratio: Decimal(sign: .plus, exponent: -3, significand: 201168)
-        )
-    }
+    /// Returns furlong `[fur]` length unit.
+    public static let furlong = LengthUnit(
+        name: "furlong",
+        symbol: "fur",
+        ratio: Decimal(string: "201.168")!
+    )
 
-    /**
-     Returns chain `[ch]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var chain: LengthUnit {
-        return LengthUnit(
-            name: "chain",
-            symbol: "ch",
-            ratio: Decimal(sign: .plus, exponent: -4, significand: 201168)
-        )
-    }
+    /// Returns chain `[ch]` length unit.
+    public static let chain = LengthUnit(
+        name: "chain",
+        symbol: "ch",
+        ratio: Decimal(string: "20.1168")!
+    )
 
-    /**
-     Returns yard `[yd]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var yard: LengthUnit {
-        return LengthUnit(
-            name: "yard",
-            symbol: "yd",
-            ratio: Decimal(sign: .plus, exponent: -4, significand: 9144)
-        )
-    }
+    /// Returns yard `[yd]` length unit.
+    public static let yard = LengthUnit(
+        name: "yard",
+        symbol: "yd",
+        ratio: Decimal(string: "0.9144")!
+    )
 
-    /**
-     Returns foot `[ft]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var foot: LengthUnit {
-        return LengthUnit(
-            name: "foot",
-            symbol: "ft",
-            ratio: Decimal(sign: .plus, exponent: -4, significand: 3048)
-        )
-    }
+    /// Returns foot `[ft]` length unit.
+    public static let foot = LengthUnit(
+        name: "foot",
+        symbol: "ft",
+        ratio: Decimal(string: "0.3048")!
+    )
 
-    /**
-     Returns inch `[in]` length unit.
-     
-     - author: Michal Konturek
-     */
-    public static var inch: LengthUnit {
-        return LengthUnit(
-            name: "inch",
-            symbol: "in",
-            ratio: Decimal(sign: .plus, exponent: -4, significand: 254)
-        )
-    }
+    /// Returns inch `[in]` length unit.
+    public static let inch = LengthUnit(
+        name: "inch",
+        symbol: "in",
+        ratio: Decimal(string: "0.0254")!
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as nautical mile quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as nautical mile quantity.
     public func nauticalMile() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.nauticalMile)
+        Quantity(amount: Decimal(self), unit: LengthUnit.nauticalMile)
     }
-    /**
-     Returns instance converted as mile quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as mile quantity.
     public func mile() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.mile)
+        Quantity(amount: Decimal(self), unit: LengthUnit.mile)
     }
-    /**
-     Returns instance converted as furlong quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as furlong quantity.
     public func furlong() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.furlong)
+        Quantity(amount: Decimal(self), unit: LengthUnit.furlong)
     }
-    /**
-     Returns instance converted as chain quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as chain quantity.
     public func chain() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.chain)
+        Quantity(amount: Decimal(self), unit: LengthUnit.chain)
     }
-    /**
-     Returns instance converted as yard quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as yard quantity.
     public func yard() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.yard)
+        Quantity(amount: Decimal(self), unit: LengthUnit.yard)
     }
-    /**
-     Returns instance converted as foot quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as foot quantity.
     public func foot() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.foot)
+        Quantity(amount: Decimal(self), unit: LengthUnit.foot)
     }
-    /**
-     Returns instance converted as inch quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as inch quantity.
     public func inch() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.inch)
+        Quantity(amount: Decimal(self), unit: LengthUnit.inch)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as nautical mile quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as nautical mile quantity.
     public func nauticalMile() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.nauticalMile)
+        Quantity(amount: Decimal(self), unit: LengthUnit.nauticalMile)
     }
-    /**
-     Returns instance converted as mile quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as mile quantity.
     public func mile() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.mile)
+        Quantity(amount: Decimal(self), unit: LengthUnit.mile)
     }
-    /**
-     Returns instance converted as furlong quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as furlong quantity.
     public func furlong() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.furlong)
+        Quantity(amount: Decimal(self), unit: LengthUnit.furlong)
     }
-    /**
-     Returns instance converted as chain quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as chain quantity.
     public func chain() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.chain)
+        Quantity(amount: Decimal(self), unit: LengthUnit.chain)
     }
-    /**
-     Returns instance converted as yard quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as yard quantity.
     public func yard() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.yard)
+        Quantity(amount: Decimal(self), unit: LengthUnit.yard)
     }
-    /**
-     Returns instance converted as foot quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as foot quantity.
     public func foot() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.foot)
+        Quantity(amount: Decimal(self), unit: LengthUnit.foot)
     }
-    /**
-     Returns instance converted as inch quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as inch quantity.
     public func inch() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: LengthUnit.inch)
+        Quantity(amount: Decimal(self), unit: LengthUnit.inch)
     }
 }

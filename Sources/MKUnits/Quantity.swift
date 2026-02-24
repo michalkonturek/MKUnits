@@ -25,35 +25,24 @@
 
 import Foundation
 
-/**
- A value type representing an amount of a `Unit`.
-
- - author: Michal Konturek
- */
+/// A value type representing an amount of a `Unit`.
 public struct Quantity: Sendable {
     public let amount: Decimal
     public let unit: Unit
 
-    /**
-     Instantiates a `Quantity` object.
-
-     - parameter amount: amount of unit.
-     - parameter unit: unit of measurement.
-
-     - author: Michal Konturek
-     */
+    /// Instantiates a `Quantity` object.
+    ///
+    /// - Parameters:
+    ///   - amount: amount of unit.
+    ///   - unit: unit of measurement.
     public init(amount: Decimal, unit: Unit) {
         self.amount = amount
         self.unit = unit
     }
 
-    /**
-     Returns new `Quantity` with amount converted to given unit.
-
-     - parameter to: destination unit.
-
-     - author: Michal Konturek
-     */
+    /// Returns new `Quantity` with amount converted to given unit.
+    ///
+    /// - Parameter to: destination unit.
     public func converted(_ to: Unit) -> Quantity {
         assert(self.unit.isConvertible(to))
         let amount = self.unit.convert(self.amount, to: to)
@@ -62,16 +51,12 @@ public struct Quantity: Sendable {
 
     /// Returns new `Quantity` with reversed amount sign.
     public func negative() -> Quantity {
-        return self * -1
+        self * -1
     }
 
-    /**
-     Returns new `Quantity` with amount rounded to given precision.
-
-     - parameter precision: number of decimal places.
-
-     - author: Michal Konturek
-     */
+    /// Returns new `Quantity` with amount rounded to given precision.
+    ///
+    /// - Parameter precision: number of decimal places.
     public func rounded(_ precision: Int) -> Quantity {
         assert(precision >= 0)
         var original = self.amount
@@ -96,34 +81,34 @@ public func - (lhs: Quantity, rhs: Quantity) -> Quantity {
 }
 
 public func * (lhs: Quantity, rhs: Int) -> Quantity {
-    return Quantity(amount: lhs.amount * Decimal(rhs), unit: lhs.unit)
+    Quantity(amount: lhs.amount * Decimal(rhs), unit: lhs.unit)
 }
 
 public func * (lhs: Quantity, rhs: Double) -> Quantity {
-    return Quantity(amount: lhs.amount * Decimal(rhs), unit: lhs.unit)
+    Quantity(amount: lhs.amount * Decimal(rhs), unit: lhs.unit)
 }
 
 public func * (lhs: Quantity, rhs: Decimal) -> Quantity {
-    return Quantity(amount: lhs.amount * rhs, unit: lhs.unit)
+    Quantity(amount: lhs.amount * rhs, unit: lhs.unit)
 }
 
 public func * (lhs: Int, rhs: Quantity) -> Quantity {
-    return Quantity(amount: rhs.amount * Decimal(lhs), unit: rhs.unit)
+    Quantity(amount: rhs.amount * Decimal(lhs), unit: rhs.unit)
 }
 
 public func * (lhs: Double, rhs: Quantity) -> Quantity {
-    return Quantity(amount: rhs.amount * Decimal(lhs), unit: rhs.unit)
+    Quantity(amount: rhs.amount * Decimal(lhs), unit: rhs.unit)
 }
 
 public func * (lhs: Decimal, rhs: Quantity) -> Quantity {
-    return Quantity(amount: rhs.amount * lhs, unit: rhs.unit)
+    Quantity(amount: rhs.amount * lhs, unit: rhs.unit)
 }
 
 // MARK: - CustomStringConvertible
 
 extension Quantity: CustomStringConvertible {
     public var description: String {
-        return "\(self.amount) \(self.unit)"
+        "\(amount) \(unit)"
     }
 }
 
@@ -141,7 +126,7 @@ extension Quantity: Equatable {
     }
 }
 public func == (lhs: Quantity, rhs: Quantity) -> Bool {
-    return lhs.equals(rhs)
+    lhs.equals(rhs)
 }
 
 // MARK: - Comparable

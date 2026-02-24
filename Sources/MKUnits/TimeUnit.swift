@@ -27,357 +27,189 @@ import Foundation
 
 public final class TimeUnit: Unit, @unchecked Sendable {
 
-    /**
-     Returns century `[c]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var century: TimeUnit {
-        return TimeUnit(
-            name: "century",
-            symbol: "c",
-            ratio: Decimal(sign: .plus, exponent: 2, significand: 31557600)
-        )
-    }
+    /// Returns century `[c]` time unit.
+    public static let century = TimeUnit(
+        name: "century",
+        symbol: "c",
+        ratio: 3_155_760_000
+    )
 
-    /**
-     Returns decade `[dec]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var decade: TimeUnit {
-        return TimeUnit(
-            name: "decade",
-            symbol: "dec",
-            ratio: Decimal(sign: .plus, exponent: 1, significand: 31557600)
-        )
-    }
+    /// Returns decade `[dec]` time unit.
+    public static let decade = TimeUnit(
+        name: "decade",
+        symbol: "dec",
+        ratio: 315_576_000
+    )
 
-    /**
-     Returns year `[y]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var year: TimeUnit {
-        return TimeUnit(
-            name: "year",
-            symbol: "y",
-            ratio: Decimal(sign: .plus, exponent: 0, significand: 31557600)
-        )
-    }
+    /// Returns year `[y]` time unit.
+    public static let year = TimeUnit(
+        name: "year",
+        symbol: "y",
+        ratio: 31_557_600
+    )
 
-    /**
-     Returns month `[mo]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var month: TimeUnit {
-        return TimeUnit(
-            name: "month",
-            symbol: "mo",
-            ratio: Decimal(sign: .plus, exponent: 0, significand: 2592000)
-        )
-    }
+    /// Returns month `[mo]` time unit.
+    public static let month = TimeUnit(
+        name: "month",
+        symbol: "mo",
+        ratio: 2_592_000
+    )
 
-    /**
-     Returns week `[wk]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var week: TimeUnit {
-        return TimeUnit(
-            name: "week",
-            symbol: "wk",
-            ratio: Decimal(sign: .plus, exponent: 0, significand: 604800)
-        )
-    }
+    /// Returns week `[wk]` time unit.
+    public static let week = TimeUnit(
+        name: "week",
+        symbol: "wk",
+        ratio: 604_800
+    )
 
-    /**
-     Returns day `[d]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var day: TimeUnit {
-        return TimeUnit(
-            name: "day",
-            symbol: "d",
-            ratio: Decimal(sign: .plus, exponent: 0, significand: 86400)
-        )
-    }
+    /// Returns day `[d]` time unit.
+    public static let day = TimeUnit(
+        name: "day",
+        symbol: "d",
+        ratio: 86_400
+    )
 
-    /**
-     Returns hour `[h]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var hour: TimeUnit {
-        return TimeUnit(
-            name: "hour",
-            symbol: "h",
-            ratio: Decimal(sign: .plus, exponent: 0, significand: 3600)
-        )
-    }
+    /// Returns hour `[h]` time unit.
+    public static let hour = TimeUnit(
+        name: "hour",
+        symbol: "h",
+        ratio: 3_600
+    )
 
-    /**
-     Returns minute `[m]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var minute: TimeUnit {
-        return TimeUnit(
-            name: "minute",
-            symbol: "m",
-            ratio: Decimal(sign: .plus, exponent: 0, significand: 60)
-        )
-    }
+    /// Returns minute `[m]` time unit.
+    public static let minute = TimeUnit(
+        name: "minute",
+        symbol: "m",
+        ratio: 60
+    )
 
-    /**
-     Returns second `[s]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var second: TimeUnit {
-        return TimeUnit(
-            name: "second",
-            symbol: "s",
-            ratio: Decimal(1)
-        )
-    }
+    /// Returns second `[s]` time unit.
+    public static let second = TimeUnit(
+        name: "second",
+        symbol: "s",
+        ratio: 1
+    )
 
-    /**
-     Returns millisecond `[ms]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var millisecond: TimeUnit {
-        return TimeUnit(
-            name: "millisecond",
-            symbol: "ms",
-            ratio: Decimal(sign: .plus, exponent: -3, significand: 1)
-        )
-    }
+    /// Returns millisecond `[ms]` time unit.
+    public static let millisecond = TimeUnit(
+        name: "millisecond",
+        symbol: "ms",
+        ratio: Decimal(string: "0.001")!
+    )
 
-    /**
-     Returns microsecond `[μs]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var microsecond: TimeUnit {
-        return TimeUnit(
-            name: "microsecond",
-            symbol: "μs",
-            ratio: Decimal(sign: .plus, exponent: -6, significand: 1)
-        )
-    }
+    /// Returns microsecond `[μs]` time unit.
+    public static let microsecond = TimeUnit(
+        name: "microsecond",
+        symbol: "μs",
+        ratio: Decimal(string: "0.000001")!
+    )
 
-    /**
-     Returns nanosecond `[ns]` time unit.
-     
-     - author: Michal Konturek
-     */
-    public static var nanosecond: TimeUnit {
-        return TimeUnit(
-            name: "nanosecond",
-            symbol: "ns",
-            ratio: Decimal(sign: .plus, exponent: -9, significand: 1)
-        )
-    }
+    /// Returns nanosecond `[ns]` time unit.
+    public static let nanosecond = TimeUnit(
+        name: "nanosecond",
+        symbol: "ns",
+        ratio: Decimal(string: "0.000000001")!
+    )
 }
 
 extension Int {
-    /**
-     Returns instance converted as century quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as century quantity.
     public func century() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.century)
+        Quantity(amount: Decimal(self), unit: TimeUnit.century)
     }
-    /**
-     Returns instance converted as decade quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as decade quantity.
     public func decade() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.decade)
+        Quantity(amount: Decimal(self), unit: TimeUnit.decade)
     }
-    /**
-     Returns instance converted as year quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as year quantity.
     public func year() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.year)
+        Quantity(amount: Decimal(self), unit: TimeUnit.year)
     }
-    /**
-     Returns instance converted as month quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as month quantity.
     public func month() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.month)
+        Quantity(amount: Decimal(self), unit: TimeUnit.month)
     }
-    /**
-     Returns instance converted as week quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as week quantity.
     public func week() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.week)
+        Quantity(amount: Decimal(self), unit: TimeUnit.week)
     }
-    /**
-     Returns instance converted as day quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as day quantity.
     public func day() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.day)
+        Quantity(amount: Decimal(self), unit: TimeUnit.day)
     }
-    /**
-     Returns instance converted as hour quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as hour quantity.
     public func hour() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.hour)
+        Quantity(amount: Decimal(self), unit: TimeUnit.hour)
     }
-    /**
-     Returns instance converted as minute quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as minute quantity.
     public func minute() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.minute)
+        Quantity(amount: Decimal(self), unit: TimeUnit.minute)
     }
-    /**
-     Returns instance converted as second quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as second quantity.
     public func second() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.second)
+        Quantity(amount: Decimal(self), unit: TimeUnit.second)
     }
-    /**
-     Returns instance converted as millisecond quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as millisecond quantity.
     public func millisecond() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.millisecond)
+        Quantity(amount: Decimal(self), unit: TimeUnit.millisecond)
     }
-    /**
-     Returns instance converted as microsecond quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as microsecond quantity.
     public func microsecond() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.microsecond)
+        Quantity(amount: Decimal(self), unit: TimeUnit.microsecond)
     }
-    /**
-     Returns instance converted as nanosecond quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as nanosecond quantity.
     public func nanosecond() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.nanosecond)
+        Quantity(amount: Decimal(self), unit: TimeUnit.nanosecond)
     }
 }
 
 extension Double {
-    /**
-     Returns instance converted as century quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as century quantity.
     public func century() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.century)
+        Quantity(amount: Decimal(self), unit: TimeUnit.century)
     }
-    /**
-     Returns instance converted as decade quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as decade quantity.
     public func decade() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.decade)
+        Quantity(amount: Decimal(self), unit: TimeUnit.decade)
     }
-    /**
-     Returns instance converted as year quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as year quantity.
     public func year() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.year)
+        Quantity(amount: Decimal(self), unit: TimeUnit.year)
     }
-    /**
-     Returns instance converted as month quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as month quantity.
     public func month() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.month)
+        Quantity(amount: Decimal(self), unit: TimeUnit.month)
     }
-    /**
-     Returns instance converted as week quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as week quantity.
     public func week() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.week)
+        Quantity(amount: Decimal(self), unit: TimeUnit.week)
     }
-    /**
-     Returns instance converted as day quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as day quantity.
     public func day() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.day)
+        Quantity(amount: Decimal(self), unit: TimeUnit.day)
     }
-    /**
-     Returns instance converted as hour quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as hour quantity.
     public func hour() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.hour)
+        Quantity(amount: Decimal(self), unit: TimeUnit.hour)
     }
-    /**
-     Returns instance converted as minute quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as minute quantity.
     public func minute() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.minute)
+        Quantity(amount: Decimal(self), unit: TimeUnit.minute)
     }
-    /**
-     Returns instance converted as second quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as second quantity.
     public func second() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.second)
+        Quantity(amount: Decimal(self), unit: TimeUnit.second)
     }
-    /**
-     Returns instance converted as millisecond quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as millisecond quantity.
     public func millisecond() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.millisecond)
+        Quantity(amount: Decimal(self), unit: TimeUnit.millisecond)
     }
-    /**
-     Returns instance converted as microsecond quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as microsecond quantity.
     public func microsecond() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.microsecond)
+        Quantity(amount: Decimal(self), unit: TimeUnit.microsecond)
     }
-    /**
-     Returns instance converted as nanosecond quantity.
-     
-     - author: Michal Konturek
-     */
+    /// Returns instance converted as nanosecond quantity.
     public func nanosecond() -> Quantity {
-        return Quantity(amount: Decimal(self), unit: TimeUnit.nanosecond)
+        Quantity(amount: Decimal(self), unit: TimeUnit.nanosecond)
     }
 }

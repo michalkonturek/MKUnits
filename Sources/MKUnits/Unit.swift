@@ -25,53 +25,38 @@
 
 import Foundation
 
-/**
- Represents a unit of measurement.
-
- - author: Michal Konturek
- */
+/// Represents a unit of measurement.
 open class Unit: @unchecked Sendable {
     public let name: String
     public let symbol: String
     public let ratio: Decimal
 
-    /**
-     Instantiates a `Unit` object.
-
-     - parameter name: unit name.
-     - parameter symbol: unit symbol.
-     - parameter ratio: conversion ratio to a base unit.
-
-     - author: Michal Konturek
-     */
+    /// Instantiates a `Unit` object.
+    ///
+    /// - Parameters:
+    ///   - name: unit name.
+    ///   - symbol: unit symbol.
+    ///   - ratio: conversion ratio to a base unit.
     public init(name: String, symbol: String, ratio: Decimal) {
         self.name = name
         self.symbol = symbol
         self.ratio = ratio
     }
 
-    /**
-     Converts given `amount` from base unit to this unit.
-
-     - parameter amount: amount in base unit.
-     - returns: amount converted to this unit.
-
-     - author: Michal Konturek
-     */
+    /// Converts given `amount` from base unit to this unit.
+    ///
+    /// - Parameter amount: amount in base unit.
+    /// - Returns: amount converted to this unit.
     open func convertFromBaseUnit(_ amount: Decimal) -> Decimal {
-        return amount / self.ratio
+        amount / ratio
     }
 
-    /**
-     Converts given `amount` from this unit to base unit.
-
-     - parameter amount: amount in this unit.
-     - returns: amount converted to base unit.
-
-     - author: Michal Konturek
-     */
+    /// Converts given `amount` from this unit to base unit.
+    ///
+    /// - Parameter amount: amount in this unit.
+    /// - Returns: amount converted to base unit.
     open func convertToBaseUnit(_ amount: Decimal) -> Decimal {
-        return amount * self.ratio
+        amount * ratio
     }
 }
 
@@ -79,17 +64,13 @@ open class Unit: @unchecked Sendable {
 
 extension Unit: CustomStringConvertible {
     public var description: String {
-        return self.symbol
+        symbol
     }
 }
 
 // MARK: - UnitConvertible
 
-/**
- A type with ability to convert between units.
-
- - author: Michal Konturek
- */
+/// A type with ability to convert between units.
 public protocol UnitConvertible {
 
     /// Converts `amount` from this unit to destination unit.
@@ -108,21 +89,19 @@ public protocol UnitConvertible {
 extension Unit: UnitConvertible {
 
     public func convert(_ amount: Decimal, to: Unit) -> Decimal {
-        return self.convert(amount, from: self, to: to)
+        convert(amount, from: self, to: to)
     }
 
     public func convert(_ amount: Decimal, from: Unit) -> Decimal {
-        return self.convert(amount, from: from, to: self)
+        convert(amount, from: from, to: self)
     }
 
     public func convert(_ amount: Decimal, from: Unit, to: Unit) -> Decimal {
-        let baseAmount = from.convertToBaseUnit(amount)
-        let converted = to.convertFromBaseUnit(baseAmount)
-        return converted
+        to.convertFromBaseUnit(from.convertToBaseUnit(amount))
     }
 
     public func isConvertible(_ with: Unit) -> Bool {
-        return type(of: with) == type(of: self)
+        type(of: with) == type(of: self)
     }
 }
 
@@ -134,9 +113,9 @@ extension Unit: Equatable {
         if type(of: other) != type(of: self) {
             return false
         }
-        return self.symbol == other.symbol
+        return symbol == other.symbol
     }
 }
 public func == <T>(lhs: T, rhs: T) -> Bool where T: Unit {
-    return lhs.equals(rhs)
+    lhs.equals(rhs)
 }
