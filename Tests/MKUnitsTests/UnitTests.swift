@@ -30,38 +30,38 @@ import MKUnits
 
 @Suite struct UnitTests {
     let sut = TestUnit.unitA
-    
+
     @Test func initialization() {
         #expect(self.sut.name == "Unit A")
         #expect(self.sut.symbol == "A")
         #expect(self.sut.ratio == Decimal(1))
         #expect(type(of: self.sut.ratio) == Decimal.self)
     }
-    
+
     @Test func convertFromBaseUnit() {
         let value = self.sut.convertFromBaseUnit(100)
         #expect(value == 100)
     }
-    
+
     @Test func convertToBaseUnit() {
         let value = self.sut.convertFromBaseUnit(100)
         #expect(value == 100)
     }
 
     // MARK: - CustomStringConvertible
-    
+
     @Test func customDescription() {
         #expect(self.sut.description == "A")
     }
-    
+
     // MARK: - UnitConvertible
-    
+
     @Test func isConvertible_returnsTrue() {
         let kilogram = MassUnit.kilogram
         let decagram = MassUnit.decagram
         #expect(kilogram.isConvertible(decagram))
     }
-    
+
     @Test func isConvertible_returnsFalse() {
         let decagram = MassUnit.decagram
         #expect(!self.sut.isConvertible(decagram))
@@ -73,50 +73,50 @@ import MKUnits
         let converted = unitA.convert(10, from: unitB)
         #expect(converted == 100)
     }
-    
+
     @Test func convert_from_to() {
         let unitA = TestUnit.unitA
         let unitB = TestUnit.unitB
         let converted = unitA.convert(10, from: unitB, to: unitA)
         #expect(converted == 100)
     }
-    
+
     @Test func convert_to() {
         let unitA = TestUnit.unitA
         let unitB = TestUnit.unitB
         let converted = unitA.convert(10, to: unitB)
         #expect(converted == 1)
     }
-    
+
     // MARK: - Equatable
-    
+
     @Test func equatable_returnsTrue() {
         let other = TestUnit.unitA
         #expect(self.sut == other)
     }
-    
+
     @Test func equatable_returnsFalse() {
         var other = TestUnit.unitB
         #expect(!(self.sut == other))
-        
+
         other = TestOtherUnit.unit
         #expect(!(self.sut == other))
     }
 }
 
 class TestUnit: MKUnits.Unit, @unchecked Sendable {
-    
+
     internal static var unitA: TestUnit {
         return TestUnit(name: "Unit A", symbol: "A", ratio: 1)
     }
-    
+
     internal static var unitB: TestUnit {
         return TestUnit(name: "Unit B", symbol: "B", ratio: 10)
     }
 }
 
 class TestOtherUnit: TestUnit, @unchecked Sendable {
-    
+
     internal static var unit: TestOtherUnit {
         return TestOtherUnit(name: "Unit A", symbol: "A", ratio: 1)
     }

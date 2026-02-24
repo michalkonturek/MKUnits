@@ -35,25 +35,25 @@ import MKUnits
         #expect(1.megajoule() == 1000.kilojoule())
         #expect(1.kilojoule() == 1000.joule())
         #expect(1.kilocalorie() == 1000.calorie())
-        
+
         let joule = Decimal(string: "4186.7999408823848347407261334609")!
         #expect(Quantity(amount: joule, unit: EnergyUnit.joule) == 1.kilocalorie())
-        
+
         #expect(1.kilocalorie()
             .converted(EnergyUnit.joule)
             .rounded(1) == 4186.8.joule())
     }
-    
+
     @Test func fluentAPI() {
         self.assert(1.gigajoule(), expectedAmount: 1, expectedUnit: EnergyUnit.gigajoule)
         self.assert(1.5.megajoule(), expectedAmount: 1.5, expectedUnit: EnergyUnit.megajoule)
         self.assert(0.00001.kilojoule(), expectedAmount: 0.00001, expectedUnit: EnergyUnit.kilojoule)
         self.assert(1.joule(), expectedAmount: 1, expectedUnit: EnergyUnit.joule)
-     
+
         self.assert(1.kilocalorie(), expectedAmount: 1, expectedUnit: EnergyUnit.kilocalorie)
         self.assert(1.calorie(), expectedAmount: 1, expectedUnit: EnergyUnit.calorie)
     }
-    
+
     private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
         #expect(item.amount == expectedAmount)
         #expect(item.unit == expectedUnit)
