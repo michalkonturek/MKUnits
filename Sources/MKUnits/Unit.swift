@@ -131,7 +131,7 @@ extension Unit: UnitConvertible {
 extension Unit: Equatable {
 
     public func equals(_ other: Unit) -> Bool {
-        if type(of: other) !== type(of: self) {
+        if type(of: other) != type(of: self) {
             return false
         }
         return self.symbol == other.symbol
