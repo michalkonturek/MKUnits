@@ -25,7 +25,7 @@
 
 import Foundation
 
-public final class AreaUnit: Unit {
+public final class AreaUnit: Unit, @unchecked Sendable {
 
     /**
      Returns square kilomoter `[km²]` area unit.

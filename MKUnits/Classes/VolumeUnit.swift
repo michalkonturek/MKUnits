@@ -25,7 +25,7 @@
 
 import Foundation
 
-public final class VolumeUnit: Unit {
+public final class VolumeUnit: Unit, @unchecked Sendable {
 
     /**
      Returns hectolitre `[hl]` volume unit.

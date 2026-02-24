@@ -25,7 +25,7 @@
 
 import Foundation
 
-public final class EnergyUnit: Unit {
+public final class EnergyUnit: Unit, @unchecked Sendable {
 
     /**
      Returns gigajoule `[GJ]` energy unit.

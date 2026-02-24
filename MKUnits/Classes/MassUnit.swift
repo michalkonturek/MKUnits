@@ -25,7 +25,7 @@
 
 import Foundation
 
-public final class MassUnit: Unit {
+public final class MassUnit: Unit, @unchecked Sendable {
 
     /**
      Returns megagram `[Mg]` mass unit.

@@ -32,7 +32,7 @@ public extension MassUnit {
      
      - author: Michal Konturek
      */
-    public static var ton: MassUnit {
+    static var ton: MassUnit {
         return MassUnit(
             name: "ton",
             symbol: "t",
@@ -45,7 +45,7 @@ public extension MassUnit {
      
      - author: Michal Konturek
      */
-    public static var hundredweight: MassUnit {
+    static var hundredweight: MassUnit {
         return MassUnit(
             name: "hundredweight",
             symbol: "cwt",
@@ -58,7 +58,7 @@ public extension MassUnit {
      
      - author: Michal Konturek
      */
-    public static var quarter: MassUnit {
+    static var quarter: MassUnit {
         return MassUnit(
             name: "quarter",
             symbol: "qtr",
@@ -71,7 +71,7 @@ public extension MassUnit {
      
      - author: Michal Konturek
      */
-    public static var stone: MassUnit {
+    static var stone: MassUnit {
         return MassUnit(
             name: "stone",
             symbol: "st",
@@ -84,7 +84,7 @@ public extension MassUnit {
      
      - author: Michal Konturek
      */
-    public static var pound: MassUnit {
+    static var pound: MassUnit {
         return MassUnit(
             name: "pound",
             symbol: "lb",
@@ -97,7 +97,7 @@ public extension MassUnit {
      
      - author: Michal Konturek
      */
-    public static var ounce: MassUnit {
+    static var ounce: MassUnit {
         return MassUnit(
             name: "ounce",
             symbol: "oz",
@@ -110,7 +110,7 @@ public extension MassUnit {
      
      - author: Michal Konturek
      */
-    public static var drachm: MassUnit {
+    static var drachm: MassUnit {
         return MassUnit(
             name: "drachm",
             symbol: "dr",
@@ -123,7 +123,7 @@ public extension MassUnit {
      
      - author: Michal Konturek
      */
-    public static var grain: MassUnit {
+    static var grain: MassUnit {
         return MassUnit(
             name: "grain",
             symbol: "gr",

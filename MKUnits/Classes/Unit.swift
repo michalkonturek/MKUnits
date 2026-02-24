@@ -30,10 +30,10 @@ import Foundation
  
  - author: Michal Konturek
  */
-open class Unit {
-    open let name: String
-    open let symbol: String
-    open let ratio: NSDecimalNumber
+open class Unit: @unchecked Sendable {
+    public let name: String
+    public let symbol: String
+    public let ratio: NSDecimalNumber
 
     /**
      Instantiates an `Unit` object.
