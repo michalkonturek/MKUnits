@@ -7,7 +7,7 @@ It is SPM-first (v6.0.0+) and also supports CocoaPods.
 
 ## Architecture
 
-- **`Unit`** — open base class (`@unchecked Sendable`) with `name`, `symbol`, and `ratio` (all `Decimal`). Conversion multiplies/divides by `ratio` relative to a designated base unit.
+- **`Unit`** — open base class (`@unchecked Sendable`) with `name`, `symbol`, and `ratio` (`name` and `symbol` are `String`, `ratio` is `Decimal`). Conversion multiplies/divides by `ratio` relative to a designated base unit.
 - **Unit groups** — `final class` subclasses of `Unit` (e.g. `MassUnit`, `LengthUnit`, `AreaUnit`, `TimeUnit`, `VolumeUnit`, `EnergyUnit`). Each must conform to `@unchecked Sendable`.
 - **`Quantity`** — value type (`struct`, `Sendable`) holding an `amount` and a `Unit`. Supports arithmetic (`+`, `-`, `*`), comparison, conversion, and rounding.
 - **Type safety** — units are only convertible within the same `Unit` subclass (checked via `type(of:)` comparison at runtime).
