@@ -23,21 +23,22 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class MassUnitTests: XCTestCase {
+@Suite struct MassUnitTests {
 
-    func test_correctness() {
-        XCTAssertTrue(1.megagram() == 1000.kilogram())
-        XCTAssertTrue(1.kilogram() == 100.decagram())
-        XCTAssertTrue(1.decagram() == 10.gram())
-        XCTAssertTrue(1.gram() == 1000.milligram())
-        XCTAssertTrue(1000.milligram() == 0.001.kilogram())
+    @Test func correctness() {
+        #expect(1.megagram() == 1000.kilogram())
+        #expect(1.kilogram() == 100.decagram())
+        #expect(1.decagram() == 10.gram())
+        #expect(1.gram() == 1000.milligram())
+        #expect(1000.milligram() == 0.001.kilogram())
     }
     
-    func test_extension() {
+    @Test func fluentAPI() {
         self.assert(1.megagram(), expectedAmount: 1, expectedUnit: MassUnit.megagram)
         self.assert(1.5.kilogram(), expectedAmount: 1.5, expectedUnit: MassUnit.kilogram)
         self.assert(0.00001.decagram(), expectedAmount: 0.00001, expectedUnit: MassUnit.decagram)
@@ -45,8 +46,8 @@ class MassUnitTests: XCTestCase {
         self.assert(1.milligram(), expectedAmount: 1, expectedUnit: MassUnit.milligram)
     }
     
-    func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        XCTAssertEqual(item.amount, expectedAmount)
-        XCTAssertEqual(item.unit, expectedUnit)
+    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+        #expect(item.amount == expectedAmount)
+        #expect(item.unit == expectedUnit)
     }
 }

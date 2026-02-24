@@ -23,25 +23,26 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class AreaUnitImperialTests: XCTestCase {
+@Suite struct AreaUnitImperialTests {
 
-    func test_correctness() {
+    @Test func correctness() {
         
-        XCTAssertTrue(1.squareMile()
+        #expect(1.squareMile()
             .converted(AreaUnit.acre)
             .rounded(6) == 640.acre())
         
-        XCTAssertTrue(1.acre() == 4840.squareYard())
-        XCTAssertTrue(1.squareYard() == 9.squareFoot())
-        XCTAssertTrue(1.squareFoot() == 144.squareInch())
-        XCTAssertTrue(1.squareInch() == 6.4516.squareCentimeter())
+        #expect(1.acre() == 4840.squareYard())
+        #expect(1.squareYard() == 9.squareFoot())
+        #expect(1.squareFoot() == 144.squareInch())
+        #expect(1.squareInch() == 6.4516.squareCentimeter())
     }
     
-    func test_extension() {
+    @Test func fluentAPI() {
         self.assert(1.squareMile(), expectedAmount: 1, expectedUnit: AreaUnit.squareMile)
         self.assert(1.acre(), expectedAmount: 1, expectedUnit: AreaUnit.acre)
         self.assert(1.squareYard(), expectedAmount: 1, expectedUnit: AreaUnit.squareYard)
@@ -49,8 +50,8 @@ class AreaUnitImperialTests: XCTestCase {
         self.assert(1.squareInch(), expectedAmount: 1, expectedUnit: AreaUnit.squareInch)
     }
     
-    func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        XCTAssertEqual(item.amount, expectedAmount)
-        XCTAssertEqual(item.unit, expectedUnit)
+    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+        #expect(item.amount == expectedAmount)
+        #expect(item.unit == expectedUnit)
     }
 }
