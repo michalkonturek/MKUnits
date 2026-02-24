@@ -1,8 +1,7 @@
 # MKUnits
 
 [![Version](https://img.shields.io/cocoapods/v/MKUnits.svg)](http://cocoapods.org/pods/MKUnits)
-[![Build Status](https://travis-ci.org/michalkonturek/MKUnits.svg?branch=master)](https://travis-ci.org/michalkonturek/MKUnits)
-[![Swift](https://img.shields.io/badge/%20compatible-swift%203.0-orange.svg)](http://swift.org)
+[![Swift](https://img.shields.io/badge/%20compatible-swift%206.0-orange.svg)](http://swift.org)
 [![License](https://img.shields.io/cocoapods/l/MKUnits.svg)](http://cocoapods.org/pods/MKUnits)
 [![Twitter](https://img.shields.io/badge/contact-@MichalKonturek-blue.svg)](http://twitter.com/michalkonturek)
 
@@ -19,6 +18,18 @@ MKUnits is available under the MIT license. See the [LICENSE][LICENSE] file for 
 
 
 ## Installation
+
+### Swift Package Manager
+
+Add the following to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/michalkonturek/MKUnits.git", from: "5.0.0")
+]
+```
+
+### CocoaPods
 
 MKUnits is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:

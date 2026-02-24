@@ -25,7 +25,7 @@
 
 import Foundation
 
-public final class LengthUnit: Unit {
+public final class LengthUnit: Unit, @unchecked Sendable {
 
     /**
      Returns kilometer `[km]` length unit.

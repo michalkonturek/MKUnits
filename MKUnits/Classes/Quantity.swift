@@ -111,17 +111,17 @@ public func - (lhs: Quantity, rhs: Quantity) -> Quantity {
 }
 
 public func * (lhs: Quantity, rhs: Int) -> Quantity {
-    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs as Int))
+    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs))
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
 public func * (lhs: Quantity, rhs: Double) -> Quantity {
-    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs as Double))
+    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs))
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
 public func * (lhs: Quantity, rhs: Float) -> Quantity {
-    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs as Float))
+    let amount = lhs.amount.multiplying(by: NSDecimalNumber(value: rhs))
     return Quantity(amount: amount, unit: lhs.unit)
 }
 
@@ -131,17 +131,17 @@ public func * (lhs: Quantity, rhs: NSNumber) -> Quantity {
 }
 
 public func * (lhs: Int, rhs: Quantity) -> Quantity {
-    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs as Int))
+    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs))
     return Quantity(amount: amount, unit: rhs.unit)
 }
 
 public func * (lhs: Double, rhs: Quantity) -> Quantity {
-    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs as Double))
+    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs))
     return Quantity(amount: amount, unit: rhs.unit)
 }
 
 public func * (lhs: Float, rhs: Quantity) -> Quantity {
-    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs as Float))
+    let amount = rhs.amount.multiplying(by: NSDecimalNumber(value: lhs))
     return Quantity(amount: amount, unit: rhs.unit)
 }
 
@@ -183,6 +183,10 @@ extension Quantity: Equatable {
 public func == (lhs: Quantity, rhs: Quantity) -> Bool {
     return lhs.equals(rhs)
 }
+
+// MARK: - Sendable
+
+extension Quantity: @unchecked Sendable {}
 
 // MARK: - Comparable
 

@@ -1,10 +1,7 @@
 language: objective-c
-osx_image: xcode8
-# cache: cocoapods
-# podfile: Example/Podfile
+osx_image: xcode16
 before_install:
-- gem install cocoapods -v 1.1.1
-# - pod install --project-directory=Example
+- gem install cocoapods
 script:
-- set -o pipefail && xcodebuild test -workspace Example/MKUnits.xcworkspace -scheme MKUnits-Example -sdk iphonesimulator -destination 'name=iPhone 6,OS=10.0' ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/MKUnits.xcworkspace -scheme MKUnits-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint

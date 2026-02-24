@@ -25,7 +25,7 @@
 
 import Foundation
 
-public final class TimeUnit: Unit {
+public final class TimeUnit: Unit, @unchecked Sendable {
 
     /**
      Returns century `[c]` time unit.

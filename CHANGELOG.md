@@ -1,5 +1,15 @@
 # Change Log
 
+## [5.0.0](https://github.com/michalkonturek/MKUnits/tree/5.0.0) (2026-02-24)
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/4.0.0...5.0.0)
+
+- Upgraded from Swift 3.0 to Swift 6.0
+- Added Swift Package Manager support
+- Added `Sendable` conformance to `Unit` and `Quantity`
+- Raised minimum iOS deployment target to 16.0
+- Changed `open let` properties on `Unit` to `public let` (required by Swift 4+)
+- Removed redundant type casts in `Quantity` arithmetic operators
+
 ## [4.0.0](https://github.com/michalkonturek/MKUnits/tree/4.0.0) (2016-11-06)
 [Full Changelog](https://github.com/michalkonturek/MKUnits/compare/3.1.0...4.0.0)
 
