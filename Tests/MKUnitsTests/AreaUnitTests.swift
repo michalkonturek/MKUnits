@@ -38,7 +38,7 @@ import MKUnits
         #expect(1.squareDecimeter() == 100.squareCentimeter())
         #expect(1.squareCentimeter() == 100.squareMillimeter())
     }
-    
+
     @Test func fluentAPI() {
         self.assert(1.squareKilometer(), expectedAmount: 1, expectedUnit: AreaUnit.squareKilometer)
         self.assert(1.hectare(), expectedAmount: 1, expectedUnit: AreaUnit.hectare)
@@ -48,7 +48,7 @@ import MKUnits
         self.assert(1.squareCentimeter(), expectedAmount: 1, expectedUnit: AreaUnit.squareCentimeter)
         self.assert(1.squareMillimeter(), expectedAmount: 1, expectedUnit: AreaUnit.squareMillimeter)
     }
-    
+
     private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
         #expect(item.amount == expectedAmount)
         #expect(item.unit == expectedUnit)
