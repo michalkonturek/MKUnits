@@ -66,7 +66,7 @@ import MKUnits
         self.assert(1.fluidram(), expectedAmount: 1, expectedUnit: VolumeUnit.fluidram)
     }
     
-    func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
         #expect(item.amount == expectedAmount)
         #expect(item.unit == expectedUnit)
     }
