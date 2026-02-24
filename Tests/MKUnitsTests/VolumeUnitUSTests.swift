@@ -66,7 +66,7 @@ import MKUnits
         self.assert(1.us_minim(), expectedAmount: 1, expectedUnit: VolumeUnit.us_minim)
     }
     
-    func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
         #expect(item.amount == expectedAmount)
         #expect(item.unit == expectedUnit)
     }
