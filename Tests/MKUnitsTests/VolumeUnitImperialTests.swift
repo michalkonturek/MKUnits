@@ -40,20 +40,20 @@ import MKUnits
         #expect(1.tablespoon() == 17.7581714.millilitre())
         #expect(1.teaspoon() == Quantity(amount: Decimal(string: "5.91939")!, unit: VolumeUnit.millilitre))
         #expect(1.fluidram() == Quantity(amount: Decimal(string: "3.5516328125")!, unit: VolumeUnit.millilitre))
-        
+
         #expect(1.pint()
             .converted(VolumeUnit.cup)
             .rounded(5) == 2.cup())
-        
+
         #expect(1.cup()
             .converted(VolumeUnit.fluidounce)
             .rounded(4) == 10.fluidounce())
-        
+
         #expect(1.tablespoon()
             .converted(VolumeUnit.teaspoon)
             .rounded(6) == 3.teaspoon())
     }
-    
+
     @Test func fluentAPI() {
         self.assert(1.gallon(), expectedAmount: 1, expectedUnit: VolumeUnit.gallon)
         self.assert(1.5.quart(), expectedAmount: 1.5, expectedUnit: VolumeUnit.quart)
@@ -65,7 +65,7 @@ import MKUnits
         self.assert(1.teaspoon(), expectedAmount: 1, expectedUnit: VolumeUnit.teaspoon)
         self.assert(1.fluidram(), expectedAmount: 1, expectedUnit: VolumeUnit.fluidram)
     }
-    
+
     private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
         #expect(item.amount == expectedAmount)
         #expect(item.unit == expectedUnit)

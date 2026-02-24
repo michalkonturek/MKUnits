@@ -37,7 +37,7 @@ import MKUnits
         #expect(1.gram() == 1000.milligram())
         #expect(1000.milligram() == 0.001.kilogram())
     }
-    
+
     @Test func fluentAPI() {
         self.assert(1.megagram(), expectedAmount: 1, expectedUnit: MassUnit.megagram)
         self.assert(1.5.kilogram(), expectedAmount: 1.5, expectedUnit: MassUnit.kilogram)
@@ -45,7 +45,7 @@ import MKUnits
         self.assert(1.gram(), expectedAmount: 1, expectedUnit: MassUnit.gram)
         self.assert(1.milligram(), expectedAmount: 1, expectedUnit: MassUnit.milligram)
     }
-    
+
     private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
         #expect(item.amount == expectedAmount)
         #expect(item.unit == expectedUnit)
