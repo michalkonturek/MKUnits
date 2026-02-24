@@ -23,23 +23,24 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class VolumeUnitTests: XCTestCase {
+@Suite struct VolumeUnitTests {
 
-    func test_correctness() {
-        XCTAssertTrue(1.hectolitre() == 100.litre())
-        XCTAssertTrue(1.litre() == 10.decilitre())
-        XCTAssertTrue(1.decilitre() == 10.centilitre())
-        XCTAssertTrue(1.centilitre() == 10.millilitre())
+    @Test func correctness() {
+        #expect(1.hectolitre() == 100.litre())
+        #expect(1.litre() == 10.decilitre())
+        #expect(1.decilitre() == 10.centilitre())
+        #expect(1.centilitre() == 10.millilitre())
         
-        XCTAssertTrue(1.millilitre() == 1000.microlitre())
-        XCTAssertTrue(1.microlitre() == 0.000001.litre())
+        #expect(1.millilitre() == 1000.microlitre())
+        #expect(1.microlitre() == 0.000001.litre())
     }
     
-    func test_extension() {
+    @Test func fluentAPI() {
         self.assert(1.hectolitre(), expectedAmount: 1, expectedUnit: VolumeUnit.hectolitre)
         self.assert(1.5.litre(), expectedAmount: 1.5, expectedUnit: VolumeUnit.litre)
         self.assert(0.00001.decilitre(), expectedAmount: 0.00001, expectedUnit: VolumeUnit.decilitre)
@@ -50,7 +51,7 @@ class VolumeUnitTests: XCTestCase {
     }
     
     func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        XCTAssertEqual(item.amount, expectedAmount)
-        XCTAssertEqual(item.unit, expectedUnit)
+        #expect(item.amount == expectedAmount)
+        #expect(item.unit == expectedUnit)
     }
 }

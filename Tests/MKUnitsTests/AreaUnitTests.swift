@@ -23,22 +23,23 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class AreaUnitTests: XCTestCase {
+@Suite struct AreaUnitTests {
 
-    func test_correctness() {
-        XCTAssertTrue(1.squareKilometer() == 100.hectare())
-        XCTAssertTrue(1.hectare() == 100.are())
-        XCTAssertTrue(1.are() == 100.squareMeter())
-        XCTAssertTrue(1.squareMeter() == 100.squareDecimeter())
-        XCTAssertTrue(1.squareDecimeter() == 100.squareCentimeter())
-        XCTAssertTrue(1.squareCentimeter() == 100.squareMillimeter())
+    @Test func correctness() {
+        #expect(1.squareKilometer() == 100.hectare())
+        #expect(1.hectare() == 100.are())
+        #expect(1.are() == 100.squareMeter())
+        #expect(1.squareMeter() == 100.squareDecimeter())
+        #expect(1.squareDecimeter() == 100.squareCentimeter())
+        #expect(1.squareCentimeter() == 100.squareMillimeter())
     }
     
-    func test_extension() {
+    @Test func fluentAPI() {
         self.assert(1.squareKilometer(), expectedAmount: 1, expectedUnit: AreaUnit.squareKilometer)
         self.assert(1.hectare(), expectedAmount: 1, expectedUnit: AreaUnit.hectare)
         self.assert(1.are(), expectedAmount: 1, expectedUnit: AreaUnit.are)
@@ -48,8 +49,8 @@ class AreaUnitTests: XCTestCase {
         self.assert(1.squareMillimeter(), expectedAmount: 1, expectedUnit: AreaUnit.squareMillimeter)
     }
     
-    func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        XCTAssertEqual(item.amount, expectedAmount)
-        XCTAssertEqual(item.unit, expectedUnit)
+    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+        #expect(item.amount == expectedAmount)
+        #expect(item.unit == expectedUnit)
     }
 }

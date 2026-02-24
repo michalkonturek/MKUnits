@@ -23,83 +23,84 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class UnitTests: XCTestCase {
+@Suite struct UnitTests {
     let sut = TestUnit.unitA
     
-    func test_init() {
-        XCTAssertEqual(self.sut.name, "Unit A")
-        XCTAssertEqual(self.sut.symbol, "A")
-        XCTAssertEqual(self.sut.ratio, Decimal(1))
-        XCTAssertTrue(type(of: self.sut.ratio) == Decimal.self)
+    @Test func initialization() {
+        #expect(self.sut.name == "Unit A")
+        #expect(self.sut.symbol == "A")
+        #expect(self.sut.ratio == Decimal(1))
+        #expect(type(of: self.sut.ratio) == Decimal.self)
     }
     
-    func test_convertFromBaseUnit() {
+    @Test func convertFromBaseUnit() {
         let value = self.sut.convertFromBaseUnit(100)
-        XCTAssertEqual(value, 100)
+        #expect(value == 100)
     }
     
-    func test_convertToBaseUnit() {
+    @Test func convertToBaseUnit() {
         let value = self.sut.convertFromBaseUnit(100)
-        XCTAssertEqual(value, 100)
+        #expect(value == 100)
     }
 
     // MARK: - CustomStringConvertible
     
-    func test_description() {
-        XCTAssertEqual(self.sut.description, "A")
+    @Test func customDescription() {
+        #expect(self.sut.description == "A")
     }
     
     // MARK: - UnitConvertible
     
-    func test_isConvertible_returnsTrue() {
+    @Test func isConvertible_returnsTrue() {
         let kilogram = MassUnit.kilogram
         let decagram = MassUnit.decagram
-        XCTAssertTrue(kilogram.isConvertible(decagram))
+        #expect(kilogram.isConvertible(decagram))
     }
     
-    func test_isConvertible_returnsFalse() {
+    @Test func isConvertible_returnsFalse() {
         let decagram = MassUnit.decagram
-        XCTAssertFalse(self.sut.isConvertible(decagram))
+        #expect(!self.sut.isConvertible(decagram))
     }
 
-    func test_convert_from() {
+    @Test func convert_from() {
         let unitA = TestUnit.unitA
         let unitB = TestUnit.unitB
         let converted = unitA.convert(10, from: unitB)
-        XCTAssertEqual(converted, 100)
+        #expect(converted == 100)
     }
     
-    func test_convert_from_to() {
+    @Test func convert_from_to() {
         let unitA = TestUnit.unitA
         let unitB = TestUnit.unitB
         let converted = unitA.convert(10, from: unitB, to: unitA)
-        XCTAssertEqual(converted, 100)
+        #expect(converted == 100)
     }
     
-    func test_convert_to() {
+    @Test func convert_to() {
         let unitA = TestUnit.unitA
         let unitB = TestUnit.unitB
         let converted = unitA.convert(10, to: unitB)
-        XCTAssertEqual(converted, 1)
+        #expect(converted == 1)
     }
     
     // MARK: - Equatable
     
-    func test_equatable_returnsTrue() {
+    @Test func equatable_returnsTrue() {
         let other = TestUnit.unitA
-        XCTAssertTrue(self.sut == other)
+        #expect(self.sut == other)
     }
     
-    func test_equatable_returnsFalse() {
+    @Test func equatable_returnsFalse() {
         var other = TestUnit.unitB
-        XCTAssertFalse(self.sut == other)
+        #expect(!(self.sut == other))
         
         other = TestOtherUnit.unit
-        XCTAssertFalse(self.sut == other)
+        #expect(!(self.sut == other))
     }
 }
 

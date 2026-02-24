@@ -23,27 +23,28 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class MassUnitImperialTests: XCTestCase {
+@Suite struct MassUnitImperialTests {
 
-    func test_correctness() {
-        XCTAssertTrue(1.ton() == 2240.pound())
-        XCTAssertTrue(1.hundredweight() == 112.pound())
-        XCTAssertTrue(1.quarter() == 28.pound())
-        XCTAssertTrue(1.pound() == 16.ounce())
+    @Test func correctness() {
+        #expect(1.ton() == 2240.pound())
+        #expect(1.hundredweight() == 112.pound())
+        #expect(1.quarter() == 28.pound())
+        #expect(1.pound() == 16.ounce())
         
-        XCTAssertTrue(1.pound() == 256.drachm())
-        XCTAssertTrue(1.pound() == 7000.grain())
-        XCTAssertTrue(1.pound() == Quantity(amount: Decimal(string: "0.45359237")!, unit: MassUnit.kilogram))
+        #expect(1.pound() == 256.drachm())
+        #expect(1.pound() == 7000.grain())
+        #expect(1.pound() == Quantity(amount: Decimal(string: "0.45359237")!, unit: MassUnit.kilogram))
 
         let stone = Decimal(string: "1.00000050076453201349859612710600618239")!
-        XCTAssertTrue(Quantity(amount: stone, unit: MassUnit.stone) == 14.pound())
+        #expect(Quantity(amount: stone, unit: MassUnit.stone) == 14.pound())
     }
     
-    func test_extension() {
+    @Test func fluentAPI() {
         self.assert(1.ton(), expectedAmount: 1, expectedUnit: MassUnit.ton)
         self.assert(1.5.hundredweight(), expectedAmount: 1.5, expectedUnit: MassUnit.hundredweight)
         self.assert(0.00001.quarter(), expectedAmount: 0.00001, expectedUnit: MassUnit.quarter)
@@ -55,8 +56,8 @@ class MassUnitImperialTests: XCTestCase {
         self.assert(1.grain(), expectedAmount: 1, expectedUnit: MassUnit.grain)
     }
     
-    func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        XCTAssertEqual(item.amount, expectedAmount)
-        XCTAssertEqual(item.unit, expectedUnit)
+    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+        #expect(item.amount == expectedAmount)
+        #expect(item.unit == expectedUnit)
     }
 }

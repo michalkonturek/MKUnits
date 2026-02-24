@@ -23,37 +23,38 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class VolumeUnitImperialTests: XCTestCase {
+@Suite struct VolumeUnitImperialTests {
 
-    func test_correctness() {
-        XCTAssertTrue(1.gallon() == 4.quart())
-        XCTAssertTrue(1.quart() == 2.pint())
-        XCTAssertTrue(1.pint() == 20.fluidounce())
-        XCTAssertTrue(1.cup() == 284.13.millilitre())
+    @Test func correctness() {
+        #expect(1.gallon() == 4.quart())
+        #expect(1.quart() == 2.pint())
+        #expect(1.pint() == 20.fluidounce())
+        #expect(1.cup() == 284.13.millilitre())
 
-        XCTAssertTrue(1.fluidounce() == 8.fluidram())
-        XCTAssertTrue(1.tablespoon() == 17.7581714.millilitre())
-        XCTAssertTrue(1.teaspoon() == Quantity(amount: Decimal(string: "5.91939")!, unit: VolumeUnit.millilitre))
-        XCTAssertTrue(1.fluidram() == Quantity(amount: Decimal(string: "3.5516328125")!, unit: VolumeUnit.millilitre))
+        #expect(1.fluidounce() == 8.fluidram())
+        #expect(1.tablespoon() == 17.7581714.millilitre())
+        #expect(1.teaspoon() == Quantity(amount: Decimal(string: "5.91939")!, unit: VolumeUnit.millilitre))
+        #expect(1.fluidram() == Quantity(amount: Decimal(string: "3.5516328125")!, unit: VolumeUnit.millilitre))
         
-        XCTAssertTrue(1.pint()
+        #expect(1.pint()
             .converted(VolumeUnit.cup)
             .rounded(5) == 2.cup())
         
-        XCTAssertTrue(1.cup()
+        #expect(1.cup()
             .converted(VolumeUnit.fluidounce)
             .rounded(4) == 10.fluidounce())
         
-        XCTAssertTrue(1.tablespoon()
+        #expect(1.tablespoon()
             .converted(VolumeUnit.teaspoon)
             .rounded(6) == 3.teaspoon())
     }
     
-    func test_extension() {
+    @Test func fluentAPI() {
         self.assert(1.gallon(), expectedAmount: 1, expectedUnit: VolumeUnit.gallon)
         self.assert(1.5.quart(), expectedAmount: 1.5, expectedUnit: VolumeUnit.quart)
         self.assert(0.00001.pint(), expectedAmount: 0.00001, expectedUnit: VolumeUnit.pint)
@@ -66,7 +67,7 @@ class VolumeUnitImperialTests: XCTestCase {
     }
     
     func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        XCTAssertEqual(item.amount, expectedAmount)
-        XCTAssertEqual(item.unit, expectedUnit)
+        #expect(item.amount == expectedAmount)
+        #expect(item.unit == expectedUnit)
     }
 }

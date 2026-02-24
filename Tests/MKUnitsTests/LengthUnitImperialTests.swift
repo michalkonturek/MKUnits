@@ -23,23 +23,24 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class LengthUnitImperialTests: XCTestCase {
+@Suite struct LengthUnitImperialTests {
 
-    func test_correctness() {
-        XCTAssertTrue(1.nauticalMile() == 6080.foot())
-        XCTAssertTrue(1.mile() == 5280.foot())
-        XCTAssertTrue(1.furlong() == 10.chain())
-        XCTAssertTrue(1.chain() == 22.yard())
+    @Test func correctness() {
+        #expect(1.nauticalMile() == 6080.foot())
+        #expect(1.mile() == 5280.foot())
+        #expect(1.furlong() == 10.chain())
+        #expect(1.chain() == 22.yard())
         
-        XCTAssertTrue(1.yard() == 3.foot())
-        XCTAssertTrue(1.foot() == 12.inch())
+        #expect(1.yard() == 3.foot())
+        #expect(1.foot() == 12.inch())
     }
     
-    func test_extension() {
+    @Test func fluentAPI() {
         self.assert(1.nauticalMile(), expectedAmount: 1, expectedUnit: LengthUnit.nauticalMile)
         self.assert(1.5.mile(), expectedAmount: 1.5, expectedUnit: LengthUnit.mile)
         self.assert(0.00001.furlong(), expectedAmount: 0.00001, expectedUnit: LengthUnit.furlong)
@@ -50,8 +51,8 @@ class LengthUnitImperialTests: XCTestCase {
         self.assert(1.inch(), expectedAmount: 1, expectedUnit: LengthUnit.inch)
     }
     
-    func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        XCTAssertEqual(item.amount, expectedAmount)
-        XCTAssertEqual(item.unit, expectedUnit)
+    private func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
+        #expect(item.amount == expectedAmount)
+        #expect(item.unit == expectedUnit)
     }
 }

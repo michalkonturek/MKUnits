@@ -23,30 +23,31 @@
 //  THE SOFTWARE.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 import MKUnits
 
-class TimeUnitTests: XCTestCase {
+@Suite struct TimeUnitTests {
 
-    func test_correctness() {
-        XCTAssertTrue(1.century() == 10.decade())
-        XCTAssertTrue(1.century() == 100.year())        
-        XCTAssertTrue(1.decade() == 10.year())
-        XCTAssertTrue(1.year() == 365.25.day())
+    @Test func correctness() {
+        #expect(1.century() == 10.decade())
+        #expect(1.century() == 100.year())        
+        #expect(1.decade() == 10.year())
+        #expect(1.year() == 365.25.day())
         
-        XCTAssertTrue(1.month() == 30.day())
-        XCTAssertTrue(1.week() == 7.day())
-        XCTAssertTrue(1.day() == 24.hour())
-        XCTAssertTrue(1.hour() == 60.minute())
+        #expect(1.month() == 30.day())
+        #expect(1.week() == 7.day())
+        #expect(1.day() == 24.hour())
+        #expect(1.hour() == 60.minute())
         
-        XCTAssertTrue(1.minute() == 60.second())
-        XCTAssertTrue(1.second() == 1000.millisecond())
-        XCTAssertTrue(1.millisecond() == 1000.microsecond())
-        XCTAssertTrue(1.microsecond() == 1000.nanosecond())
+        #expect(1.minute() == 60.second())
+        #expect(1.second() == 1000.millisecond())
+        #expect(1.millisecond() == 1000.microsecond())
+        #expect(1.microsecond() == 1000.nanosecond())
     }
     
-    func test_extension() {
+    @Test func fluentAPI() {
         self.assert(1.century(), expectedAmount: 1, expectedUnit: TimeUnit.century)
         self.assert(1.5.decade(), expectedAmount: 1.5, expectedUnit: TimeUnit.decade)
         self.assert(0.00001.year(), expectedAmount: 0.00001, expectedUnit: TimeUnit.year)
@@ -64,7 +65,7 @@ class TimeUnitTests: XCTestCase {
     }
     
     func assert(_ item: Quantity, expectedAmount: Decimal, expectedUnit: MKUnits.Unit) {
-        XCTAssertEqual(item.amount, expectedAmount)
-        XCTAssertEqual(item.unit, expectedUnit)
+        #expect(item.amount == expectedAmount)
+        #expect(item.unit == expectedUnit)
     }
 }
