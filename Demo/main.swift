@@ -75,6 +75,17 @@ print("  1 litre + 250 ml = \(1.litre() + 250.millilitre())")
 print("  1 GB - 512 MB = \(1.gigabyte() - 512.megabyte())")
 print()
 
+// MARK: - Metric ↔ Imperial
+
+print("-- Metric + Imperial --")
+print("  5 lb + 1 kg = \(5.pound() + 1.kilogram())")
+print("  1 kg - 8 oz = \(1.kilogram() - 8.ounce())")
+print("  10 stone + 5 kg = \(10.stone() + 5.kilogram())")
+print("  3 ft + 50 cm = \(3.foot() + 50.centimeter())")
+print("  1 yard - 0.5 m = \(1.yard() - 0.5.meter())")
+print("  1 mile + 1 km = \(1.mile() + 1.kilometer())")
+print()
+
 // MARK: - Scalar Arithmetic
 
 print("-- Scalar Arithmetic --")
