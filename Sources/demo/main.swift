@@ -61,21 +61,33 @@ print("1 kJ in joules: \(1.kilojoule().converted(EnergyUnit.joule))")
 print("1 kcal in joules: \(1.kilocalorie().converted(EnergyUnit.joule))")
 print()
 
-// MARK: - Arithmetic
+// MARK: - Cross-Unit Arithmetic
 
-print("-- Arithmetic --")
-let a = 5.kilogram()
-let b = 3000.gram()
-print("\(a) + \(b) = \(a + b)")
-print("\(a) - \(b) = \(a - b)")
-print("\(a) × 3 = \(a * 3)")
+print("-- Cross-Unit Arithmetic --")
+print("Result is always in the unit of the left operand:")
+print("  5 kg + 3000 g = \(5.kilogram() + 3000.gram())")
+print("  5 kg - 3000 g = \(5.kilogram() - 3000.gram())")
+print("  1 km + 500 m = \(1.kilometer() + 500.meter())")
+print("  1 mile - 1 km = \(1.mile() - 1.kilometer())")
+print("  1 hour + 1800 s = \(1.hour() + 1800.second())")
+print("  1 day - 2 h = \(1.day() - 2.hour())")
+print("  1 litre + 250 ml = \(1.litre() + 250.millilitre())")
+print("  1 GB - 512 MB = \(1.gigabyte() - 512.megabyte())")
+print()
+
+// MARK: - Scalar Arithmetic
+
+print("-- Scalar Arithmetic --")
+print("  5 kg × 3 = \(5.kilogram() * 3)")
+print("  2 × 100 m = \(2 * 100.meter())")
 print()
 
 // MARK: - Comparison
 
 print("-- Comparison --")
-print("1 kg == 1000 g? \(1.kilogram() == 1000.gram())")
-print("1 kg > 500 g? \(1.kilogram() > 500.gram())")
-print("100 °C == 212 °F? \(100.celsius() == 212.fahrenheit())")
+print("  1 kg == 1000 g? \(1.kilogram() == 1000.gram())")
+print("  1 kg > 500 g? \(1.kilogram() > 500.gram())")
+print("  100 °C == 212 °F? \(100.celsius() == 212.fahrenheit())")
+print("  1 mile > 1 km? \(1.mile() > 1.kilometer())")
 
 print("\n=== Done ===")
