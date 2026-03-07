@@ -22,7 +22,7 @@ let package = Package(
       name: "MKUnits"
     ),
     .executableTarget(
-      name: "MKUnitsDemo",
+      name: "Demo",
       dependencies: ["MKUnits"]
     ),
     .testTarget(
