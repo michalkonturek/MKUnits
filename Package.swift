@@ -23,7 +23,8 @@ let package = Package(
     ),
     .executableTarget(
       name: "demo",
-      dependencies: ["MKUnits"]
+      dependencies: ["MKUnits"],
+      path: "Demo"
     ),
     .testTarget(
       name: "MKUnitsTests",
