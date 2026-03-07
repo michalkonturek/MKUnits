@@ -1,25 +1,27 @@
 # Change Log
 
-## [6.0.0](https://github.com/michalkonturek/MKUnits/tree/6.0.0) (2026-02-24)
-[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/5.0.0...6.0.0)
+## [4.2.0](https://github.com/michalkonturek/MKUnits/tree/4.2.0) (2026-03-07)
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/4.1.0...4.2.0)
 
+- Added `ByteUnit` for digital storage conversions (byte, KB, MB, GB, TB, PB)
+- Added `TemperatureUnit` with offset-based conversion (Kelvin, Celsius, Fahrenheit, Rankine)
+- Added `demo` executable target (`swift run demo`) showcasing all unit groups
+- Added CLAUDE.md for Claude Code guidance
+- Added OpenSpec configuration and AI assistant skills
+
+## [4.1.0](https://github.com/michalkonturek/MKUnits/tree/4.1.0) (2026-02-24)
+[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/4.0.0...4.1.0)
+
+- Upgraded from Swift 3.0 to Swift 6.0
 - Restructured as SPM-first project (standard `Sources/` and `Tests/` layout)
 - Replaced `NSDecimalNumber`/`NSNumber` with Swift's native `Decimal` type throughout
 - Replaced `ExpressibleByIntegerLiteral` extensions with `Int` and `Double` extensions
 - Added multi-platform support: iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, visionOS 1+
-- Removed Xcode project, CocoaPods workspace, and Travis CI configuration
-- Simplified `Quantity` to use `Sendable` (no longer `@unchecked`)
-- Updated README with modernized code examples
-
-## [5.0.0](https://github.com/michalkonturek/MKUnits/tree/5.0.0) (2026-02-24)
-[Full Changelog](https://github.com/michalkonturek/MKUnits/compare/4.0.0...5.0.0)
-
-- Upgraded from Swift 3.0 to Swift 6.0
-- Added Swift Package Manager support
 - Added `Sendable` conformance to `Unit` and `Quantity`
-- Raised minimum iOS deployment target to 16.0
-- Changed `open let` properties on `Unit` to `public let` (required by Swift 4+)
-- Removed redundant type casts in `Quantity` arithmetic operators
+- Added GitHub Actions CI (macOS + Ubuntu, swift-format lint, build, test)
+- Migrated unit tests from XCTest to Swift Testing
+- Added swift-format with 2-space indentation
+- Removed Xcode project, CocoaPods workspace, and Travis CI configuration
 
 ## [4.0.0](https://github.com/michalkonturek/MKUnits/tree/4.0.0) (2016-11-06)
 [Full Changelog](https://github.com/michalkonturek/MKUnits/compare/3.1.0...4.0.0)
