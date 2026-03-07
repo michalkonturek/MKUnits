@@ -85,14 +85,24 @@ let rounded = result.rounded(3)
 ```
 
 
-## Supported Units 
+## Demo
+
+Run the built-in demo to see all unit groups in action:
+
+```bash
+swift run demo
+```
+
+## Supported Units
 
 MKUnits supports the following unit groups:
 
 * Area (base unit: square meter)
+* Byte (base unit: byte)
 * Energy (base unit: calorie)
-* Mass (base unit: kilogram)
 * Length (base unit: meter)
+* Mass (base unit: kilogram)
+* Temperature (base unit: kelvin)
 * Time (base unit: second)
 * Volume (base unit: litre)
 
