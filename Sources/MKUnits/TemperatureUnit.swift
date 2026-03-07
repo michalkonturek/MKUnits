@@ -27,19 +27,31 @@ import Foundation
 
 public final class TemperatureUnit: Unit, @unchecked Sendable {
 
+  private let numerator: Decimal
+  private let denominator: Decimal
   private let offset: Decimal
 
-  public init(name: String, symbol: String, ratio: Decimal, offset: Decimal) {
+  /// Creates a temperature unit.
+  ///
+  /// Conversion to Kelvin: `K = (amount + offset) * numerator / denominator`
+  /// Conversion from Kelvin: `amount = K * denominator / numerator - offset`
+  public init(
+    name: String, symbol: String,
+    numerator: Decimal, denominator: Decimal,
+    offset: Decimal
+  ) {
+    self.numerator = numerator
+    self.denominator = denominator
     self.offset = offset
-    super.init(name: name, symbol: symbol, ratio: ratio)
+    super.init(name: name, symbol: symbol, ratio: numerator / denominator)
   }
 
   override public func convertToBaseUnit(_ amount: Decimal) -> Decimal {
-    amount * ratio + offset
+    (amount + offset) * numerator / denominator
   }
 
   override public func convertFromBaseUnit(_ amount: Decimal) -> Decimal {
-    (amount - offset) / ratio
+    amount * denominator / numerator - offset
   }
 
   /// Returns kelvin `[K]` temperature unit.
@@ -48,31 +60,41 @@ public final class TemperatureUnit: Unit, @unchecked Sendable {
   public static let kelvin = TemperatureUnit(
     name: "kelvin",
     symbol: "K",
-    ratio: 1,
+    numerator: 1,
+    denominator: 1,
     offset: 0
   )
 
   /// Returns celsius `[°C]` temperature unit.
+  ///
+  /// K = C + 273.15
   public static let celsius = TemperatureUnit(
     name: "celsius",
     symbol: "°C",
-    ratio: 1,
+    numerator: 1,
+    denominator: 1,
     offset: Decimal(string: "273.15")!
   )
 
   /// Returns fahrenheit `[°F]` temperature unit.
+  ///
+  /// K = (F + 459.67) × 5/9
   public static let fahrenheit = TemperatureUnit(
     name: "fahrenheit",
     symbol: "°F",
-    ratio: Decimal(string: "5")! / Decimal(string: "9")!,
-    offset: Decimal(string: "459.67")! * Decimal(string: "5")! / Decimal(string: "9")!
+    numerator: 5,
+    denominator: 9,
+    offset: Decimal(string: "459.67")!
   )
 
   /// Returns rankine `[°R]` temperature unit.
+  ///
+  /// K = R × 5/9
   public static let rankine = TemperatureUnit(
     name: "rankine",
     symbol: "°R",
-    ratio: Decimal(string: "5")! / Decimal(string: "9")!,
+    numerator: 5,
+    denominator: 9,
     offset: 0
   )
 }
