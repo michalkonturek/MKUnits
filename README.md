@@ -90,7 +90,7 @@ let rounded = result.rounded(3)
 Run the built-in demo to see all unit groups in action:
 
 ```bash
-swift run Demo
+swift run demo
 ```
 
 ## Supported Units
