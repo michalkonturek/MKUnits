@@ -21,6 +21,10 @@ let package = Package(
     .target(
       name: "MKUnits"
     ),
+    .executableTarget(
+      name: "MKUnitsDemo",
+      dependencies: ["MKUnits"]
+    ),
     .testTarget(
       name: "MKUnitsTests",
       dependencies: ["MKUnits"]
