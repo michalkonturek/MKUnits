@@ -1,0 +1,19 @@
+lockfile_version: '1'
+generated_at: '2026-05-13T12:44:34.122789+00:00'
+apm_version: 0.13.0
+dependencies:
+- repo_url: danielmeppiel/genesis
+  host: github.com
+  resolved_commit: 16a5027d6cdc23c0fd9df21f65e21fa0f681d722
+  resolved_ref: v0.1.0
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/genesis
+  - .claude/skills/genesis
+  content_hash: sha256:4f28e525c755aa538ed7aabd8e69cdd14c62c57b19cbfc37ddca5b0707f34730
+local_deployed_files:
+- .claude/rules/project.md
+- .github/instructions/project.instructions.md
+local_deployed_file_hashes:
+  .claude/rules/project.md: sha256:643098b9856c03c3d8a5bdc8fe05c0dec647266ba341242f40c6680503cf6e8b
+  .github/instructions/project.instructions.md: sha256:b424efb4340701e7b97bac1666123f9073f45aebaa94337cde0f22f6f0ee306a

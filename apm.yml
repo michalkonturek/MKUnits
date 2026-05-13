@@ -1,0 +1,15 @@
+name: MKUnits
+version: 1.0.0
+description: Swift library for measurement units
+author: Michal Konturek
+targets:
+- claude
+- codex
+- copilot
+- gemini
+dependencies:
+  apm:
+  - danielmeppiel/genesis#v0.1.0
+  mcp: []
+includes: auto
+scripts: {}

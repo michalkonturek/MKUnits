@@ -1,20 +1,18 @@
 schema: spec-driven
 
-# Project context (optional)
-# This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
+context: |
+  Tech stack: Swift 6.0, SPM, Swift Testing
+  Domain: unit conversion library using Decimal arithmetic
+  Architecture: Unit base class with subclass groups (MassUnit, LengthUnit, etc.),
+    Quantity struct for arithmetic/conversion, fluent Int/Double extensions
+  Conventions: public static let for unit constants, Decimal(string:) for fractional ratios,
+    2-space indent, swift-format enforced, MIT license headers
+  CI: GitHub Actions on macOS-15 + ubuntu-latest (swift-format lint, swift build, swift test)
+  Platforms: iOS 16+, macOS 13+, tvOS 16+, watchOS 9+, visionOS 1+
 
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+rules:
+  tasks:
+    - Each task should target a single source file or test file
+    - Include the file path in the task title
+  design:
+    - Note cross-platform considerations (Linux metatype comparison, watchOS Decimal issues)
