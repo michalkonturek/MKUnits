@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-05-13T12:44:34.122789+00:00'
+generated_at: '2026-05-13T14:01:16.285552+00:00'
 apm_version: 0.13.0
 dependencies:
 - repo_url: danielmeppiel/genesis
@@ -12,8 +12,16 @@ dependencies:
   - .claude/skills/genesis
   content_hash: sha256:4f28e525c755aa538ed7aabd8e69cdd14c62c57b19cbfc37ddca5b0707f34730
 local_deployed_files:
+- .agents/skills/add-unit
+- .agents/skills/add-unit-group
+- .claude/rules/precision-guard.md
 - .claude/rules/project.md
+- .claude/skills/add-unit
+- .claude/skills/add-unit-group
+- .github/instructions/precision-guard.instructions.md
 - .github/instructions/project.instructions.md
 local_deployed_file_hashes:
+  .claude/rules/precision-guard.md: sha256:7817df64cfe5bf53085a4402083edcb8ed974ffbe58fd266c3d818a2468033f1
   .claude/rules/project.md: sha256:643098b9856c03c3d8a5bdc8fe05c0dec647266ba341242f40c6680503cf6e8b
+  .github/instructions/precision-guard.instructions.md: sha256:9c2f0b8a80ae71df7dba2ba9492ddd4e0e970e5bea009519ec24b19fedb43207
   .github/instructions/project.instructions.md: sha256:b424efb4340701e7b97bac1666123f9073f45aebaa94337cde0f22f6f0ee306a
